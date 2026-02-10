@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVERSHOP - Research & Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --dark: rgb(22,44,71);
+            --dark-secondary: rgba(30,52,79,1);
+            --text: #E8ECF1;
+            --text-muted: #8B96A5;
+            --accent: #4A9EFF;
+            
+            --primary-blue: #0A2342;
+            --accent-orange: #E85D04;
+            --steel-gray: #2C3E50;
+            --light-gray: #ECF0F1;
+            --white: #FFFFFF;
+            --dark-bg: #0c2b4b;
+            --footer-dark: #081b2c;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ========== HEADER STYLES ========== */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--steel-gray) 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 85px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-image {
+            height: 75px;
+            width: auto;
+            object-fit: contain;
+            transition: filter 0.3s ease;
+            margin-right: 20px;
+        }
+
+        .logo:hover .logo-image {
+            filter: brightness(1.2);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            color: var(--white);
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent-orange);
+        }
+
+        .nav-link:hover::before {
+            width: 80%;
+        }
+
+        .dropdown-icon {
+            display: inline-block;
+            margin-left: 4px;
+            transition: transform 0.3s ease;
+            font-size: 0.75rem;
+        }
+
+        .nav-item:hover .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            min-width: 280px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            margin-top: 0.5rem;
+            border-top: 3px solid var(--accent-orange);
+            overflow: hidden;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-list {
+            list-style: none;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 0.875rem 1.5rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-link:hover {
+            background: var(--light-gray);
+            border-left-color: var(--accent-orange);
+            padding-left: 1.75rem;
+        }
+
+        .mobile-controls {
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .language-dropdown .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .language-dropdown .flag-icon {
+            width: 24px;
+            height: 17px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .lang-text {
+            font-weight: 700;
+        }
+
+        .lang-dropdown {
+            min-width: 220px;
+        }
+
+        .lang-dropdown .dropdown-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-dropdown .flag-icon {
+            width: 28px;
+            height: 20px;
+        }
+
+        .mobile-lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .mobile-lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-lang-btn .flag-icon {
+            width: 22px;
+            height: 16px;
+        }
+
+        .mobile-lang-btn .lang-text {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+            margin-top: 85px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--primary);
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: #ffffff;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.35rem;
+            color: #ffffff;
+            line-height: 1.8;
+            max-width: 850px;
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .intro-text {
+            max-width: 900px;
+            margin-bottom: 4rem;
+        }
+
+        .intro-text p {
+            font-size: 1.15rem;
+            color: #ffffff;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Capabilities Section */
+        .capabilities-section {
+            margin-bottom: 4rem;
+        }
+
+        .capabilities-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text);
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .capability-card {
+            background: var(--dark-secondary);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capability-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .capability-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
+        }
+
+        .capability-card:hover::before {
+            opacity: 1;
+        }
+
+        .capability-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, #FF8F5A 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .capability-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .capability-card p {
+            font-size: 1rem;
+            color: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* ========== FOOTER STYLES ========== */
+        .site-footer {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--footer-dark) 100%);
+            color: #ffffff;
+            font-size: 1rem;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 5rem;
+        }
+
+        .footer-top {
+            padding: 80px 0 50px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            width: 190px;
+            height: auto;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .footer-widget p {
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .footer-widget h4 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-widget h4::after {
+            content: "";
+            width: 36px;
+            height: 2px;
+            background: var(--accent-orange);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .footer-widget ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-widget ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-widget ul li a {
+            color: rgba(255, 255, 255, 0.9);
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .footer-widget ul li a:hover {
+            color: var(--accent-orange);
+            padding-left: 6px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.12);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent-orange);
+            transform: translateY(-4px);
+        }
+
+        .footer-contact {
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 15px;
+        }
+
+        .footer-contact li i {
+            color: var(--accent-orange);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            background: #050f1c;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .footer-credit {
+            margin-left: 10px;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-orange);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: var(--transition);
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
+        }
+
+        .scroll-to-top:hover {
+            background: rgb(239,53,32);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-content {
+                padding: 0 1rem;
+                min-height: 70px;
+            }
+
+            .logo-image {
+                height: 60px;
+            }
+
+            .mobile-controls {
+                display: flex;
+            }
+
+            .mobile-lang-btn {
+                display: flex;
+            }
+
+            .nav-list .language-dropdown {
+                display: none;
+            }
+
+            .nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--primary-blue);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease, box-shadow 0.4s ease;
+                box-shadow: none;
+            }
+
+            .nav.active {
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-list {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+                padding: 1rem 0;
+            }
+
+            .nav-item {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-link {
+                padding: 1rem 1.5rem;
+                font-size: 1.05rem;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .nav-link::before {
+                display: none;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                margin-top: 0;
+                background: rgba(255, 255, 255, 0.05);
+                border-top: none;
+                border-radius: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .nav-item.dropdown-active .dropdown {
+                max-height: 500px;
+            }
+
+            .dropdown-list {
+                padding: 0;
+            }
+
+            .dropdown-link {
+                color: var(--white);
+                padding: 0.875rem 2.5rem;
+                font-size: 0.95rem;
+                border-left: 3px solid transparent;
+            }
+
+            .dropdown-link:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .hero {
+                margin-top: 70px;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.15rem;
+            }
+
+            .hero-container {
+                padding: 3rem 1.5rem;
+            }
+
+            .content-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .header-container {
+                padding: 1.5rem;
+            }
+
+            .footer-top {
+                padding: 60px 0 40px;
+            }
+
+            .footer-row {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-content {
+                padding: 0 0.75rem;
+            }
+
+            .logo-image {
+                height: 50px;
+            }
+
+            .mobile-lang-btn {
+                padding: 5px 5px;
+            }
+
+            .mobile-lang-btn .flag-icon {
+                width: 20px;
+                height: 14px;
+            }
+
+            .mobile-lang-btn .lang-text {
+                font-size: 0.85rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content,
+        .intro-text,
+        .capabilities-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .capability-card {
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .capability-card:nth-child(1) { animation-delay: 0.1s; }
+        .capability-card:nth-child(2) { animation-delay: 0.2s; }
+        .capability-card:nth-child(3) { animation-delay: 0.3s; }
+        .capability-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo/logo.png" alt="EVERSHOP MMC" class="logo-image">
+            </a>
+
+            <div class="mobile-controls">
+                <button class="mobile-lang-btn" id="mobileLangBtn">
+                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#012169" d="M0 0h640v480H0z"/>
+                        <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
+                        <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
+                        <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
+                        <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
+                    </svg>
+                    <span class="lang-text">EN</span>
+                </button>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <nav class="nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link" data-translate="nav_about">About</a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#products" class="nav-link">
+                            <span data-translate="nav_products">Products</span>
+                            <span class="dropdown-icon">▼</span>
+                        </a>
+                        <ul class="dropdown">
+                            <li class="dropdown-list">
+                                <a href="custom.html" class="dropdown-link" data-translate="dropdown_fabrication">Custom Fabrication</a>
+                                <a href="static.html" class="dropdown-link" data-translate="dropdown_static">Static Equipment</a>
+                                <a href="packages.html" class="dropdown-link" data-translate="dropdown_skid">Industrial Skid Packages</a>
+                                <a href="parts.html" class="dropdown-link" data-translate="dropdown_machined">Machined Parts</a>
+                                <a href="supply.html" class="dropdown-link" data-translate="dropdown_equipment">Industrial Equipment Supply</a>
+                                <a href="steel.html" class="dropdown-link" data-translate="dropdown_steel">Steel & Piping Accessories</a>
+                                <a href="sealing.html" class="dropdown-link" data-translate="dropdown_sealing">Sealing Elements</a>
+                                <a href="oem.html" class="dropdown-link" data-translate="dropdown_oem">OEM Parts</a>
+                                <a href="prototype.html" class="dropdown-link" data-translate="dropdown_rd">R&D and Prototype</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#services" class="nav-link">
+                            <span data-translate="nav_services">Services</span>
+                            <span class="dropdown-icon">▼</span>
+                        </a>
+                        <ul class="dropdown">
+                            <li class="dropdown-list">
+                                <a href="design.html" class="dropdown-link" data-translate="dropdown_design">Design & Engineering</a>
+                                <a href="installation.html" class="dropdown-link" data-translate="dropdown_installation">Installation & Commissioning</a>
+                                <a href="repair.html" class="dropdown-link" data-translate="dropdown_repair">Repair & Maintenance</a>
+                                <a href="heat.html" class="dropdown-link" data-translate="dropdown_heat">Heat Treatment</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="market.html" class="nav-link" data-translate="nav_markets">Market Sectors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="career.html" class="nav-link" data-translate="nav_career">Career</a>
+                    </li>
+                    <li class="nav-item has-dropdown language-dropdown">
+                        <a href="#" class="nav-link" id="currentLangBtn">
+                            <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#012169" d="M0 0h640v480H0z"/>
+                                <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
+                                <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
+                                <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
+                                <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
+                            </svg>
+                            <span class="lang-text">EN</span>
+                            <span class="dropdown-icon">▼</span>
+                        </a>
+                        <ul class="dropdown lang-dropdown">
+                            <li class="dropdown-list">
+                                <a href="#" class="dropdown-link lang-option" data-lang="en">
+                                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="#012169" d="M0 0h640v480H0z"/>
+                                        <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
+                                        <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
+                                        <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
+                                        <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
+                                    </svg>
+                                    <span data-translate="lang_en">English</span>
+                                </a>
+                                <a href="#" class="dropdown-link lang-option" data-lang="az">
+                                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="#00b9e4" d="M0 0h640v160H0z"/>
+                                        <path fill="#ed2939" d="M0 160h640v160H0z"/>
+                                        <path fill="#3f9c35" d="M0 320h640v160H0z"/>
+                                        <circle cx="304" cy="240" r="72" fill="#fff"/>
+                                        <circle cx="320" cy="240" r="60" fill="#ed2939"/>
+                                        <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
+                                    </svg>
+                                    <span data-translate="lang_az">Azərbaycan dili</span>
+                                </a>
+                                <a href="#" class="dropdown-link lang-option" data-lang="ru">
+                                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="#fff" d="M0 0h640v160H0z"/>
+                                        <path fill="#0039a6" d="M0 160h640v160H0z"/>
+                                        <path fill="#d52b1e" d="M0 320h640v160H0z"/>
+                                    </svg>
+                                    <span data-translate="lang_ru">Русский язык</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 data-translate="hero_title">Research & Development</h1>
+                <p class="subtitle" data-translate="hero_subtitle">The technical pillar of EVERSHOP's operations—specializing in investigating complex industrial requirements and developing engineering solutions where standard equipment falls short</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <!-- Introduction -->
+        <div class="intro-text">
+            <p data-translate="intro_text">Research & Development is the technical pillar of EVERSHOP's operations. We specialize in investigating complex industrial requirements and developing engineering solutions in areas where standard equipment falls short.</p>
+        </div>
+
+        <!-- Capabilities Section -->
+        <div class="capabilities-section">
+            <h2 data-translate="capabilities_title">Technical Capabilities</h2>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">💧</div>
+                    <h3 data-translate="cap1_title">Custom Water Skid Systems</h3>
+                    <p data-translate="cap1_desc">We research and develop custom-engineered water treatment and processing skid systems to ensure full integration into existing process cycles.</p>
+                </div>
+
+                <div class="capability-card">
+                    <div class="capability-icon">🔬</div>
+                    <h3 data-translate="cap2_title">Custom Filtration Vessels</h3>
+                    <p data-translate="cap2_desc">We have proven experience in the design and manufacture of unique filtration vessels, from initial flow rate studies to high-pressure structural engineering.</p>
+                </div>
+
+                <div class="capability-card">
+                    <div class="capability-icon">🔧</div>
+                    <h3 data-translate="cap3_title">Prototyping & Testing</h3>
+                    <p data-translate="cap3_desc">We create functional prototypes at our Baku-based facility before serial production, verifying their compliance with EN, ASME, and ГОСТ standards.</p>
+                </div>
+
+                <div class="capability-card">
+                    <div class="capability-icon">🚀</div>
+                    <h3 data-translate="cap4_title">In-House Product Development</h3>
+                    <p data-translate="cap4_desc">Our HDPE pipe chocks are a direct result of our R&D process—successfully designed, tested, and manufactured in Azerbaijan to solve specific transport safety challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-row">
+                    <div class="footer-widget">
+                        <img src="assets/images/logo/logo.png" class="footer-logo" alt="EVERSHOP MMC">
+                        <p data-translate="footer_about">
+                            Engineering excellence in industrial solutions and equipment supply for Azerbaijan's energy sector.
+                        </p>
+                        <div class="footer-social">
+                            <a href="https://wa.me/994702710066" target="_blank" aria-label="WhatsApp Evershop">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.instagram.com/evershopllc/" target="_blank" aria-label="Instagram Evershop">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/evershop-llc/" target="_blank" aria-label="LinkedIn Evershop">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-widget">
+                        <h4 data-translate="footer_company">Company</h4>
+                        <ul>
+                            <li><a href="about.html" data-translate="nav_about">About</a></li>
+                            <li><a href="#" data-translate="nav_products">Products</a></li>
+                            <li><a href="#" data-translate="nav_services">Services</a></li>
+                            <li><a href="#" data-translate="nav_markets">Market Sectors</a></li>
+                            <li><a href="#" data-translate="nav_career">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget">
+                        <h4 data-translate="footer_solutions">Solutions</h4>
+                        <ul>
+                            <li><a href="#" data-translate="footer_engineering">Engineering & Design</a></li>
+                            <li><a href="#" data-translate="footer_manufacturing">Manufacturing</a></li>
+                            <li><a href="#" data-translate="footer_procurement">Industrial Procurement</a></li>
+                            <li><a href="#" data-translate="footer_project">Project Management</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-widget">
+                        <h4 data-translate="footer_contact">Contact</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+994 70 271 00 66</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>Sales@evershop.az</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-translate="footer_address">Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-industry"></i>
+                                <span data-translate="footer_workshop">Salyan Highway, 32 km, Baku, Azerbaijan</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>
+                        <span data-translate="footer_rights">© 2026 EVERSHOP MMC. All rights reserved.</span>
+                        <span class="footer-credit">
+                            <span data-translate="footer_prepared">Prepared by:</span> 
+                            <strong>BUTA GRUP</strong>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // ========== LANGUAGE TRANSLATIONS ==========
+        const translations = {
+            en: {
+                // Navigation
+                nav_about: "About", nav_products: "Products", nav_services: "Services",
+                nav_markets: "Market Sectors", nav_career: "Career",
+                // Dropdowns
+                dropdown_fabrication: "Custom Fabrication", dropdown_static: "Static Equipment",
+                dropdown_skid: "Industrial Skid Packages", dropdown_machined: "Machined Parts",
+                dropdown_equipment: "Industrial Equipment Supply", dropdown_steel: "Steel & Piping Accessories",
+                dropdown_sealing: "Sealing Elements", dropdown_oem: "OEM Parts", dropdown_rd: "R&D and Prototype",
+                dropdown_design: "Design & Engineering", dropdown_installation: "Installation & Commissioning",
+                dropdown_repair: "Repair & Maintenance", dropdown_heat: "Heat Treatment",
+                // Languages
+                lang_en: "English", lang_az: "Azərbaycan dili", lang_ru: "Русский язык",
+                // Hero
+                hero_title: "Research & Development",
+                hero_subtitle: "The technical pillar of EVERSHOP's operations—specializing in investigating complex industrial requirements and developing engineering solutions where standard equipment falls short",
+                // Content
+                intro_text: "Research & Development is the technical pillar of EVERSHOP's operations. We specialize in investigating complex industrial requirements and developing engineering solutions in areas where standard equipment falls short.",
+                capabilities_title: "Technical Capabilities",
+                cap1_title: "Custom Water Skid Systems",
+                cap1_desc: "We research and develop custom-engineered water treatment and processing skid systems to ensure full integration into existing process cycles.",
+                cap2_title: "Custom Filtration Vessels",
+                cap2_desc: "We have proven experience in the design and manufacture of unique filtration vessels, from initial flow rate studies to high-pressure structural engineering.",
+                cap3_title: "Prototyping & Testing",
+                cap3_desc: "We create functional prototypes at our Baku-based facility before serial production, verifying their compliance with EN, ASME, and ГОСТ standards.",
+                cap4_title: "In-House Product Development",
+                cap4_desc: "Our HDPE pipe chocks are a direct result of our R&D process—successfully designed, tested, and manufactured in Azerbaijan to solve specific transport safety challenges.",
+                // Footer
+                footer_about: "Engineering excellence in industrial solutions and equipment supply for Azerbaijan's energy sector.",
+                footer_company: "Company", footer_solutions: "Solutions",
+                footer_engineering: "Engineering & Design", footer_manufacturing: "Manufacturing",
+                footer_procurement: "Industrial Procurement", footer_project: "Project Management",
+                footer_contact: "Contact",
+                footer_address: "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+                footer_workshop: "Salyan Highway, 32 km, Baku, Azerbaijan",
+                footer_rights: "© 2026 EVERSHOP MMC. All rights reserved.",
+                footer_prepared: "Prepared by:"
+            },
+            az: {
+                // Navigation
+                nav_about: "Haqqımızda", nav_products: "Məhsullar", nav_services: "Xidmətlər",
+                nav_markets: "Bazar Sektorları", nav_career: "Karyera",
+                // Dropdowns
+                dropdown_fabrication: "Xüsusi Konstruksiyaların İstehsalı", dropdown_static: "Statik Avadanlıq",
+                dropdown_skid: "Sənaye Skid Paketləri", dropdown_machined: "Mexaniki Hissələr",
+                dropdown_equipment: "Sənaye Avadanlığı Təchizatı", dropdown_steel: "Polad və Boru Aksesuarları",
+                dropdown_sealing: "Kipləndirici Elementlər", dropdown_oem: "OEM Hissələri",
+                dropdown_rd: "Tədqiqat və Prototip", dropdown_design: "Dizayn və Mühəndislik",
+                dropdown_installation: "Quraşdırma və İstismara Verilmə", dropdown_repair: "Təmir və Texniki Xidmət",
+                dropdown_heat: "İstilik Emalı",
+                // Languages
+                lang_en: "English", lang_az: "Azərbaycan dili", lang_ru: "Русский язык",
+                // Hero
+                hero_title: "Tədqiqat və İnkişaf",
+                hero_subtitle: "EVERSHOP-un əməliyyatlarının texniki sütunu—mürəkkəb sənaye tələblərinin araşdırılması və standart avadanlığın kifayət etmədiyi sahələrdə mühendislik həllərinin hazırlanması üzrə ixtisaslaşmışdır",
+                // Content
+                intro_text: "Tədqiqat və İnkişaf EVERSHOP-un əməliyyatlarının texniki sütunudur. Biz mürəkkəb sənaye tələblərinin araşdırılması və standart avadanlığın kifayət etmədiyi sahələrdə mühendislik həllərinin hazırlanması üzrə ixtisaslaşmışıq.",
+                capabilities_title: "Texniki İmkanlar",
+                cap1_title: "Fərdi Su Skid Sistemləri",
+                cap1_desc: "Mövcud proseslərə tam inteqrasiya təmin etmək üçün fərdi dizayn edilmiş su təmizləmə və emal skid sistemlərinin tədqiq və inkişafını həyata keçiririk.",
+                cap2_title: "Fərdi Filtrasiya Qabları",
+                cap2_desc: "İlkin axın sürəti tədqiqatlarından yüksək təzyiqli struktur mühendisliyinə qədər unikal filtrasiya qablarının dizaynı və istehsalında sübut edilmiş təcrübəmiz var.",
+                cap3_title: "Prototip və Sınaq",
+                cap3_desc: "Seriyalı istehsaldan əvvəl Bakı bazalı müəssisəmizdə funksional prototiplər yaradır, onların EN, ASME və ГОСТ standartlarına uyğunluğunu yoxlayırıq.",
+                cap4_title: "Daxili Məhsul İnkişafı",
+                cap4_desc: "HDPE boru dayaqlarımız bizim T&İ prosesimizin birbaşa nəticəsidir—xüsusi nəqliyyat təhlükəsizliyi problemlərini həll etmək üçün Azərbaycanda uğurla layihələndirilmiş, sınaqdan keçirilmiş və istehsal edilmişdir.",
+                // Footer
+                footer_about: "Azərbaycanın enerji sektoru üçün sənaye həllərində və avadanlıq tədarükündə mühendislik mükəmməlliyi.",
+                footer_company: "Şirkət", footer_solutions: "Həllər",
+                footer_engineering: "Mühəndislik və Dizayn", footer_manufacturing: "İstehsal",
+                footer_procurement: "Sənaye Tədarükü", footer_project: "Layihə İdarəetməsi",
+                footer_contact: "Əlaqə",
+                footer_address: "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+                footer_workshop: "Salyan Highway, 32 km, Baku, Azerbaijan",
+                footer_rights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
+                footer_prepared: "Hazırlayan:"
+            },
+            ru: {
+                // Navigation
+                nav_about: "О нас", nav_products: "Продукция", nav_services: "Услуги",
+                nav_markets: "Рыночные Секторы", nav_career: "Карьера",
+                // Dropdowns
+                dropdown_fabrication: "Изготовление Специальных Конструкций", dropdown_static: "Статическое Оборудование",
+                dropdown_skid: "Промышленные Скид-Пакеты", dropdown_machined: "Механические Детали",
+                dropdown_equipment: "Поставка Промышленного Оборудования", dropdown_steel: "Сталь и Трубопроводная Арматура",
+                dropdown_sealing: "Уплотнительные Элементы", dropdown_oem: "OEM Детали",
+                dropdown_rd: "R&D и Прототипы", dropdown_design: "Проектирование и Инжиниринг",
+                dropdown_installation: "Монтаж и Пуско-Наладка", dropdown_repair: "Ремонт и Техническое Обслуживание",
+                dropdown_heat: "Термическая Обработка",
+                // Languages
+                lang_en: "English", lang_az: "Azərbaycan dili", lang_ru: "Русский язык",
+                // Hero
+                hero_title: "Исследования и Разработки",
+                hero_subtitle: "Технический столп операций EVERSHOP—специализируется на исследовании сложных промышленных требований и разработке инженерных решений там, где стандартное оборудование недостаточно",
+                // Content
+                intro_text: "Исследования и разработки — это технический столп деятельности EVERSHOP. Мы специализируемся на изучении сложных промышленных требований и разработке инженерных решений в областях, где стандартное оборудование не справляется.",
+                capabilities_title: "Технические Возможности",
+                cap1_title: "Индивидуальные Водоподготовительные Системы",
+                cap1_desc: "Мы исследуем и разрабатываем специально спроектированные системы водоочистки и обработки на скидах для обеспечения полной интеграции в существующие технологические циклы.",
+                cap2_title: "Индивидуальные Фильтрационные Сосуды",
+                cap2_desc: "Мы имеем проверенный опыт в проектировании и производстве уникальных фильтрационных сосудов, от исследований скорости потока до высоконапорной структурной инженерии.",
+                cap3_title: "Прототипирование и Испытания",
+                cap3_desc: "Мы создаем функциональные прототипы на нашем предприятии в Баку перед серийным производством, проверяя их соответствие стандартам EN, ASME и ГОСТ.",
+                cap4_title: "Внутренняя Разработка Продукции",
+                cap4_desc: "Наши опоры для труб из HDPE являются прямым результатом нашего процесса НИОКР—успешно спроектированы, испытаны и произведены в Азербайджане для решения конкретных задач транспортной безопасности.",
+                // Footer
+                footer_about: "Инженерное совершенство в промышленных решениях и поставке оборудования для энергетического сектора Азербайджана.",
+                footer_company: "Компания", footer_solutions: "Решения",
+                footer_engineering: "Инжиниринг и Проектирование", footer_manufacturing: "Производство",
+                footer_procurement: "Промышленные Закупки", footer_project: "Управление Проектами",
+                footer_contact: "Контакты",
+                footer_address: "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Баку, Азербайджан",
+                footer_workshop: "Сальянское шоссе, 32 км, Баку, Азербайджан",
+                footer_rights: "© 2026 EVERSHOP MMC. Все права защищены.",
+                footer_prepared: "Подготовлено:"
+            }
+        };
+
+        const flagSVG = {
+            en: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg>`,
+            az: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#00b9e4" d="M0 0h640v160H0z"/><path fill="#ed2939" d="M0 160h640v160H0z"/><path fill="#3f9c35" d="M0 320h640v160H0z"/><circle cx="304" cy="240" r="72" fill="#fff"/><circle cx="320" cy="240" r="60" fill="#ed2939"/><path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/></svg>`,
+            ru: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h640v160H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>`
+        };
+
+        const langCodes = { en: 'EN', az: 'AZ', ru: 'RU' };
+        let currentLanguage = localStorage.getItem('language') || 'en';
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            updateLanguageButtons(lang);
+            document.documentElement.lang = lang;
+        }
+
+        function updateLanguageButtons(lang) {
+            const currentLangBtn = document.getElementById('currentLangBtn');
+            if (currentLangBtn) {
+                currentLangBtn.innerHTML = `${flagSVG[lang]}<span class="lang-text">${langCodes[lang]}</span><span class="dropdown-icon">▼</span>`;
+            }
+            
+            const mobileLangBtn = document.getElementById('mobileLangBtn');
+            if (mobileLangBtn) {
+                mobileLangBtn.innerHTML = `${flagSVG[lang]}<span class="lang-text">${langCodes[lang]}</span>`;
+            }
+        }
+
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            const dropdownItems = document.querySelectorAll('.nav-item.has-dropdown');
+
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.header-content')) {
+                        mobileMenuBtn.classList.remove('active');
+                        mainNav.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            dropdownItems.forEach(item => {
+                const link = item.querySelector('.nav-link');
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        item.classList.toggle('dropdown-active');
+                    }
+                });
+            });
+        }
+
+        function initScrollToTop() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            if (scrollToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    scrollToTopBtn.classList.toggle('show', window.pageYOffset > 300);
+                });
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        }
+
+        function initHeaderScroll() {
+            const header = document.querySelector('.header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    header.classList.toggle('scrolled', window.pageYOffset > 50);
+                });
+            }
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLanguage);
+            
+            // Language switcher
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(option.getAttribute('data-lang'));
+                });
+            });
+
+            // Mobile language button (cycles through languages)
+            const mobileLangBtn = document.getElementById('mobileLangBtn');
+            if (mobileLangBtn) {
+                mobileLangBtn.addEventListener('click', () => {
+                    const languages = ['en', 'az', 'ru'];
+                    const currentIndex = languages.indexOf(currentLanguage);
+                    const nextIndex = (currentIndex + 1) % languages.length;
+                    setLanguage(languages[nextIndex]);
+                });
+            }
+
+            initMobileMenu();
+            initScrollToTop();
+            initHeaderScroll();
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && document.querySelector(href)) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        window.scrollTo({
+                            top: target.offsetTop - headerHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 992) {
+                    const mainNav = document.getElementById('mainNav');
+                    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                    if (mainNav) mainNav.classList.remove('active');
+                    if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
+                    document.body.style.overflow = '';
+                    document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
+                        item.classList.remove('dropdown-active');
+                    });
+                }
+            }, 250);
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.capability-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
