@@ -517,7 +517,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.8rem;
-            background: linear-gradient(135deg, var(--primary) 0%, #FF8F5A 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, rgb(239,52,33) 100%);
             color: white;
             padding: 1rem 2.5rem;
             border-radius: 8px;
@@ -1057,6 +1057,7 @@
         </div>
     </section>
 
+
     <!-- Content Section -->
     <section class="content-section">
         <!-- Section Header -->
@@ -1069,32 +1070,45 @@
         <div class="values-grid">
             <!-- Card 1 -->
             <div class="value-card">
-                <div class="value-icon">🚀</div>
+                <!-- <div class="value-icon">🚀</div> -->
                 <h3 data-i18n="value1Title">İnnovasiya və İnkişaf</h3>
                 <p data-i18n="value1Desc">Beynəlxalq standartlar və ən son mühəndislik texnologiyaları ilə qabaqcıl layihələr üzərində işləyin.</p>
             </div>
 
             <!-- Card 2 -->
             <div class="value-card">
-                <div class="value-icon">👥</div>
+                <!-- <div class="value-icon">👥</div> -->
                 <h3 data-i18n="value2Title">Ekspert Komandası</h3>
                 <p data-i18n="value2Desc">Təcrübəli mühəndislər və sənaye peşəkarları ilə kritik infrastruktur layihələri üzərinde əməkdaşlıq edin.</p>
             </div>
 
             <!-- Card 3 -->
             <div class="value-card">
-                <div class="value-icon">🌍</div>
+                <!-- <div class="value-icon">🌍</div> -->
                 <h3 data-i18n="value3Title">Qlobal Standartlar</h3>
                 <p data-i18n="value3Desc">ASME, ISO, GOST və digər beynəlxalq mühəndislik kodları və sertifikatları sahəsində ekspertiza qazanın.</p>
             </div>
 
             <!-- Card 4 -->
             <div class="value-card">
-                <div class="value-icon">🏆</div>
+                <!-- <div class="value-icon">🏆</div> -->
                 <h3 data-i18n="value4Title">Karyera İnkişafı</h3>
                 <p data-i18n="value4Desc">Davamlı öyrənmə imkanları və peşəkar inkişaf və ixtisaslaşma üçün aydın yollar.</p>
             </div>
         </div>
+
+                   <!-- CTA Section -->
+                <div class="cta-section">
+                    <h2 data-i18n="ctaTitle">Düzgün Vəzifə Görmürsünüz?</h2>
+                    <p data-i18n="ctaDescription">
+                        Biz həmişə istedadlı peşəkarlarla əlaqə qurmaqda maraqlıyıq. CV-nizi göndərin və komandamıza necə töhfə verə biləcəyinizi bizə bildirin.
+                    </p>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Sales@evershop.az&su=CV Göndərmək&body=Salam! CV-mi göndərmək istəyirəm." 
+                    target="_blank" 
+                    class="cta-button">
+                        <span data-i18n="ctaButton">✉️ CV-nizi Göndərin</span>
+                    </a>
+                </div>
 
         <!-- Benefits Section -->
         <div class="benefits-section">
@@ -1130,7 +1144,7 @@
                     <!-- <div class="benefit-icon">❤️</div> -->
                     <div class="benefit-content">
                         <h3 data-i18n="benefit4Title">Sağlamlıq və Rifah</h3>
-                        <p data-i18n="benefit4Desc">Sizin və ailəniz üçün hərtərəfli sağlamlıq sığortası və rifah proqramları.</p>
+                        <p data-i18n="benefit4Desc">Sizin üçün hərtərəfli sağlamlıq sığortası və rifah proqramları.</p>
                     </div>
                 </div>
 
@@ -1151,19 +1165,6 @@
                 </div>
             </div>
         </div>
-
-                <!-- CTA Section -->
-                <div class="cta-section">
-                    <h2 data-i18n="ctaTitle">Düzgün Vəzifə Görmürsünüz?</h2>
-                    <p data-i18n="ctaDescription">
-                        Biz həmişə istedadlı peşəkarlarla əlaqə qurmaqda maraqlıyıq. CV-nizi göndərin və komandamıza necə töhfə verə biləcəyinizi bizə bildirin.
-                    </p>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Sales@evershop.az&su=CV Göndərmək&body=Salam! CV-mi göndərmək istəyirəm." 
-                    target="_blank" 
-                    class="cta-button">
-                        <span data-i18n="ctaButton">📧 CV-nizi Göndərin</span>
-                    </a>
-                </div>
 
                 </section>
 
@@ -1313,7 +1314,7 @@ const translations = {
         benefit3Title: "Layihə Müxtəlifliyi",
         benefit3Desc: "Müxtəlif sənaye sahələrində müxtəlif layihələr üzərində işləyin və geniş mühəndislik təcrübəsi qazanın.",
         benefit4Title: "Sağlamlıq və Rifah",
-        benefit4Desc: "Sizin və ailəniz üçün hərtərəfli sağlamlıq sığortası və rifah proqramları.",
+        benefit4Desc: "Sizin üçün hərtərəfli sağlamlıq sığortası və rifah proqramları.",
         benefit5Title: "İş-Həyat Balansı",
         benefit5Desc: "Sağlam iş-həyat balansını qorumaq üçün çevik iş qaydaları və səxavətli məzuniyyət siyasəti.",
         benefit6Title: "Əməkdaşlıq Mədəniyyəti",
@@ -1393,7 +1394,7 @@ const translations = {
         benefit3Title: "Project Diversity",
         benefit3Desc: "Work on diverse projects across multiple industries and gain broad engineering experience.",
         benefit4Title: "Health & Wellness",
-        benefit4Desc: "Comprehensive health insurance coverage and wellness programs for you and your family.",
+        benefit4Desc: "Comprehensive health insurance coverage and wellness programs for you.",
         benefit5Title: "Work-Life Balance",
         benefit5Desc: "Flexible working arrangements and generous vacation policy to maintain healthy work-life balance.",
         benefit6Title: "Collaborative Culture",
@@ -1473,7 +1474,7 @@ const translations = {
         benefit3Title: "Разнообразие Проектов",
         benefit3Desc: "Работайте над разнообразными проектами в различных отраслях и получайте широкий инженерный опыт.",
         benefit4Title: "Здоровье и Благополучие",
-        benefit4Desc: "Комплексное медицинское страхование и программы оздоровления для вас и вашей семьи.",
+        benefit4Desc: "Комплексное медицинское страхование и программы оздоровления для вас.",
         benefit5Title: "Баланс Работы и Жизни",
         benefit5Desc: "Гибкие условия работы и щедрая политика отпусков для поддержания здорового баланса между работой и личной жизнью.",
         benefit6Title: "Культура Сотрудничества",
