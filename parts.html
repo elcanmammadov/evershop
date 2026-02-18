@@ -1,1662 +1,1875 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="az">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVERSHOP - High-Precision Machining</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yüksək Dəqiqlikli Emal - EVERSHOP</title>
+    <link rel="icon" href="assets/favicon/fav.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
     <style>
-        :root {
-            --primary: #FF6B35;
-            --dark: rgb(22,44,71);
-            --dark-secondary: rgba(30,52,79,1);
-            --text: #E8ECF1;
-            --text-muted: #8B96A5;
-            --accent: #4A9EFF;
-            
-            --primary-blue: #0A2342;
-            --accent-orange: #E85D04;
-            --steel-gray: #2C3E50;
-            --light-gray: #ECF0F1;
-            --white: #FFFFFF;
-            --dark-bg: #0c2b4b;
-            --footer-dark: #081b2c;
-            --transition: all 0.3s ease;
-        }
+      :root {
+        --primary: #ff6b35;
+        --dark: rgb(22, 44, 71);
+        --dark-secondary: rgba(30, 52, 79, 1);
+        --text: #e8ecf1;
+        --text-muted: #8b96a5;
+        --accent: #4a9eff;
+        --primary-blue: #0a2342;
+        --accent-orange: #e85d04;
+        --steel-gray: #2c3e50;
+        --light-gray: #ecf0f1;
+        --white: #ffffff;
+        --footer-dark: #0a2342;
+        --transition: all 0.3s ease;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: var(--text);
-            line-height: 1.6;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--dark);
+        color: var(--text);
+        line-height: 1.6;
+      }
 
-        /* ========== HEADER STYLES ========== */
-        .header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--steel-gray) 100%);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 9999;
-            transition: var(--transition);
-        }
+      /* ========== HEADER STYLES ========== */
+      .header {
+        background: var(--primary-blue);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        transition: var(--transition);
+      }
 
-        .header.scrolled {
-            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
-        }
+      .header.scrolled {
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+      }
 
+      .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 85px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .logo-image {
+        height: 75px;
+        width: auto;
+        object-fit: contain;
+        transition: filter 0.3s ease;
+      }
+
+      .logo:hover .logo-image {
+        filter: brightness(1.2);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      .nav-item {
+        position: relative;
+      }
+
+      .nav-link {
+        font-family: "Montserrat", sans-serif;
+        text-decoration: none;
+        color: var(--white);
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition);
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--accent-orange);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--accent-orange);
+      }
+
+      .nav-link:hover::before {
+        width: 80%;
+      }
+
+      .dropdown-icon {
+        display: inline-block;
+        margin-left: 4px;
+        transition: transform 0.3s ease;
+        font-size: 0.75rem;
+      }
+
+      .nav-item:hover .dropdown-icon {
+        transform: rotate(180deg);
+      }
+
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--white);
+        min-width: 280px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: var(--transition);
+        margin-top: 0.5rem;
+        border-top: 3px solid var(--accent-orange);
+        overflow: hidden;
+      }
+
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-list {
+        list-style: none;
+        padding: 0.5rem 0;
+      }
+
+      .dropdown-link {
+        display: block;
+        padding: 0.875rem 1.5rem;
+        color: var(--primary-blue);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: var(--transition);
+        border-left: 3px solid transparent;
+      }
+
+      .dropdown-link:hover {
+        background: var(--light-gray);
+        border-left-color: var(--accent-orange);
+        padding-left: 1.75rem;
+      }
+
+      .mobile-controls {
+        display: none;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        transition: var(--transition);
+      }
+
+      .mobile-menu-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .mobile-menu-btn span {
+        width: 28px;
+        height: 3px;
+        background: var(--white);
+        border-radius: 2px;
+        transition: var(--transition);
+      }
+
+      .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      .language-dropdown .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .language-dropdown .flag-icon {
+        width: 24px;
+        height: 17px;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      .lang-text {
+        font-weight: 700;
+      }
+
+      .lang-dropdown {
+        min-width: 220px;
+      }
+
+      .lang-dropdown .dropdown-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .lang-dropdown .flag-icon {
+        width: 28px;
+        height: 20px;
+      }
+
+      .mobile-lang-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        gap: 6px;
+        transition: var(--transition);
+      }
+
+      .mobile-lang-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .mobile-lang-btn .flag-icon {
+        width: 22px;
+        height: 16px;
+      }
+
+      .mobile-lang-btn .lang-text {
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      /* ========== HERO SECTION ========== */
+      .hero {
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #162c47 0%, #1a3a5a 100%);
+        position: relative;
+        overflow: hidden;
+        margin-top: 85px;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary),
+          transparent
+        );
+      }
+
+      .hero-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .company-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+        color: #ffffff;
+      }
+
+      .hero-content .tagline {
+        font-size: 1.3rem;
+        color: var(--text);
+        font-weight: 600;
+        letter-spacing: 1px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* ========== CONTENT SECTION ========== */
+      .content-section {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .intro-section {
+        max-width: 900px;
+        margin: 0 auto 5rem;
+        padding: 3rem;
+        border-radius: 16px;
+      }
+
+      .intro-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: var(--text);
+      }
+
+      .intro-section p {
+        font-size: 1.15rem;
+        color: #ffffff;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      /* ========== CAPABILITIES SECTION ========== */
+      .capabilities-section {
+        margin-bottom: 5rem;
+        padding: 3rem 0;
+      }
+
+      .capabilities-section h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        color: var(--text);
+        text-align: center;
+      }
+
+      .capabilities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .capability-card {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 12px;
+        padding: 2.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .capability-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+      }
+
+      .capability-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .capability-card p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.7;
+      }
+
+      /* ========== STANDARDS SECTION ========== */
+      .standards-section {
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 16px;
+        padding: 3rem;
+        background: rgba(30, 52, 79, 0.5);
+        margin-bottom: 0;
+      }
+
+      .standards-section h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--text);
+      }
+
+      .standards-intro {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2.5rem;
+        line-height: 1.8;
+      }
+
+      .standards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .standard-card {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .standard-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(255, 107, 53, 0.15);
+      }
+
+      .standard-card h3 {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .standard-card p {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.7;
+      }
+
+      .standard-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+      }
+
+      .badge {
+        background: rgba(255, 107, 53, 0.15);
+        color: var(--primary);
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        font-family: "JetBrains Mono", monospace;
+        border: 1px solid rgba(255, 107, 53, 0.25);
+      }
+
+      /* ========== FOOTER STYLES ========== */
+      .site-footer {
+        background: var(--footer-dark);
+        color: #ffffff;
+        font-size: 1rem;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 0;
+      }
+
+      .footer-top {
+        padding: 50px 0 35px;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .footer-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+        gap: 30px;
+      }
+
+      .footer-logo {
+        width: 180px;
+        height: auto;
+        margin-bottom: 12px;
+        transition: var(--transition);
+        cursor: pointer;
+      }
+
+      .footer-logo:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+
+      .footer-widget p {
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+      }
+
+      .footer-widget h4 {
+        color: #ffffff;
+        font-weight: 600;
+        margin-bottom: 18px;
+        position: relative;
+        padding-bottom: 10px;
+        font-size: 1.1rem;
+      }
+
+      .footer-widget h4::after {
+        content: "";
+        width: 36px;
+        height: 2px;
+        background: var(--accent-orange);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      .footer-widget ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-widget ul li {
+        margin-bottom: 8px;
+      }
+
+      .footer-widget ul li a {
+        color: rgba(255, 255, 255, 0.85);
+        transition: color 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.95rem;
+      }
+
+      .footer-widget ul li a:hover {
+        color: var(--accent-orange);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .footer-social a {
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.12);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .footer-social a:hover {
+        background: var(--accent-orange);
+        transform: translateY(-3px);
+      }
+
+      .footer-contact {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .footer-contact li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 10px;
+      }
+
+      .footer-contact li i {
+        color: var(--accent-orange);
+        flex-shrink: 0;
+        font-size: 1rem;
+        width: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .footer-contact li a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        flex: 1;
+        font-size: 0.95rem;
+      }
+
+      .footer-contact li a:hover {
+        color: var(--accent-orange);
+      }
+
+      .footer-bottom {
+        background: #050f1c;
+        padding: 18px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+      }
+
+      .footer-credit {
+        margin-left: 5px;
+      }
+
+      .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--accent-orange);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: var(--transition);
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
+      }
+
+      .scroll-to-top:hover {
+        background: rgb(239, 53, 32);
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
+      }
+
+      .scroll-to-top.show {
+        display: flex;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 992px) {
         .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 85px;
+          padding: 0 1rem;
+          min-height: 70px;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
         .logo-image {
-            height: 75px;
-            width: auto;
-            object-fit: contain;
-            transition: filter 0.3s ease;
-            margin-right: 20px;
+          height: 60px;
         }
-
-        .logo:hover .logo-image {
-            filter: brightness(1.2);
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-link {
-            font-family: 'Montserrat', sans-serif;
-            text-decoration: none;
-            color: var(--white);
-            padding: 0.75rem 1.25rem;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: var(--transition);
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--accent-orange);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--accent-orange);
-        }
-
-        .nav-link:hover::before {
-            width: 80%;
-        }
-
-        .dropdown-icon {
-            display: inline-block;
-            margin-left: 4px;
-            transition: transform 0.3s ease;
-            font-size: 0.75rem;
-        }
-
-        .nav-item:hover .dropdown-icon {
-            transform: rotate(180deg);
-        }
-
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--white);
-            min-width: 280px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-            border-radius: 8px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: var(--transition);
-            margin-top: 0.5rem;
-            border-top: 3px solid var(--accent-orange);
-            overflow: hidden;
-        }
-
-        .nav-item:hover .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-list {
-            list-style: none;
-            padding: 0.5rem 0;
-        }
-
-        .dropdown-link {
-            display: block;
-            padding: 0.875rem 1.5rem;
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: var(--transition);
-            border-left: 3px solid transparent;
-        }
-
-        .dropdown-link:hover {
-            background: var(--light-gray);
-            border-left-color: var(--accent-orange);
-            padding-left: 1.75rem;
-        }
-
         .mobile-controls {
-            display: none;
-            align-items: center;
-            gap: 12px;
+          display: flex;
         }
-
-        .mobile-menu-btn {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 4px;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-menu-btn span {
-            width: 28px;
-            height: 3px;
-            background: var(--white);
-            border-radius: 2px;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(7px, 7px);
-        }
-
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        .language-dropdown .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .language-dropdown .flag-icon {
-            width: 24px;
-            height: 17px;
-            border-radius: 2px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        .lang-text {
-            font-weight: 700;
-        }
-
-        .lang-dropdown {
-            min-width: 220px;
-        }
-
-        .lang-dropdown .dropdown-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .lang-dropdown .flag-icon {
-            width: 28px;
-            height: 20px;
-        }
-
         .mobile-lang-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            gap: 6px;
-            transition: var(--transition);
+          display: flex;
         }
-
-        .mobile-lang-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .nav-list .language-dropdown {
+          display: none;
         }
-
-        .mobile-lang-btn .flag-icon {
-            width: 22px;
-            height: 16px;
+        .nav {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          right: 0;
+          background: var(--primary-blue);
+          max-height: 0;
+          overflow: hidden;
+          transition:
+            max-height 0.4s ease,
+            box-shadow 0.4s ease;
+          box-shadow: none;
         }
-
-        .mobile-lang-btn .lang-text {
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 600;
+        .nav.active {
+          max-height: calc(100vh - 70px);
+          overflow-y: auto;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
-
-        /* Hero Section */
+        .nav-list {
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+          padding: 1rem 0;
+        }
+        .nav-item {
+          width: 100%;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-link {
+          padding: 1rem 1.5rem;
+          font-size: 1.05rem;
+          width: 100%;
+          justify-content: space-between;
+        }
+        .nav-link::before {
+          display: none;
+        }
+        .dropdown {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          margin-top: 0;
+          background: rgba(255, 255, 255, 0.05);
+          border-top: none;
+          border-radius: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+        .nav-item.dropdown-active .dropdown {
+          max-height: 500px;
+        }
+        .dropdown-list {
+          padding: 0;
+        }
+        .dropdown-link {
+          color: var(--white);
+          padding: 0.875rem 2.5rem;
+          font-size: 0.95rem;
+          border-left: 3px solid transparent;
+        }
+        .dropdown-link:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
         .hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            background: var(--dark);
-            position: relative;
-            overflow: hidden;
-            margin-top: 85px;
+          margin-top: 70px;
         }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--primary);
-        }
-
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
         .hero-content h1 {
-            font-size: 3.8rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            color: #ffffff;
+          font-size: 2.5rem;
         }
-
-        .hero-content .subtitle {
-            font-size: 1.35rem;
-            color: #ffffff;
-            line-height: 1.8;
-            max-width: 850px;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content .tagline {
-            font-size: 1.1rem;
-            color: var(--primary);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        /* Content Section */
-        .content-section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        .intro-text {
-            max-width: 900px;
-            margin-bottom: 4rem;
-        }
-
-        .intro-text p {
-            font-size: 1.15rem;
-            color: #ffffff;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Expertise Highlight */
-        .expertise-highlight {
-            background: linear-gradient(135deg, var(--primary) 0%, #FF8F5A 100%);
-            border-radius: 16px;
-            padding: 3rem;
-            margin-bottom: 4rem;
-            text-align: center;
-        }
-
-        .expertise-highlight h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .expertise-highlight p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.8;
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        /* Capabilities Section */
-        .capabilities-section {
-            margin-bottom: 4rem;
-        }
-
-        .capabilities-section h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            color: var(--text);
-        }
-
-        .capabilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .capability-card {
-            background: var(--dark-secondary);
-            border: 1px solid rgba(255, 107, 53, 0.1);
-            border-radius: 12px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .capability-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--primary);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .capability-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
-        }
-
-        .capability-card:hover::before {
-            opacity: 1;
-        }
-
-        .capability-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary) 0%, #FF8F5A 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .capability-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .capability-card p {
-            font-size: 1rem;
-            color: #ffffff;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .capability-details {
-            list-style: none;
-            padding: 0;
-        }
-
-        .capability-details li {
-            padding-left: 1.5rem;
-            position: relative;
-            margin-bottom: 0.7rem;
-            color: #ffffff;
-            font-size: 0.95rem;
-        }
-
-        .capability-details li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* Standards Section */
-        .standards-section {
-            background: var(--dark-secondary);
-            border: 1px solid rgba(255, 107, 53, 0.1);
-            border-radius: 16px;
-            padding: 3rem;
-            margin-bottom: 4rem;
-        }
-
-        .standards-section h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-        }
-
-        .standards-intro {
-            font-size: 1.05rem;
-            color: #ffffff;
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-
+        .capabilities-grid,
         .standards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+          grid-template-columns: 1fr;
         }
-
-        .standard-card {
-            background: rgba(255, 107, 53, 0.05);
-            border: 1px solid rgba(255, 107, 53, 0.15);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .standard-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
-        }
-
-        .standard-card h3 {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .standard-card p {
-            font-size: 0.95rem;
-            color: #ffffff;
-            line-height: 1.7;
-        }
-
-        .standard-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 1.5rem;
-        }
-
-        .badge {
-            background: rgba(255, 107, 53, 0.15);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            font-family: 'JetBrains Mono', monospace;
-            border: 1px solid rgba(255, 107, 53, 0.25);
-        }
-
-        /* ========== FOOTER STYLES ========== */
-        .site-footer {
-            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--footer-dark) 100%);
-            color: #ffffff;
-            font-size: 1rem;
-            width: 100%;
-            overflow: hidden;
-            margin-top: 5rem;
-        }
-
-        .footer-top {
-            padding: 80px 0 50px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
         .footer-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
-            gap: 40px;
+          grid-template-columns: repeat(2, 1fr);
         }
+      }
 
-        .footer-logo {
-            width: 190px;
-            height: auto;
-            margin-bottom: 20px;
-            transition: var(--transition);
+      @media (max-width: 768px) {
+        .content-section {
+          padding: 3rem 1.5rem;
         }
-
-        .footer-logo:hover {
-            transform: scale(1.05);
-            filter: brightness(1.2);
+        .intro-section {
+          padding: 2rem 1.5rem;
         }
-
-        .footer-widget p {
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px;
+        .intro-section h2 {
+          font-size: 2rem;
         }
-
-        .footer-widget h4 {
-            color: #ffffff;
-            font-weight: 600;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
+        .hero-content h1 {
+          font-size: 2.2rem;
         }
-
-        .footer-widget h4::after {
-            content: "";
-            width: 36px;
-            height: 2px;
-            background: var(--accent-orange);
-            position: absolute;
-            left: 0;
-            bottom: 0;
+        .hero-content .tagline {
+          font-size: 1.1rem;
         }
-
-        .footer-widget ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .footer-top {
+          padding: 40px 0 30px;
         }
-
-        .footer-widget ul li {
-            margin-bottom: 12px;
+        .footer-row {
+          grid-template-columns: 1fr;
+          gap: 25px;
         }
-
-        .footer-widget ul li a {
-            color: rgba(255, 255, 255, 0.9);
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .footer-widget ul li a:hover {
-            color: var(--accent-orange);
-            padding-left: 6px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .footer-social a {
-            width: 38px;
-            height: 38px;
-            background: rgba(255, 255, 255, 0.12);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: #ffffff;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .footer-social a:hover {
-            background: var(--accent-orange);
-            transform: translateY(-4px);
-        }
-
-        .footer-contact {
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-contact li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 15px;
-        }
-
-        .footer-contact li i {
-            color: var(--accent-orange);
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-
-        .footer-bottom {
-            background: #050f1c;
-            padding: 20px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
         .footer-bottom-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
         }
+      }
 
-        .footer-bottom p {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.85);
+      @media (max-width: 576px) {
+        .header-content {
+          padding: 0 0.75rem;
         }
-
-        .footer-credit {
-            margin-left: 10px;
+        .logo-image {
+          height: 50px;
         }
-
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--accent-orange);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            transition: var(--transition);
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
+        .mobile-lang-btn {
+          padding: 5px 8px;
         }
-
-        .scroll-to-top:hover {
-            background: rgb(239,53,32);
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
+        .container {
+          padding: 0 1rem;
         }
+      }
 
-        .scroll-to-top.show {
-            display: flex;
+      /* ========== ANIMATIONS ========== */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
         }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .header-content {
-                padding: 0 1rem;
-                min-height: 70px;
-            }
-
-            .logo-image {
-                height: 60px;
-            }
-
-            .mobile-controls {
-                display: flex;
-            }
-
-            .mobile-lang-btn {
-                display: flex;
-            }
-
-            .nav-list .language-dropdown {
-                display: none;
-            }
-
-            .nav {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--primary-blue);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.4s ease, box-shadow 0.4s ease;
-                box-shadow: none;
-            }
-
-            .nav.active {
-                max-height: calc(100vh - 70px);
-                overflow-y: auto;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            }
-
-            .nav-list {
-                flex-direction: column;
-                width: 100%;
-                gap: 0;
-                padding: 1rem 0;
-            }
-
-            .nav-item {
-                width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .nav-link {
-                padding: 1rem 1.5rem;
-                font-size: 1.05rem;
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .nav-link::before {
-                display: none;
-            }
-
-            .dropdown {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                margin-top: 0;
-                background: rgba(255, 255, 255, 0.05);
-                border-top: none;
-                border-radius: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-            }
-
-            .nav-item.dropdown-active .dropdown {
-                max-height: 500px;
-            }
-
-            .dropdown-list {
-                padding: 0;
-            }
-
-            .dropdown-link {
-                color: var(--white);
-                padding: 0.875rem 2.5rem;
-                font-size: 0.95rem;
-                border-left: 3px solid transparent;
-            }
-
-            .dropdown-link:hover {
-                background: rgba(255, 255, 255, 0.1);
-            }
-
-            .hero {
-                margin-top: 70px;
-            }
-
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-
-            .capabilities-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-row {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
+      .hero-content,
+      .intro-section,
+      .capabilities-section,
+      .standards-section {
+        animation: fadeInUp 0.8s ease-out;
+      }
 
-            .hero-content .subtitle {
-                font-size: 1.15rem;
-            }
+      .capability-card,
+      .standard-card {
+        animation: fadeInUp 0.8s ease-out;
+        animation-fill-mode: both;
+      }
 
-            .hero-container {
-                padding: 3rem 1.5rem;
-            }
-
-            .content-section {
-                padding: 3rem 1.5rem;
-            }
-
-            .standards-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .expertise-highlight h2 {
-                font-size: 1.8rem;
-            }
-
-            .expertise-highlight p {
-                font-size: 1.05rem;
-            }
-
-            .footer-top {
-                padding: 60px 0 40px;
-            }
-
-            .footer-row {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-bottom-content {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .header-content {
-                padding: 0 0.75rem;
-            }
-
-            .logo-image {
-                height: 50px;
-            }
-
-            .mobile-lang-btn {
-                padding: 5px 5px;
-            }
-
-            .mobile-lang-btn .flag-icon {
-                width: 20px;
-                height: 14px;
-            }
-
-            .mobile-lang-btn .lang-text {
-                font-size: 0.85rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-content,
-        .intro-text,
-        .expertise-highlight,
-        .capabilities-section,
-        .standards-section {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .capability-card,
-        .standard-card {
-            animation: fadeInUp 0.8s ease-out;
-            animation-fill-mode: both;
-        }
-
-        .capability-card:nth-child(1) { animation-delay: 0.1s; }
-        .capability-card:nth-child(2) { animation-delay: 0.2s; }
-        .capability-card:nth-child(3) { animation-delay: 0.3s; }
-        .capability-card:nth-child(4) { animation-delay: 0.4s; }
-        .capability-card:nth-child(5) { animation-delay: 0.5s; }
-
-        .standard-card:nth-child(1) { animation-delay: 0.1s; }
-        .standard-card:nth-child(2) { animation-delay: 0.2s; }
+      .capability-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .capability-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .capability-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .capability-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .capability-card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .standard-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .standard-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
     </style>
-</head>
-<body>
-
-    <!-- HEADER -->
+  </head>
+  <body>
+    <!-- ========== HEADER ========== -->
     <header class="header">
-        <div class="header-content">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo/logo.png" alt="EVERSHOP MMC" class="logo-image">
-            </a>
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <img
+            src="assets/images/logo/logo.png"
+            alt="EVERSHOP MMC"
+            class="logo-image"
+          />
+        </a>
 
-            <div class="mobile-controls">
-                <button class="mobile-lang-btn" id="mobileLangBtn">
-                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#00b9e4" d="M0 0h640v160H0z"/>
-                        <path fill="#ed2939" d="M0 160h640v160H0z"/>
-                        <path fill="#3f9c35" d="M0 320h640v160H0z"/>
-                        <circle cx="304" cy="240" r="72" fill="#fff"/>
-                        <circle cx="320" cy="240" r="60" fill="#ed2939"/>
-                        <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
-                    </svg>
-                    <span class="lang-text">AZ</span>
-                </button>
+        <div class="mobile-controls">
+          <button class="mobile-lang-btn" id="mobileLangBtn">
+            <svg
+              class="flag-icon"
+              viewBox="0 0 640 480"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path fill="#00b9e4" d="M0 0h640v160H0z" />
+              <path fill="#ed2939" d="M0 160h640v160H0z" />
+              <path fill="#3f9c35" d="M0 320h640v160H0z" />
+              <circle cx="304" cy="240" r="72" fill="#fff" />
+              <circle cx="320" cy="240" r="60" fill="#ed2939" />
+              <path
+                fill="#fff"
+                d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
+              />
+            </svg>
+            <span class="lang-text">AZ</span>
+          </button>
 
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-
-            <nav class="nav" id="mainNav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link" data-i18n="about">Haqqımızda</a>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#products" class="nav-link">
-                            <span data-i18n="products">Məhsullar</span>
-                            <span class="dropdown-icon">▼</span>
-                        </a>
-                        <ul class="dropdown">
-                            <li class="dropdown-list">
-                                <a href="custom.html" class="dropdown-link" data-i18n="fabrication">Xüsusi Konstruksiyaların İstehsalı</a>
-                                <a href="static.html" class="dropdown-link" data-i18n="staticEquipment">Statik Avadanlıq</a>
-                                <a href="packages.html" class="dropdown-link" data-i18n="skidPackages">Sənaye Skid Paketləri</a>
-                                <a href="parts.html" class="dropdown-link" data-i18n="machinedParts">Mexaniki Hissələr</a>
-                                <a href="supply.html" class="dropdown-link" data-i18n="equipmentSupply">Sənaye Avadanlığı Təchizatı</a>
-                                <a href="steel.html" class="dropdown-link" data-i18n="steelPiping">Polad və Boru Aksesuarları</a>
-                                <a href="sealing.html" class="dropdown-link" data-i18n="sealing">Kipləndirici Elementlər</a>
-                                <a href="oem.html" class="dropdown-link" data-i18n="oemParts">OEM Hissələri</a>
-                                <a href="prototype.html" class="dropdown-link" data-i18n="rdPrototype">Tədqiqat və Prototip İstehsalı</a>
-                                <a href="https://www.evershop.az/az/shop" class="dropdown-link">Shopping</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#services" class="nav-link">
-                            <span data-i18n="services">Xidmətlər</span>
-                            <span class="dropdown-icon">▼</span>
-                        </a>
-                        <ul class="dropdown">
-                            <li class="dropdown-list">
-                                <a href="design.html" class="dropdown-link" data-i18n="designEngineering">Dizayn və Mühəndislik</a>
-                                <a href="installation.html" class="dropdown-link" data-i18n="installation">Quraşdırma və İstismara Verilmə</a>
-                                <a href="repair.html" class="dropdown-link" data-i18n="repairMaintenance">Təmir və Texniki Xidmət</a>
-                                <a href="heat.html" class="dropdown-link" data-i18n="heatTreatment">İstilik Emalı</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="market.html" class="nav-link">
-                            <span data-i18n="markets">Bazar Sektorları</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="career.html" class="nav-link" data-i18n="career">Karyera</a>
-                    </li>
-                    <li class="nav-item has-dropdown language-dropdown">
-                        <a href="#" class="nav-link" id="currentLangBtn">
-                            <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="#00b9e4" d="M0 0h640v160H0z"/>
-                                <path fill="#ed2939" d="M0 160h640v160H0z"/>
-                                <path fill="#3f9c35" d="M0 320h640v160H0z"/>
-                                <circle cx="304" cy="240" r="72" fill="#fff"/>
-                                <circle cx="320" cy="240" r="60" fill="#ed2939"/>
-                                <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
-                            </svg>
-                            <span class="lang-text">AZ</span>
-                            <span class="dropdown-icon">▼</span>
-                        </a>
-                        <ul class="dropdown lang-dropdown">
-                            <li class="dropdown-list">
-                                <a href="#" class="dropdown-link lang-option" data-lang="az">
-                                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#00b9e4" d="M0 0h640v160H0z"/>
-                                        <path fill="#ed2939" d="M0 160h640v160H0z"/>
-                                        <path fill="#3f9c35" d="M0 320h640v160H0z"/>
-                                        <circle cx="304" cy="240" r="72" fill="#fff"/>
-                                        <circle cx="320" cy="240" r="60" fill="#ed2939"/>
-                                        <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
-                                    </svg>
-                                    <span data-i18n="langAz">Azərbaycan dili</span>
-                                </a>
-                                <a href="#" class="dropdown-link lang-option" data-lang="en">
-                                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#012169" d="M0 0h640v480H0z"/>
-                                        <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-                                        <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-                                        <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-                                        <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
-                                    </svg>
-                                    <span data-i18n="langEn">English</span>
-                                </a>
-                                <a href="#" class="dropdown-link lang-option" data-lang="ru">
-                                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#fff" d="M0 0h640v160H0z"/>
-                                        <path fill="#0039a6" d="M0 160h640v160H0z"/>
-                                        <path fill="#d52b1e" d="M0 320h640v160H0z"/>
-                                    </svg>
-                                    <span data-i18n="langRu">Русский язык</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+          <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Toggle Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+
+        <nav class="nav" id="mainNav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="about.html" class="nav-link" data-i18n="about"
+                >Haqqımızda</a
+              >
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="#products" class="nav-link">
+                <span data-i18n="products">Məhsullar</span>
+                <span class="dropdown-icon">▼</span>
+              </a>
+              <ul class="dropdown">
+                <li class="dropdown-list">
+                  <a
+                    href="custom.html"
+                    class="dropdown-link"
+                    data-i18n="fabrication"
+                    >Xüsusi Konstruksiyaların İstehsalı</a
+                  >
+                  <a
+                    href="static.html"
+                    class="dropdown-link"
+                    data-i18n="staticEquipment"
+                    >Statik Avadanlıq</a
+                  >
+                  <a
+                    href="packages.html"
+                    class="dropdown-link"
+                    data-i18n="skidPackages"
+                    >Sənaye Skid Paketləri</a
+                  >
+                  <a
+                    href="parts.html"
+                    class="dropdown-link"
+                    data-i18n="machinedParts"
+                    >Mexaniki Hissələr</a
+                  >
+                  <a
+                    href="supply.html"
+                    class="dropdown-link"
+                    data-i18n="equipmentSupply"
+                    >Sənaye Avadanlığı Təchizatı</a
+                  >
+                  <a
+                    href="steel.html"
+                    class="dropdown-link"
+                    data-i18n="steelPiping"
+                    >Polad və Boru Aksesuarları</a
+                  >
+                  <a
+                    href="sealing.html"
+                    class="dropdown-link"
+                    data-i18n="sealing"
+                    >Kipləndirici Elementlər</a
+                  >
+                  <a href="oem.html" class="dropdown-link" data-i18n="oemParts"
+                    >OEM Hissələri</a
+                  >
+                  <a
+                    href="prototype.html"
+                    class="dropdown-link"
+                    data-i18n="rdPrototype"
+                    >Tədqiqat və Prototip İstehsalı</a
+                  >
+                  <a
+                    href="https://www.evershop.az/az/shop"
+                    class="dropdown-link"
+                    >Shopping</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="#services" class="nav-link">
+                <span data-i18n="services">Xidmətlər</span>
+                <span class="dropdown-icon">▼</span>
+              </a>
+              <ul class="dropdown">
+                <li class="dropdown-list">
+                  <a
+                    href="design.html"
+                    class="dropdown-link"
+                    data-i18n="designEngineering"
+                    >Dizayn və Mühəndislik</a
+                  >
+                  <a
+                    href="installation.html"
+                    class="dropdown-link"
+                    data-i18n="installation"
+                    >Quraşdırma və İstismara Verilmə</a
+                  >
+                  <a
+                    href="repair.html"
+                    class="dropdown-link"
+                    data-i18n="repairMaintenance"
+                    >Təmir və Texniki Xidmət</a
+                  >
+                  <a
+                    href="heat.html"
+                    class="dropdown-link"
+                    data-i18n="heatTreatment"
+                    >İstilik Emalı</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="market.html" class="nav-link">
+                <span data-i18n="markets">Bazar Sektorları</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="career.html" class="nav-link" data-i18n="career"
+                >Karyera</a
+              >
+            </li>
+            <li class="nav-item has-dropdown language-dropdown">
+              <a href="#" class="nav-link" id="currentLangBtn">
+                <svg
+                  class="flag-icon"
+                  viewBox="0 0 640 480"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="#00b9e4" d="M0 0h640v160H0z" />
+                  <path fill="#ed2939" d="M0 160h640v160H0z" />
+                  <path fill="#3f9c35" d="M0 320h640v160H0z" />
+                  <circle cx="304" cy="240" r="72" fill="#fff" />
+                  <circle cx="320" cy="240" r="60" fill="#ed2939" />
+                  <path
+                    fill="#fff"
+                    d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
+                  />
+                </svg>
+                <span class="lang-text">AZ</span>
+                <span class="dropdown-icon">▼</span>
+              </a>
+              <ul class="dropdown lang-dropdown">
+                <li class="dropdown-list">
+                  <a href="#" class="dropdown-link lang-option" data-lang="az">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#00b9e4" d="M0 0h640v160H0z" />
+                      <path fill="#ed2939" d="M0 160h640v160H0z" />
+                      <path fill="#3f9c35" d="M0 320h640v160H0z" />
+                      <circle cx="304" cy="240" r="72" fill="#fff" />
+                      <circle cx="320" cy="240" r="60" fill="#ed2939" />
+                      <path
+                        fill="#fff"
+                        d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
+                      />
+                    </svg>
+                    <span data-i18n="langAz">Azərbaycan dili</span>
+                  </a>
+                  <a href="#" class="dropdown-link lang-option" data-lang="en">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#012169" d="M0 0h640v480H0z" />
+                      <path
+                        fill="#FFF"
+                        d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"
+                      />
+                      <path
+                        fill="#C8102E"
+                        d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"
+                      />
+                      <path
+                        fill="#FFF"
+                        d="M241 0v480h160V0H241zM0 160v160h640V160H0z"
+                      />
+                      <path
+                        fill="#C8102E"
+                        d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"
+                      />
+                    </svg>
+                    <span data-i18n="langEn">English</span>
+                  </a>
+                  <a href="#" class="dropdown-link lang-option" data-lang="ru">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#fff" d="M0 0h640v160H0z" />
+                      <path fill="#0039a6" d="M0 160h640v160H0z" />
+                      <path fill="#d52b1e" d="M0 320h640v160H0z" />
+                    </svg>
+                    <span data-i18n="langRu">Русский язык</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ========== HERO SECTION ========== -->
     <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 data-i18n="pageTitle">Yüksək Dəqiqlikli Emal</h1>
-                <p class="subtitle" data-i18n="pageSubtitle">Müasir sənaye əməliyyatlarının ciddi tələblərinə cavab verən mürəkkəb komponentlər — dərin metallurgiya biliklərindən və beynəlxalq mühəndislik standartlarından istifadə edərək</p>
-                <p class="tagline" data-i18n="pageTagline">Dəqiqlik Material Elmi ilə Buluşur</p>
-            </div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="company-name">EVERSHOP</div>
+          <h1 data-i18n="heroTitle">Yüksək Dəqiqlikli Emal</h1>
+          <p class="tagline" data-i18n="heroTagline">
+            Dəqiqlik Material Elmi ilə Buluşur
+          </p>
         </div>
+      </div>
     </section>
 
-    <!-- Content Section -->
+    <!-- ========== CONTENT SECTION ========== -->
     <section class="content-section">
-        <!-- Introduction -->
-        <div class="intro-text">
-            <p data-i18n="introText">EVERSHOP yüksək dəqiqlikli emalla məşğul olur, təsisçilərimizin metallurgiya və beynəlxalq mühəndislik standartları sahəsində dərin biliklərindən istifadə edir. Biz qlobal ticarət və yüksək mühəndislik istehsalı arasında körpü quraraq müasir sənaye əməliyyatlarının ciddi tələblərinə cavab verən mürəkkəb komponentlər təqdim edirik.</p>
+      <!-- Introduction -->
+      <div class="intro-section">
+        <h2 data-i18n="introTitle">Bizim Yanaşma</h2>
+        <p data-i18n="introText">
+          EVERSHOP yüksək dəqiqlikli emalla məşğul olur, təsisçilərimizin
+          metallurgiya və beynəlxalq mühəndislik standartları sahəsində dərin
+          biliklərindən istifadə edir. Biz qlobal ticarət və yüksək mühəndislik
+          istehsalı arasında körpü quraraq müasir sənaye əməliyyatlarının ciddi
+          tələblərinə cavab verən mürəkkəb komponentlər təqdim edirik.
+        </p>
+      </div>
+
+      <!-- Capabilities Section -->
+      <div class="capabilities-section">
+        <h2 data-i18n="capabilitiesTitle">Bizim Emal İmkanlarımız</h2>
+        <div class="capabilities-grid">
+          <div class="capability-card">
+            <h3 data-i18n="cap1Title">Dəqiq Komponentlər</h3>
+            <p data-i18n="cap1Desc">
+              Dəqiq texniki spesifikasiyalara uyğun olaraq yüksək toleranslı
+              hissələrin istehsalı.
+            </p>
+          </div>
+
+          <div class="capability-card">
+            <h3 data-i18n="cap2Title">Material Təcrübəsi</h3>
+            <p data-i18n="cap2Desc">
+              Metallurgiya sahəsində dərin anlaşılmaya əsaslanan müxtəlif
+              metallar və ərintilər üçün ixtisaslaşdırılmış emal.
+            </p>
+          </div>
+
+          <div class="capability-card">
+            <h3 data-i18n="cap3Title">OEM Hissələri</h3>
+            <p data-i18n="cap3Desc">
+              Avadanlığın bütövlüyünü qorumaq üçün Orijinal Avadanlıq
+              İstehsalçısı (OEM) hissələrinin istehsalı.
+            </p>
+          </div>
+
+          <div class="capability-card">
+            <h3 data-i18n="cap4Title">Kipləndirici Elementlər</h3>
+            <p data-i18n="cap4Desc">
+              Ekstremal sənaye mühitləri üçün dizayn edilmiş yüksək performanslı
+              kipləyicilər.
+            </p>
+          </div>
+
+          <div class="capability-card">
+            <h3 data-i18n="cap5Title">Prototipləşdirmə</h3>
+            <p data-i18n="cap5Desc">
+              Yerli sənaye artımını dəstəkləmək üçün tədqiqat-inkişaf
+              prototiplərinin sürətli istehsalı.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <!-- Capabilities Section -->
-        <div class="capabilities-section">
-            <h2 data-i18n="capabilitiesTitle">Bizim Emal İmkanlarımız</h2>
-            <div class="capabilities-grid">
-                <div class="capability-card">
-                    <div class="capability-icon">⚙️</div>
-                    <h3 data-i18n="cap1Title">Dəqiq Komponentlər</h3>
-                    <p data-i18n="cap1Desc">Dəqiq texniki spesifikasiyalara uyğun olaraq yüksək toleranslı hissələrin istehsalı.</p>
-                </div>
+      <!-- Standards & Compliance -->
+      <div class="standards-section">
+        <h2 data-i18n="standardsTitle">Uyğunluq və Standartlar</h2>
+        <p class="standards-intro" data-i18n="standardsIntro">
+          Bütün hissələr beynəlxalq standartlara uyğun olaraq emal edilir və
+          yoxlanılır. Tam izlənilmə və dəqiqlik yoxlamaları məhsulların
+          layihələrə kompromissiz çatmasını təmin etmək üçün idarəetmə
+          sistemimizə inteqrasiya edilmişdir.
+        </p>
 
-                <div class="capability-card">
-                    <div class="capability-icon">🔬</div>
-                    <h3 data-i18n="cap2Title">Material Təcrübəsi</h3>
-                    <p data-i18n="cap2Desc">Metallurgiya sahəsində dərin anlaşılmaya əsaslanan müxtəlif metallar və ərintilər üçün ixtisaslaşdırılmış emal.</p>
-                </div>
-
-                <div class="capability-card">
-                    <div class="capability-icon">🔧</div>
-                    <h3 data-i18n="cap3Title">OEM Hissələri</h3>
-                    <p data-i18n="cap3Desc">Avadanlığın bütövlüyünü qorumaq üçün Orijinal Avadanlıq İstehsalçısı (OEM) hissələrinin istehsalı.</p>
-                </div>
-
-                <div class="capability-card">
-                    <div class="capability-icon">⭕</div>
-                    <h3 data-i18n="cap4Title">Kipləndirici Elementlər</h3>
-                    <p data-i18n="cap4Desc">Ekstremal sənaye mühitləri üçün dizayn edilmiş yüksək performanslı kipləyicilər.</p>
-                </div>
-
-                <div class="capability-card">
-                    <div class="capability-icon">🚀</div>
-                    <h3 data-i18n="cap5Title">Prototipləşdirmə</h3>
-                    <p data-i18n="cap5Desc">Yerli sənaye artımını dəstəkləmək üçün tədqiqat-inkişaf prototiplərinin sürətli istehsalı.</p>
-                </div>
+        <div class="standards-grid">
+          <div class="standard-card">
+            <h3 data-i18n="intStandardsTitle">Beynəlxalq Standartlar</h3>
+            <p data-i18n="intStandardsDesc">
+              Bütün hissələr aşağıdakılara uyğun olaraq emal və yoxlanılır:
+            </p>
+            <div class="standard-badges">
+              <span class="badge">ASME</span>
+              <span class="badge">EN</span>
+              <span class="badge">ГОСТ</span>
+              <span class="badge">API</span>
             </div>
-        </div>
+          </div>
 
-        <!-- Standards & Compliance -->
-        <div class="standards-section">
-            <h2 data-i18n="standardsTitle">Uyğunluq və Standartlar</h2>
-            <p class="standards-intro" data-i18n="standardsIntro">Bütün hissələr beynəlxalq standartlara uyğun olaraq emal edilir və yoxlanılır. Tam izlənilmə və dəqiqlik yoxlamaları məhsulların layihələrə kompromissiz çatmasını təmin etmək üçün idarəetmə sistemimizə inteqrasiya edilmişdir.</p>
-            
-            <div class="standards-grid">
-                <div class="standard-card">
-                    <h3 data-i18n="intStandardsTitle">Beynəlxalq Standartlar</h3>
-                    <p data-i18n="intStandardsDesc">Bütün hissələr aşağıdakılara uyğun olaraq emal və yoxlanılır:</p>
-                    <div class="standard-badges">
-                        <span class="badge">ASME</span>
-                        <span class="badge">EN</span>
-                        <span class="badge">ГОСТ</span>
-                        <span class="badge">API</span>
-                    </div>
-                </div>
-
-                <div class="standard-card">
-                    <h3 data-i18n="qaTitle">Keyfiyyət Təminatı</h3>
-                    <p data-i18n="qaDesc">Tam izlənilmə və dəqiqlik yoxlamaları məhsulların layihələrə kompromissiz çatmasını təmin etmək üçün idarəetmə sistemimizə inteqrasiya edilmişdir.</p>
-                </div>
-            </div>
+          <div class="standard-card">
+            <h3 data-i18n="qaTitle">Keyfiyyət Təminatı</h3>
+            <p data-i18n="qaDesc">
+              Tam izlənilmə və dəqiqlik yoxlamaları məhsulların layihələrə
+              kompromissiz çatmasını təmin etmək üçün idarəetmə sistemimizə
+              inteqrasiya edilmişdir.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-row">
-                    <div class="footer-widget">
-                        <img src="assets/images/logo/logo.png" class="footer-logo" alt="EVERSHOP MMC">
-                        <p data-i18n="footerAbout">
-                            Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz 
-                            biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.
-                        </p>
-                        <div class="footer-social">
-                            <a href="https://wa.me/994702710066" target="_blank" aria-label="WhatsApp Evershop">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="https://www.instagram.com/evershopllc/" target="_blank" aria-label="Instagram Evershop">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/company/evershop-llc/" target="_blank" aria-label="LinkedIn Evershop">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="footer-widget">
-                        <h4 data-i18n="company">Şirkət</h4>
-                        <ul>
-                            <li><a href="about.html" data-i18n="about">Haqqımızda</a></li>
-                            <li><a href="#" data-i18n="products">Məhsullar</a></li>
-                            <li><a href="#" data-i18n="services">Xidmətlər</a></li>
-                            <li><a href="#" data-i18n="markets">Bazar Sektorları</a></li>
-                            <li><a href="#" data-i18n="career">Karyera</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-widget">
-                        <h4 data-i18n="solutions">Həllər</h4>
-                        <ul>
-                            <li><a href="#" data-i18n="engineeringDesign">Mühəndislik və Dizayn</a></li>
-                            <li><a href="#" data-i18n="manufacturing">İstehsal</a></li>
-                            <li><a href="#" data-i18n="industrialProcurement">Sənaye Tədarükü</a></li>
-                            <li><a href="#" data-i18n="projectManagement">Layihə İdarəetməsi</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-widget">
-                        <h4 data-i18n="contactInfo">Əlaqə</h4>
-                        <ul class="footer-contact">
-                            <li>
-                                <i class="fas fa-phone-alt"></i>
-                                <span>+994 70 271 00 66</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope"></i>
-                                <span>Sales@evershop.az</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span data-i18n="addressText">Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-industry"></i>
-                                <span data-i18n="workshopText">Salyan Highway, 32 km, Baku, Azerbaijan</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-row">
+            <div class="footer-widget">
+              <a href="index.html">
+                <img
+                  src="assets/images/logo/logo.png"
+                  class="footer-logo"
+                  alt="EVERSHOP MMC Logo"
+                />
+              </a>
+              <p data-i18n="footerAbout">
+                Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət
+                mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli
+                tapsınlar.
+              </p>
+              <div class="footer-social">
+                <a
+                  href="https://wa.me/994702710066"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                >
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/evershopllc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/evershop-llc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <p>
-                        <span data-i18n="allRights">© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.</span>
-                        <span class="footer-credit">
-                            <span data-i18n="preparedBy">Hazırlayan:</span> 
-                            <strong>BUTA GRUP</strong>
-                        </span>
-                    </p>
-                </div>
+
+            <div class="footer-widget">
+              <h4 data-i18n="company">Şirkət</h4>
+              <ul>
+                <li><a href="about.html" data-i18n="about">Haqqımızda</a></li>
+                <li><a href="index.html" data-i18n="products">Məhsullar</a></li>
+                <li><a href="index.html" data-i18n="services">Xidmətlər</a></li>
+                <li>
+                  <a href="market.html" data-i18n="markets">Bazar Sektorları</a>
+                </li>
+                <li><a href="career.html" data-i18n="career">Karyera</a></li>
+              </ul>
             </div>
+
+            <div class="footer-widget">
+              <h4 data-i18n="solutions">Həllər</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="engineeringDesign"
+                    >Mühəndislik və Dizayn</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="industrialEquipment"
+                    >Sənaye Avadanlıqları</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.evershop.az/az" data-i18n="manufacturing"
+                    >İstehsal</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="energySolutions"
+                    >Enerji Həlləri</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="innovativeProjects"
+                    >İnnovativ Layihələr</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-widget">
+              <h4 data-i18n="contactInfo">Əlaqə</h4>
+              <ul class="footer-contact">
+                <li>
+                  <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                  <a
+                    href="https://wa.me/994702710066"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +994 70 271 00 66
+                  </a>
+                </li>
+
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az"
+                    target="_blank"
+                  >
+                    Sales@evershop.az
+                  </a>
+                </li>
+
+                <li>
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-i18n="addressText"
+                  >
+                    Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
+                    Azerbaijan
+                  </a>
+                </li>
+
+                <li>
+                  <i class="fas fa-industry" aria-hidden="true"></i>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-i18n="workshopText"
+                  >
+                    Salyan Highway, 32 km, Baku, Azerbaijan
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-content">
+            <p>
+              <span data-i18n="allRights"
+                >© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.</span
+              >
+              <span class="footer-credit">
+                <span data-i18n="preparedBy">Hazırlayan:</span>
+                <a
+                  href="https://www.butagrup.com.tr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="text-decoration: none; color: inherit"
+                >
+                  <strong>BUTA GRUP</strong>
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-        <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
     </button>
 
-<script>
-    // ========== DİL TƏRCÜMƏLƏRİ ==========
-    const translations = {
+    <script>
+      // ========== TRANSLATIONS ==========
+      const translations = {
         az: {
-            // Header
-            about: "Haqqımızda",
-            products: "Məhsullar",
-            services: "Xidmətlər",
-            markets: "Bazar Sektorları",
-            career: "Karyera",
-            fabrication: "Xüsusi Konstruksiyaların İstehsalı",
-            staticEquipment: "Statik Avadanlıq",
-            skidPackages: "Sənaye Skid Paketləri",
-            machinedParts: "Mexaniki Hissələr",
-            equipmentSupply: "Sənaye Avadanlığı Təchizatı",
-            steelPiping: "Polad və Boru Aksesuarları",
-            sealing: "Kipləndirici Elementlər",
-            oemParts: "OEM Hissələri",
-            rdPrototype: "Tədqiqat və Prototip İstehsalı",
-            designEngineering: "Dizayn və Mühəndislik",
-            installation: "Quraşdırma və İstismara Verilmə",
-            repairMaintenance: "Təmir və Texniki Xidmət",
-            heatTreatment: "İstilik Emalı",
-            langAz: "Azərbaycan dili",
-            langEn: "English",
-            langRu: "Русский язык",
-            
-            // Page Content
-            pageTitle: "Yüksək Dəqiqlikli Emal",
-            pageSubtitle: "Müasir sənaye əməliyyatlarının ciddi tələblərinə cavab verən mürəkkəb komponentlər — dərin metallurgiya biliklərindən və beynəlxalq mühəndislik standartlarından istifadə edərək",
-            pageTagline: "Dəqiqlik Material Elmi ilə Buluşur",
-            introText: "EVERSHOP yüksək dəqiqlikli emalla məşğul olur, təsisçilərimizin metallurgiya və beynəlxalq mühəndislik standartları sahəsində dərin biliklərindən istifadə edir. Biz qlobal ticarət və yüksək mühəndislik istehsalı arasında körpü quraraq müasir sənaye əməliyyatlarının ciddi tələblərinə cavab verən mürəkkəb komponentlər təqdim edirik.",
-            
-            capabilitiesTitle: "Bizim Emal İmkanlarımız",
-            cap1Title: "Dəqiq Komponentlər",
-            cap1Desc: "Dəqiq texniki spesifikasiyalara uyğun olaraq yüksək toleranslı hissələrin istehsalı.",
-            cap2Title: "Material Təcrübəsi",
-            cap2Desc: "Metallurgiya sahəsində dərin anlaşılmaya əsaslanan müxtəlif metallar və ərintilər üçün ixtisaslaşdırılmış emal.",
-            cap3Title: "OEM Hissələri",
-            cap3Desc: "Avadanlığın bütövlüyünü qorumaq üçün Orijinal Avadanlıq İstehsalçısı (OEM) hissələrinin istehsalı.",
-            cap4Title: "Kipləndirici Elementlər",
-            cap4Desc: "Ekstremal sənaye mühitləri üçün dizayn edilmiş yüksək performanslı kipləyicilər.",
-            cap5Title: "Prototipləşdirmə",
-            cap5Desc: "Yerli sənaye artımını dəstəkləmək üçün tədqiqat-inkişaf prototiplərinin sürətli istehsalı.",
-            
-            standardsTitle: "Uyğunluq və Standartlar",
-            standardsIntro: "Bütün hissələr beynəlxalq standartlara uyğun olaraq emal edilir və yoxlanılır. Tam izlənilmə və dəqiqlik yoxlamaları məhsulların layihələrə kompromissiz çatmasını təmin etmək üçün idarəetmə sistemimizə inteqrasiya edilmişdir.",
-            intStandardsTitle: "Beynəlxalq Standartlar",
-            intStandardsDesc: "Bütün hissələr aşağıdakılara uyğun olaraq emal və yoxlanılır:",
-            qaTitle: "Keyfiyyət Təminatı",
-            qaDesc: "Tam izlənilmə və dəqiqlik yoxlamaları məhsulların layihələrə kompromissiz çatmasını təmin etmək üçün idarəetmə sistemimizə inteqrasiya edilmişdir.",
-            
-            // Footer
-            footerAbout: "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
-            company: "Şirkət",
-            solutions: "Həllər",
-            engineeringDesign: "Mühəndislik və Dizayn",
-            manufacturing: "İstehsal",
-            industrialProcurement: "Sənaye Tədarükü",
-            projectManagement: "Layihə İdarəetməsi",
-            contactInfo: "Əlaqə",
-            addressText: "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
-            workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
-            allRights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
-            preparedBy: "Hazırlayan:"
+          // Header
+          about: "Haqqımızda",
+          products: "Məhsullar",
+          services: "Xidmətlər",
+          markets: "Bazar Sektorları",
+          career: "Karyera",
+          fabrication: "Xüsusi Konstruksiyaların İstehsalı",
+          staticEquipment: "Statik Avadanlıq",
+          skidPackages: "Sənaye Skid Paketləri",
+          machinedParts: "Mexaniki Hissələr",
+          equipmentSupply: "Sənaye Avadanlığı Təchizatı",
+          steelPiping: "Polad və Boru Aksesuarları",
+          sealing: "Kipləndirici Elementlər",
+          oemParts: "OEM Hissələri",
+          rdPrototype: "Tədqiqat və Prototip İstehsalı",
+          designEngineering: "Dizayn və Mühəndislik",
+          installation: "Quraşdırma və İstismara Verilmə",
+          repairMaintenance: "Təmir və Texniki Xidmət",
+          heatTreatment: "İstilik Emalı",
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+
+          // Page Content
+          heroTitle: "Yüksək Dəqiqlikli Emal",
+          heroTagline: "Dəqiqlik Material Elmi ilə Buluşur",
+          introTitle: "Bizim Yanaşma",
+          introText:
+            "EVERSHOP yüksək dəqiqlikli emalla məşğul olur, təsisçilərimizin metallurgiya və beynəlxalq mühəndislik standartları sahəsində dərin biliklərindən istifadə edir. Biz qlobal ticarət və yüksək mühəndislik istehsalı arasında körpü quraraq müasir sənaye əməliyyatlarının ciddi tələblərinə cavab verən mürəkkəb komponentlər təqdim edirik.",
+
+          capabilitiesTitle: "Bizim Emal İmkanlarımız",
+          cap1Title: "Dəqiq Komponentlər",
+          cap1Desc:
+            "Dəqiq texniki spesifikasiyalara uyğun olaraq yüksək toleranslı hissələrin istehsalı.",
+          cap2Title: "Material Təcrübəsi",
+          cap2Desc:
+            "Metallurgiya sahəsində dərin anlaşılmaya əsaslanan müxtəlif metallar və ərintilər üçün ixtisaslaşdırılmış emal.",
+          cap3Title: "OEM Hissələri",
+          cap3Desc:
+            "Avadanlığın bütövlüyünü qorumaq üçün Orijinal Avadanlıq İstehsalçısı (OEM) hissələrinin istehsalı.",
+          cap4Title: "Kipləndirici Elementlər",
+          cap4Desc:
+            "Ekstremal sənaye mühitləri üçün dizayn edilmiş yüksək performanslı kipləyicilər.",
+          cap5Title: "Prototipləşdirmə",
+          cap5Desc:
+            "Yerli sənaye artımını dəstəkləmək üçün tədqiqat-inkişaf prototiplərinin sürətli istehsalı.",
+
+          standardsTitle: "Uyğunluq və Standartlar",
+          standardsIntro:
+            "Bütün hissələr beynəlxalq standartlara uyğun olaraq emal edilir və yoxlanılır. Tam izlənilmə və dəqiqlik yoxlamaları məhsulların layihələrə kompromissiz çatmasını təmin etmək üçün idarəetmə sistemimizə inteqrasiya edilmişdir.",
+          intStandardsTitle: "Beynəlxalq Standartlar",
+          intStandardsDesc:
+            "Bütün hissələr aşağıdakılara uyğun olaraq emal və yoxlanılır:",
+          qaTitle: "Keyfiyyət Təminatı",
+          qaDesc:
+            "Tam izlənilmə və dəqiqlik yoxlamaları məhsulların layihələrə kompromissiz çatmasını təmin etmək üçün idarəetmə sistemimizə inteqrasiya edilmişdir.",
+
+          // Footer
+          footerAbout:
+            "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
+          company: "Şirkət",
+          solutions: "Həllər",
+          engineeringDesign: "Mühəndislik və Dizayn",
+          industrialEquipment: "Sənaye Avadanlıqları",
+          manufacturing: "İstehsal",
+          energySolutions: "Enerji Həlləri",
+          innovativeProjects: "İnnovativ Layihələr",
+          contactInfo: "Əlaqə",
+          addressText:
+            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+          workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
+          allRights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
+          preparedBy: "Hazırlayan:",
         },
         en: {
-            // Header
-            about: "About",
-            products: "Products",
-            services: "Services",
-            markets: "Market Sectors",
-            career: "Career",
-            fabrication: "Fabrication Custom Structures",
-            staticEquipment: "Static Equipment",
-            skidPackages: "Industrial Skid Packages",
-            machinedParts: "Machined Parts",
-            equipmentSupply: "Industrial Equipment Supply",
-            steelPiping: "Steel & Piping Accessories",
-            sealing: "Sealing Elements",
-            oemParts: "OEM Parts",
-            rdPrototype: "R&D & Prototype Manufacturing",
-            designEngineering: "Design & Engineering",
-            installation: "Installation & Commissioning",
-            repairMaintenance: "Repair & Maintenance",
-            heatTreatment: "Heat Treatment",
-            langAz: "Azərbaycan dili",
-            langEn: "English",
-            langRu: "Русский язык",
-            
-            // Page Content
-            pageTitle: "High-Precision Machining",
-            pageSubtitle: "Complex components that meet the rigorous demands of modern industrial operations—leveraging deep metallurgical knowledge and international engineering standards",
-            pageTagline: "Where Precision Meets Material Science",
-            introText: "EVERSHOP specializes in high-precision machining, leveraging our founders' deep understanding of metallurgy and international engineering standards. We provide complex components that meet the rigorous demands of modern industrial operations by bridging the gap between global trade and high-engineering manufacturing.",
-            
-            capabilitiesTitle: "Our Machining Capabilities",
-            cap1Title: "Precision Components",
-            cap1Desc: "Manufacturing of high-tolerance parts according to exact technical specifications.",
-            cap2Title: "Material Expertise",
-            cap2Desc: "Specialized machining for a variety of metals and alloys based on a deep understanding of metallurgy.",
-            cap3Title: "OEM Parts",
-            cap3Desc: "Production of Original Equipment Manufacturer (OEM) parts to maintain equipment integrity.",
-            cap4Title: "Sealing Elements",
-            cap4Desc: "High-performance seals designed for extreme industrial environments.",
-            cap5Title: "Prototyping",
-            cap5Desc: "Rapid manufacturing of R&D prototypes to support local industrial growth.",
-            
-            standardsTitle: "Compliance & Standards",
-            standardsIntro: "All parts are machined and inspected in accordance with international standards. Full traceability and precision checks are integrated into our management system to ensure products reach projects without compromise.",
-            intStandardsTitle: "International Standards",
-            intStandardsDesc: "All parts are machined and inspected in accordance with:",
-            qaTitle: "Quality Assurance",
-            qaDesc: "Full traceability and precision checks are integrated into our management system to ensure products reach projects without compromise.",
-            
-            // Footer
-            footerAbout: "Have a complex project? Let our engineers and trade experts find the most efficient and reliable solution for your business.",
-            company: "Company",
-            solutions: "Solutions",
-            engineeringDesign: "Engineering & Design",
-            manufacturing: "Manufacturing",
-            industrialProcurement: "Industrial Procurement",
-            projectManagement: "Project Management",
-            contactInfo: "Contact",
-            addressText: "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
-            workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
-            allRights: "© 2026 EVERSHOP MMC. All rights reserved.",
-            preparedBy: "Prepared by:"
+          // Header
+          about: "About",
+          products: "Products",
+          services: "Services",
+          markets: "Market Sectors",
+          career: "Career",
+          fabrication: "Fabrication Custom Structures",
+          staticEquipment: "Static Equipment",
+          skidPackages: "Industrial Skid Packages",
+          machinedParts: "Machined Parts",
+          equipmentSupply: "Industrial Equipment Supply",
+          steelPiping: "Steel & Piping Accessories",
+          sealing: "Sealing Elements",
+          oemParts: "OEM Parts",
+          rdPrototype: "R&D & Prototype Manufacturing",
+          designEngineering: "Design & Engineering",
+          installation: "Installation & Commissioning",
+          repairMaintenance: "Repair & Maintenance",
+          heatTreatment: "Heat Treatment",
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+
+          // Page Content
+          heroTitle: "High-Precision Machining",
+          heroTagline: "Where Precision Meets Material Science",
+          introTitle: "Our Approach",
+          introText:
+            "EVERSHOP specializes in high-precision machining, leveraging our founders' deep understanding of metallurgy and international engineering standards. We provide complex components that meet the rigorous demands of modern industrial operations by bridging the gap between global trade and high-engineering manufacturing.",
+
+          capabilitiesTitle: "Our Machining Capabilities",
+          cap1Title: "Precision Components",
+          cap1Desc:
+            "Manufacturing of high-tolerance parts according to exact technical specifications.",
+          cap2Title: "Material Expertise",
+          cap2Desc:
+            "Specialized machining for a variety of metals and alloys based on a deep understanding of metallurgy.",
+          cap3Title: "OEM Parts",
+          cap3Desc:
+            "Production of Original Equipment Manufacturer (OEM) parts to maintain equipment integrity.",
+          cap4Title: "Sealing Elements",
+          cap4Desc:
+            "High-performance seals designed for extreme industrial environments.",
+          cap5Title: "Prototyping",
+          cap5Desc:
+            "Rapid manufacturing of R&D prototypes to support local industrial growth.",
+
+          standardsTitle: "Compliance & Standards",
+          standardsIntro:
+            "All parts are machined and inspected in accordance with international standards. Full traceability and precision checks are integrated into our management system to ensure products reach projects without compromise.",
+          intStandardsTitle: "International Standards",
+          intStandardsDesc:
+            "All parts are machined and inspected in accordance with:",
+          qaTitle: "Quality Assurance",
+          qaDesc:
+            "Full traceability and precision checks are integrated into our management system to ensure products reach projects without compromise.",
+
+          // Footer
+          footerAbout:
+            "Have a complex project? Let our engineers and trade experts find the most efficient and reliable solution for your business.",
+          company: "Company",
+          solutions: "Solutions",
+          engineeringDesign: "Engineering & Design",
+          industrialEquipment: "Industrial Equipment",
+          manufacturing: "Manufacturing",
+          energySolutions: "Energy Solutions",
+          innovativeProjects: "Innovative Projects",
+          contactInfo: "Contact",
+          addressText:
+            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+          workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
+          allRights: "© 2026 EVERSHOP MMC. All rights reserved.",
+          preparedBy: "Prepared by:",
         },
         ru: {
-            // Header
-            about: "О нас",
-            products: "Продукция",
-            services: "Услуги",
-            markets: "Рыночные Секторы",
-            career: "Карьера",
-            fabrication: "Изготовление Нестандартных Конструкций",
-            staticEquipment: "Статическое Оборудование",
-            skidPackages: "Промышленные Модульные Установки",
-            machinedParts: "Механически Обработанные Детали",
-            equipmentSupply: "Поставка Промышленного Оборудования",
-            steelPiping: "Сталь и Трубопроводная Арматура",
-            sealing: "Уплотнительные Элементы",
-            oemParts: "OEM Запчасти",
-            rdPrototype: "НИОКР и Прототипное Производство",
-            designEngineering: "Проектирование и Инжиниринг",
-            installation: "Монтаж и Ввод в Эксплуатацию",
-            repairMaintenance: "Ремонт и Техническое Обслуживание",
-            heatTreatment: "Термическая Обработка",
-            langAz: "Azərbaycan dili",
-            langEn: "English",
-            langRu: "Русский язык",
-            
-            // Page Content
-            pageTitle: "Высокоточная Механическая Обработка",
-            pageSubtitle: "Сложные компоненты, отвечающие строгим требованиям современных промышленных операций — с использованием глубоких знаний металлургии и международных инженерных стандартов",
-            pageTagline: "Где Точность Встречается с Материаловедением",
-            introText: "EVERSHOP специализируется на высокоточной механической обработке, используя глубокое понимание наших основателей в металлургии и международных инженерных стандартах. Мы предоставляем сложные компоненты, отвечающие строгим требованиям современных промышленных операций, соединяя глобальную торговлю и высокотехнологичное производство.",
-            
-            capabilitiesTitle: "Наши Возможности Механической Обработки",
-            cap1Title: "Прецизионные Компоненты",
-            cap1Desc: "Производство деталей с высокими допусками в соответствии с точными техническими спецификациями.",
-            cap2Title: "Экспертиза Материалов",
-            cap2Desc: "Специализированная обработка различных металлов и сплавов на основе глубокого понимания металлургии.",
-            cap3Title: "OEM Запчасти",
-            cap3Desc: "Производство оригинальных запчастей производителя оборудования (OEM) для поддержания целостности оборудования.",
-            cap4Title: "Уплотнительные Элементы",
-            cap4Desc: "Высокопроизводительные уплотнения, разработанные для экстремальных промышленных условий.",
-            cap5Title: "Прототипирование",
-            cap5Desc: "Быстрое производство прототипов для НИОКР в поддержку местного промышленного роста.",
-            
-            standardsTitle: "Соответствие и Стандарты",
-            standardsIntro: "Все детали обрабатываются и проверяются в соответствии с международными стандартами. Полная прослеживаемость и проверки точности интегрированы в нашу систему управления для обеспечения доставки продуктов в проекты без компромиссов.",
-            intStandardsTitle: "Международные Стандарты",
-            intStandardsDesc: "Все детали обрабатываются и проверяются в соответствии с:",
-            qaTitle: "Обеспечение Качества",
-            qaDesc: "Полная прослеживаемость и проверки точности интегрированы в нашу систему управления для обеспечения доставки продуктов в проекты без компромиссов.",
-            
-            // Footer
-            footerAbout: "У вас сложный проект? Позвольте нашим инженерам и торговым экспертам найти наиболее эффективное и надежное решение для вашего бизнеса.",
-            company: "Компания",
-            solutions: "Решения",
-            engineeringDesign: "Проектирование и Инжиниринг",
-            manufacturing: "Производство",
-            industrialProcurement: "Промышленные Закупки",
-            projectManagement: "Управление Проектами",
-            contactInfo: "Контакты",
-            addressText: "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
-            workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
-            allRights: "© 2026 EVERSHOP MMC. Все права защищены.",
-            preparedBy: "Подготовлено:"
-        }
-    };
+          // Header
+          about: "О нас",
+          products: "Продукция",
+          services: "Услуги",
+          markets: "Рыночные Секторы",
+          career: "Карьера",
+          fabrication: "Изготовление Нестандартных Конструкций",
+          staticEquipment: "Статическое Оборудование",
+          skidPackages: "Промышленные Модульные Установки",
+          machinedParts: "Механически Обработанные Детали",
+          equipmentSupply: "Поставка Промышленного Оборудования",
+          steelPiping: "Сталь и Трубопроводная Арматура",
+          sealing: "Уплотнительные Элементы",
+          oemParts: "OEM Запчасти",
+          rdPrototype: "НИОКР и Прототипное Производство",
+          designEngineering: "Проектирование и Инжиниринг",
+          installation: "Монтаж и Ввод в Эксплуатацию",
+          repairMaintenance: "Ремонт и Техническое Обслуживание",
+          heatTreatment: "Термическая Обработка",
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
 
-    // Bayraq SVG-ləri
-    const flagSVGs = {
-        az: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#00b9e4" d="M0 0h640v160H0z"/>
-                <path fill="#ed2939" d="M0 160h640v160H0z"/>
-                <path fill="#3f9c35" d="M0 320h640v160H0z"/>
-                <circle cx="304" cy="240" r="72" fill="#fff"/>
-                <circle cx="320" cy="240" r="60" fill="#ed2939"/>
-                <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
-            </svg>`,
-        en: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#012169" d="M0 0h640v480H0z"/>
-                <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-                <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-                <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-                <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
-            </svg>`,
-        ru: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#fff" d="M0 0h640v160H0z"/>
-                <path fill="#0039a6" d="M0 160h640v160H0z"/>
-                <path fill="#d52b1e" d="M0 320h640v160H0z"/>
-            </svg>`
-    };
+          // Page Content
+          heroTitle: "Высокоточная Механическая Обработка",
+          heroTagline: "Где Точность Встречается с Материаловедением",
+          introTitle: "Наш Подход",
+          introText:
+            "EVERSHOP специализируется на высокоточной механической обработке, используя глубокое понимание наших основателей в металлургии и международных инженерных стандартах. Мы предоставляем сложные компоненты, отвечающие строгим требованиям современных промышленных операций, соединяя глобальную торговлю и высокотехнологичное производство.",
 
-    // Cari dil
-    let currentLang = 'az';
+          capabilitiesTitle: "Наши Возможности Механической Обработки",
+          cap1Title: "Прецизионные Компоненты",
+          cap1Desc:
+            "Производство деталей с высокими допусками в соответствии с точными техническими спецификациями.",
+          cap2Title: "Экспертиза Материалов",
+          cap2Desc:
+            "Специализированная обработка различных металлов и сплавов на основе глубокого понимания металлургии.",
+          cap3Title: "OEM Запчасти",
+          cap3Desc:
+            "Производство оригинальных запчастей производителя оборудования (OEM) для поддержания целостности оборудования.",
+          cap4Title: "Уплотнительные Элементы",
+          cap4Desc:
+            "Высокопроизводительные уплотнения, разработанные для экстремальных промышленных условий.",
+          cap5Title: "Прототипирование",
+          cap5Desc:
+            "Быстрое производство прототипов для НИОКР в поддержку местного промышленного роста.",
 
-    // Dili yeniləmək
-    function updateLanguage(lang) {
+          standardsTitle: "Соответствие и Стандарты",
+          standardsIntro:
+            "Все детали обрабатываются и проверяются в соответствии с международными стандартами. Полная прослеживаемость и проверки точности интегрированы в нашу систему управления для обеспечения доставки продуктов в проекты без компромиссов.",
+          intStandardsTitle: "Международные Стандарты",
+          intStandardsDesc:
+            "Все детали обрабатываются и проверяются в соответствии с:",
+          qaTitle: "Обеспечение Качества",
+          qaDesc:
+            "Полная прослеживаемость и проверки точности интегрированы в нашу систему управления для обеспечения доставки продуктов в проекты без компромиссов.",
+
+          // Footer
+          footerAbout:
+            "У вас сложный проект? Позвольте нашим инженерам и торговым экспертам найти наиболее эффективное и надежное решение для вашего бизнеса.",
+          company: "Компания",
+          solutions: "Решения",
+          engineeringDesign: "Проектирование и Инжиниринг",
+          industrialEquipment: "Промышленное Оборудование",
+          manufacturing: "Производство",
+          energySolutions: "Энергетические Решения",
+          innovativeProjects: "Инновационные Проекты",
+          contactInfo: "Контакты",
+          addressText:
+            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+          workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
+          allRights: "© 2026 EVERSHOP MMC. Все права защищены.",
+          preparedBy: "Подготовлено:",
+        },
+      };
+
+      // Flag SVGs
+      const flagSVGs = {
+        az: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#00b9e4" d="M0 0h640v160H0z"/><path fill="#ed2939" d="M0 160h640v160H0z"/><path fill="#3f9c35" d="M0 320h640v160H0z"/><circle cx="304" cy="240" r="72" fill="#fff"/><circle cx="320" cy="240" r="60" fill="#ed2939"/><path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/></svg>',
+        en: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg>',
+        ru: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h640v160H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>',
+      };
+
+      let currentLang = "az";
+
+      // Update language
+      function updateLanguage(lang) {
         currentLang = lang;
         const t = translations[lang];
 
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            if (t[key]) {
-                element.textContent = t[key];
-            }
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.getAttribute("data-i18n");
+          if (t[key]) {
+            element.textContent = t[key];
+          }
         });
 
-        const currentLangBtn = document.getElementById('currentLangBtn');
+        const currentLangBtn = document.getElementById("currentLangBtn");
         if (currentLangBtn) {
-            currentLangBtn.innerHTML = flagSVGs[lang] + 
-                `<span class="lang-text">${lang.toUpperCase()}</span>
-                <span class="dropdown-icon">▼</span>`;
+          currentLangBtn.innerHTML =
+            flagSVGs[lang] +
+            `<span class="lang-text">${lang.toUpperCase()}</span><span class="dropdown-icon">▼</span>`;
         }
 
-        const mobileLangBtn = document.getElementById('mobileLangBtn');
+        const mobileLangBtn = document.getElementById("mobileLangBtn");
         if (mobileLangBtn) {
-            mobileLangBtn.innerHTML = flagSVGs[lang] + 
-                `<span class="lang-text">${lang.toUpperCase()}</span>`;
+          mobileLangBtn.innerHTML =
+            flagSVGs[lang] +
+            `<span class="lang-text">${lang.toUpperCase()}</span>`;
         }
 
         document.documentElement.lang = lang;
-        localStorage.setItem('preferredLanguage', lang);
-    }
+        localStorage.setItem("preferredLanguage", lang);
+      }
 
-    // Dil hadisələri
-    function setupLanguageHandlers() {
-        document.querySelectorAll('.lang-option').forEach(option => {
-            option.addEventListener('click', function(e) {
-                e.preventDefault();
-                updateLanguage(this.dataset.lang);
-                
-                if (window.innerWidth <= 992) {
-                    const dropdown = this.closest('.has-dropdown');
-                    if (dropdown) dropdown.classList.remove('dropdown-active');
-                }
-            });
+      // Setup language handlers
+      function setupLanguageHandlers() {
+        document.querySelectorAll(".lang-option").forEach((option) => {
+          option.addEventListener("click", function (e) {
+            e.preventDefault();
+            updateLanguage(this.dataset.lang);
+
+            if (window.innerWidth <= 992) {
+              const dropdown = this.closest(".has-dropdown");
+              if (dropdown) dropdown.classList.remove("dropdown-active");
+            }
+          });
         });
 
-        const mobileLangBtn = document.getElementById('mobileLangBtn');
+        const mobileLangBtn = document.getElementById("mobileLangBtn");
         if (mobileLangBtn) {
-            mobileLangBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                const langs = ['az', 'en', 'ru'];
-                const currentIndex = langs.indexOf(currentLang);
-                const nextIndex = (currentIndex + 1) % langs.length;
-                updateLanguage(langs[nextIndex]);
-            });
+          mobileLangBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const langs = ["az", "en", "ru"];
+            const currentIndex = langs.indexOf(currentLang);
+            const nextIndex = (currentIndex + 1) % langs.length;
+            updateLanguage(langs[nextIndex]);
+          });
         }
-    }
+      }
 
-    // Mobil menyu
-    function setupMobileMenu() {
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        
+      // Setup mobile menu
+      function setupMobileMenu() {
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mainNav = document.getElementById("mainNav");
+
         if (mobileMenuBtn && mainNav) {
-            mobileMenuBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                this.classList.toggle('active');
-                mainNav.classList.toggle('active');
-            });
+          mobileMenuBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.classList.toggle("active");
+            mainNav.classList.toggle("active");
+          });
 
-            const dropdownItems = document.querySelectorAll('.has-dropdown');
-            
-            dropdownItems.forEach(item => {
-                const link = item.querySelector('.nav-link');
-                
-                if (link) {
-                    link.addEventListener('click', function(e) {
-                        if (window.innerWidth <= 992) {
-                            e.preventDefault();
-                            item.classList.toggle('dropdown-active');
-                            
-                            dropdownItems.forEach(otherItem => {
-                                if (otherItem !== item) {
-                                    otherItem.classList.remove('dropdown-active');
-                                }
-                            });
-                        }
-                    });
+          const dropdownItems = document.querySelectorAll(".has-dropdown");
+
+          dropdownItems.forEach((item) => {
+            const link = item.querySelector(".nav-link");
+
+            if (link) {
+              link.addEventListener("click", function (e) {
+                if (window.innerWidth <= 992) {
+                  e.preventDefault();
+                  item.classList.toggle("dropdown-active");
+
+                  dropdownItems.forEach((otherItem) => {
+                    if (otherItem !== item) {
+                      otherItem.classList.remove("dropdown-active");
+                    }
+                  });
                 }
-            });
-
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.header')) {
-                    mainNav.classList.remove('active');
-                    mobileMenuBtn.classList.remove('active');
-                    dropdownItems.forEach(item => item.classList.remove('dropdown-active'));
-                }
-            });
-
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 992) {
-                    mainNav.classList.remove('active');
-                    mobileMenuBtn.classList.remove('active');
-                    dropdownItems.forEach(item => item.classList.remove('dropdown-active'));
-                }
-            });
-        }
-    }
-
-    // Scroll effektləri
-    function setupScrollEffects() {
-        const header = document.querySelector('.header');
-        const scrollToTop = document.getElementById('scrollToTop');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
-                if (header) header.classList.add('scrolled');
-                if (scrollToTop) scrollToTop.classList.add('show');
-            } else {
-                if (header) header.classList.remove('scrolled');
-                if (scrollToTop) scrollToTop.classList.remove('show');
+              });
             }
+          });
+
+          document.addEventListener("click", function (e) {
+            if (!e.target.closest(".header")) {
+              mainNav.classList.remove("active");
+              mobileMenuBtn.classList.remove("active");
+              dropdownItems.forEach((item) =>
+                item.classList.remove("dropdown-active"),
+              );
+            }
+          });
+
+          window.addEventListener("resize", function () {
+            if (window.innerWidth > 992) {
+              mainNav.classList.remove("active");
+              mobileMenuBtn.classList.remove("active");
+              dropdownItems.forEach((item) =>
+                item.classList.remove("dropdown-active"),
+              );
+            }
+          });
+        }
+      }
+
+      // Setup scroll effects
+      function setupScrollEffects() {
+        const header = document.querySelector(".header");
+        const scrollToTop = document.getElementById("scrollToTop");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 100) {
+            if (header) header.classList.add("scrolled");
+            if (scrollToTop) scrollToTop.classList.add("show");
+          } else {
+            if (header) header.classList.remove("scrolled");
+            if (scrollToTop) scrollToTop.classList.remove("show");
+          }
         });
 
         if (scrollToTop) {
-            scrollToTop.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
+          scrollToTop.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
         }
-    }
+      }
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
         });
-    });
+      });
 
-    // Intersection Observer
-    const observerOptions = {
+      // Intersection Observer for animations
+      const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
         });
-    }, observerOptions);
+      }, observerOptions);
 
-    document.querySelectorAll('.capability-card, .standard-card').forEach(el => {
-        observer.observe(el);
-    });
+      document
+        .querySelectorAll(".capability-card, .standard-card")
+        .forEach((el) => {
+          observer.observe(el);
+        });
 
-    // Initialize
-    document.addEventListener('DOMContentLoaded', function() {
-        const savedLang = localStorage.getItem('preferredLanguage');
+      // Initialize
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedLang = localStorage.getItem("preferredLanguage");
         if (savedLang && translations[savedLang]) {
-            updateLanguage(savedLang);
+          updateLanguage(savedLang);
         }
 
         setupLanguageHandlers();
         setupMobileMenu();
         setupScrollEffects();
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>

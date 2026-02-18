@@ -1,1756 +1,1930 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="az">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EVERSHOP - Engineering & Technical Consulting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/favicon/fav.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      :root {
+        --primary: #ff6b35;
+        --dark: rgb(22, 44, 71);
+        --dark-secondary: rgba(30, 52, 79, 1);
+        --text: #e8ecf1;
+        --text-muted: #8b96a5;
+        --accent: #4a9eff;
+        --primary-blue: #0a2342;
+        --accent-orange: #e85d04;
+        --steel-gray: #2c3e50;
+        --light-gray: #ecf0f1;
+        --white: #ffffff;
+        --dark-bg: #0c2b4b;
+        --footer-dark: #0a2342;
+        --transition: all 0.3s ease;
+      }
 
-        :root {
-            --primary: #FF6B35;
-            --dark: rgb(22,44,71);
-            --dark-secondary: rgba(30,52,79,1);
-            --text: #E8ECF1;
-            --text-muted: #8B96A5;
-            --accent: #4A9EFF;
-            
-            --primary-blue: #0A2342;
-            --accent-orange: #E85D04;
-            --steel-gray: #2C3E50;
-            --light-gray: #ECF0F1;
-            --white: #FFFFFF;
-            --dark-bg: #0c2b4b;
-            --footer-dark: #081b2c;
-            --transition: all 0.3s ease;
-            
-            --primary-dark: #1a2332;
-            --secondary-dark: #2c3e50;
-            --accent-orange-light: #ff8557;
-            --text-white: #ffffff;
-            --text-light: #a8b2c1;
-            --bg-dark: #0f1419;
-            --bg-section: #141922;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--dark);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
 
-        /* ========== HEADER STYLES ========== */
-        .header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--steel-gray) 100%);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 9999;
-            transition: var(--transition);
-        }
+      /* ========== HEADER ========== */
+      .header {
+        background: var(--primary-blue);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        transition: var(--transition);
+      }
 
-        .header.scrolled {
-            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
-        }
+      .header.scrolled {
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+      }
 
+      .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 85px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .logo-image {
+        height: 75px;
+        width: auto;
+        object-fit: contain;
+        transition: filter 0.3s ease;
+      }
+
+      .logo:hover .logo-image {
+        filter: brightness(1.2);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      .nav-item {
+        position: relative;
+      }
+
+      .nav-link {
+        font-family: "Montserrat", sans-serif;
+        text-decoration: none;
+        color: var(--white);
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition);
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--accent-orange);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--accent-orange);
+      }
+
+      .nav-link:hover::before {
+        width: 80%;
+      }
+
+      .dropdown-icon {
+        display: inline-block;
+        margin-left: 4px;
+        transition: transform 0.3s ease;
+        font-size: 0.75rem;
+      }
+
+      .nav-item:hover .dropdown-icon {
+        transform: rotate(180deg);
+      }
+
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--white);
+        min-width: 280px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: var(--transition);
+        margin-top: 0.5rem;
+        border-top: 3px solid var(--accent-orange);
+        overflow: hidden;
+      }
+
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-list {
+        list-style: none;
+        padding: 0.5rem 0;
+      }
+
+      .dropdown-link {
+        display: block;
+        padding: 0.875rem 1.5rem;
+        color: var(--primary-blue);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: var(--transition);
+        border-left: 3px solid transparent;
+      }
+
+      .dropdown-link:hover {
+        background: var(--light-gray);
+        border-left-color: var(--accent-orange);
+        padding-left: 1.75rem;
+      }
+
+      .mobile-controls {
+        display: none;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        transition: var(--transition);
+      }
+
+      .mobile-menu-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .mobile-menu-btn span {
+        width: 28px;
+        height: 3px;
+        background: var(--white);
+        border-radius: 2px;
+        transition: var(--transition);
+      }
+
+      .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      .language-dropdown .flag-icon {
+        width: 24px;
+        height: 17px;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+      .lang-text {
+        font-weight: 700;
+      }
+      .lang-dropdown {
+        min-width: 220px;
+      }
+      .lang-dropdown .dropdown-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .lang-dropdown .flag-icon {
+        width: 28px;
+        height: 20px;
+      }
+
+      .mobile-lang-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        gap: 6px;
+        transition: var(--transition);
+      }
+
+      .mobile-lang-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .mobile-lang-btn .flag-icon {
+        width: 22px;
+        height: 16px;
+      }
+      .mobile-lang-btn .lang-text {
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      /* ========== HERO ========== */
+      .hero {
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #162c47 0%, #1a3a5a 100%);
+        position: relative;
+        overflow: hidden;
+        margin-top: 85px;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary),
+          transparent
+        );
+      }
+
+      .hero-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .company-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+        color: #ffffff;
+      }
+
+      .hero-content .tagline {
+        font-size: 1.3rem;
+        color: var(--text);
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      /* ========== CONTENT ========== */
+      .content-section {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ========== SERVICES GRID ========== */
+      .services-section {
+        padding: 4rem 0;
+      }
+
+      .services-section h2 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 14px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+      }
+
+      .service-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .service-card:hover .service-image {
+        transform: scale(1.05);
+      }
+
+      .service-content {
+        padding: 1.8rem 1.5rem;
+      }
+
+      .service-icon {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 107, 53, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .service-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+      }
+
+      .service-description {
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.7;
+        font-size: 1rem;
+      }
+
+      /* ========== STANDARDS ========== */
+      .standards-section {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 16px;
+        padding: 3rem;
+        margin: 0 2rem 4rem;
+        max-width: calc(1400px - 4rem);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .standards-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 1rem;
+      }
+
+      .standards-description {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+      }
+
+      .standards-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .standard-badge {
+        background: rgba(255, 107, 53, 0.1);
+        border: 2px solid var(--primary);
+        padding: 0.8rem 1.8rem;
+        border-radius: 50px;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s;
+        cursor: default;
+      }
+
+      .standard-badge:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      /* ========== GALLERY ========== */
+      .gallery-section {
+        padding: 4rem 0;
+      }
+
+      .gallery-section h2 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .gallery-item {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        position: relative;
+        aspect-ratio: 4/3;
+        cursor: pointer;
+      }
+
+      .gallery-item:hover {
+        border-color: var(--primary);
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9) 0%,
+          transparent 100%
+        );
+        padding: 2rem 1.5rem 1.5rem;
+        color: white;
+        transform: translateY(100%);
+        transition: transform 0.4s;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        transform: translateY(0);
+      }
+
+      .gallery-title {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      /* ========== FOOTER ========== */
+      .site-footer {
+        background: var(--footer-dark);
+        color: #ffffff;
+        font-size: 1rem;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 5rem;
+      }
+
+      .footer-top {
+        padding: 50px 0 35px;
+      }
+
+      .footer-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+        gap: 30px;
+      }
+
+      .footer-logo {
+        width: 180px;
+        height: auto;
+        margin-bottom: 12px;
+        transition: var(--transition);
+      }
+
+      .footer-logo:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+
+      .footer-widget p {
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+      }
+
+      .footer-widget h4 {
+        color: #ffffff;
+        font-weight: 600;
+        margin-bottom: 18px;
+        position: relative;
+        padding-bottom: 10px;
+        font-size: 1.1rem;
+      }
+
+      .footer-widget h4::after {
+        content: "";
+        width: 36px;
+        height: 2px;
+        background: var(--accent-orange);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      .footer-widget ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-widget ul li {
+        margin-bottom: 8px;
+      }
+
+      .footer-widget ul li a {
+        color: rgba(255, 255, 255, 0.85);
+        transition: color 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.95rem;
+      }
+
+      .footer-widget ul li a:hover {
+        color: var(--accent-orange);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .footer-social a {
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.12);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .footer-social a:hover {
+        background: var(--accent-orange);
+        transform: translateY(-4px);
+      }
+
+      .footer-contact {
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-contact li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 10px;
+      }
+
+      .footer-contact li i {
+        color: var(--accent-orange);
+        flex-shrink: 0;
+        margin-top: 3px;
+        width: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .footer-contact li a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        flex: 1;
+        font-size: 0.95rem;
+      }
+
+      .footer-contact li a:hover {
+        color: var(--accent-orange);
+      }
+
+      .footer-bottom {
+        background: #050f1c;
+        padding: 18px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+      }
+      .footer-credit {
+        margin-left: 5px;
+      }
+
+      .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--accent-orange);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: var(--transition);
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
+      }
+
+      .scroll-to-top:hover {
+        background: rgb(239, 53, 32);
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
+      }
+      .scroll-to-top.show {
+        display: flex;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 992px) {
         .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 85px;
+          padding: 0 1rem;
+          min-height: 70px;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
         .logo-image {
-            height: 75px;
-            width: auto;
-            object-fit: contain;
-            transition: filter 0.3s ease;
-            margin-right: 20px;
+          height: 60px;
         }
-
-        .logo:hover .logo-image {
-            filter: brightness(1.2);
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-link {
-            font-family: 'Montserrat', sans-serif;
-            text-decoration: none;
-            color: var(--white);
-            padding: 0.75rem 1.25rem;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: var(--transition);
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--accent-orange);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--accent-orange);
-        }
-
-        .nav-link:hover::before {
-            width: 80%;
-        }
-
-        .dropdown-icon {
-            display: inline-block;
-            margin-left: 4px;
-            transition: transform 0.3s ease;
-            font-size: 0.75rem;
-        }
-
-        .nav-item:hover .dropdown-icon {
-            transform: rotate(180deg);
-        }
-
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--white);
-            min-width: 280px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-            border-radius: 8px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: var(--transition);
-            margin-top: 0.5rem;
-            border-top: 3px solid var(--accent-orange);
-            overflow: hidden;
-        }
-
-        .nav-item:hover .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-list {
-            list-style: none;
-            padding: 0.5rem 0;
-        }
-
-        .dropdown-link {
-            display: block;
-            padding: 0.875rem 1.5rem;
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: var(--transition);
-            border-left: 3px solid transparent;
-        }
-
-        .dropdown-link:hover {
-            background: var(--light-gray);
-            border-left-color: var(--accent-orange);
-            padding-left: 1.75rem;
-        }
-
         .mobile-controls {
-            display: none;
-            align-items: center;
-            gap: 12px;
+          display: flex;
         }
-
-        .mobile-menu-btn {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 4px;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-menu-btn span {
-            width: 28px;
-            height: 3px;
-            background: var(--white);
-            border-radius: 2px;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(7px, 7px);
-        }
-
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        .language-dropdown .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .language-dropdown .flag-icon {
-            width: 24px;
-            height: 17px;
-            border-radius: 2px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        .lang-text {
-            font-weight: 700;
-        }
-
-        .lang-dropdown {
-            min-width: 220px;
-        }
-
-        .lang-dropdown .dropdown-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .lang-dropdown .flag-icon {
-            width: 28px;
-            height: 20px;
-        }
-
         .mobile-lang-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            gap: 6px;
-            transition: var(--transition);
+          display: flex;
         }
-
-        .mobile-lang-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .nav-list .language-dropdown {
+          display: none;
         }
-
-        .mobile-lang-btn .flag-icon {
-            width: 22px;
-            height: 16px;
+        .nav {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          right: 0;
+          background: var(--primary-blue);
+          max-height: 0;
+          overflow: hidden;
+          transition:
+            max-height 0.4s ease,
+            box-shadow 0.4s ease;
+          box-shadow: none;
         }
-
-        .mobile-lang-btn .lang-text {
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 600;
+        .nav.active {
+          max-height: calc(100vh - 70px);
+          overflow-y: auto;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
-
-        /* Hero Section */
+        .nav-list {
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+          padding: 1rem 0;
+        }
+        .nav-item {
+          width: 100%;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-link {
+          padding: 1rem 1.5rem;
+          font-size: 1.05rem;
+          width: 100%;
+          justify-content: space-between;
+        }
+        .nav-link::before {
+          display: none;
+        }
+        .dropdown {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          margin-top: 0;
+          background: rgba(255, 255, 255, 0.05);
+          border-top: none;
+          border-radius: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+        .nav-item.dropdown-active .dropdown {
+          max-height: 500px;
+        }
+        .dropdown-link {
+          color: var(--white);
+          padding: 0.875rem 2.5rem;
+          font-size: 0.95rem;
+          border-left: 3px solid transparent;
+        }
+        .dropdown-link:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
         .hero {
-            position: relative;
-            height: 85vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-dark) 100%);
-            overflow: hidden;
-            margin-top: 85px;
+          margin-top: 70px;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 60%;
-            background: url('https://images.unsplash.com/photo-1581092918484-8313e1f7e8c6?w=1200&h=800&fit=crop') center/cover;
-            opacity: 0.25;
-            z-index: 1;
+        .hero-content h1 {
+          font-size: 2.5rem;
         }
-
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            width: 100%;
-        }
-
-        .hero-text {
-            max-width: 650px;
-            padding-left: 3rem;
-            border-left: 4px solid var(--accent-orange);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--text-white);
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--accent-orange);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-description {
-            font-size: 1.05rem;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 5rem 2rem;
-        }
-
-        .section-alt {
-            background: var(--bg-section);
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: var(--primary-dark);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-orange);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .service-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .service-card:hover .service-image {
-            transform: scale(1.05);
-        }
-
-        .service-content {
-            padding: 1.8rem 1.5rem;
-        }
-
-        .service-icon {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 107, 53, 0.1);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-orange);
-            font-size: 1.3rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .service-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-            color: var(--text-white);
-            line-height: 1.3;
-        }
-
-        .service-description {
-            color: var(--text-light);
-            line-height: 1.6;
-            font-size: 0.9rem;
-        }
-
-        /* Standards Section */
-        .standards-section {
-            background: var(--primary-dark);
-            padding: 4rem 2rem;
-        }
-
-        .standards-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .standards-header {
-            margin-bottom: 2rem;
-        }
-
-        .standards-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-white);
-            margin-bottom: 1rem;
-        }
-
-        .standards-description {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-        }
-
-        .standards-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .standard-badge {
-            background: rgba(255, 107, 53, 0.1);
-            border: 2px solid var(--accent-orange);
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
-            color: var(--accent-orange);
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .standard-badge:hover {
-            background: var(--accent-orange);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Gallery Grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            aspect-ratio: 4/3;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
-            padding: 2rem 1.5rem 1.5rem;
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.4s;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-
-        .gallery-title {
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        /* ========== FOOTER STYLES ========== */
-        .site-footer {
-            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--footer-dark) 100%);
-            color: #ffffff;
-            font-size: 1rem;
-            width: 100%;
-            overflow: hidden;
-            margin-top: 5rem;
-        }
-
-        .footer-top {
-            padding: 80px 0 50px;
-        }
-
         .footer-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
-            gap: 40px;
+          grid-template-columns: repeat(2, 1fr);
         }
-
-        .footer-logo {
-            width: 190px;
-            height: auto;
-            margin-bottom: 20px;
-            transition: var(--transition);
+        .services-grid {
+          grid-template-columns: 1fr;
         }
+      }
 
-        .footer-logo:hover {
-            transform: scale(1.05);
-            filter: brightness(1.2);
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.2rem;
         }
-
-        .footer-widget p {
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px;
+        .hero-content .tagline {
+          font-size: 1.1rem;
         }
-
-        .footer-widget h4 {
-            color: #ffffff;
-            font-weight: 600;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
+        .content-section {
+          padding: 3rem 1.5rem;
         }
-
-        .footer-widget h4::after {
-            content: "";
-            width: 36px;
-            height: 2px;
-            background: var(--accent-orange);
-            position: absolute;
-            left: 0;
-            bottom: 0;
+        .standards-section {
+          padding: 2rem 1.5rem;
+          margin: 0 1rem 3rem;
         }
-
-        .footer-widget ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .standards-list {
+          gap: 1rem;
         }
-
-        .footer-widget ul li {
-            margin-bottom: 12px;
+        .standard-badge {
+          font-size: 0.9rem;
+          padding: 0.6rem 1.4rem;
         }
-
-        .footer-widget ul li a {
-            color: rgba(255, 255, 255, 0.9);
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-block;
+        .footer-row {
+          grid-template-columns: 1fr;
+          gap: 25px;
         }
-
-        .footer-widget ul li a:hover {
-            color: var(--accent-orange);
-            padding-left: 6px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .footer-social a {
-            width: 38px;
-            height: 38px;
-            background: rgba(255, 255, 255, 0.12);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: #ffffff;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .footer-social a:hover {
-            background: var(--accent-orange);
-            transform: translateY(-4px);
-        }
-
-        .footer-contact {
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-contact li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 15px;
-        }
-
-        .footer-contact li i {
-            color: var(--accent-orange);
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-
-        .footer-bottom {
-            background: #050f1c;
-            padding: 20px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
         .footer-bottom-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
         }
-
-        .footer-bottom p {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.85);
+        .gallery-grid {
+          grid-template-columns: 1fr;
         }
-
-        .footer-credit {
-            margin-left: 10px;
+        .footer-top {
+          padding: 40px 0 30px;
         }
+      }
 
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--accent-orange);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            transition: var(--transition);
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
+      @media (max-width: 576px) {
+        .header-content {
+          padding: 0 0.75rem;
         }
-
-        .scroll-to-top:hover {
-            background: rgb(239,53,32);
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
+        .logo-image {
+          height: 50px;
         }
-
-        .scroll-to-top.show {
-            display: flex;
+        .mobile-lang-btn {
+          padding: 5px 8px;
         }
+      }
 
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
         }
-
-        @media (max-width: 992px) {
-            .header-content {
-                padding: 0 1rem;
-                min-height: 70px;
-            }
-
-            .logo-image {
-                height: 60px;
-            }
-
-            .mobile-controls {
-                display: flex;
-            }
-
-            .mobile-lang-btn {
-                display: flex;
-            }
-
-            .nav-list .language-dropdown {
-                display: none;
-            }
-
-            .nav {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--primary-blue);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.4s ease, box-shadow 0.4s ease;
-                box-shadow: none;
-            }
-
-            .nav.active {
-                max-height: calc(100vh - 70px);
-                overflow-y: auto;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            }
-
-            .nav-list {
-                flex-direction: column;
-                width: 100%;
-                gap: 0;
-                padding: 1rem 0;
-            }
-
-            .nav-item {
-                width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .nav-link {
-                padding: 1rem 1.5rem;
-                font-size: 1.05rem;
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .nav-link::before {
-                display: none;
-            }
-
-            .dropdown {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                margin-top: 0;
-                background: rgba(255, 255, 255, 0.05);
-                border-top: none;
-                border-radius: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-            }
-
-            .nav-item.dropdown-active .dropdown {
-                max-height: 500px;
-            }
-
-            .dropdown-list {
-                padding: 0;
-            }
-
-            .dropdown-link {
-                color: var(--white);
-                padding: 0.875rem 2.5rem;
-                font-size: 0.95rem;
-                border-left: 3px solid transparent;
-            }
-
-            .dropdown-link:hover {
-                background: rgba(255, 255, 255, 0.1);
-            }
-
-            .hero {
-                margin-top: 70px;
-            }
-
-            .footer-row {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        @media (max-width: 768px) {
-            .hero-text {
-                padding-left: 1.5rem;
-            }
+      .hero-content {
+        animation: fadeInUp 0.8s ease-out;
+      }
 
-            .hero {
-                height: auto;
-                min-height: 70vh;
-                padding: 4rem 0;
-            }
-
-            .section {
-                padding: 3rem 1.5rem;
-            }
-
-            .services-grid,
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .standards-list {
-                gap: 1rem;
-            }
-
-            .standard-badge {
-                font-size: 0.9rem;
-                padding: 0.6rem 1.4rem;
-            }
-
-            .footer-top {
-                padding: 60px 0 40px;
-            }
-
-            .footer-row {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-bottom-content {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .header-content {
-                padding: 0 0.75rem;
-            }
-
-            .logo-image {
-                height: 50px;
-            }
-
-            .mobile-lang-btn {
-                padding: 5px 5px;
-            }
-
-            .mobile-lang-btn .flag-icon {
-                width: 20px;
-                height: 14px;
-            }
-
-            .mobile-lang-btn .lang-text {
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-in {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
+      .service-card,
+      .gallery-item {
+        animation: fadeInUp 0.8s ease-out;
+        animation-fill-mode: both;
+      }
+      .service-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .service-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .service-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .service-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- HEADER -->
     <header class="header">
-        <div class="header-content">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo/logo.png" alt="EVERSHOP MMC" class="logo-image">
-            </a>
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <img
+            src="assets/images/logo/logo.png"
+            alt="EVERSHOP MMC"
+            class="logo-image"
+          />
+        </a>
 
-            <div class="mobile-controls">
-                <button class="mobile-lang-btn" id="mobileLangBtn">
-                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#00b9e4" d="M0 0h640v160H0z"/>
-                        <path fill="#ed2939" d="M0 160h640v160H0z"/>
-                        <path fill="#3f9c35" d="M0 320h640v160H0z"/>
-                        <circle cx="304" cy="240" r="72" fill="#fff"/>
-                        <circle cx="320" cy="240" r="60" fill="#ed2939"/>
-                        <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
-                    </svg>
-                    <span class="lang-text">AZ</span>
-                </button>
-
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-
-            <nav class="nav" id="mainNav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="about.html" class="nav-link" data-i18n="about">Haqqımızda</a>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#products" class="nav-link">
-                            <span data-i18n="products">Məhsullar</span>
-                            <span class="dropdown-icon">▼</span>
-                        </a>
-                        <ul class="dropdown">
-                            <li class="dropdown-list">
-                                <a href="custom.html" class="dropdown-link" data-i18n="fabrication">Xüsusi Konstruksiyaların İstehsalı</a>
-                                <a href="static.html" class="dropdown-link" data-i18n="staticEquipment">Statik Avadanlıq</a>
-                                <a href="packages.html" class="dropdown-link" data-i18n="skidPackages">Sənaye Skid Paketləri</a>
-                                <a href="parts.html" class="dropdown-link" data-i18n="machinedParts">Mexaniki Hissələr</a>
-                                <a href="supply.html" class="dropdown-link" data-i18n="equipmentSupply">Sənaye Avadanlığı Təchizatı</a>
-                                <a href="steel.html" class="dropdown-link" data-i18n="steelPiping">Polad və Boru Aksesuarları</a>
-                                <a href="sealing.html" class="dropdown-link" data-i18n="sealing">Kipləndirici Elementlər</a>
-                                <a href="oem.html" class="dropdown-link" data-i18n="oemParts">OEM Hissələri</a>
-                                <a href="prototype.html" class="dropdown-link" data-i18n="rdPrototype">Tədqiqat və Prototip İstehsalı</a>
-                                <a href="https://www.evershop.az/az/shop" class="dropdown-link">Shopping</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-dropdown">
-                        <a href="#services" class="nav-link">
-                            <span data-i18n="services">Xidmətlər</span>
-                            <span class="dropdown-icon">▼</span>
-                        </a>
-                        <ul class="dropdown">
-                            <li class="dropdown-list">
-                                <a href="design.html" class="dropdown-link" data-i18n="designEngineering">Dizayn və Mühəndislik</a>
-                                <a href="installation.html" class="dropdown-link" data-i18n="installation">Quraşdırma və İstismara Verilmə</a>
-                                <a href="repair.html" class="dropdown-link" data-i18n="repairMaintenance">Təmir və Texniki Xidmət</a>
-                                <a href="heat.html" class="dropdown-link" data-i18n="heatTreatment">İstilik Emalı</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="market.html" class="nav-link">
-                            <span data-i18n="markets">Bazar Sektorları</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="career.html" class="nav-link" data-i18n="career">Karyera</a>
-                    </li>
-                    <li class="nav-item has-dropdown language-dropdown">
-                        <a href="#" class="nav-link" id="currentLangBtn">
-                            <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="#00b9e4" d="M0 0h640v160H0z"/>
-                                <path fill="#ed2939" d="M0 160h640v160H0z"/>
-                                <path fill="#3f9c35" d="M0 320h640v160H0z"/>
-                                <circle cx="304" cy="240" r="72" fill="#fff"/>
-                                <circle cx="320" cy="240" r="60" fill="#ed2939"/>
-                                <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
-                            </svg>
-                            <span class="lang-text">AZ</span>
-                            <span class="dropdown-icon">▼</span>
-                        </a>
-                        <ul class="dropdown lang-dropdown">
-                            <li class="dropdown-list">
-                                <a href="#" class="dropdown-link lang-option" data-lang="az">
-                                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#00b9e4" d="M0 0h640v160H0z"/>
-                                        <path fill="#ed2939" d="M0 160h640v160H0z"/>
-                                        <path fill="#3f9c35" d="M0 320h640v160H0z"/>
-                                        <circle cx="304" cy="240" r="72" fill="#fff"/>
-                                        <circle cx="320" cy="240" r="60" fill="#ed2939"/>
-                                        <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
-                                    </svg>
-                                    <span data-i18n="langAz">Azərbaycan dili</span>
-                                </a>
-                                <a href="#" class="dropdown-link lang-option" data-lang="en">
-                                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#012169" d="M0 0h640v480H0z"/>
-                                        <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-                                        <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-                                        <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-                                        <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
-                                    </svg>
-                                    <span data-i18n="langEn">English</span>
-                                </a>
-                                <a href="#" class="dropdown-link lang-option" data-lang="ru">
-                                    <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#fff" d="M0 0h640v160H0z"/>
-                                        <path fill="#0039a6" d="M0 160h640v160H0z"/>
-                                        <path fill="#d52b1e" d="M0 320h640v160H0z"/>
-                                    </svg>
-                                    <span data-i18n="langRu">Русский язык</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+        <div class="mobile-controls">
+          <button class="mobile-lang-btn" id="mobileLangBtn">
+            <svg
+              class="flag-icon"
+              viewBox="0 0 640 480"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path fill="#00b9e4" d="M0 0h640v160H0z" />
+              <path fill="#ed2939" d="M0 160h640v160H0z" />
+              <path fill="#3f9c35" d="M0 320h640v160H0z" />
+              <circle cx="304" cy="240" r="72" fill="#fff" />
+              <circle cx="320" cy="240" r="60" fill="#ed2939" />
+              <path
+                fill="#fff"
+                d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
+              />
+            </svg>
+            <span class="lang-text">AZ</span>
+          </button>
+          <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Toggle Menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
         </div>
+
+        <nav class="nav" id="mainNav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="about.html" class="nav-link" data-i18n="about"
+                >Haqqımızda</a
+              >
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="#products" class="nav-link">
+                <span data-i18n="products">Məhsullar</span>
+                <span class="dropdown-icon">▼</span>
+              </a>
+              <ul class="dropdown">
+                <li class="dropdown-list">
+                  <a
+                    href="custom.html"
+                    class="dropdown-link"
+                    data-i18n="fabrication"
+                    >Xüsusi Konstruksiyaların İstehsalı</a
+                  >
+                  <a
+                    href="static.html"
+                    class="dropdown-link"
+                    data-i18n="staticEquipment"
+                    >Statik Avadanlıq</a
+                  >
+                  <a
+                    href="packages.html"
+                    class="dropdown-link"
+                    data-i18n="skidPackages"
+                    >Sənaye Skid Paketləri</a
+                  >
+                  <a
+                    href="parts.html"
+                    class="dropdown-link"
+                    data-i18n="machinedParts"
+                    >Mexaniki Hissələr</a
+                  >
+                  <a
+                    href="supply.html"
+                    class="dropdown-link"
+                    data-i18n="equipmentSupply"
+                    >Sənaye Avadanlığı Təchizatı</a
+                  >
+                  <a
+                    href="steel.html"
+                    class="dropdown-link"
+                    data-i18n="steelPiping"
+                    >Polad və Boru Aksesuarları</a
+                  >
+                  <a
+                    href="sealing.html"
+                    class="dropdown-link"
+                    data-i18n="sealing"
+                    >Kipləndirici Elementlər</a
+                  >
+                  <a href="oem.html" class="dropdown-link" data-i18n="oemParts"
+                    >OEM Hissələri</a
+                  >
+                  <a
+                    href="prototype.html"
+                    class="dropdown-link"
+                    data-i18n="rdPrototype"
+                    >Tədqiqat və Prototip İstehsalı</a
+                  >
+                  <a
+                    href="https://www.evershop.az/az/shop"
+                    class="dropdown-link"
+                    >Shopping</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="#services" class="nav-link">
+                <span data-i18n="services">Xidmətlər</span>
+                <span class="dropdown-icon">▼</span>
+              </a>
+              <ul class="dropdown">
+                <li class="dropdown-list">
+                  <a
+                    href="design.html"
+                    class="dropdown-link"
+                    data-i18n="designEngineering"
+                    >Dizayn və Mühəndislik</a
+                  >
+                  <a
+                    href="installation.html"
+                    class="dropdown-link"
+                    data-i18n="installation"
+                    >Quraşdırma və İstismara Verilmə</a
+                  >
+                  <a
+                    href="repair.html"
+                    class="dropdown-link"
+                    data-i18n="repairMaintenance"
+                    >Təmir və Texniki Xidmət</a
+                  >
+                  <a
+                    href="heat.html"
+                    class="dropdown-link"
+                    data-i18n="heatTreatment"
+                    >İstilik Emalı</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="market.html" class="nav-link"
+                ><span data-i18n="markets">Bazar Sektorları</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="career.html" class="nav-link" data-i18n="career"
+                >Karyera</a
+              >
+            </li>
+            <li class="nav-item has-dropdown language-dropdown">
+              <a href="#" class="nav-link" id="currentLangBtn">
+                <svg
+                  class="flag-icon"
+                  viewBox="0 0 640 480"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="#00b9e4" d="M0 0h640v160H0z" />
+                  <path fill="#ed2939" d="M0 160h640v160H0z" />
+                  <path fill="#3f9c35" d="M0 320h640v160H0z" />
+                  <circle cx="304" cy="240" r="72" fill="#fff" />
+                  <circle cx="320" cy="240" r="60" fill="#ed2939" />
+                  <path
+                    fill="#fff"
+                    d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
+                  />
+                </svg>
+                <span class="lang-text">AZ</span>
+                <span class="dropdown-icon">▼</span>
+              </a>
+              <ul class="dropdown lang-dropdown">
+                <li class="dropdown-list">
+                  <a href="#" class="dropdown-link lang-option" data-lang="az">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#00b9e4" d="M0 0h640v160H0z" />
+                      <path fill="#ed2939" d="M0 160h640v160H0z" />
+                      <path fill="#3f9c35" d="M0 320h640v160H0z" />
+                      <circle cx="304" cy="240" r="72" fill="#fff" />
+                      <circle cx="320" cy="240" r="60" fill="#ed2939" />
+                      <path
+                        fill="#fff"
+                        d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
+                      />
+                    </svg>
+                    <span data-i18n="langAz">Azərbaycan dili</span>
+                  </a>
+                  <a href="#" class="dropdown-link lang-option" data-lang="en">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#012169" d="M0 0h640v480H0z" />
+                      <path
+                        fill="#FFF"
+                        d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"
+                      />
+                      <path
+                        fill="#C8102E"
+                        d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"
+                      />
+                      <path
+                        fill="#FFF"
+                        d="M241 0v480h160V0H241zM0 160v160h640V160H0z"
+                      />
+                      <path
+                        fill="#C8102E"
+                        d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"
+                      />
+                    </svg>
+                    <span data-i18n="langEn">English</span>
+                  </a>
+                  <a href="#" class="dropdown-link lang-option" data-lang="ru">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#fff" d="M0 0h640v160H0z" />
+                      <path fill="#0039a6" d="M0 160h640v160H0z" />
+                      <path fill="#d52b1e" d="M0 320h640v160H0z" />
+                    </svg>
+                    <span data-i18n="langRu">Русский язык</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero">
+      <div class="hero-container">
         <div class="hero-content">
-            <div class="hero-text">
-                <h1 data-i18n="pageTitle">Mühəndislik və Texniki Məsləhətləşmə</h1>
-                <p class="hero-subtitle" data-i18n="pageSubtitle">İnfrastrukturun Arxasındakı Ağıl</p>
-                <p class="hero-description" data-i18n="pageDescription">EVERSHOP-da biz inanırıq ki, yüksək keyfiyyətli istehsal ilk qaynaqdan çox əvvəl başlayır. Beynəlxalq layihə idarəetməsi və tədarükdə geniş təcrübəyə malik peşəkar mühəndislər tərəfindən qurulmuş və rəhbərlik edilən şirkət olaraq, biz dünyanın ən tələbkar sənayeləri üçün tələb olunan texniki dəqiqliyi təmin edirik.</p>
-            </div>
+          <div class="company-name">EVERSHOP</div>
+          <h1 data-i18n="pageTitle">Mühəndislik və Texniki Məsləhətləşmə</h1>
+          <p class="tagline" data-i18n="pageSubtitle">
+            İnfrastrukturun Arxasındakı Ağıl
+          </p>
         </div>
+      </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section section-alt" id="services">
-        <div class="container">
-            <div class="services-grid">
-                <!-- Design & Calculation Services -->
-                <div class="service-card animate-in">
-                    <img src="assets/images/engineering/Skid .jpg" alt="Design & Calculation Services" class="service-image">
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-drafting-compass"></i>
-                        </div>
-                        <h3 class="service-title" data-i18n="service1Title">Dizayn və Hesablama Xidmətləri</h3>
-                        <p class="service-description" data-i18n="service1Desc">Komandamız təzyiq avadanlıqları, boru sistemləri və mürəkkəb strukturlar üçün hərtərəfli dizayn xidmətləri təqdim edir. Müasir mühəndislik metodologiyalarından istifadə edərək hər dizaynın performans, təhlükəsizlik və uzunömürlülük üçün optimallaşdırılmasını təmin edirik.</p>
-                    </div>
-                </div>
-
-                <!-- Material Science & Metallurgy -->
-                <div class="service-card animate-in">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (1).jpeg" alt="Material Science & Metallurgy Consulting" class="service-image">
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-atom"></i>
-                        </div>
-                        <h3 class="service-title" data-i18n="service2Title">Material Elmləri və Metallurgiya Məsləhətləşməsi</h3>
-                        <p class="service-description" data-i18n="service2Desc">Düzgün materialın seçilməsi kritik tətbiqlərdə uğur və uğursuzluq arasındakı fərqi təşkil edə bilər. Biz Ekzotik Ərintilər, Dupleks Poladlar və Korroziyaya Davamlı Örtüklərin yüksək təzyiq və yüksək temperatur mühitlərində davranışı üzrə ixtisaslaşaraq material seçimi üzrə ekspert məsləhətləşməsi təklif edirik.</p>
-                    </div>
-                </div>
-
-                <!-- Project Management -->
-                <div class="service-card animate-in">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (2).jpeg" alt="Project Management & Procurement Strategy" class="service-image">
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-tasks"></i>
-                        </div>
-                        <h3 class="service-title" data-i18n="service3Title">Layihə İdarəetməsi və Tədarük Strategiyası</h3>
-                        <p class="service-description" data-i18n="service3Desc">Qurucularımızın geniş ekspertizasından istifadə edərək, biz başdan-sona layihə idarəetməsi təklif edirik. Biz sadəcə istehsalçı kimi deyil, texniki tərəfdaş kimi çıxış edərək, başlanğıc material izlənməsindən son FAT (Zavod Qəbulu Sınağı) və çatdırılmaya qədər hər şeyə nəzarət edirik.</p>
-                    </div>
-                </div>
-
-                <!-- Reverse Engineering -->
-                <div class="service-card animate-in">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (3).jpeg" alt="Reverse Engineering" class="service-image">
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3 class="service-title" data-i18n="service4Title">Tərs Mühəndislik</h3>
-                        <p class="service-description" data-i18n="service4Desc">Biz köhnə komponentlər üçün ixtisaslaşdırılmış tərs mühəndislik xidmətləri təqdim edərək, zavodların köhnəlmiş hissələri tez-tez orijinal istehsalçının spesifikasiyalarını üstələyən müasir, "Yerli İstehsal Edilmiş" həllərlə əvəz etməsinə imkan veririk.</p>
-                    </div>
-                </div>
+    <!-- SERVICES -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <h2 data-i18n="servicesHeading">Mühəndislik Xidmətləri</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <img
+              src="assets/images/engineering/Skid .jpg"
+              alt="Design & Calculation Services"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">
+                <i class="fas fa-drafting-compass"></i>
+              </div>
+              <h3 class="service-title" data-i18n="service1Title">
+                Dizayn və Hesablama Xidmətləri
+              </h3>
+              <p class="service-description" data-i18n="service1Desc">
+                Komandamız təzyiq avadanlıqları, boru sistemləri və mürəkkəb
+                strukturlar üçün hərtərəfli dizayn xidmətləri təqdim edir.
+                Müasir mühəndislik metodologiyalarından istifadə edərək hər
+                dizaynın performans, təhlükəsizlik və uzunömürlülük üçün
+                optimallaşdırılmasını təmin edirik.
+              </p>
             </div>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (1).jpeg"
+              alt="Material Science & Metallurgy"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon"><i class="fas fa-atom"></i></div>
+              <h3 class="service-title" data-i18n="service2Title">
+                Material Elmləri və Metallurgiya Məsləhətləşməsi
+              </h3>
+              <p class="service-description" data-i18n="service2Desc">
+                Düzgün materialın seçilməsi kritik tətbiqlərdə uğur və
+                uğursuzluq arasındakı fərqi təşkil edə bilər. Biz Ekzotik
+                Ərintilər, Dupleks Poladlar və Korroziyaya Davamlı Örtüklərin
+                yüksək təzyiq və yüksək temperatur mühitlərində davranışı üzrə
+                ixtisaslaşaraq material seçimi üzrə ekspert məsləhətləşməsi
+                təklif edirik.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (2).jpeg"
+              alt="Project Management"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon"><i class="fas fa-tasks"></i></div>
+              <h3 class="service-title" data-i18n="service3Title">
+                Layihə İdarəetməsi və Tədarük Strategiyası
+              </h3>
+              <p class="service-description" data-i18n="service3Desc">
+                Qurucularımızın geniş ekspertizasından istifadə edərək, biz
+                başdan-sona layihə idarəetməsi təklif edirik. Biz sadəcə
+                istehsalçı kimi deyil, texniki tərəfdaş kimi çıxış edərək,
+                başlanğıc material izlənməsindən son FAT (Zavod Qəbulu Sınağı)
+                və çatdırılmaya qədər hər şeyə nəzarət edirik.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (3).jpeg"
+              alt="Reverse Engineering"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon"><i class="fas fa-cogs"></i></div>
+              <h3 class="service-title" data-i18n="service4Title">
+                Tərs Mühəndislik
+              </h3>
+              <p class="service-description" data-i18n="service4Desc">
+                Biz köhnə komponentlər üçün ixtisaslaşdırılmış tərs mühəndislik
+                xidmətləri təqdim edərək, zavodların köhnəlmiş hissələri tez-tez
+                orijinal istehsalçının spesifikasiyalarını üstələyən müasir,
+                "Yerli İstehsal Edilmiş" həllərlə əvəz etməsinə imkan veririk.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- International Standards Section -->
-    <section class="standards-section">
-        <div class="standards-content">
-            <div class="standards-header">
-                <h2 class="standards-title" data-i18n="standardsTitle">Beynəlxalq Standartlara Uyğunluq</h2>
-                <p class="standards-description" data-i18n="standardsDescription">Biz yerli istehsal və qlobal tələblər arasında körpü qururuq. Mühəndislik komandamız hər layihənin beynəlxalq kodlara ciddi şəkildə riayət etməsini təmin edir, o cümlədən:</p>
-            </div>
-
-            <div class="standards-list">
-                <div class="standard-badge">ASME (Section VIII, Div 1 & 2)</div>
-                <div class="standard-badge">ASTM</div>
-                <div class="standard-badge">EN</div>
-                <div class="standard-badge">DIN</div>
-                <div class="standard-badge">ISO</div>
-                <div class="standard-badge" data-i18n="gostBadge">GOST (Regional Sertifikat və Standartlar)</div>
-            </div>
+    <!-- STANDARDS -->
+    <div class="standards-section">
+      <h2 class="standards-title" data-i18n="standardsTitle">
+        Beynəlxalq Standartlara Uyğunluq
+      </h2>
+      <p class="standards-description" data-i18n="standardsDescription">
+        Biz yerli istehsal və qlobal tələblər arasında körpü qururuq.
+        Mühəndislik komandamız hər layihənin beynəlxalq kodlara ciddi şəkildə
+        riayət etməsini təmin edir, o cümlədən:
+      </p>
+      <div class="standards-list">
+        <div class="standard-badge">ASME (Section VIII, Div 1 & 2)</div>
+        <div class="standard-badge">ASTM</div>
+        <div class="standard-badge">EN</div>
+        <div class="standard-badge">DIN</div>
+        <div class="standard-badge">ISO</div>
+        <div class="standard-badge" data-i18n="gostBadge">
+          GOST (Regional Sertifikat və Standartlar)
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Gallery Section -->
-    <section class="section">
-        <div class="container">
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (4).jpeg" alt="Engineering Excellence">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" data-i18n="gallery1">Təzyiq Qablarının Dizaynı</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (5).jpeg" alt="Piping Systems">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" data-i18n="gallery2">Boru Sistemləri Mühəndisliyi</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54.jpeg" alt="Metallurgical Testing">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" data-i18n="gallery3">Metallurgiya Sınağı</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.55 (1).jpeg" alt="CAD Design">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" data-i18n="gallery4">CAD Mühəndisliyi</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.55 (2).jpeg" alt="Quality Control">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" data-i18n="gallery5">Keyfiyyət Nəzarəti</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-28 at 17.49.58.jpeg" alt="Welding Inspection">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" data-i18n="gallery6">Qaynaq Yoxlaması</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.55.jpeg" alt="Material Testing">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" data-i18n="gallery7">Material Sınaq Laboratoriyası</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-28 at 11.15.48 (1).jpeg" alt="Structural Analysis">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" data-i18n="gallery8">Struktur Analizi</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-28 at 11.15.48 (2).jpeg" alt="Factory Testing">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" data-i18n="gallery9">Zavod Qəbulu Sınağı</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/engineering/WhatsApp Image 2026-01-28 at 11.15.48.jpeg" alt="On-site Oversight">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" data-i18n="gallery10">Sahədə İstehsal Nəzarəti</div>
-                    </div>
-                </div>
+    <!-- GALLERY -->
+    <section class="gallery-section">
+      <div class="container">
+        <h2 data-i18n="galleryHeading">Layihə Nümunələri</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (4).jpeg"
+              alt="Engineering Excellence"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery1">
+                Təzyiq Qablarının Dizaynı
+              </div>
             </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (5).jpeg"
+              alt="Piping Systems"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery2">
+                Boru Sistemləri Mühəndisliyi
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54.jpeg"
+              alt="Metallurgical Testing"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery3">
+                Metallurgiya Sınağı
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.55 (1).jpeg"
+              alt="CAD Design"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery4">
+                CAD Mühəndisliyi
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.55 (2).jpeg"
+              alt="Quality Control"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery5">
+                Keyfiyyət Nəzarəti
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-28 at 17.49.58.jpeg"
+              alt="Welding Inspection"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery6">
+                Qaynaq Yoxlaması
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.55.jpeg"
+              alt="Material Testing"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery7">
+                Material Sınaq Laboratoriyası
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-28 at 11.15.48 (1).jpeg"
+              alt="Structural Analysis"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery8">
+                Struktur Analizi
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-28 at 11.15.48 (2).jpeg"
+              alt="Factory Testing"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery9">
+                Zavod Qəbulu Sınağı
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-28 at 11.15.48.jpeg"
+              alt="On-site Oversight"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery10">
+                Sahədə İstehsal Nəzarəti
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-row">
-                    <div class="footer-widget">
-                        <img src="assets/images/logo/logo.png" class="footer-logo" alt="EVERSHOP MMC">
-                        <p data-i18n="footerAbout">
-                            Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz 
-                            biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.
-                        </p>
-                        <div class="footer-social">
-                            <a href="https://wa.me/994702710066" target="_blank" aria-label="WhatsApp Evershop">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="https://www.instagram.com/evershopllc/" target="_blank" aria-label="Instagram Evershop">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/company/evershop-llc/" target="_blank" aria-label="LinkedIn Evershop">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="footer-widget">
-                        <h4 data-i18n="company">Şirkət</h4>
-                        <ul>
-                            <li><a href="about.html" data-i18n="about">Haqqımızda</a></li>
-                            <li><a href="#" data-i18n="products">Məhsullar</a></li>
-                            <li><a href="#" data-i18n="services">Xidmətlər</a></li>
-                            <li><a href="#" data-i18n="markets">Bazar Sektorları</a></li>
-                            <li><a href="#" data-i18n="career">Karyera</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-widget">
-                        <h4 data-i18n="solutions">Həllər</h4>
-                        <ul>
-                            <li><a href="#" data-i18n="engineeringDesign">Mühəndislik və Dizayn</a></li>
-                            <li><a href="#" data-i18n="manufacturing">İstehsal</a></li>
-                            <li><a href="#" data-i18n="industrialProcurement">Sənaye Tədarükü</a></li>
-                            <li><a href="#" data-i18n="projectManagement">Layihə İdarəetməsi</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-widget">
-                        <h4 data-i18n="contactInfo">Əlaqə</h4>
-                        <ul class="footer-contact">
-                            <li>
-                                <i class="fas fa-phone-alt"></i>
-                                <span>+994 70 271 00 66</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope"></i>
-                                <span>Sales@evershop.az</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span data-i18n="addressText">Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-industry"></i>
-                                <span data-i18n="workshopText">Salyan Highway, 32 km, Baku, Azerbaijan</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-row">
+            <div class="footer-widget">
+              <a href="index.html">
+                <img
+                  src="assets/images/logo/logo.png"
+                  class="footer-logo"
+                  alt="EVERSHOP MMC Logo"
+                />
+              </a>
+              <p data-i18n="footerAbout">
+                Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət
+                mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli
+                tapsınlar.
+              </p>
+              <div class="footer-social">
+                <a
+                  href="https://wa.me/994702710066"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                >
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/evershopllc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/evershop-llc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+              </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <p>
-                        <span data-i18n="allRights">© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.</span>
-                        <span class="footer-credit">
-                            <span data-i18n="preparedBy">Hazırlayan:</span> 
-                            <strong>BUTA GRUP</strong>
-                        </span>
-                    </p>
-                </div>
+
+            <div class="footer-widget">
+              <h4 data-i18n="company">Şirkət</h4>
+              <ul>
+                <li><a href="about.html" data-i18n="about">Haqqımızda</a></li>
+                <li><a href="index.html" data-i18n="products">Məhsullar</a></li>
+                <li><a href="index.html" data-i18n="services">Xidmətlər</a></li>
+                <li>
+                  <a href="market.html" data-i18n="markets">Bazar Sektorları</a>
+                </li>
+                <li><a href="career.html" data-i18n="career">Karyera</a></li>
+              </ul>
             </div>
+
+            <div class="footer-widget">
+              <h4 data-i18n="solutions">Həllər</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="engineeringDesign"
+                    >Mühəndislik və Dizayn</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="industrialEquipment"
+                    >Sənaye Avadanlıqları</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.evershop.az/az" data-i18n="manufacturing"
+                    >İstehsal</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="energySolutions"
+                    >Enerji Həlləri</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="innovativeProjects"
+                    >İnnovativ Layihələr</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-widget">
+              <h4 data-i18n="contactInfo">Əlaqə</h4>
+              <ul class="footer-contact">
+                <li>
+                  <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                  <a
+                    href="https://wa.me/994702710066"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +994 70 271 00 66
+                  </a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az"
+                    target="_blank"
+                  >
+                    Sales@evershop.az
+                  </a>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-i18n="addressText"
+                  >
+                    Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
+                    Azerbaijan
+                  </a>
+                </li>
+                <li>
+                  <i class="fas fa-industry" aria-hidden="true"></i>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-i18n="workshopText"
+                  >
+                    Salyan Highway, 32 km, Baku, Azerbaijan
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-content">
+            <p>
+              <span data-i18n="allRights"
+                >© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.</span
+              >
+              <span class="footer-credit">
+                <span data-i18n="preparedBy">Hazırlayan:</span>
+                <a
+                  href="https://www.butagrup.com.tr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="text-decoration: none; color: inherit"
+                >
+                  <strong>BUTA GRUP</strong>
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-        <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
     </button>
 
     <script>
-// ========== LANGUAGE TRANSLATIONS ==========
-const translations = {
-    az: {
-        // Navigation
-        about: "Haqqımızda",
-        products: "Məhsullar",
-        fabrication: "Xüsusi Konstruksiyaların İstehsalı",
-        staticEquipment: "Statik Avadanlıq",
-        skidPackages: "Sənaye Skid Paketləri",
-        machinedParts: "Mexaniki Hissələr",
-        equipmentSupply: "Sənaye Avadanlığı Təchizatı",
-        steelPiping: "Polad və Boru Aksesuarları",
-        sealing: "Kipləndirici Elementlər",
-        oemParts: "OEM Hissələri",
-        rdPrototype: "Tədqiqat və Prototip İstehsalı",
-        services: "Xidmətlər",
-        designEngineering: "Dizayn və Mühəndislik",
-        installation: "Quraşdırma və İstismara Verilmə",
-        repairMaintenance: "Təmir və Texniki Xidmət",
-        heatTreatment: "İstilik Emalı",
-        markets: "Bazar Sektorları",
-        career: "Karyera",
-        
-        // Language names
-        langAz: "Azərbaycan dili",
-        langEn: "English",
-        langRu: "Русский язык",
-        
-        // Hero Section
-        pageTitle: "Mühəndislik və Texniki Məsləhətləşmə",
-        pageSubtitle: "İnfrastrukturun Arxasındakı Ağıl",
-        pageDescription: "EVERSHOP-da biz inanırıq ki, yüksək keyfiyyətli istehsal ilk qaynaqdan çox əvvəl başlayır. Beynəlxalq layihə idarəetməsi və tədarükdə geniş təcrübəyə malik peşəkar mühəndislər tərəfindən qurulmuş və rəhbərlik edilən şirkət olaraq, biz dünyanın ən tələbkar sənayeləri üçün tələb olunan texniki dəqiqliyi təmin edirik.",
-        
-        // Services
-        service1Title: "Dizayn və Hesablama Xidmətləri",
-        service1Desc: "Komandamız təzyiq avadanlıqları, boru sistemləri və mürəkkəb strukturlar üçün hərtərəfli dizayn xidmətləri təqdim edir. Müasir mühəndislik metodologiyalarından istifadə edərək hər dizaynın performans, təhlükəsizlik və uzunömürlülük üçün optimallaşdırılmasını təmin edirik.",
-        service2Title: "Material Elmləri və Metallurgiya Məsləhətləşməsi",
-        service2Desc: "Düzgün materialın seçilməsi kritik tətbiqlərdə uğur və uğursuzluq arasındakı fərqi təşkil edə bilər. Biz Ekzotik Ərintilər, Dupleks Poladlar və Korroziyaya Davamlı Örtüklərin yüksək təzyiq və yüksək temperatur mühitlərində davranışı üzrə ixtisaslaşaraq material seçimi üzrə ekspert məsləhətləşməsi təklif edirik.",
-        service3Title: "Layihə İdarəetməsi və Tədarük Strategiyası",
-        service3Desc: "Qurucularımızın geniş ekspertizasından istifadə edərək, biz başdan-sona layihə idarəetməsi təklif edirik. Biz sadəcə istehsalçı kimi deyil, texniki tərəfdaş kimi çıxış edərək, başlanğıc material izlənməsindən son FAT (Zavod Qəbulu Sınağı) və çatdırılmaya qədər hər şeyə nəzarət edirik.",
-        service4Title: "Tərs Mühəndislik",
-        service4Desc: "Biz köhnə komponentlər üçün ixtisaslaşdırılmış tərs mühəndislik xidmətləri təqdim edərək, zavodların köhnəlmiş hissələri tez-tez orijinal istehsalçının spesifikasiyalarını üstələyən müasir, 'Yerli İstehsal Edilmiş' həllərlə əvəz etməsinə imkan veririk.",
-        
-        // Standards
-        standardsTitle: "Beynəlxalq Standartlara Uyğunluq",
-        standardsDescription: "Biz yerli istehsal və qlobal tələblər arasında körpü qururuq. Mühəndislik komandamız hər layihənin beynəlxalq kodlara ciddi şəkildə riayət etməsini təmin edir, o cümlədən:",
-        gostBadge: "GOST (Regional Sertifikat və Standartlar)",
-        
-        // Gallery
-        gallery1: "Təzyiq Qablarının Dizaynı",
-        gallery2: "Boru Sistemləri Mühəndisliyi",
-        gallery3: "Metallurgiya Sınağı",
-        gallery4: "CAD Mühəndisliyi",
-        gallery5: "Keyfiyyət Nəzarəti",
-        gallery6: "Qaynaq Yoxlaması",
-        gallery7: "Material Sınaq Laboratoriyası",
-        gallery8: "Struktur Analizi",
-        gallery9: "Zavod Qəbulu Sınağı",
-        gallery10: "Sahədə İstehsal Nəzarəti",
-        
-        // Footer
-        footerAbout: "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
-        company: "Şirkət",
-        solutions: "Həllər",
-        engineeringDesign: "Mühəndislik və Dizayn",
-        manufacturing: "İstehsal",
-        industrialProcurement: "Sənaye Tədarükü",
-        projectManagement: "Layihə İdarəetməsi",
-        contactInfo: "Əlaqə",
-        addressText: "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
-        workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
-        allRights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
-        preparedBy: "Hazırlayan:"
-    },
-    
-    en: {
-        // Navigation
-        about: "About Us",
-        products: "Products",
-        fabrication: "Custom Fabrication",
-        staticEquipment: "Static Equipment",
-        skidPackages: "Industrial Skid Packages",
-        machinedParts: "Machined Parts",
-        equipmentSupply: "Industrial Equipment Supply",
-        steelPiping: "Steel & Piping Accessories",
-        sealing: "Sealing Elements",
-        oemParts: "OEM Parts",
-        rdPrototype: "R&D and Prototype Manufacturing",
-        services: "Services",
-        designEngineering: "Design & Engineering",
-        installation: "Installation & Commissioning",
-        repairMaintenance: "Repair & Maintenance",
-        heatTreatment: "Heat Treatment",
-        markets: "Market Sectors",
-        career: "Career",
-        
-        // Language names
-        langAz: "Azərbaycan dili",
-        langEn: "English",
-        langRu: "Русский язык",
-        
-        // Hero Section
-        pageTitle: "Engineering & Technical Consulting",
-        pageSubtitle: "The Intelligence Behind the Infrastructure",
-        pageDescription: "At EVERSHOP, we believe that high-quality manufacturing begins long before the first weld. Founded and led by professional engineers with extensive experience in international project management and procurement, we provide the technical precision required for the world's most demanding industries.",
-        
-        // Services
-        service1Title: "Design & Calculation Services",
-        service1Desc: "Our team provides comprehensive design services for pressure equipment, piping systems, and complex structures. We ensure every design is optimized for performance, safety, and longevity using modern engineering methodologies.",
-        service2Title: "Material Science & Metallurgy Consulting",
-        service2Desc: "Choosing the right material can mean the difference between success and failure in critical applications. We offer expert consulting on material selection, specializing in the behavior of Exotic Alloys, Duplex Steels, and Corrosion-Resistant Cladding in high-pressure and high-temperature environments.",
-        service3Title: "Project Management & Procurement Strategy",
-        service3Desc: "Leveraging our founders' vast expertise, we offer end-to-end project management. We don't just act as a fabricator; we act as a technical partner, overseeing everything from initial material traceability to final FAT (Factory Acceptance Testing) and delivery.",
-        service4Title: "Reverse Engineering",
-        service4Desc: "We provide specialized reverse engineering services for legacy components, allowing plants to replace obsolete parts with modern, 'Engineered Locally' solutions that often exceed the original manufacturer's specifications.",
-        
-        // Standards
-        standardsTitle: "International Standards Compliance",
-        standardsDescription: "We bridge the gap between local production and global requirements. Our engineering team ensures that every project adheres strictly to international codes, including:",
-        gostBadge: "GOST (Regional Certification & Standards)",
-        
-        // Gallery
-        gallery1: "Pressure Vessel Design",
-        gallery2: "Piping Systems Engineering",
-        gallery3: "Metallurgical Testing",
-        gallery4: "CAD Engineering",
-        gallery5: "Quality Control",
-        gallery6: "Welding Inspection",
-        gallery7: "Material Testing Lab",
-        gallery8: "Structural Analysis",
-        gallery9: "Factory Acceptance Testing",
-        gallery10: "On-Site Fabrication Oversight",
-        
-        // Footer
-        footerAbout: "Have a complex project? Let our engineers and procurement specialists find the most efficient and reliable solution for your business.",
-        company: "Company",
-        solutions: "Solutions",
-        engineeringDesign: "Engineering & Design",
-        manufacturing: "Manufacturing",
-        industrialProcurement: "Industrial Procurement",
-        projectManagement: "Project Management",
-        contactInfo: "Contact",
-        addressText: "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
-        workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
-        allRights: "© 2026 EVERSHOP MMC. All rights reserved.",
-        preparedBy: "Prepared by:"
-    },
-    
-    ru: {
-        // Navigation
-        about: "О нас",
-        products: "Продукция",
-        fabrication: "Изготовление Специальных Конструкций",
-        staticEquipment: "Статическое Оборудование",
-        skidPackages: "Промышленные Скид-Пакеты",
-        machinedParts: "Механические Детали",
-        equipmentSupply: "Поставка Промышленного Оборудования",
-        steelPiping: "Сталь и Трубопроводная Арматура",
-        sealing: "Уплотнительные Элементы",
-        oemParts: "OEM Детали",
-        rdPrototype: "R&D и Прототипное Производство",
-        services: "Услуги",
-        designEngineering: "Проектирование и Инжиниринг",
-        installation: "Монтаж и Пуско-Наладка",
-        repairMaintenance: "Ремонт и Техническое Обслуживание",
-        heatTreatment: "Термическая Обработка",
-        markets: "Рыночные Секторы",
-        career: "Карьера",
-        
-        // Language names
-        langAz: "Azərbaycan dili",
-        langEn: "English",
-        langRu: "Русский язык",
-        
-        // Hero Section
-        pageTitle: "Инжиниринг и Технический Консалтинг",
-        pageSubtitle: "Интеллект За Инфраструктурой",
-        pageDescription: "В EVERSHOP мы считаем, что высококачественное производство начинается задолго до первого сварного шва. Основанная и возглавляемая профессиональными инженерами с обширным опытом в международном управлении проектами и закупках, мы обеспечиваем техническую точность, необходимую для самых требовательных отраслей мира.",
-        
-        // Services
-        service1Title: "Проектирование и Расчетные Услуги",
-        service1Desc: "Наша команда предоставляет комплексные проектные услуги для оборудования под давлением, трубопроводных систем и сложных конструкций. Мы обеспечиваем оптимизацию каждого проекта для производительности, безопасности и долговечности, используя современные инженерные методологии.",
-        service2Title: "Материаловедение и Металлургический Консалтинг",
-        service2Desc: "Выбор правильного материала может означать разницу между успехом и неудачей в критических приложениях. Мы предлагаем экспертный консалтинг по выбору материалов, специализируясь на поведении экзотических сплавов, дуплексных сталей и коррозионностойких покрытий в условиях высокого давления и высоких температур.",
-        service3Title: "Управление Проектами и Стратегия Закупок",
-        service3Desc: "Используя обширный опыт наших основателей, мы предлагаем сквозное управление проектами. Мы действуем не просто как изготовитель, а как технический партнер, контролируя все от начальной прослеживаемости материалов до финального FAT (заводских приемочных испытаний) и поставки.",
-        service4Title: "Обратный Инжиниринг",
-        service4Desc: "Мы предоставляем специализированные услуги обратного инжиниринга для устаревших компонентов, позволяя заводам заменять устаревшие детали современными решениями 'местного производства', которые часто превосходят спецификации оригинального производителя.",
-        
-        // Standards
-        standardsTitle: "Соответствие Международным Стандартам",
-        standardsDescription: "Мы устраняем разрыв между местным производством и глобальными требованиями. Наша инженерная команда обеспечивает строгое соблюдение каждым проектом международных кодексов, включая:",
-        gostBadge: "ГОСТ (Региональная Сертификация и Стандарты)",
-        
-        // Gallery
-        gallery1: "Проектирование Сосудов Давления",
-        gallery2: "Инжиниринг Трубопроводных Систем",
-        gallery3: "Металлургические Испытания",
-        gallery4: "CAD Инжиниринг",
-        gallery5: "Контроль Качества",
-        gallery6: "Инспекция Сварки",
-        gallery7: "Лаборатория Испытания Материалов",
-        gallery8: "Структурный Анализ",
-        gallery9: "Заводские Приемочные Испытания",
-        gallery10: "Надзор За Производством На Месте",
-        
-        // Footer
-        footerAbout: "У вас сложный проект? Позвольте нашим инженерам и специалистам по закупкам найти наиболее эффективное и надежное решение для вашего бизнеса.",
-        company: "Компания",
-        solutions: "Решения",
-        engineeringDesign: "Инжиниринг и Проектирование",
-        manufacturing: "Производство",
-        industrialProcurement: "Промышленные Закупки",
-        projectManagement: "Управление Проектами",
-        contactInfo: "Контакты",
-        addressText: "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Баку, Азербайджан",
-        workshopText: "Сальянское шоссе, 32 км, Баку, Азербайджан",
-        allRights: "© 2026 EVERSHOP MMC. Все права защищены.",
-        preparedBy: "Подготовлено:"
-    }
-};
+      const translations = {
+        az: {
+          about: "Haqqımızda",
+          products: "Məhsullar",
+          fabrication: "Xüsusi Konstruksiyaların İstehsalı",
+          staticEquipment: "Statik Avadanlıq",
+          skidPackages: "Sənaye Skid Paketləri",
+          machinedParts: "Mexaniki Hissələr",
+          equipmentSupply: "Sənaye Avadanlığı Təchizatı",
+          steelPiping: "Polad və Boru Aksesuarları",
+          sealing: "Kipləndirici Elementlər",
+          oemParts: "OEM Hissələri",
+          rdPrototype: "Tədqiqat və Prototip İstehsalı",
+          services: "Xidmətlər",
+          designEngineering: "Dizayn və Mühəndislik",
+          installation: "Quraşdırma və İstismara Verilmə",
+          repairMaintenance: "Təmir və Texniki Xidmət",
+          heatTreatment: "İstilik Emalı",
+          markets: "Bazar Sektorları",
+          career: "Karyera",
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+          pageTitle: "Mühəndislik və Texniki Məsləhətləşmə",
+          pageSubtitle: "İnfrastrukturun Arxasındakı Ağıl",
+          servicesHeading: "Mühəndislik Xidmətləri",
+          service1Title: "Dizayn və Hesablama Xidmətləri",
+          service1Desc:
+            "Komandamız təzyiq avadanlıqları, boru sistemləri və mürəkkəb strukturlar üçün hərtərəfli dizayn xidmətləri təqdim edir. Müasir mühəndislik metodologiyalarından istifadə edərək hər dizaynın performans, təhlükəsizlik və uzunömürlülük üçün optimallaşdırılmasını təmin edirik.",
+          service2Title: "Material Elmləri və Metallurgiya Məsləhətləşməsi",
+          service2Desc:
+            "Düzgün materialın seçilməsi kritik tətbiqlərdə uğur və uğursuzluq arasındakı fərqi təşkil edə bilər. Biz Ekzotik Ərintilər, Dupleks Poladlar və Korroziyaya Davamlı Örtüklərin yüksək təzyiq və yüksək temperatur mühitlərində davranışı üzrə ixtisaslaşaraq material seçimi üzrə ekspert məsləhətləşməsi təklif edirik.",
+          service3Title: "Layihə İdarəetməsi və Tədarük Strategiyası",
+          service3Desc:
+            "Qurucularımızın geniş ekspertizasından istifadə edərək, biz başdan-sona layihə idarəetməsi təklif edirik. Biz sadəcə istehsalçı kimi deyil, texniki tərəfdaş kimi çıxış edərək, başlanğıc material izlənməsindən son FAT (Zavod Qəbulu Sınağı) və çatdırılmaya qədər hər şeyə nəzarət edirik.",
+          service4Title: "Tərs Mühəndislik",
+          service4Desc:
+            "Biz köhnə komponentlər üçün ixtisaslaşdırılmış tərs mühəndislik xidmətləri təqdim edərək, zavodların köhnəlmiş hissələri tez-tez orijinal istehsalçının spesifikasiyalarını üstələyən müasir, 'Yerli İstehsal Edilmiş' həllərlə əvəz etməsinə imkan veririk.",
+          standardsTitle: "Beynəlxalq Standartlara Uyğunluq",
+          standardsDescription:
+            "Biz yerli istehsal və qlobal tələblər arasında körpü qururuq. Mühəndislik komandamız hər layihənin beynəlxalq kodlara ciddi şəkildə riayət etməsini təmin edir, o cümlədən:",
+          gostBadge: "GOST (Regional Sertifikat və Standartlar)",
+          galleryHeading: "Layihə Nümunələri",
+          gallery1: "Təzyiq Qablarının Dizaynı",
+          gallery2: "Boru Sistemləri Mühəndisliyi",
+          gallery3: "Metallurgiya Sınağı",
+          gallery4: "CAD Mühəndisliyi",
+          gallery5: "Keyfiyyət Nəzarəti",
+          gallery6: "Qaynaq Yoxlaması",
+          gallery7: "Material Sınaq Laboratoriyası",
+          gallery8: "Struktur Analizi",
+          gallery9: "Zavod Qəbulu Sınağı",
+          gallery10: "Sahədə İstehsal Nəzarəti",
+          footerAbout:
+            "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
+          company: "Şirkət",
+          solutions: "Həllər",
+          engineeringDesign: "Mühəndislik və Dizayn",
+          manufacturing: "İstehsal",
+          industrialEquipment: "Sənaye Avadanlıqları",
+          energySolutions: "Enerji Həlləri",
+          innovativeProjects: "İnnovativ Layihələr",
+          industrialProcurement: "Sənaye Tədarükü",
+          projectManagement: "Layihə İdarəetməsi",
+          contactInfo: "Əlaqə",
+          addressText:
+            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+          workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
+          allRights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
+          preparedBy: "Hazırlayan:",
+        },
+        en: {
+          about: "About Us",
+          products: "Products",
+          fabrication: "Custom Fabrication",
+          staticEquipment: "Static Equipment",
+          skidPackages: "Industrial Skid Packages",
+          machinedParts: "Machined Parts",
+          equipmentSupply: "Industrial Equipment Supply",
+          steelPiping: "Steel & Piping Accessories",
+          sealing: "Sealing Elements",
+          oemParts: "OEM Parts",
+          rdPrototype: "R&D and Prototype Manufacturing",
+          services: "Services",
+          designEngineering: "Design & Engineering",
+          installation: "Installation & Commissioning",
+          repairMaintenance: "Repair & Maintenance",
+          heatTreatment: "Heat Treatment",
+          markets: "Market Sectors",
+          career: "Career",
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+          pageTitle: "Engineering & Technical Consulting",
+          pageSubtitle: "The Intelligence Behind the Infrastructure",
+          servicesHeading: "Engineering Services",
+          service1Title: "Design & Calculation Services",
+          service1Desc:
+            "Our team provides comprehensive design services for pressure equipment, piping systems, and complex structures. We ensure every design is optimized for performance, safety, and longevity using modern engineering methodologies.",
+          service2Title: "Material Science & Metallurgy Consulting",
+          service2Desc:
+            "Choosing the right material can mean the difference between success and failure in critical applications. We offer expert consulting on material selection, specializing in the behavior of Exotic Alloys, Duplex Steels, and Corrosion-Resistant Cladding in high-pressure and high-temperature environments.",
+          service3Title: "Project Management & Procurement Strategy",
+          service3Desc:
+            "Leveraging our founders' vast expertise, we offer end-to-end project management. We don't just act as a fabricator; we act as a technical partner, overseeing everything from initial material traceability to final FAT (Factory Acceptance Testing) and delivery.",
+          service4Title: "Reverse Engineering",
+          service4Desc:
+            "We provide specialized reverse engineering services for legacy components, allowing plants to replace obsolete parts with modern, 'Engineered Locally' solutions that often exceed the original manufacturer's specifications.",
+          standardsTitle: "International Standards Compliance",
+          standardsDescription:
+            "We bridge the gap between local production and global requirements. Our engineering team ensures that every project adheres strictly to international codes, including:",
+          gostBadge: "GOST (Regional Certification & Standards)",
+          galleryHeading: "Project Showcase",
+          gallery1: "Pressure Vessel Design",
+          gallery2: "Piping Systems Engineering",
+          gallery3: "Metallurgical Testing",
+          gallery4: "CAD Engineering",
+          gallery5: "Quality Control",
+          gallery6: "Welding Inspection",
+          gallery7: "Material Testing Lab",
+          gallery8: "Structural Analysis",
+          gallery9: "Factory Acceptance Testing",
+          gallery10: "On-Site Fabrication Oversight",
+          footerAbout:
+            "Have a complex project? Let our engineers and procurement specialists find the most efficient and reliable solution for your business.",
+          company: "Company",
+          solutions: "Solutions",
+          engineeringDesign: "Engineering & Design",
+          manufacturing: "Manufacturing",
+          industrialEquipment: "Industrial Equipment",
+          energySolutions: "Energy Solutions",
+          innovativeProjects: "Innovative Projects",
+          industrialProcurement: "Industrial Procurement",
+          projectManagement: "Project Management",
+          contactInfo: "Contact",
+          addressText:
+            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+          workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
+          allRights: "© 2026 EVERSHOP MMC. All rights reserved.",
+          preparedBy: "Prepared by:",
+        },
+        ru: {
+          about: "О нас",
+          products: "Продукция",
+          fabrication: "Изготовление Специальных Конструкций",
+          staticEquipment: "Статическое Оборудование",
+          skidPackages: "Промышленные Скид-Пакеты",
+          machinedParts: "Механические Детали",
+          equipmentSupply: "Поставка Промышленного Оборудования",
+          steelPiping: "Сталь и Трубопроводная Арматура",
+          sealing: "Уплотнительные Элементы",
+          oemParts: "OEM Детали",
+          rdPrototype: "R&D и Прототипное Производство",
+          services: "Услуги",
+          designEngineering: "Проектирование и Инжиниринг",
+          installation: "Монтаж и Пуско-Наладка",
+          repairMaintenance: "Ремонт и Техническое Обслуживание",
+          heatTreatment: "Термическая Обработка",
+          markets: "Рыночные Секторы",
+          career: "Карьера",
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+          pageTitle: "Инжиниринг и Технический Консалтинг",
+          pageSubtitle: "Интеллект За Инфраструктурой",
+          servicesHeading: "Инженерные Услуги",
+          service1Title: "Проектирование и Расчетные Услуги",
+          service1Desc:
+            "Наша команда предоставляет комплексные проектные услуги для оборудования под давлением, трубопроводных систем и сложных конструкций. Мы обеспечиваем оптимизацию каждого проекта для производительности, безопасности и долговечности, используя современные инженерные методологии.",
+          service2Title: "Материаловедение и Металлургический Консалтинг",
+          service2Desc:
+            "Выбор правильного материала может означать разницу между успехом и неудачей в критических приложениях. Мы предлагаем экспертный консалтинг по выбору материалов, специализируясь на поведении экзотических сплавов, дуплексных сталей и коррозионностойких покрытий в условиях высокого давления и высоких температур.",
+          service3Title: "Управление Проектами и Стратегия Закупок",
+          service3Desc:
+            "Используя обширный опыт наших основателей, мы предлагаем сквозное управление проектами. Мы действуем не просто как изготовитель, а как технический партнер, контролируя все от начальной прослеживаемости материалов до финального FAT и поставки.",
+          service4Title: "Обратный Инжиниринг",
+          service4Desc:
+            "Мы предоставляем специализированные услуги обратного инжиниринга для устаревших компонентов, позволяя заводам заменять устаревшие детали современными решениями 'местного производства', которые часто превосходят спецификации оригинального производителя.",
+          standardsTitle: "Соответствие Международным Стандартам",
+          standardsDescription:
+            "Мы устраняем разрыв между местным производством и глобальными требованиями. Наша инженерная команда обеспечивает строгое соблюдение каждым проектом международных кодексов, включая:",
+          gostBadge: "ГОСТ (Региональная Сертификация и Стандарты)",
+          galleryHeading: "Примеры Проектов",
+          gallery1: "Проектирование Сосудов Давления",
+          gallery2: "Инжиниринг Трубопроводных Систем",
+          gallery3: "Металлургические Испытания",
+          gallery4: "CAD Инжиниринг",
+          gallery5: "Контроль Качества",
+          gallery6: "Инспекция Сварки",
+          gallery7: "Лаборатория Испытания Материалов",
+          gallery8: "Структурный Анализ",
+          gallery9: "Заводские Приемочные Испытания",
+          gallery10: "Надзор За Производством На Месте",
+          footerAbout:
+            "У вас сложный проект? Позвольте нашим инженерам и специалистам по закупкам найти наиболее эффективное и надежное решение для вашего бизнеса.",
+          company: "Компания",
+          solutions: "Решения",
+          engineeringDesign: "Инжиниринг и Проектирование",
+          manufacturing: "Производство",
+          industrialEquipment: "Промышленное Оборудование",
+          energySolutions: "Энергетические Решения",
+          innovativeProjects: "Инновационные Проекты",
+          industrialProcurement: "Промышленные Закупки",
+          projectManagement: "Управление Проектами",
+          contactInfo: "Контакты",
+          addressText:
+            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Баку, Азербайджан",
+          workshopText: "Сальянское шоссе, 32 км, Баку, Азербайджан",
+          allRights: "© 2026 EVERSHOP MMC. Все права защищены.",
+          preparedBy: "Подготовлено:",
+        },
+      };
 
-// ========== FLAG SVG DATA ==========
-const flagSVG = {
-    az: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#00b9e4" d="M0 0h640v160H0z"/>
-        <path fill="#ed2939" d="M0 160h640v160H0z"/>
-        <path fill="#3f9c35" d="M0 320h640v160H0z"/>
-        <circle cx="304" cy="240" r="72" fill="#fff"/>
-        <circle cx="320" cy="240" r="60" fill="#ed2939"/>
-        <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
-    </svg>`,
-    en: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#012169" d="M0 0h640v480H0z"/>
-        <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-        <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-        <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-        <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
-    </svg>`,
-    ru: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#fff" d="M0 0h640v160H0z"/>
-        <path fill="#0039a6" d="M0 160h640v160H0z"/>
-        <path fill="#d52b1e" d="M0 320h640v160H0z"/>
-    </svg>`
-};
+      const flagSVGs = {
+        az: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#00b9e4" d="M0 0h640v160H0z"/><path fill="#ed2939" d="M0 160h640v160H0z"/><path fill="#3f9c35" d="M0 320h640v160H0z"/><circle cx="304" cy="240" r="72" fill="#fff"/><circle cx="320" cy="240" r="60" fill="#ed2939"/><path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/></svg>',
+        en: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg>',
+        ru: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h640v160H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>',
+      };
 
-const langCodes = {
-    az: 'AZ',
-    en: 'EN',
-    ru: 'RU'
-};
+      let currentLang = localStorage.getItem("preferredLanguage") || "az";
 
-// ========== LANGUAGE FUNCTIONS ==========
-let currentLanguage = localStorage.getItem('language') || 'az';
-
-function setLanguage(lang) {
-    currentLanguage = lang;
-    localStorage.setItem('language', lang);
-    
-    // Update all elements with data-i18n attribute
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-    
-    // Update language buttons
-    updateLanguageButtons(lang);
-    
-    // Update HTML lang attribute
-    document.documentElement.lang = lang;
-}
-
-function updateLanguageButtons(lang) {
-    // Update desktop language button
-    const currentLangBtn = document.getElementById('currentLangBtn');
-    if (currentLangBtn) {
-        currentLangBtn.innerHTML = `
-            ${flagSVG[lang]}
-            <span class="lang-text">${langCodes[lang]}</span>
-            <span class="dropdown-icon">▼</span>
-        `;
-    }
-    
-    // Update mobile language button
-    const mobileLangBtn = document.getElementById('mobileLangBtn');
-    if (mobileLangBtn) {
-        mobileLangBtn.innerHTML = `
-            ${flagSVG[lang]}
-            <span class="lang-text">${langCodes[lang]}</span>
-        `;
-    }
-}
-
-// ========== MOBILE MENU FUNCTIONS ==========
-function initMobileMenu() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mainNav = document.getElementById('mainNav');
-    const dropdownItems = document.querySelectorAll('.nav-item.has-dropdown');
-
-    if (mobileMenuBtn && mainNav) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            mainNav.classList.toggle('active');
-            document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+      function updateLanguage(lang) {
+        currentLang = lang;
+        const t = translations[lang];
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (t[key]) el.textContent = t[key];
         });
+        const btn = document.getElementById("currentLangBtn");
+        if (btn)
+          btn.innerHTML =
+            flagSVGs[lang] +
+            `<span class="lang-text">${lang.toUpperCase()}</span><span class="dropdown-icon">▼</span>`;
+        const mBtn = document.getElementById("mobileLangBtn");
+        if (mBtn)
+          mBtn.innerHTML =
+            flagSVGs[lang] +
+            `<span class="lang-text">${lang.toUpperCase()}</span>`;
+        document.documentElement.lang = lang;
+        localStorage.setItem("preferredLanguage", lang);
+      }
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.header-content')) {
-                mobileMenuBtn.classList.remove('active');
-                mainNav.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    }
-
-    // Mobile dropdown functionality
-    dropdownItems.forEach(item => {
-        const link = item.querySelector('.nav-link');
-        link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992) {
-                e.preventDefault();
-                item.classList.toggle('dropdown-active');
-            }
-        });
-    });
-}
-
-// ========== SCROLL TO TOP FUNCTION ==========
-function initScrollToTop() {
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    
-    if (scrollToTopBtn) {
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('show');
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
-        });
-
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-}
-
-// ========== HEADER SCROLL EFFECT ==========
-function initHeaderScroll() {
-    const header = document.querySelector('.header');
-    
-    if (header) {
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    }
-}
-
-// ========== SCROLL ANIMATIONS ==========
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe all animated elements
-    document.querySelectorAll('.service-card, .gallery-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-}
-
-// ========== INITIALIZE EVERYTHING ==========
-document.addEventListener('DOMContentLoaded', () => {
-    // Set initial language
-    setLanguage(currentLanguage);
-    
-    // Language switcher for desktop dropdown
-    document.querySelectorAll('.lang-option').forEach(option => {
-        option.addEventListener('click', (e) => {
+      function setupLanguageHandlers() {
+        document.querySelectorAll(".lang-option").forEach((opt) => {
+          opt.addEventListener("click", (e) => {
             e.preventDefault();
-            const lang = option.getAttribute('data-lang');
-            setLanguage(lang);
+            updateLanguage(opt.dataset.lang);
+          });
         });
-    });
-    
-    // Mobile language button
-    const mobileLangBtn = document.getElementById('mobileLangBtn');
-    if (mobileLangBtn) {
-        mobileLangBtn.addEventListener('click', () => {
-            const languages = ['az', 'en', 'ru'];
-            const currentIndex = languages.indexOf(currentLanguage);
-            const nextIndex = (currentIndex + 1) % languages.length;
-            setLanguage(languages[nextIndex]);
-        });
-    }
-    
-    // Initialize other features
-    initMobileMenu();
-    initScrollToTop();
-    initHeaderScroll();
-    initScrollAnimations();
-    
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && document.querySelector(href)) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = target.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
-
-// ========== RESPONSIVE HANDLING ==========
-let resizeTimer;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        if (window.innerWidth > 992) {
-            const mainNav = document.getElementById('mainNav');
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            
-            if (mainNav) mainNav.classList.remove('active');
-            if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
-            document.body.style.overflow = '';
-            
-            document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
-                item.classList.remove('dropdown-active');
-            });
+        const mBtn = document.getElementById("mobileLangBtn");
+        if (mBtn) {
+          mBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const langs = ["az", "en", "ru"];
+            updateLanguage(
+              langs[(langs.indexOf(currentLang) + 1) % langs.length],
+            );
+          });
         }
-    }, 250);
-});
+      }
+
+      function setupMobileMenu() {
+        const btn = document.getElementById("mobileMenuBtn");
+        const nav = document.getElementById("mainNav");
+        if (!btn || !nav) return;
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          btn.classList.toggle("active");
+          nav.classList.toggle("active");
+        });
+        document.querySelectorAll(".has-dropdown").forEach((item) => {
+          item.querySelector(".nav-link").addEventListener("click", (e) => {
+            if (window.innerWidth <= 992) {
+              e.preventDefault();
+              item.classList.toggle("dropdown-active");
+            }
+          });
+        });
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest(".header-content")) {
+            nav.classList.remove("active");
+            btn.classList.remove("active");
+            document
+              .querySelectorAll(".has-dropdown")
+              .forEach((i) => i.classList.remove("dropdown-active"));
+          }
+        });
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 992) {
+            nav.classList.remove("active");
+            btn.classList.remove("active");
+            document
+              .querySelectorAll(".has-dropdown")
+              .forEach((i) => i.classList.remove("dropdown-active"));
+          }
+        });
+      }
+
+      function setupScrollEffects() {
+        const header = document.querySelector(".header");
+        const scrollBtn = document.getElementById("scrollToTop");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 100) {
+            header && header.classList.add("scrolled");
+            scrollBtn && scrollBtn.classList.add("show");
+          } else {
+            header && header.classList.remove("scrolled");
+            scrollBtn && scrollBtn.classList.remove("show");
+          }
+        });
+        scrollBtn &&
+          scrollBtn.addEventListener("click", () =>
+            window.scrollTo({ top: 0, behavior: "smooth" }),
+          );
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        updateLanguage(currentLang);
+        setupLanguageHandlers();
+        setupMobileMenu();
+        setupScrollEffects();
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -1,1669 +1,2168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raw Materials & Pre-Fabricated Supply - Global Sourcing - EVERSHOP</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Raw Materials & Pre-Fabricated Supply - Global Sourcing - EVERSHOP
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --primary-dark: #1a2332;
+        --secondary-dark: #2c3e50;
+        --accent-orange: #ff6b35;
+        --accent-orange-light: #ff8557;
+        --text-white: #ffffff;
+        --text-light: #a8b2c1;
+        --bg-dark: #0f1419;
+        --bg-section: #141922;
+        --primary-blue: #0a2342;
+        --accent-orange-alt: #e85d04;
+        --steel-gray: #2c3e50;
+        --light-gray: #ecf0f1;
+        --white: #ffffff;
+        --dark-bg: #0c2b4b;
+        --footer-dark: #081b2c;
+        --transition: all 0.3s ease;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-white);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ========== HEADER STYLES ========== */
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--steel-gray) 100%
+        );
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        transition: var(--transition);
+      }
+
+      .header.scrolled {
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+      }
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    :root{
-      --primary-dark:#1a2332;
-      --secondary-dark:#2c3e50;
-      --accent-orange:#ff6b35;
-      --accent-orange-light:#ff8557;
-      --text-white:#ffffff;
-      --text-light:#a8b2c1;
-      --bg-dark:#0f1419;
-      --bg-section:#141922;
-      --primary-blue: #0A2342;
-      --accent-orange-alt: #E85D04;
-      --steel-gray: #2C3E50;
-      --light-gray: #ECF0F1;
-      --white: #FFFFFF;
-      --dark-bg: #0c2b4b;
-      --footer-dark: #081b2c;
-      --transition: all 0.3s ease;
-    }
-    body{
-      font-family:'Inter',sans-serif;
-      background:var(--bg-dark);
-      color:var(--text-white);
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-
-    /* ========== HEADER STYLES ========== */
-    .header {
-      background: linear-gradient(135deg, var(--primary-blue) 0%, var(--steel-gray) 100%);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 9999;
-      transition: var(--transition);
-    }
-
-    .header.scrolled {
-      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    .header-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 85px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-
-    .logo:hover {
-      transform: scale(1.05);
-    }
-
-    .logo-image {
-      height: 75px;
-      width: auto;
-      object-fit: contain;
-      transition: filter 0.3s ease;
-      margin-right: 20px;
-    }
-
-    .logo:hover .logo-image {
-      filter: brightness(1.2);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
-    .nav-item {
-      position: relative;
-    }
-
-    .nav-link {
-      font-family: 'Montserrat', sans-serif;
-      text-decoration: none;
-      color: var(--white);
-      padding: 0.75rem 1.25rem;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: var(--transition);
-      border-radius: 4px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .nav-link::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--accent-orange);
-      transition: var(--transition);
-      transform: translateX(-50%);
-    }
-
-    .nav-link:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--accent-orange);
-    }
-
-    .nav-link:hover::before {
-      width: 80%;
-    }
-
-    .dropdown-icon {
-      display: inline-block;
-      margin-left: 4px;
-      transition: transform 0.3s ease;
-      font-size: 0.75rem;
-    }
-
-    .nav-item:hover .dropdown-icon {
-      transform: rotate(180deg);
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: var(--white);
-      min-width: 280px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      border-radius: 8px;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: var(--transition);
-      margin-top: 0.5rem;
-      border-top: 3px solid var(--accent-orange);
-      overflow: hidden;
-    }
-
-    .nav-item:hover .dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .dropdown-list {
-      list-style: none;
-      padding: 0.5rem 0;
-    }
-
-    .dropdown-link {
-      display: block;
-      padding: 0.875rem 1.5rem;
-      color: var(--primary-blue);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: var(--transition);
-      border-left: 3px solid transparent;
-    }
-
-    .dropdown-link:hover {
-      background: var(--light-gray);
-      border-left-color: var(--accent-orange);
-      padding-left: 1.75rem;
-    }
-
-    .mobile-controls {
-      display: none;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .mobile-menu-btn {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 4px;
-      transition: var(--transition);
-    }
-
-    .mobile-menu-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .mobile-menu-btn span {
-      width: 28px;
-      height: 3px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: var(--transition);
-    }
-
-    .mobile-menu-btn.active span:nth-child(1) {
-      transform: rotate(45deg) translate(7px, 7px);
-    }
-
-    .mobile-menu-btn.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .mobile-menu-btn.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-    }
-
-    .language-dropdown .nav-link {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .language-dropdown .flag-icon {
-      width: 24px;
-      height: 17px;
-      border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    }
-
-    .lang-text {
-      font-weight: 700;
-    }
-
-    .lang-dropdown {
-      min-width: 220px;
-    }
-
-    .lang-dropdown .dropdown-link {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .lang-dropdown .flag-icon {
-      width: 28px;
-      height: 20px;
-    }
-
-    .mobile-lang-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 6px 12px;
-      border-radius: 4px;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      gap: 6px;
-      transition: var(--transition);
-    }
-
-    .mobile-lang-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .mobile-lang-btn .flag-icon {
-      width: 22px;
-      height: 16px;
-    }
-
-    .mobile-lang-btn .lang-text {
-      color: white;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    /* Hero */
-    .hero{
-      position:relative;
-      height:85vh;
-      display:flex;
-      align-items:center;
-      background:linear-gradient(135deg,var(--bg-dark) 0%,var(--primary-dark) 100%);
-      overflow:hidden;
-      margin-top: 85px;
-    }
-    .hero::before{
-      content:'';
-      position:absolute;
-      top:0;right:0;bottom:0;
-      width:60%;
-      opacity:.22;
-      z-index:1;
-    }
-    .hero-content{
-      max-width:1400px;
-      margin:0 auto;
-      padding:0 2rem;
-      position:relative;
-      z-index:2;
-      display:flex;
-      align-items:center;
-      width:100%;
-    }
-    .hero-text{
-      max-width:760px;
-      padding-left:3rem;
-      border-left:4px solid var(--accent-orange);
-    }
-    .hero h1{
-      font-size:clamp(2.5rem,5vw,4rem);
-      font-weight:800;
-      line-height:1.1;
-      margin-bottom:1.2rem;
-      color:var(--text-white);
-    }
-    .hero-subtitle{
-      font-size:1.2rem;
-      color:var(--accent-orange);
-      margin-bottom:1.2rem;
-      font-weight:600;
-      letter-spacing:.5px;
-    }
-    .hero-description{
-      font-size:1.05rem;
-      color:var(--text-light);
-      line-height:1.85;
-    }
-
-    /* Section */
-    .section{padding:5rem 2rem;}
-    .section-alt{background:var(--bg-section);}
-    .container{max-width:1400px;margin:0 auto;}
-
-    /* Services Grid (5 columns desktop) */
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:2rem;
-      margin-top:3rem;
-    }
-    .service-card{
-      background:var(--primary-dark);
-      border-radius:8px;
-      transition:all .4s ease;
-      border:1px solid rgba(255,255,255,.05);
-      padding:2rem 1.8rem;
-    }
-    .service-card:hover{
-      transform:translateY(-8px);
-      border-color:var(--accent-orange);
-      box-shadow:0 15px 40px rgba(0,0,0,.4);
-    }
-    .service-icon{
-      width:45px;height:45px;
-      background:rgba(255,107,53,.1);
-      border-radius:8px;
-      display:flex;align-items:center;justify-content:center;
-      color:var(--accent-orange);
-      font-size:1.3rem;
-      margin-bottom:1.2rem;
-    }
-    .service-title{
-      font-size:1.15rem;
-      font-weight:700;
-      margin-bottom:.8rem;
-      color:var(--text-white);
-      line-height:1.3;
-    }
-    .service-description{
-      color:var(--text-light);
-      line-height:1.6;
-      font-size:.9rem;
-    }
-
-    /* Materials */
-    .materials-section{
-      background:var(--primary-dark);
-      padding:4rem 2rem;
-    }
-    .materials-content{max-width:1200px;margin:0 auto;}
-    .materials-header{margin-bottom:2rem;}
-    .materials-title{
-      font-size:2rem;
-      font-weight:700;
-      color:var(--text-white);
-      margin-bottom:1rem;
-    }
-    .materials-description{
-      color:var(--text-light);
-      font-size:1.05rem;
-      line-height:1.7;
-      margin-bottom:2.5rem;
-    }
-    .materials-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:1.5rem;
-    }
-    .material-badge{
-      background:rgba(255,107,53,.1);
-      border:2px solid var(--accent-orange);
-      padding:.8rem 1.8rem;
-      border-radius:50px;
-      color:var(--accent-orange);
-      font-weight:600;
-      font-size:1rem;
-      transition:all .3s;
-    }
-    .material-badge:hover{
-      background:var(--accent-orange);
-      color:#fff;
-      transform:translateY(-3px);
-    }
-
-    /* Gallery (5 columns) */
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:1.5rem;
-      margin-top:3rem;
-    }
-    .gallery-item{
-      position:relative;
-      overflow:hidden;
-      border-radius:8px;
-      aspect-ratio:4/3;
-      cursor:pointer;
-    }
-    .gallery-item img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform .5s;
-    }
-    .gallery-item:hover img{transform:scale(1.1);}
-    .gallery-overlay{
-      position:absolute;
-      bottom:0;left:0;right:0;
-      background:linear-gradient(to top,rgba(0,0,0,.9) 0%,transparent 100%);
-      padding:2rem 1.5rem 1.5rem;
-      color:#fff;
-      transform:translateY(100%);
-      transition:transform .4s;
-    }
-    .gallery-item:hover .gallery-overlay{transform:translateY(0);}
-    .gallery-title{font-weight:600;font-size:.95rem;}
-
-    /* Sourcing Network */
-    .sourcing-section{
-      background:var(--bg-section);
-      padding:4rem 2rem;
-    }
-    .sourcing-content{max-width:1200px;margin:0 auto;}
-    .sourcing-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:1.5rem;
-      margin-top:2rem;
-    }
-    .sourcing-badge{
-      background:rgba(255,107,53,.05);
-      border:1px solid rgba(255,107,53,.3);
-      padding:1.5rem;
-      border-radius:8px;
-      text-align:center;
-      transition:all .3s;
-    }
-    .sourcing-badge:hover{
-      background:rgba(255,107,53,.1);
-      border-color:var(--accent-orange);
-      transform:translateY(-5px);
-    }
-    .sourcing-icon{
-      font-size:2rem;
-      color:var(--accent-orange);
-      margin-bottom:.8rem;
-    }
-    .sourcing-name{
-      font-weight:600;
-      color:var(--text-white);
-    }
-
-    /* ========== FOOTER STYLES ========== */
-    .site-footer {
-      background: linear-gradient(180deg, var(--dark-bg) 0%, var(--footer-dark) 100%);
-      color: #ffffff;
-      font-size: 1rem;
-      width: 100%;
-      overflow: hidden;
-      margin-top: 5rem;
-    }
-
-    .footer-top {
-      padding: 80px 0 50px;
-    }
-
-    .footer-row {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
-      gap: 40px;
-    }
-
-    .footer-logo {
-      width: 190px;
-      height: auto;
-      margin-bottom: 20px;
-      transition: var(--transition);
-    }
-
-    .footer-logo:hover {
-      transform: scale(1.05);
-      filter: brightness(1.2);
-    }
-
-    .footer-widget p {
-      line-height: 1.8;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 20px;
-    }
-
-    .footer-widget h4 {
-      color: #ffffff;
-      font-weight: 600;
-      margin-bottom: 25px;
-      position: relative;
-      padding-bottom: 15px;
-    }
-
-    .footer-widget h4::after {
-      content: "";
-      width: 36px;
-      height: 2px;
-      background: var(--accent-orange);
-      position: absolute;
-      left: 0;
-      bottom: 0;
-    }
-
-    .footer-widget ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-widget ul li {
-      margin-bottom: 12px;
-    }
-
-    .footer-widget ul li a {
-      color: rgba(255, 255, 255, 0.9);
-      transition: var(--transition);
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .footer-widget ul li a:hover {
-      color: var(--accent-orange);
-      padding-left: 6px;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .footer-social a {
-      width: 38px;
-      height: 38px;
-      background: rgba(255, 255, 255, 0.12);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      color: #ffffff;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .footer-social a:hover {
-      background: var(--accent-orange);
-      transform: translateY(-4px);
-    }
-
-    .footer-contact {
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-contact li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 15px;
-    }
-
-    .footer-contact li i {
-      color: var(--accent-orange);
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    .footer-bottom {
-      background: #050f1c;
-      padding: 20px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .footer-bottom-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-bottom p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    .footer-credit {
-      margin-left: 10px;
-    }
-
-    .scroll-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      background: var(--accent-orange);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      transition: var(--transition);
-      z-index: 1000;
-      box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
-    }
-
-    .scroll-to-top:hover {
-      background: rgb(239,53,32);
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
-    }
-
-    .scroll-to-top.show {
-      display: flex;
-    }
-
-    /* Responsive */
-    @media (max-width:1400px){
-      .services-grid{grid-template-columns:repeat(3,1fr);}
-      .gallery-grid{grid-template-columns:repeat(4,1fr);}
-    }
-    @media (max-width:1200px){
-      .services-grid{grid-template-columns:repeat(2,1fr);}
-      .gallery-grid{grid-template-columns:repeat(3,1fr);}
-    }
-    @media (max-width: 992px) {
       .header-content {
-        padding: 0 1rem;
-        min-height: 70px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 85px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
       }
 
       .logo-image {
-        height: 60px;
+        height: 75px;
+        width: auto;
+        object-fit: contain;
+        transition: filter 0.3s ease;
+        margin-right: 20px;
       }
 
-      .mobile-controls {
-        display: flex;
-      }
-
-      .mobile-lang-btn {
-        display: flex;
-      }
-
-      .nav-list .language-dropdown {
-        display: none;
+      .logo:hover .logo-image {
+        filter: brightness(1.2);
       }
 
       .nav {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--primary-blue);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, box-shadow 0.4s ease;
-        box-shadow: none;
-      }
-
-      .nav.active {
-        max-height: calc(100vh - 70px);
-        overflow-y: auto;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
       }
 
       .nav-list {
-        flex-direction: column;
-        width: 100%;
-        gap: 0;
-        padding: 1rem 0;
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
       }
 
       .nav-item {
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
       }
 
       .nav-link {
-        padding: 1rem 1.5rem;
-        font-size: 1.05rem;
-        width: 100%;
-        justify-content: space-between;
+        font-family: "Montserrat", sans-serif;
+        text-decoration: none;
+        color: var(--white);
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition);
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
       }
 
       .nav-link::before {
-        display: none;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--accent-orange);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--accent-orange);
+      }
+
+      .nav-link:hover::before {
+        width: 80%;
+      }
+
+      .dropdown-icon {
+        display: inline-block;
+        margin-left: 4px;
+        transition: transform 0.3s ease;
+        font-size: 0.75rem;
+      }
+
+      .nav-item:hover .dropdown-icon {
+        transform: rotate(180deg);
       }
 
       .dropdown {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        margin-top: 0;
-        background: rgba(255, 255, 255, 0.05);
-        border-top: none;
-        border-radius: 0;
-        max-height: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--white);
+        min-width: 280px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: var(--transition);
+        margin-top: 0.5rem;
+        border-top: 3px solid var(--accent-orange);
         overflow: hidden;
-        transition: max-height 0.3s ease;
       }
 
-      .nav-item.dropdown-active .dropdown {
-        max-height: 500px;
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
       }
 
       .dropdown-list {
-        padding: 0;
+        list-style: none;
+        padding: 0.5rem 0;
       }
 
       .dropdown-link {
-        color: var(--white);
-        padding: 0.875rem 2.5rem;
+        display: block;
+        padding: 0.875rem 1.5rem;
+        color: var(--primary-blue);
+        text-decoration: none;
         font-size: 0.95rem;
+        font-weight: 500;
+        transition: var(--transition);
         border-left: 3px solid transparent;
       }
 
       .dropdown-link:hover {
+        background: var(--light-gray);
+        border-left-color: var(--accent-orange);
+        padding-left: 1.75rem;
+      }
+
+      .mobile-controls {
+        display: none;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        transition: var(--transition);
+      }
+
+      .mobile-menu-btn:hover {
         background: rgba(255, 255, 255, 0.1);
       }
 
-      .hero {
-        margin-top: 70px;
+      .mobile-menu-btn span {
+        width: 28px;
+        height: 3px;
+        background: var(--white);
+        border-radius: 2px;
+        transition: var(--transition);
       }
 
-      .footer-row {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width:768px){
-      .hero-text{padding-left:1.5rem;}
-      .hero{height:auto;min-height:70vh;padding:4rem 0;}
-      .section{padding:3rem 1.5rem;}
-      .services-grid,.gallery-grid{grid-template-columns:1fr;}
-      .materials-list{gap:1rem;}
-      .material-badge{font-size:.9rem;padding:.6rem 1.4rem;}
-      .sourcing-grid{grid-template-columns:repeat(2,1fr);}
-      .footer-top {
-        padding: 60px 0 40px;
+      .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
       }
 
-      .footer-row {
-        grid-template-columns: 1fr;
-        gap: 30px;
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
       }
 
-      .footer-bottom-content {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .header-content {
-        padding: 0 0.75rem;
+      .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
       }
 
-      .logo-image {
-        height: 50px;
+      .language-dropdown .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .language-dropdown .flag-icon {
+        width: 24px;
+        height: 17px;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      .lang-text {
+        font-weight: 700;
+      }
+
+      .lang-dropdown {
+        min-width: 220px;
+      }
+
+      .lang-dropdown .dropdown-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .lang-dropdown .flag-icon {
+        width: 28px;
+        height: 20px;
       }
 
       .mobile-lang-btn {
-        padding: 5px 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        gap: 6px;
+        transition: var(--transition);
+      }
+
+      .mobile-lang-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
       }
 
       .mobile-lang-btn .flag-icon {
-        width: 20px;
-        height: 14px;
+        width: 22px;
+        height: 16px;
       }
 
       .mobile-lang-btn .lang-text {
-        font-size: 0.85rem;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 600;
       }
-    }
 
-    @keyframes fadeInUp{
-      from{opacity:0;transform:translateY(30px);}
-      to{opacity:1;transform:translateY(0);}
-    }
-    .animate-in{animation:fadeInUp .8s ease-out forwards;}
-  </style>
-</head>
+      /* Hero */
+      .hero {
+        position: relative;
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          135deg,
+          var(--bg-dark) 0%,
+          var(--primary-dark) 100%
+        );
+        overflow: hidden;
+        margin-top: 85px;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 60%;
+        opacity: 0.22;
+        z-index: 1;
+      }
+      .hero-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .hero-text {
+        max-width: 760px;
+        padding-left: 3rem;
+        border-left: 4px solid var(--accent-orange);
+      }
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.2rem;
+        color: var(--text-white);
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+        color: var(--accent-orange);
+        margin-bottom: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      .hero-description {
+        font-size: 1.05rem;
+        color: var(--text-light);
+        line-height: 1.85;
+      }
 
-<body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="logo">
-        <img src="assets/images/logo/logo.png" alt="EVERSHOP MMC" class="logo-image">
-      </a>
+      /* Section */
+      .section {
+        padding: 5rem 2rem;
+      }
+      .section-alt {
+        background: var(--bg-section);
+      }
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
 
-      <div class="mobile-controls">
-        <button class="mobile-lang-btn" id="mobileLangBtn">
-          <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#012169" d="M0 0h640v480H0z"/>
-            <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-            <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-            <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-            <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
-          </svg>
-          <span class="lang-text">EN</span>
-        </button>
+      /* Services Grid (5 columns desktop) */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+      .service-card {
+        background: var(--primary-dark);
+        border-radius: 8px;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2rem 1.8rem;
+      }
+      .service-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent-orange);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      }
+      .service-icon {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 107, 53, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent-orange);
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+      }
+      .service-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        color: var(--text-white);
+        line-height: 1.3;
+      }
+      .service-description {
+        color: var(--text-light);
+        line-height: 1.6;
+        font-size: 0.9rem;
+      }
 
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      /* Materials */
+      .materials-section {
+        background: var(--primary-dark);
+        padding: 4rem 2rem;
+      }
+      .materials-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .materials-header {
+        margin-bottom: 2rem;
+      }
+      .materials-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-white);
+        margin-bottom: 1rem;
+      }
+      .materials-description {
+        color: var(--text-light);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+      }
+      .materials-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .material-badge {
+        background: rgba(255, 107, 53, 0.1);
+        border: 2px solid var(--accent-orange);
+        padding: 0.8rem 1.8rem;
+        border-radius: 50px;
+        color: var(--accent-orange);
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s;
+      }
+      .material-badge:hover {
+        background: var(--accent-orange);
+        color: #fff;
+        transform: translateY(-3px);
+      }
+
+      /* Gallery (5 columns) */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        aspect-ratio: 4/3;
+        cursor: pointer;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9) 0%,
+          transparent 100%
+        );
+        padding: 2rem 1.5rem 1.5rem;
+        color: #fff;
+        transform: translateY(100%);
+        transition: transform 0.4s;
+      }
+      .gallery-item:hover .gallery-overlay {
+        transform: translateY(0);
+      }
+      .gallery-title {
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      /* Sourcing Network */
+      .sourcing-section {
+        background: var(--bg-section);
+        padding: 4rem 2rem;
+      }
+      .sourcing-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .sourcing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .sourcing-badge {
+        background: rgba(255, 107, 53, 0.05);
+        border: 1px solid rgba(255, 107, 53, 0.3);
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+      .sourcing-badge:hover {
+        background: rgba(255, 107, 53, 0.1);
+        border-color: var(--accent-orange);
+        transform: translateY(-5px);
+      }
+      .sourcing-icon {
+        font-size: 2rem;
+        color: var(--accent-orange);
+        margin-bottom: 0.8rem;
+      }
+      .sourcing-name {
+        font-weight: 600;
+        color: var(--text-white);
+      }
+
+      /* ========== FOOTER STYLES ========== */
+      .site-footer {
+        background: linear-gradient(
+          180deg,
+          var(--dark-bg) 0%,
+          var(--footer-dark) 100%
+        );
+        color: #ffffff;
+        font-size: 1rem;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 5rem;
+      }
+
+      .footer-top {
+        padding: 80px 0 50px;
+      }
+
+      .footer-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+        gap: 40px;
+      }
+
+      .footer-logo {
+        width: 190px;
+        height: auto;
+        margin-bottom: 20px;
+        transition: var(--transition);
+      }
+
+      .footer-logo:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+
+      .footer-widget p {
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 20px;
+      }
+
+      .footer-widget h4 {
+        color: #ffffff;
+        font-weight: 600;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .footer-widget h4::after {
+        content: "";
+        width: 36px;
+        height: 2px;
+        background: var(--accent-orange);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      .footer-widget ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-widget ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-widget ul li a {
+        color: rgba(255, 255, 255, 0.9);
+        transition: var(--transition);
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .footer-widget ul li a:hover {
+        color: var(--accent-orange);
+        padding-left: 6px;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.12);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .footer-social a:hover {
+        background: var(--accent-orange);
+        transform: translateY(-4px);
+      }
+
+      .footer-contact {
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-contact li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.95);
+        margin-bottom: 15px;
+      }
+
+      .footer-contact li i {
+        color: var(--accent-orange);
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .footer-bottom {
+        background: #050f1c;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .footer-credit {
+        margin-left: 10px;
+      }
+
+      .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--accent-orange);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: var(--transition);
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
+      }
+
+      .scroll-to-top:hover {
+        background: rgb(239, 53, 32);
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
+      }
+
+      .scroll-to-top.show {
+        display: flex;
+      }
+
+      /* Responsive */
+      @media (max-width: 1400px) {
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (max-width: 1200px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 992px) {
+        .header-content {
+          padding: 0 1rem;
+          min-height: 70px;
+        }
+
+        .logo-image {
+          height: 60px;
+        }
+
+        .mobile-controls {
+          display: flex;
+        }
+
+        .mobile-lang-btn {
+          display: flex;
+        }
+
+        .nav-list .language-dropdown {
+          display: none;
+        }
+
+        .nav {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          right: 0;
+          background: var(--primary-blue);
+          max-height: 0;
+          overflow: hidden;
+          transition:
+            max-height 0.4s ease,
+            box-shadow 0.4s ease;
+          box-shadow: none;
+        }
+
+        .nav.active {
+          max-height: calc(100vh - 70px);
+          overflow-y: auto;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-list {
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+          padding: 1rem 0;
+        }
+
+        .nav-item {
+          width: 100%;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+          padding: 1rem 1.5rem;
+          font-size: 1.05rem;
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .nav-link::before {
+          display: none;
+        }
+
+        .dropdown {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          margin-top: 0;
+          background: rgba(255, 255, 255, 0.05);
+          border-top: none;
+          border-radius: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+
+        .nav-item.dropdown-active .dropdown {
+          max-height: 500px;
+        }
+
+        .dropdown-list {
+          padding: 0;
+        }
+
+        .dropdown-link {
+          color: var(--white);
+          padding: 0.875rem 2.5rem;
+          font-size: 0.95rem;
+          border-left: 3px solid transparent;
+        }
+
+        .dropdown-link:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero {
+          margin-top: 70px;
+        }
+
+        .footer-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .hero-text {
+          padding-left: 1.5rem;
+        }
+        .hero {
+          height: auto;
+          min-height: 70vh;
+          padding: 4rem 0;
+        }
+        .section {
+          padding: 3rem 1.5rem;
+        }
+        .services-grid,
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+        .materials-list {
+          gap: 1rem;
+        }
+        .material-badge {
+          font-size: 0.9rem;
+          padding: 0.6rem 1.4rem;
+        }
+        .sourcing-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-top {
+          padding: 60px 0 40px;
+        }
+
+        .footer-row {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .footer-bottom-content {
+          flex-direction: column;
+          gap: 15px;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .header-content {
+          padding: 0 0.75rem;
+        }
+
+        .logo-image {
+          height: 50px;
+        }
+
+        .mobile-lang-btn {
+          padding: 5px 8px;
+        }
+
+        .mobile-lang-btn .flag-icon {
+          width: 20px;
+          height: 14px;
+        }
+
+        .mobile-lang-btn .lang-text {
+          font-size: 0.85rem;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <img
+            src="assets/images/logo/logo.png"
+            alt="EVERSHOP MMC"
+            class="logo-image"
+          />
+        </a>
+
+        <div class="mobile-controls">
+          <button class="mobile-lang-btn" id="mobileLangBtn">
+            <svg
+              class="flag-icon"
+              viewBox="0 0 640 480"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path fill="#012169" d="M0 0h640v480H0z" />
+              <path
+                fill="#FFF"
+                d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"
+              />
+              <path
+                fill="#C8102E"
+                d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"
+              />
+              <path
+                fill="#FFF"
+                d="M241 0v480h160V0H241zM0 160v160h640V160H0z"
+              />
+              <path
+                fill="#C8102E"
+                d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"
+              />
+            </svg>
+            <span class="lang-text">EN</span>
+          </button>
+
+          <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Toggle Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <nav class="nav" id="mainNav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="about.html" class="nav-link" data-i18n="about"
+                >About Us</a
+              >
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="#products" class="nav-link">
+                <span data-i18n="products">Products</span>
+                <span class="dropdown-icon">▼</span>
+              </a>
+              <ul class="dropdown">
+                <li class="dropdown-list">
+                  <a
+                    href="custom.html"
+                    class="dropdown-link"
+                    data-i18n="fabrication"
+                    >Custom Fabrication</a
+                  >
+                  <a
+                    href="static.html"
+                    class="dropdown-link"
+                    data-i18n="staticEquipment"
+                    >Static Equipment</a
+                  >
+                  <a
+                    href="packages.html"
+                    class="dropdown-link"
+                    data-i18n="skidPackages"
+                    >Industrial Skid Packages</a
+                  >
+                  <a
+                    href="parts.html"
+                    class="dropdown-link"
+                    data-i18n="machinedParts"
+                    >Machined Parts</a
+                  >
+                  <a
+                    href="supply.html"
+                    class="dropdown-link"
+                    data-i18n="equipmentSupply"
+                    >Equipment Supply</a
+                  >
+                  <a
+                    href="steel.html"
+                    class="dropdown-link"
+                    data-i18n="steelPiping"
+                    >Steel & Piping Accessories</a
+                  >
+                  <a
+                    href="sealing.html"
+                    class="dropdown-link"
+                    data-i18n="sealing"
+                    >Sealing Elements</a
+                  >
+                  <a href="oem.html" class="dropdown-link" data-i18n="oemParts"
+                    >OEM Parts</a
+                  >
+                  <a
+                    href="prototype.html"
+                    class="dropdown-link"
+                    data-i18n="rdPrototype"
+                    >R&D & Prototype</a
+                  >
+                  <a
+                    href="https://www.evershop.az/az/shop"
+                    class="dropdown-link"
+                    >Shopping</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="#services" class="nav-link">
+                <span data-i18n="services">Services</span>
+                <span class="dropdown-icon">▼</span>
+              </a>
+              <ul class="dropdown">
+                <li class="dropdown-list">
+                  <a
+                    href="design.html"
+                    class="dropdown-link"
+                    data-i18n="designEngineering"
+                    >Design & Engineering</a
+                  >
+                  <a
+                    href="installation.html"
+                    class="dropdown-link"
+                    data-i18n="installation"
+                    >Installation & Commissioning</a
+                  >
+                  <a
+                    href="repair.html"
+                    class="dropdown-link"
+                    data-i18n="repairMaintenance"
+                    >Repair & Maintenance</a
+                  >
+                  <a
+                    href="heat.html"
+                    class="dropdown-link"
+                    data-i18n="heatTreatment"
+                    >Heat Treatment</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="market.html" class="nav-link">
+                <span data-i18n="markets">Market Sectors</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="career.html" class="nav-link" data-i18n="career"
+                >Career</a
+              >
+            </li>
+            <li class="nav-item has-dropdown language-dropdown">
+              <a href="#" class="nav-link" id="currentLangBtn">
+                <svg
+                  class="flag-icon"
+                  viewBox="0 0 640 480"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="#012169" d="M0 0h640v480H0z" />
+                  <path
+                    fill="#FFF"
+                    d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"
+                  />
+                  <path
+                    fill="#C8102E"
+                    d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"
+                  />
+                  <path
+                    fill="#FFF"
+                    d="M241 0v480h160V0H241zM0 160v160h640V160H0z"
+                  />
+                  <path
+                    fill="#C8102E"
+                    d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"
+                  />
+                </svg>
+                <span class="lang-text">EN</span>
+                <span class="dropdown-icon">▼</span>
+              </a>
+              <ul class="dropdown lang-dropdown">
+                <li class="dropdown-list">
+                  <a href="#" class="dropdown-link lang-option" data-lang="az">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#00b9e4" d="M0 0h640v160H0z" />
+                      <path fill="#ed2939" d="M0 160h640v160H0z" />
+                      <path fill="#3f9c35" d="M0 320h640v160H0z" />
+                      <circle cx="304" cy="240" r="72" fill="#fff" />
+                      <circle cx="320" cy="240" r="60" fill="#ed2939" />
+                      <path
+                        fill="#fff"
+                        d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
+                      />
+                    </svg>
+                    <span data-i18n="langAz">Azərbaycan dili</span>
+                  </a>
+                  <a href="#" class="dropdown-link lang-option" data-lang="en">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#012169" d="M0 0h640v480H0z" />
+                      <path
+                        fill="#FFF"
+                        d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"
+                      />
+                      <path
+                        fill="#C8102E"
+                        d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"
+                      />
+                      <path
+                        fill="#FFF"
+                        d="M241 0v480h160V0H241zM0 160v160h640V160H0z"
+                      />
+                      <path
+                        fill="#C8102E"
+                        d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"
+                      />
+                    </svg>
+                    <span data-i18n="langEn">English</span>
+                  </a>
+                  <a href="#" class="dropdown-link lang-option" data-lang="ru">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#fff" d="M0 0h640v160H0z" />
+                      <path fill="#0039a6" d="M0 160h640v160H0z" />
+                      <path fill="#d52b1e" d="M0 320h640v160H0z" />
+                    </svg>
+                    <span data-i18n="langRu">Русский язык</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-      <nav class="nav" id="mainNav">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="about.html" class="nav-link" data-i18n="about">About Us</a>
-          </li>
-          <li class="nav-item has-dropdown">
-            <a href="#products" class="nav-link">
-              <span data-i18n="products">Products</span>
-              <span class="dropdown-icon">▼</span>
-            </a>
-            <ul class="dropdown">
-              <li class="dropdown-list">
-                <a href="custom.html" class="dropdown-link" data-i18n="fabrication">Custom Fabrication</a>
-                <a href="static.html" class="dropdown-link" data-i18n="staticEquipment">Static Equipment</a>
-                <a href="packages.html" class="dropdown-link" data-i18n="skidPackages">Industrial Skid Packages</a>
-                <a href="parts.html" class="dropdown-link" data-i18n="machinedParts">Machined Parts</a>
-                <a href="supply.html" class="dropdown-link" data-i18n="equipmentSupply">Equipment Supply</a>
-                <a href="steel.html" class="dropdown-link" data-i18n="steelPiping">Steel & Piping Accessories</a>
-                <a href="sealing.html" class="dropdown-link" data-i18n="sealing">Sealing Elements</a>
-                <a href="oem.html" class="dropdown-link" data-i18n="oemParts">OEM Parts</a>
-                <a href="prototype.html" class="dropdown-link" data-i18n="rdPrototype">R&D & Prototype</a>
-                <a href="https://www.evershop.az/az/shop" class="dropdown-link">Shopping</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item has-dropdown">
-            <a href="#services" class="nav-link">
-              <span data-i18n="services">Services</span>
-              <span class="dropdown-icon">▼</span>
-            </a>
-            <ul class="dropdown">
-              <li class="dropdown-list">
-                <a href="design.html" class="dropdown-link" data-i18n="designEngineering">Design & Engineering</a>
-                <a href="installation.html" class="dropdown-link" data-i18n="installation">Installation & Commissioning</a>
-                <a href="repair.html" class="dropdown-link" data-i18n="repairMaintenance">Repair & Maintenance</a>
-                <a href="heat.html" class="dropdown-link" data-i18n="heatTreatment">Heat Treatment</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="market.html" class="nav-link">
-              <span data-i18n="markets">Market Sectors</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="career.html" class="nav-link" data-i18n="career">Career</a>
-          </li>
-          <li class="nav-item has-dropdown language-dropdown">
-            <a href="#" class="nav-link" id="currentLangBtn">
-              <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#012169" d="M0 0h640v480H0z"/>
-                <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-                <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-                <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-                <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
-              </svg>
-              <span class="lang-text">EN</span>
-              <span class="dropdown-icon">▼</span>
-            </a>
-            <ul class="dropdown lang-dropdown">
-              <li class="dropdown-list">
-                <a href="#" class="dropdown-link lang-option" data-lang="az">
-                  <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#00b9e4" d="M0 0h640v160H0z"/>
-                    <path fill="#ed2939" d="M0 160h640v160H0z"/>
-                    <path fill="#3f9c35" d="M0 320h640v160H0z"/>
-                    <circle cx="304" cy="240" r="72" fill="#fff"/>
-                    <circle cx="320" cy="240" r="60" fill="#ed2939"/>
-                    <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
-                  </svg>
-                  <span data-i18n="langAz">Azərbaycan dili</span>
-                </a>
-                <a href="#" class="dropdown-link lang-option" data-lang="en">
-                  <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#012169" d="M0 0h640v480H0z"/>
-                    <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-                    <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-                    <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-                    <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
-                  </svg>
-                  <span data-i18n="langEn">English</span>
-                </a>
-                <a href="#" class="dropdown-link lang-option" data-lang="ru">
-                  <svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#fff" d="M0 0h640v160H0z"/>
-                    <path fill="#0039a6" d="M0 160h640v160H0z"/>
-                    <path fill="#d52b1e" d="M0 320h640v160H0z"/>
-                  </svg>
-                  <span data-i18n="langRu">Русский язык</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 data-i18n="pageTitle">Raw Materials & Pre-Fabricated Supply</h1>
-        <p class="hero-subtitle" data-i18n="pageSubtitle">Global Sourcing. Certified Quality. Project Ready.</p>
-        <p class="hero-description" data-i18n="pageDescription">
-          As a single-source partner, EVERSHOP manages the critical supply chain for the <b>Oil & Gas</b>, 
-          <b>Petrochemical</b>, and <b>Water Treatment</b> industries. We specialize in sourcing hard-to-find 
-          materials and providing pre-fabricated components that meet the exact technical requirements of your project.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="section section-alt" id="services">
-    <div class="container">
-      <div class="services-grid">
-
-        <!-- Strategic Raw Material Sourcing -->
-        <div class="service-card animate-in">
-          <div class="service-icon"><i class="fas fa-globe-americas"></i></div>
-          <h3 class="service-title" data-i18n="service1Title">Strategic Raw Material Sourcing</h3>
-          <p class="service-description" data-i18n="service1Desc">
-            We leverage an international network (USA, EU, UK, Japan, South Korea) to supply high-grade 
-            structural and process materials with full mill traceability and certification.
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 data-i18n="pageTitle">Raw Materials & Pre-Fabricated Supply</h1>
+          <p class="hero-subtitle" data-i18n="pageSubtitle">
+            Global Sourcing. Certified Quality. Project Ready.
+          </p>
+          <p class="hero-description" data-i18n="pageDescription">
+            As a single-source partner, EVERSHOP manages the critical supply
+            chain for the <b>Oil & Gas</b>, <b>Petrochemical</b>, and
+            <b>Water Treatment</b> industries. We specialize in sourcing
+            hard-to-find materials and providing pre-fabricated components that
+            meet the exact technical requirements of your project.
           </p>
         </div>
-
-        <!-- Pre-Fabricated Components -->
-        <div class="service-card animate-in">
-          <div class="service-icon"><i class="fas fa-shapes"></i></div>
-          <h3 class="service-title" data-i18n="service2Title">Pre-Fabricated Components</h3>
-          <p class="service-description" data-i18n="service2Desc">
-            Reduce onsite assembly time with cut-to-size steel plates, beveled piping sections, 
-            and pre-assembled structural sub-sections prepared to your exact specifications.
-          </p>
-        </div>
-
-        <!-- Specialized Alloys -->
-        <div class="service-card animate-in">
-          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3 class="service-title" data-i18n="service3Title">Specialized Alloys for Harsh Environments</h3>
-          <p class="service-description" data-i18n="service3Desc">
-            Expert procurement of high-performance metals: Stainless & Duplex Steels (300/400 Series, 904L), 
-            and exotic alloys including Nickel, Inconel, Monel, Hastelloy, and Titanium.
-          </p>
-        </div>
-
-        <!-- Forged & Formed Materials -->
-        <div class="service-card animate-in">
-          <div class="service-icon"><i class="fas fa-hammer"></i></div>
-          <h3 class="service-title" data-i18n="service4Title">Forged & Formed Materials</h3>
-          <p class="service-description" data-i18n="service4Desc">
-            Supply of high-integrity forged components, rings, and shafts. Hot and cold formed 
-            components from 1/4" up to 54" for water treatment and petrochemical piping networks.
-          </p>
-        </div>
-
-        <!-- NACE & Compliance -->
-        <div class="service-card animate-in">
-          <div class="service-icon"><i class="fas fa-certificate"></i></div>
-          <h3 class="service-title" data-i18n="service5Title">NACE & Project-Specific Compliance</h3>
-          <p class="service-description" data-i18n="service5Desc">
-            All materials supplied according to international standards (ASTM, ASME, DIN, GOST) 
-            and can meet NACE MR0175/ISO 15156 requirements for sour service environments.
-          </p>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Materials & Products -->
-  <section class="materials-section">
-    <div class="materials-content">
-      <div class="materials-header">
-        <h2 class="materials-title" data-i18n="materialsTitle">Our Material Portfolio</h2>
-        <p class="materials-description" data-i18n="materialsDescription">
-          Comprehensive range of raw materials and specialty alloys for demanding industrial applications.
-        </p>
-      </div>
-
-      <div class="materials-list">
-        <div class="material-badge" data-i18n="material1">High-Grade Plates & Beams</div>
-        <div class="material-badge" data-i18n="material2">Stainless Steel 300/400 Series</div>
-        <div class="material-badge" data-i18n="material3">Duplex & Super Duplex Steel</div>
-        <div class="material-badge" data-i18n="material4">Nickel Alloys</div>
-        <div class="material-badge" data-i18n="material5">Inconel</div>
-        <div class="material-badge" data-i18n="material6">Monel</div>
-        <div class="material-badge" data-i18n="material7">Hastelloy</div>
-        <div class="material-badge" data-i18n="material8">Titanium</div>
-        <div class="material-badge" data-i18n="material9">Hardox & Abrex</div>
-        <div class="material-badge" data-i18n="material10">Forged Components</div>
-        <div class="material-badge" data-i18n="material11">Round Bars & Piping</div>
-        <div class="material-badge" data-i18n="material12">904L Stainless</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery (25 images) -->
-  <section class="section">
-    <div class="container">
-      <div class="gallery-grid">
-
-        <div class="gallery-item">
-          <img src="assets/images/material/Elbows.jpeg" alt="Raw Materials 1">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery1">High-Grade Steel Plates</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/FLANGES .jpg" alt="Raw Materials 2">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery2">Structural Beams Inventory</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/Reinforced Nozzles Flanges .jpeg" alt="Raw Materials 3">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery3">Stainless Steel Stock</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/RTJ Ring .jpeg" alt="Raw Materials 4">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery4">Duplex Steel Materials</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/SS Tube 2.jpg" alt="Raw Materials 5">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery5">Nickel Alloy Inventory</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/SS Tubes .jpg" alt="Raw Materials 6">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery6">Inconel Material Storage</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 13.13.31.jpeg" alt="Raw Materials 7">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery7">Monel Alloy Stock</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 13.13.32 (5).jpeg" alt="Raw Materials 8">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery8">Pre-Cut Steel Sections</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 13.13.32 (6).jpeg" alt="Raw Materials 9">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery9">Beveled Pipe Sections</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32 (1).jpeg" alt="Raw Materials 10">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery10">Forged Ring Components</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32 (2).jpeg" alt="Raw Materials 11">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery11">Round Bar Stock</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32 (3).jpeg" alt="Raw Materials 12">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery12">Hardox Wear Plates</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32 (4).jpeg" alt="Raw Materials 13">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery13">Titanium Materials</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32 (5).jpeg" alt="Raw Materials 14">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery14">Quality Inspection</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32.jpeg" alt="Raw Materials 15">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery15">Mill Certificates</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.33 (1).jpeg" alt="Raw Materials 16">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery16">Material Traceability</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.33 (2).jpeg" alt="Raw Materials 17">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery17">Pre-Fabricated Assemblies</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.33 (3).jpeg" alt="Raw Materials 18">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery18">Piping Components</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.33 (4).jpeg" alt="Raw Materials 19">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery19">Structural Sub-Sections</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.33.jpeg" alt="Raw Materials 20">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery20">Exotic Alloy Storage</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.35.54.jpeg" alt="Raw Materials 21">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery21">Hot Formed Components</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.43.58 (1).jpeg" alt="Raw Materials 22">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery22">Cold Formed Sections</div></div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="assets/images/material/WhatsApp Image 2026-01-27 at 15.44.00.jpeg" alt="Raw Materials 23">
-          <div class="gallery-overlay"><div class="gallery-title" data-i18n="gallery23">NACE Compliant Materials</div></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Global Sourcing Network -->
-  <section class="sourcing-section">
-    <div class="sourcing-content">
-      <div class="materials-header">
-        <h2 class="materials-title" data-i18n="sourcingTitle">Global Sourcing Network</h2>
-        <p class="materials-description" data-i18n="sourcingDescription">
-          Materials sourced from trusted suppliers across the globe to ensure quality, reliability, and project compliance.
-        </p>
-      </div>
-
-      <div class="sourcing-grid">
-        <div class="sourcing-badge">
-          <div class="sourcing-icon"><i class="fas fa-flag-usa"></i></div>
-          <div class="sourcing-name" data-i18n="country1">USA</div>
-        </div>
-        <div class="sourcing-badge">
-          <div class="sourcing-icon"><i class="fas fa-globe-europe"></i></div>
-          <div class="sourcing-name" data-i18n="country2">European Union</div>
-        </div>
-        <div class="sourcing-badge">
-          <div class="sourcing-icon"><i class="fas fa-landmark"></i></div>
-          <div class="sourcing-name" data-i18n="country3">United Kingdom</div>
-        </div>
-        <div class="sourcing-badge">
-          <div class="sourcing-icon"><i class="fas fa-torii-gate"></i></div>
-          <div class="sourcing-name" data-i18n="country4">Japan</div>
-        </div>
-        <div class="sourcing-badge">
-          <div class="sourcing-icon"><i class="fas fa-flag"></i></div>
-          <div class="sourcing-name" data-i18n="country5">South Korea</div>
-        </div>
-        <div class="sourcing-badge">
-          <div class="sourcing-icon"><i class="fas fa-dragon"></i></div>
-          <div class="sourcing-name" data-i18n="country6">China</div>
-        </div>
-        <div class="sourcing-badge">
-          <div class="sourcing-icon"><i class="fas fa-om"></i></div>
-          <div class="sourcing-name" data-i18n="country7">India</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-top">
+    <!-- Services -->
+    <section class="section section-alt" id="services">
       <div class="container">
-        <div class="footer-row">
-          <div class="footer-widget">
-            <img src="assets/images/logo/logo.png" class="footer-logo" alt="EVERSHOP MMC">
-            <p data-i18n="footerAbout">
-              Have a complex project? Let our engineers and procurement specialists find the most efficient and reliable solution for your business.
+        <div class="services-grid">
+          <!-- Strategic Raw Material Sourcing -->
+          <div class="service-card animate-in">
+            <div class="service-icon">
+              <i class="fas fa-globe-americas"></i>
+            </div>
+            <h3 class="service-title" data-i18n="service1Title">
+              Strategic Raw Material Sourcing
+            </h3>
+            <p class="service-description" data-i18n="service1Desc">
+              We leverage an international network (USA, EU, UK, Japan, South
+              Korea) to supply high-grade structural and process materials with
+              full mill traceability and certification.
             </p>
-            <div class="footer-social">
-              <a href="https://wa.me/994702710066" target="_blank" aria-label="WhatsApp Evershop">
-                <i class="fab fa-whatsapp"></i>
-              </a>
-              <a href="https://www.instagram.com/evershopllc/" target="_blank" aria-label="Instagram Evershop">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.linkedin.com/company/evershop-llc/" target="_blank" aria-label="LinkedIn Evershop">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
+          </div>
+
+          <!-- Pre-Fabricated Components -->
+          <div class="service-card animate-in">
+            <div class="service-icon"><i class="fas fa-shapes"></i></div>
+            <h3 class="service-title" data-i18n="service2Title">
+              Pre-Fabricated Components
+            </h3>
+            <p class="service-description" data-i18n="service2Desc">
+              Reduce onsite assembly time with cut-to-size steel plates, beveled
+              piping sections, and pre-assembled structural sub-sections
+              prepared to your exact specifications.
+            </p>
+          </div>
+
+          <!-- Specialized Alloys -->
+          <div class="service-card animate-in">
+            <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="service-title" data-i18n="service3Title">
+              Specialized Alloys for Harsh Environments
+            </h3>
+            <p class="service-description" data-i18n="service3Desc">
+              Expert procurement of high-performance metals: Stainless & Duplex
+              Steels (300/400 Series, 904L), and exotic alloys including Nickel,
+              Inconel, Monel, Hastelloy, and Titanium.
+            </p>
+          </div>
+
+          <!-- Forged & Formed Materials -->
+          <div class="service-card animate-in">
+            <div class="service-icon"><i class="fas fa-hammer"></i></div>
+            <h3 class="service-title" data-i18n="service4Title">
+              Forged & Formed Materials
+            </h3>
+            <p class="service-description" data-i18n="service4Desc">
+              Supply of high-integrity forged components, rings, and shafts. Hot
+              and cold formed components from 1/4" up to 54" for water treatment
+              and petrochemical piping networks.
+            </p>
+          </div>
+
+          <!-- NACE & Compliance -->
+          <div class="service-card animate-in">
+            <div class="service-icon"><i class="fas fa-certificate"></i></div>
+            <h3 class="service-title" data-i18n="service5Title">
+              NACE & Project-Specific Compliance
+            </h3>
+            <p class="service-description" data-i18n="service5Desc">
+              All materials supplied according to international standards (ASTM,
+              ASME, DIN, GOST) and can meet NACE MR0175/ISO 15156 requirements
+              for sour service environments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Materials & Products -->
+    <section class="materials-section">
+      <div class="materials-content">
+        <div class="materials-header">
+          <h2 class="materials-title" data-i18n="materialsTitle">
+            Our Material Portfolio
+          </h2>
+          <p class="materials-description" data-i18n="materialsDescription">
+            Comprehensive range of raw materials and specialty alloys for
+            demanding industrial applications.
+          </p>
+        </div>
+
+        <div class="materials-list">
+          <div class="material-badge" data-i18n="material1">
+            High-Grade Plates & Beams
+          </div>
+          <div class="material-badge" data-i18n="material2">
+            Stainless Steel 300/400 Series
+          </div>
+          <div class="material-badge" data-i18n="material3">
+            Duplex & Super Duplex Steel
+          </div>
+          <div class="material-badge" data-i18n="material4">Nickel Alloys</div>
+          <div class="material-badge" data-i18n="material5">Inconel</div>
+          <div class="material-badge" data-i18n="material6">Monel</div>
+          <div class="material-badge" data-i18n="material7">Hastelloy</div>
+          <div class="material-badge" data-i18n="material8">Titanium</div>
+          <div class="material-badge" data-i18n="material9">Hardox & Abrex</div>
+          <div class="material-badge" data-i18n="material10">
+            Forged Components
+          </div>
+          <div class="material-badge" data-i18n="material11">
+            Round Bars & Piping
+          </div>
+          <div class="material-badge" data-i18n="material12">
+            904L Stainless
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery (25 images) -->
+    <section class="section">
+      <div class="container">
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/Elbows.jpeg"
+              alt="Raw Materials 1"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery1">
+                High-Grade Steel Plates
+              </div>
             </div>
           </div>
 
-          <div class="footer-widget">
-            <h4 data-i18n="company">Company</h4>
-            <ul>
-              <li><a href="about.html" data-i18n="about">About Us</a></li>
-              <li><a href="#" data-i18n="products">Products</a></li>
-              <li><a href="#" data-i18n="services">Services</a></li>
-              <li><a href="#" data-i18n="markets">Market Sectors</a></li>
-              <li><a href="#" data-i18n="career">Career</a></li>
-            </ul>
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/FLANGES .jpg"
+              alt="Raw Materials 2"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery2">
+                Structural Beams Inventory
+              </div>
+            </div>
           </div>
 
-          <div class="footer-widget">
-            <h4 data-i18n="solutions">Solutions</h4>
-            <ul>
-              <li><a href="#" data-i18n="engineeringDesign">Engineering & Design</a></li>
-              <li><a href="#" data-i18n="manufacturing">Manufacturing</a></li>
-              <li><a href="#" data-i18n="industrialProcurement">Industrial Procurement</a></li>
-              <li><a href="#" data-i18n="projectManagement">Project Management</a></li>
-            </ul>
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/Reinforced Nozzles Flanges .jpeg"
+              alt="Raw Materials 3"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery3">
+                Stainless Steel Stock
+              </div>
+            </div>
           </div>
 
-          <div class="footer-widget">
-            <h4 data-i18n="contactInfo">Contact</h4>
-            <ul class="footer-contact">
-              <li>
-                <i class="fas fa-phone-alt"></i>
-                <span>+994 70 271 00 66</span>
-              </li>
-              <li>
-                <i class="fas fa-envelope"></i>
-                <span>Sales@evershop.az</span>
-              </li>
-              <li>
-                <i class="fas fa-map-marker-alt"></i>
-                <span data-i18n="addressText">Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan</span>
-              </li>
-              <li>
-                <i class="fas fa-industry"></i>
-                <span data-i18n="workshopText">Salyan Highway, 32 km, Baku, Azerbaijan</span>
-              </li>
-            </ul>
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/RTJ Ring .jpeg"
+              alt="Raw Materials 4"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery4">
+                Duplex Steel Materials
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/SS Tube 2.jpg"
+              alt="Raw Materials 5"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery5">
+                Nickel Alloy Inventory
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/SS Tubes .jpg"
+              alt="Raw Materials 6"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery6">
+                Inconel Material Storage
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 13.13.31.jpeg"
+              alt="Raw Materials 7"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery7">
+                Monel Alloy Stock
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 13.13.32 (5).jpeg"
+              alt="Raw Materials 8"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery8">
+                Pre-Cut Steel Sections
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 13.13.32 (6).jpeg"
+              alt="Raw Materials 9"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery9">
+                Beveled Pipe Sections
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32 (1).jpeg"
+              alt="Raw Materials 10"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery10">
+                Forged Ring Components
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32 (2).jpeg"
+              alt="Raw Materials 11"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery11">
+                Round Bar Stock
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32 (3).jpeg"
+              alt="Raw Materials 12"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery12">
+                Hardox Wear Plates
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32 (4).jpeg"
+              alt="Raw Materials 13"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery13">
+                Titanium Materials
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32 (5).jpeg"
+              alt="Raw Materials 14"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery14">
+                Quality Inspection
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.32.jpeg"
+              alt="Raw Materials 15"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery15">
+                Mill Certificates
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.33 (1).jpeg"
+              alt="Raw Materials 16"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery16">
+                Material Traceability
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.33 (2).jpeg"
+              alt="Raw Materials 17"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery17">
+                Pre-Fabricated Assemblies
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.33 (3).jpeg"
+              alt="Raw Materials 18"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery18">
+                Piping Components
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.33 (4).jpeg"
+              alt="Raw Materials 19"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery19">
+                Structural Sub-Sections
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.19.33.jpeg"
+              alt="Raw Materials 20"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery20">
+                Exotic Alloy Storage
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.35.54.jpeg"
+              alt="Raw Materials 21"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery21">
+                Hot Formed Components
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.43.58 (1).jpeg"
+              alt="Raw Materials 22"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery22">
+                Cold Formed Sections
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/images/material/WhatsApp Image 2026-01-27 at 15.44.00.jpeg"
+              alt="Raw Materials 23"
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title" data-i18n="gallery23">
+                NACE Compliant Materials
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="footer-bottom-content">
-          <p>
-            <span data-i18n="allRights">© 2026 EVERSHOP MMC. All rights reserved.</span>
-            <span class="footer-credit">
-              <span data-i18n="preparedBy">Prepared by:</span> 
-              <strong>BUTA GRUP</strong>
-            </span>
+    </section>
+
+    <!-- Global Sourcing Network -->
+    <section class="sourcing-section">
+      <div class="sourcing-content">
+        <div class="materials-header">
+          <h2 class="materials-title" data-i18n="sourcingTitle">
+            Global Sourcing Network
+          </h2>
+          <p class="materials-description" data-i18n="sourcingDescription">
+            Materials sourced from trusted suppliers across the globe to ensure
+            quality, reliability, and project compliance.
           </p>
         </div>
+
+        <div class="sourcing-grid">
+          <div class="sourcing-badge">
+            <div class="sourcing-icon"><i class="fas fa-flag-usa"></i></div>
+            <div class="sourcing-name" data-i18n="country1">USA</div>
+          </div>
+          <div class="sourcing-badge">
+            <div class="sourcing-icon"><i class="fas fa-globe-europe"></i></div>
+            <div class="sourcing-name" data-i18n="country2">European Union</div>
+          </div>
+          <div class="sourcing-badge">
+            <div class="sourcing-icon"><i class="fas fa-landmark"></i></div>
+            <div class="sourcing-name" data-i18n="country3">United Kingdom</div>
+          </div>
+          <div class="sourcing-badge">
+            <div class="sourcing-icon"><i class="fas fa-torii-gate"></i></div>
+            <div class="sourcing-name" data-i18n="country4">Japan</div>
+          </div>
+          <div class="sourcing-badge">
+            <div class="sourcing-icon"><i class="fas fa-flag"></i></div>
+            <div class="sourcing-name" data-i18n="country5">South Korea</div>
+          </div>
+          <div class="sourcing-badge">
+            <div class="sourcing-icon"><i class="fas fa-dragon"></i></div>
+            <div class="sourcing-name" data-i18n="country6">China</div>
+          </div>
+          <div class="sourcing-badge">
+            <div class="sourcing-icon"><i class="fas fa-om"></i></div>
+            <div class="sourcing-name" data-i18n="country7">India</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-row">
+            <div class="footer-widget">
+              <img
+                src="assets/images/logo/logo.png"
+                class="footer-logo"
+                alt="EVERSHOP MMC"
+              />
+              <p data-i18n="footerAbout">
+                Have a complex project? Let our engineers and procurement
+                specialists find the most efficient and reliable solution for
+                your business.
+              </p>
+              <div class="footer-social">
+                <a
+                  href="https://wa.me/994702710066"
+                  target="_blank"
+                  aria-label="WhatsApp Evershop"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/evershopllc/"
+                  target="_blank"
+                  aria-label="Instagram Evershop"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/evershop-llc/"
+                  target="_blank"
+                  aria-label="LinkedIn Evershop"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
 
-  <script>
-// ========== LANGUAGE TRANSLATIONS ==========
-const translations = {
-  en: {
-    // Navigation
-    about: "About Us",
-    products: "Products",
-    fabrication: "Custom Fabrication",
-    staticEquipment: "Static Equipment",
-    skidPackages: "Industrial Skid Packages",
-    machinedParts: "Machined Parts",
-    equipmentSupply: "Equipment Supply",
-    steelPiping: "Steel & Piping Accessories",
-    sealing: "Sealing Elements",
-    oemParts: "OEM Parts",
-    rdPrototype: "R&D & Prototype",
-    services: "Services",
-    designEngineering: "Design & Engineering",
-    installation: "Installation & Commissioning",
-    repairMaintenance: "Repair & Maintenance",
-    heatTreatment: "Heat Treatment",
-    markets: "Market Sectors",
-    career: "Career",
-    
-    // Language names
-    langAz: "Azərbaycan dili",
-    langEn: "English",
-    langRu: "Русский язык",
-    
-    // Page Content
-    pageTitle: "Raw Materials & Pre-Fabricated Supply",
-    pageSubtitle: "Global Sourcing. Certified Quality. Project Ready.",
-    pageDescription: "As a single-source partner, EVERSHOP manages the critical supply chain for the Oil & Gas, Petrochemical, and Water Treatment industries. We specialize in sourcing hard-to-find materials and providing pre-fabricated components that meet the exact technical requirements of your project.",
-    
-    // Services
-    service1Title: "Strategic Raw Material Sourcing",
-    service1Desc: "We leverage an international network (USA, EU, UK, Japan, South Korea) to supply high-grade structural and process materials with full mill traceability and certification.",
-    service2Title: "Pre-Fabricated Components",
-    service2Desc: "Reduce onsite assembly time with cut-to-size steel plates, beveled piping sections, and pre-assembled structural sub-sections prepared to your exact specifications.",
-    service3Title: "Specialized Alloys for Harsh Environments",
-    service3Desc: "Expert procurement of high-performance metals: Stainless & Duplex Steels (300/400 Series, 904L), and exotic alloys including Nickel, Inconel, Monel, Hastelloy, and Titanium.",
-    service4Title: "Forged & Formed Materials",
-    service4Desc: "Supply of high-integrity forged components, rings, and shafts. Hot and cold formed components from 1/4\" up to 54\" for water treatment and petrochemical piping networks.",
-    service5Title: "NACE & Project-Specific Compliance",
-    service5Desc: "All materials supplied according to international standards (ASTM, ASME, DIN, GOST) and can meet NACE MR0175/ISO 15156 requirements for sour service environments.",
-    
-    // Materials
-    materialsTitle: "Our Material Portfolio",
-    materialsDescription: "Comprehensive range of raw materials and specialty alloys for demanding industrial applications.",
-    material1: "High-Grade Plates & Beams",
-    material2: "Stainless Steel 300/400 Series",
-    material3: "Duplex & Super Duplex Steel",
-    material4: "Nickel Alloys",
-    material5: "Inconel",
-    material6: "Monel",
-    material7: "Hastelloy",
-    material8: "Titanium",
-    material9: "Hardox & Abrex",
-    material10: "Forged Components",
-    material11: "Round Bars & Piping",
-    material12: "904L Stainless",
-    
-    // Gallery
-    gallery1: "High-Grade Steel Plates",
-    gallery2: "Structural Beams Inventory",
-    gallery3: "Stainless Steel Stock",
-    gallery4: "Duplex Steel Materials",
-    gallery5: "Nickel Alloy Inventory",
-    gallery6: "Inconel Material Storage",
-    gallery7: "Monel Alloy Stock",
-    gallery8: "Pre-Cut Steel Sections",
-    gallery9: "Beveled Pipe Sections",
-    gallery10: "Forged Ring Components",
-    gallery11: "Round Bar Stock",
-    gallery12: "Hardox Wear Plates",
-    gallery13: "Titanium Materials",
-    gallery14: "Quality Inspection",
-    gallery15: "Mill Certificates",
-    gallery16: "Material Traceability",
-    gallery17: "Pre-Fabricated Assemblies",
-    gallery18: "Piping Components",
-    gallery19: "Structural Sub-Sections",
-    gallery20: "Exotic Alloy Storage",
-    gallery21: "Hot Formed Components",
-    gallery22: "Cold Formed Sections",
-    gallery23: "NACE Compliant Materials",
-    
-    // Sourcing
-    sourcingTitle: "Global Sourcing Network",
-    sourcingDescription: "Materials sourced from trusted suppliers across the globe to ensure quality, reliability, and project compliance.",
-    country1: "USA",
-    country2: "European Union",
-    country3: "United Kingdom",
-    country4: "Japan",
-    country5: "South Korea",
-    country6: "China",
-    country7: "India",
-    
-    // Footer
-    footerAbout: "Have a complex project? Let our engineers and procurement specialists find the most efficient and reliable solution for your business.",
-    company: "Company",
-    solutions: "Solutions",
-    manufacturing: "Manufacturing",
-    industrialProcurement: "Industrial Procurement",
-    projectManagement: "Project Management",
-    contactInfo: "Contact",
-    addressText: "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
-    workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
-    allRights: "© 2026 EVERSHOP MMC. All rights reserved.",
-    preparedBy: "Prepared by:",
-    engineeringDesign: "Engineering & Design"
-  },
-  
-  az: {
-    // Navigation
-    about: "Haqqımızda",
-    products: "Məhsullar",
-    fabrication: "Xüsusi Konstruksiyaların İstehsalı",
-    staticEquipment: "Statik Avadanlıq",
-    skidPackages: "Sənaye Skid Paketləri",
-    machinedParts: "Mexaniki Hissələr",
-    equipmentSupply: "Sənaye Avadanlığı Təchizatı",
-    steelPiping: "Polad və Boru Aksesuarları",
-    sealing: "Kipləndirici Elementlər",
-    oemParts: "OEM Hissələri",
-    rdPrototype: "Tədqiqat və Prototip İstehsalı",
-    services: "Xidmətlər",
-    designEngineering: "Dizayn və Mühəndislik",
-    installation: "Quraşdırma və İstismara Verilmə",
-    repairMaintenance: "Təmir və Texniki Xidmət",
-    heatTreatment: "İstilik Emalı",
-    markets: "Bazar Sektorları",
-    career: "Karyera",
-    
-    // Language names
-    langAz: "Azərbaycan dili",
-    langEn: "English",
-    langRu: "Русский язык",
-    
-    // Page Content
-    pageTitle: "Xam Material və Hazır Komponentlər Təchizatı",
-    pageSubtitle: "Qlobal Tədarük. Sertifikatlaşdırılmış Keyfiyyət. Layihəyə Hazır.",
-    pageDescription: "Tək mənbə tərəfdaşı olaraq, EVERSHOP Neft və Qaz, Neft-Kimya və Su Təmizləmə sənayesi üçün kritik təchizat zəncirini idarə edir. Biz tapılması çətin materialların tədarükü və layihənizin dəqiq texniki tələblərinə cavab verən hazır komponentlərin təmin edilməsində ixtisaslaşmışıq.",
-    
-    // Services
-    service1Title: "Strateji Xam Material Tədarükü",
-    service1Desc: "Tam zavod izlənməsi və sertifikatlaşdırma ilə yüksək dərəcəli struktur və proses materiallarını təmin etmək üçün beynəlxalq şəbəkədən (ABŞ, AB, Böyük Britaniya, Yaponiya, Cənubi Koreya) istifadə edirik.",
-    service2Title: "Hazır Komponentlər",
-    service2Desc: "Dəqiq spesifikasiyalarınıza uyğun hazırlanmış ölçüyə kəsilmiş polad lövhələr, əyri boru bölmələri və əvvəlcədən yığılmış struktur alt bölmələri ilə sahədə montaj vaxtını azaldın.",
-    service3Title: "Ağır Mühitlər üçün Xüsusi Ərintilər",
-    service3Desc: "Yüksək performanslı metalların ekspert tədarükü: Paslanmayan və Dupleks Poladlar (300/400 Seriyası, 904L) və Nikel, İnkonel, Monel, Hastelloy və Titan daxil olmaqla ekzotik ərintilər.",
-    service4Title: "Döyülmüş və Formalaşdırılmış Materiallar",
-    service4Desc: "Yüksək bütövlüklü döyülmüş komponentlər, halqalar və valların təchizatı. Su təmizləməsi və neft-kimya boru şəbəkələri üçün 1/4\" -dən 54\" -ə qədər isti və soyuq formalaşdırılmış komponentlər.",
-    service5Title: "NACE və Layihəyə Xüsusi Uyğunluq",
-    service5Desc: "Bütün materiallar beynəlxalq standartlara (ASTM, ASME, DIN, GOST) uyğun təmin edilir və turş xidmət mühitləri üçün NACE MR0175/ISO 15156 tələblərinə cavab verə bilər.",
-    
-    // Materials
-    materialsTitle: "Material Portfelimiz",
-    materialsDescription: "Tələbkar sənaye tətbiqləri üçün xam materiallar və xüsusi ərintilər çeşidi.",
-    material1: "Yüksək Keyfiyyətli Lövhələr və Tir",
-    material2: "Paslanmayan Polad 300/400 Seriyası",
-    material3: "Dupleks və Super Dupleks Polad",
-    material4: "Nikel Ərintiləri",
-    material5: "İnkonel",
-    material6: "Monel",
-    material7: "Hastelloy",
-    material8: "Titan",
-    material9: "Hardox və Abrex",
-    material10: "Döyülmüş Komponentlər",
-    material11: "Dəyirmi Çubuqlar və Borular",
-    material12: "904L Paslanmayan Polad",
-    
-    // Gallery
-    gallery1: "Yüksək Keyfiyyətli Polad Lövhələr",
-    gallery2: "Struktur Tirlərin İnventarı",
-    gallery3: "Paslanmayan Polad Ehtiyatı",
-    gallery4: "Dupleks Polad Materialları",
-    gallery5: "Nikel Ərintisi İnventarı",
-    gallery6: "İnkonel Material Anbarı",
-    gallery7: "Monel Ərintisi Ehtiyatı",
-    gallery8: "Əvvəlcədən Kəsilmiş Polad Bölmələri",
-    gallery9: "Əyri Boru Bölmələri",
-    gallery10: "Döyülmüş Halqa Komponentləri",
-    gallery11: "Dəyirmi Çubuq Ehtiyatı",
-    gallery12: "Hardox Aşınma Lövhələri",
-    gallery13: "Titan Materiallar",
-    gallery14: "Keyfiyyət Yoxlaması",
-    gallery15: "Zavod Sertifikatları",
-    gallery16: "Material İzlənməsi",
-    gallery17: "Hazır Quraşdırmalar",
-    gallery18: "Boru Komponentləri",
-    gallery19: "Struktur Alt-Bölmələr",
-    gallery20: "Ekzotik Ərintilər Anbarı",
-    gallery21: "İsti Formalaşdırılmış Komponentlər",
-    gallery22: "Soyuq Formalaşdırılmış Bölmələr",
-    gallery23: "NACE Uyğun Materiallar",
-    
-    // Sourcing
-    sourcingTitle: "Qlobal Tədarük Şəbəkəsi",
-    sourcingDescription: "Keyfiyyət, etibarlılıq və layihə uyğunluğunu təmin etmək üçün dünyanın müxtəlif yerlərindən etibarlı təchizatçılardan materialların tədarükü.",
-    country1: "ABŞ",
-    country2: "Avropa Birliyi",
-    country3: "Böyük Britaniya",
-    country4: "Yaponiya",
-    country5: "Cənubi Koreya",
-    country6: "Çin",
-    country7: "Hindistan",
-    
-    // Footer
-    footerAbout: "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və tədarük mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
-    company: "Şirkət",
-    solutions: "Həllər",
-    manufacturing: "İstehsal",
-    industrialProcurement: "Sənaye Tədarükü",
-    projectManagement: "Layihə İdarəetməsi",
-    contactInfo: "Əlaqə",
-    addressText: "Badamdar Estates, M. Müşfiq küçəsi 1C, AZ1006, Bakı, Azərbaycan",
-    workshopText: "Salyan yolu, 32 km, Bakı, Azərbaycan",
-    allRights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
-    preparedBy: "Hazırlayan:",
-    engineeringDesign: "Mühəndislik və Dizayn"
-  },
-  
-  ru: {
-    // Navigation
-    about: "О нас",
-    products: "Продукция",
-    fabrication: "Изготовление на Заказ",
-    staticEquipment: "Статическое Оборудование",
-    skidPackages: "Промышленные Скид-Пакеты",
-    machinedParts: "Механические Детали",
-    equipmentSupply: "Поставка Оборудования",
-    steelPiping: "Сталь и Трубопроводная Арматура",
-    sealing: "Уплотнительные Элементы",
-    oemParts: "OEM Детали",
-    rdPrototype: "R&D и Прототипирование",
-    services: "Услуги",
-    designEngineering: "Проектирование и Инжиниринг",
-    installation: "Монтаж и Пуско-Наладка",
-    repairMaintenance: "Ремонт и Техническое Обслуживание",
-    heatTreatment: "Термическая Обработка",
-    markets: "Рыночные Секторы",
-    career: "Карьера",
-    
-    // Language names
-    langAz: "Azərbaycan dili",
-    langEn: "English",
-    langRu: "Русский язык",
-    
-    // Page Content
-    pageTitle: "Поставка Сырья и Готовых Компонентов",
-    pageSubtitle: "Глобальные Закупки. Сертифицированное Качество. Готово к Проекту.",
-    pageDescription: "В качестве единственного партнера EVERSHOP управляет критической цепочкой поставок для отраслей нефти и газа, нефтехимии и водоочистки. Мы специализируемся на поставке труднодоступных материалов и предоставлении готовых компонентов, отвечающих точным техническим требованиям вашего проекта.",
-    
-    // Services
-    service1Title: "Стратегические Закупки Сырья",
-    service1Desc: "Мы используем международную сеть (США, ЕС, Великобритания, Япония, Южная Корея) для поставки высококачественных конструкционных и технологических материалов с полной прослеживаемостью и сертификацией.",
-    service2Title: "Готовые Компоненты",
-    service2Desc: "Сократите время монтажа на месте с помощью стальных пластин, нарезанных по размеру, скошенных трубных секций и предварительно собранных конструктивных подсекций, подготовленных в соответствии с вашими точными спецификациями.",
-    service3Title: "Специализированные Сплавы для Жестких Условий",
-    service3Desc: "Экспертные закупки высокопроизводительных металлов: нержавеющие и дуплексные стали (серии 300/400, 904L) и экзотические сплавы, включая никель, инконель, монель, хастеллой и титан.",
-    service4Title: "Кованые и Формованные Материалы",
-    service4Desc: "Поставка высокопрочных кованых компонентов, колец и валов. Горячие и холодноформованные компоненты от 1/4\" до 54\" для сетей трубопроводов водоочистки и нефтехимии.",
-    service5Title: "Соответствие NACE и Специфическим Требованиям Проекта",
-    service5Desc: "Все материалы поставляются в соответствии с международными стандартами (ASTM, ASME, DIN, GOST) и могут соответствовать требованиям NACE MR0175/ISO 15156 для сернистых сред.",
-    
-    // Materials
-    materialsTitle: "Наш Материальный Портфель",
-    materialsDescription: "Широкий ассортимент сырья и специальных сплавов для требовательных промышленных применений.",
-    material1: "Высококачественные Плиты и Балки",
-    material2: "Нержавеющая Сталь Серии 300/400",
-    material3: "Дуплексная и Супер Дуплексная Сталь",
-    material4: "Никелевые Сплавы",
-    material5: "Инконель",
-    material6: "Монель",
-    material7: "Хастеллой",
-    material8: "Титан",
-    material9: "Hardox и Abrex",
-    material10: "Кованые Компоненты",
-    material11: "Круглые Прутки и Трубы",
-    material12: "Нержавеющая Сталь 904L",
-    
-    // Gallery
-    gallery1: "Высококачественные Стальные Плиты",
-    gallery2: "Инвентарь Конструкционных Балок",
-    gallery3: "Запас Нержавеющей Стали",
-    gallery4: "Дуплексные Стальные Материалы",
-    gallery5: "Инвентарь Никелевых Сплавов",
-    gallery6: "Хранение Инконеля",
-    gallery7: "Запас Сплава Монель",
-    gallery8: "Предварительно Нарезанные Стальные Секции",
-    gallery9: "Скошенные Трубные Секции",
-    gallery10: "Кованые Кольцевые Компоненты",
-    gallery11: "Запас Круглых Прутков",
-    gallery12: "Износостойкие Плиты Hardox",
-    gallery13: "Титановые Материалы",
-    gallery14: "Контроль Качества",
-    gallery15: "Заводские Сертификаты",
-    gallery16: "Прослеживаемость Материалов",
-    gallery17: "Готовые Сборки",
-    gallery18: "Трубопроводные Компоненты",
-    gallery19: "Конструкционные Подсекции",
-    gallery20: "Хранение Экзотических Сплавов",
-    gallery21: "Горячеформованные Компоненты",
-    gallery22: "Холодноформованные Секции",
-    gallery23: "Материалы, Соответствующие NACE",
-    
-    // Sourcing
-    sourcingTitle: "Глобальная Сеть Закупок",
-    sourcingDescription: "Материалы от проверенных поставщиков со всего мира для обеспечения качества, надежности и соответствия проектным требованиям.",
-    country1: "США",
-    country2: "Европейский Союз",
-    country3: "Великобритания",
-    country4: "Япония",
-    country5: "Южная Корея",
-    country6: "Китай",
-    country7: "Индия",
-    
-    // Footer
-    footerAbout: "У вас сложный проект? Позвольте нашим инженерам и специалистам по закупкам найти наиболее эффективное и надежное решение для вашего бизнеса.",
-    company: "Компания",
-    solutions: "Решения",
-    manufacturing: "Производство",
-    industrialProcurement: "Промышленные Закупки",
-    projectManagement: "Управление Проектами",
-    contactInfo: "Контакты",
-    addressText: "Badamdar Estates, улица М. Мушфига 1C, AZ1006, Баку, Азербайджан",
-    workshopText: "Сальянское шоссе, 32 км, Баку, Азербайджан",
-    allRights: "© 2026 EVERSHOP MMC. Все права защищены.",
-    preparedBy: "Подготовлено:",
-    engineeringDesign: "Инжиниринг и Проектирование"
-  }
-};
+            <div class="footer-widget">
+              <h4 data-i18n="company">Company</h4>
+              <ul>
+                <li><a href="about.html" data-i18n="about">About Us</a></li>
+                <li><a href="#" data-i18n="products">Products</a></li>
+                <li><a href="#" data-i18n="services">Services</a></li>
+                <li><a href="#" data-i18n="markets">Market Sectors</a></li>
+                <li><a href="#" data-i18n="career">Career</a></li>
+              </ul>
+            </div>
 
-// ========== FLAG SVG DATA ==========
-const flagSVG = {
-  az: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+            <div class="footer-widget">
+              <h4 data-i18n="solutions">Solutions</h4>
+              <ul>
+                <li>
+                  <a href="#" data-i18n="engineeringDesign"
+                    >Engineering & Design</a
+                  >
+                </li>
+                <li><a href="#" data-i18n="manufacturing">Manufacturing</a></li>
+                <li>
+                  <a href="#" data-i18n="industrialProcurement"
+                    >Industrial Procurement</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-i18n="projectManagement"
+                    >Project Management</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-widget">
+              <h4 data-i18n="contactInfo">Contact</h4>
+              <ul class="footer-contact">
+                <li>
+                  <i class="fas fa-phone-alt"></i>
+                  <span>+994 70 271 00 66</span>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <span>Sales@evershop.az</span>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span data-i18n="addressText"
+                    >Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
+                    Azerbaijan</span
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-industry"></i>
+                  <span data-i18n="workshopText"
+                    >Salyan Highway, 32 km, Baku, Azerbaijan</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-content">
+            <p>
+              <span data-i18n="allRights"
+                >© 2026 EVERSHOP MMC. All rights reserved.</span
+              >
+              <span class="footer-credit">
+                <span data-i18n="preparedBy">Prepared by:</span>
+                <strong>BUTA GRUP</strong>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // ========== LANGUAGE TRANSLATIONS ==========
+      const translations = {
+        en: {
+          // Navigation
+          about: "About Us",
+          products: "Products",
+          fabrication: "Custom Fabrication",
+          staticEquipment: "Static Equipment",
+          skidPackages: "Industrial Skid Packages",
+          machinedParts: "Machined Parts",
+          equipmentSupply: "Equipment Supply",
+          steelPiping: "Steel & Piping Accessories",
+          sealing: "Sealing Elements",
+          oemParts: "OEM Parts",
+          rdPrototype: "R&D & Prototype",
+          services: "Services",
+          designEngineering: "Design & Engineering",
+          installation: "Installation & Commissioning",
+          repairMaintenance: "Repair & Maintenance",
+          heatTreatment: "Heat Treatment",
+          markets: "Market Sectors",
+          career: "Career",
+
+          // Language names
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+
+          // Page Content
+          pageTitle: "Raw Materials & Pre-Fabricated Supply",
+          pageSubtitle: "Global Sourcing. Certified Quality. Project Ready.",
+          pageDescription:
+            "As a single-source partner, EVERSHOP manages the critical supply chain for the Oil & Gas, Petrochemical, and Water Treatment industries. We specialize in sourcing hard-to-find materials and providing pre-fabricated components that meet the exact technical requirements of your project.",
+
+          // Services
+          service1Title: "Strategic Raw Material Sourcing",
+          service1Desc:
+            "We leverage an international network (USA, EU, UK, Japan, South Korea) to supply high-grade structural and process materials with full mill traceability and certification.",
+          service2Title: "Pre-Fabricated Components",
+          service2Desc:
+            "Reduce onsite assembly time with cut-to-size steel plates, beveled piping sections, and pre-assembled structural sub-sections prepared to your exact specifications.",
+          service3Title: "Specialized Alloys for Harsh Environments",
+          service3Desc:
+            "Expert procurement of high-performance metals: Stainless & Duplex Steels (300/400 Series, 904L), and exotic alloys including Nickel, Inconel, Monel, Hastelloy, and Titanium.",
+          service4Title: "Forged & Formed Materials",
+          service4Desc:
+            'Supply of high-integrity forged components, rings, and shafts. Hot and cold formed components from 1/4" up to 54" for water treatment and petrochemical piping networks.',
+          service5Title: "NACE & Project-Specific Compliance",
+          service5Desc:
+            "All materials supplied according to international standards (ASTM, ASME, DIN, GOST) and can meet NACE MR0175/ISO 15156 requirements for sour service environments.",
+
+          // Materials
+          materialsTitle: "Our Material Portfolio",
+          materialsDescription:
+            "Comprehensive range of raw materials and specialty alloys for demanding industrial applications.",
+          material1: "High-Grade Plates & Beams",
+          material2: "Stainless Steel 300/400 Series",
+          material3: "Duplex & Super Duplex Steel",
+          material4: "Nickel Alloys",
+          material5: "Inconel",
+          material6: "Monel",
+          material7: "Hastelloy",
+          material8: "Titanium",
+          material9: "Hardox & Abrex",
+          material10: "Forged Components",
+          material11: "Round Bars & Piping",
+          material12: "904L Stainless",
+
+          // Gallery
+          gallery1: "High-Grade Steel Plates",
+          gallery2: "Structural Beams Inventory",
+          gallery3: "Stainless Steel Stock",
+          gallery4: "Duplex Steel Materials",
+          gallery5: "Nickel Alloy Inventory",
+          gallery6: "Inconel Material Storage",
+          gallery7: "Monel Alloy Stock",
+          gallery8: "Pre-Cut Steel Sections",
+          gallery9: "Beveled Pipe Sections",
+          gallery10: "Forged Ring Components",
+          gallery11: "Round Bar Stock",
+          gallery12: "Hardox Wear Plates",
+          gallery13: "Titanium Materials",
+          gallery14: "Quality Inspection",
+          gallery15: "Mill Certificates",
+          gallery16: "Material Traceability",
+          gallery17: "Pre-Fabricated Assemblies",
+          gallery18: "Piping Components",
+          gallery19: "Structural Sub-Sections",
+          gallery20: "Exotic Alloy Storage",
+          gallery21: "Hot Formed Components",
+          gallery22: "Cold Formed Sections",
+          gallery23: "NACE Compliant Materials",
+
+          // Sourcing
+          sourcingTitle: "Global Sourcing Network",
+          sourcingDescription:
+            "Materials sourced from trusted suppliers across the globe to ensure quality, reliability, and project compliance.",
+          country1: "USA",
+          country2: "European Union",
+          country3: "United Kingdom",
+          country4: "Japan",
+          country5: "South Korea",
+          country6: "China",
+          country7: "India",
+
+          // Footer
+          footerAbout:
+            "Have a complex project? Let our engineers and procurement specialists find the most efficient and reliable solution for your business.",
+          company: "Company",
+          solutions: "Solutions",
+          manufacturing: "Manufacturing",
+          industrialProcurement: "Industrial Procurement",
+          projectManagement: "Project Management",
+          contactInfo: "Contact",
+          addressText:
+            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+          workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
+          allRights: "© 2026 EVERSHOP MMC. All rights reserved.",
+          preparedBy: "Prepared by:",
+          engineeringDesign: "Engineering & Design",
+        },
+
+        az: {
+          // Navigation
+          about: "Haqqımızda",
+          products: "Məhsullar",
+          fabrication: "Xüsusi Konstruksiyaların İstehsalı",
+          staticEquipment: "Statik Avadanlıq",
+          skidPackages: "Sənaye Skid Paketləri",
+          machinedParts: "Mexaniki Hissələr",
+          equipmentSupply: "Sənaye Avadanlığı Təchizatı",
+          steelPiping: "Polad və Boru Aksesuarları",
+          sealing: "Kipləndirici Elementlər",
+          oemParts: "OEM Hissələri",
+          rdPrototype: "Tədqiqat və Prototip İstehsalı",
+          services: "Xidmətlər",
+          designEngineering: "Dizayn və Mühəndislik",
+          installation: "Quraşdırma və İstismara Verilmə",
+          repairMaintenance: "Təmir və Texniki Xidmət",
+          heatTreatment: "İstilik Emalı",
+          markets: "Bazar Sektorları",
+          career: "Karyera",
+
+          // Language names
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+
+          // Page Content
+          pageTitle: "Xam Material və Hazır Komponentlər Təchizatı",
+          pageSubtitle:
+            "Qlobal Tədarük. Sertifikatlaşdırılmış Keyfiyyət. Layihəyə Hazır.",
+          pageDescription:
+            "Tək mənbə tərəfdaşı olaraq, EVERSHOP Neft və Qaz, Neft-Kimya və Su Təmizləmə sənayesi üçün kritik təchizat zəncirini idarə edir. Biz tapılması çətin materialların tədarükü və layihənizin dəqiq texniki tələblərinə cavab verən hazır komponentlərin təmin edilməsində ixtisaslaşmışıq.",
+
+          // Services
+          service1Title: "Strateji Xam Material Tədarükü",
+          service1Desc:
+            "Tam zavod izlənməsi və sertifikatlaşdırma ilə yüksək dərəcəli struktur və proses materiallarını təmin etmək üçün beynəlxalq şəbəkədən (ABŞ, AB, Böyük Britaniya, Yaponiya, Cənubi Koreya) istifadə edirik.",
+          service2Title: "Hazır Komponentlər",
+          service2Desc:
+            "Dəqiq spesifikasiyalarınıza uyğun hazırlanmış ölçüyə kəsilmiş polad lövhələr, əyri boru bölmələri və əvvəlcədən yığılmış struktur alt bölmələri ilə sahədə montaj vaxtını azaldın.",
+          service3Title: "Ağır Mühitlər üçün Xüsusi Ərintilər",
+          service3Desc:
+            "Yüksək performanslı metalların ekspert tədarükü: Paslanmayan və Dupleks Poladlar (300/400 Seriyası, 904L) və Nikel, İnkonel, Monel, Hastelloy və Titan daxil olmaqla ekzotik ərintilər.",
+          service4Title: "Döyülmüş və Formalaşdırılmış Materiallar",
+          service4Desc:
+            'Yüksək bütövlüklü döyülmüş komponentlər, halqalar və valların təchizatı. Su təmizləməsi və neft-kimya boru şəbəkələri üçün 1/4" -dən 54" -ə qədər isti və soyuq formalaşdırılmış komponentlər.',
+          service5Title: "NACE və Layihəyə Xüsusi Uyğunluq",
+          service5Desc:
+            "Bütün materiallar beynəlxalq standartlara (ASTM, ASME, DIN, GOST) uyğun təmin edilir və turş xidmət mühitləri üçün NACE MR0175/ISO 15156 tələblərinə cavab verə bilər.",
+
+          // Materials
+          materialsTitle: "Material Portfelimiz",
+          materialsDescription:
+            "Tələbkar sənaye tətbiqləri üçün xam materiallar və xüsusi ərintilər çeşidi.",
+          material1: "Yüksək Keyfiyyətli Lövhələr və Tir",
+          material2: "Paslanmayan Polad 300/400 Seriyası",
+          material3: "Dupleks və Super Dupleks Polad",
+          material4: "Nikel Ərintiləri",
+          material5: "İnkonel",
+          material6: "Monel",
+          material7: "Hastelloy",
+          material8: "Titan",
+          material9: "Hardox və Abrex",
+          material10: "Döyülmüş Komponentlər",
+          material11: "Dəyirmi Çubuqlar və Borular",
+          material12: "904L Paslanmayan Polad",
+
+          // Gallery
+          gallery1: "Yüksək Keyfiyyətli Polad Lövhələr",
+          gallery2: "Struktur Tirlərin İnventarı",
+          gallery3: "Paslanmayan Polad Ehtiyatı",
+          gallery4: "Dupleks Polad Materialları",
+          gallery5: "Nikel Ərintisi İnventarı",
+          gallery6: "İnkonel Material Anbarı",
+          gallery7: "Monel Ərintisi Ehtiyatı",
+          gallery8: "Əvvəlcədən Kəsilmiş Polad Bölmələri",
+          gallery9: "Əyri Boru Bölmələri",
+          gallery10: "Döyülmüş Halqa Komponentləri",
+          gallery11: "Dəyirmi Çubuq Ehtiyatı",
+          gallery12: "Hardox Aşınma Lövhələri",
+          gallery13: "Titan Materiallar",
+          gallery14: "Keyfiyyət Yoxlaması",
+          gallery15: "Zavod Sertifikatları",
+          gallery16: "Material İzlənməsi",
+          gallery17: "Hazır Quraşdırmalar",
+          gallery18: "Boru Komponentləri",
+          gallery19: "Struktur Alt-Bölmələr",
+          gallery20: "Ekzotik Ərintilər Anbarı",
+          gallery21: "İsti Formalaşdırılmış Komponentlər",
+          gallery22: "Soyuq Formalaşdırılmış Bölmələr",
+          gallery23: "NACE Uyğun Materiallar",
+
+          // Sourcing
+          sourcingTitle: "Qlobal Tədarük Şəbəkəsi",
+          sourcingDescription:
+            "Keyfiyyət, etibarlılıq və layihə uyğunluğunu təmin etmək üçün dünyanın müxtəlif yerlərindən etibarlı təchizatçılardan materialların tədarükü.",
+          country1: "ABŞ",
+          country2: "Avropa Birliyi",
+          country3: "Böyük Britaniya",
+          country4: "Yaponiya",
+          country5: "Cənubi Koreya",
+          country6: "Çin",
+          country7: "Hindistan",
+
+          // Footer
+          footerAbout:
+            "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və tədarük mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
+          company: "Şirkət",
+          solutions: "Həllər",
+          manufacturing: "İstehsal",
+          industrialProcurement: "Sənaye Tədarükü",
+          projectManagement: "Layihə İdarəetməsi",
+          contactInfo: "Əlaqə",
+          addressText:
+            "Badamdar Estates, M. Müşfiq küçəsi 1C, AZ1006, Bakı, Azərbaycan",
+          workshopText: "Salyan yolu, 32 km, Bakı, Azərbaycan",
+          allRights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
+          preparedBy: "Hazırlayan:",
+          engineeringDesign: "Mühəndislik və Dizayn",
+        },
+
+        ru: {
+          // Navigation
+          about: "О нас",
+          products: "Продукция",
+          fabrication: "Изготовление на Заказ",
+          staticEquipment: "Статическое Оборудование",
+          skidPackages: "Промышленные Скид-Пакеты",
+          machinedParts: "Механические Детали",
+          equipmentSupply: "Поставка Оборудования",
+          steelPiping: "Сталь и Трубопроводная Арматура",
+          sealing: "Уплотнительные Элементы",
+          oemParts: "OEM Детали",
+          rdPrototype: "R&D и Прототипирование",
+          services: "Услуги",
+          designEngineering: "Проектирование и Инжиниринг",
+          installation: "Монтаж и Пуско-Наладка",
+          repairMaintenance: "Ремонт и Техническое Обслуживание",
+          heatTreatment: "Термическая Обработка",
+          markets: "Рыночные Секторы",
+          career: "Карьера",
+
+          // Language names
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+
+          // Page Content
+          pageTitle: "Поставка Сырья и Готовых Компонентов",
+          pageSubtitle:
+            "Глобальные Закупки. Сертифицированное Качество. Готово к Проекту.",
+          pageDescription:
+            "В качестве единственного партнера EVERSHOP управляет критической цепочкой поставок для отраслей нефти и газа, нефтехимии и водоочистки. Мы специализируемся на поставке труднодоступных материалов и предоставлении готовых компонентов, отвечающих точным техническим требованиям вашего проекта.",
+
+          // Services
+          service1Title: "Стратегические Закупки Сырья",
+          service1Desc:
+            "Мы используем международную сеть (США, ЕС, Великобритания, Япония, Южная Корея) для поставки высококачественных конструкционных и технологических материалов с полной прослеживаемостью и сертификацией.",
+          service2Title: "Готовые Компоненты",
+          service2Desc:
+            "Сократите время монтажа на месте с помощью стальных пластин, нарезанных по размеру, скошенных трубных секций и предварительно собранных конструктивных подсекций, подготовленных в соответствии с вашими точными спецификациями.",
+          service3Title: "Специализированные Сплавы для Жестких Условий",
+          service3Desc:
+            "Экспертные закупки высокопроизводительных металлов: нержавеющие и дуплексные стали (серии 300/400, 904L) и экзотические сплавы, включая никель, инконель, монель, хастеллой и титан.",
+          service4Title: "Кованые и Формованные Материалы",
+          service4Desc:
+            'Поставка высокопрочных кованых компонентов, колец и валов. Горячие и холодноформованные компоненты от 1/4" до 54" для сетей трубопроводов водоочистки и нефтехимии.',
+          service5Title:
+            "Соответствие NACE и Специфическим Требованиям Проекта",
+          service5Desc:
+            "Все материалы поставляются в соответствии с международными стандартами (ASTM, ASME, DIN, GOST) и могут соответствовать требованиям NACE MR0175/ISO 15156 для сернистых сред.",
+
+          // Materials
+          materialsTitle: "Наш Материальный Портфель",
+          materialsDescription:
+            "Широкий ассортимент сырья и специальных сплавов для требовательных промышленных применений.",
+          material1: "Высококачественные Плиты и Балки",
+          material2: "Нержавеющая Сталь Серии 300/400",
+          material3: "Дуплексная и Супер Дуплексная Сталь",
+          material4: "Никелевые Сплавы",
+          material5: "Инконель",
+          material6: "Монель",
+          material7: "Хастеллой",
+          material8: "Титан",
+          material9: "Hardox и Abrex",
+          material10: "Кованые Компоненты",
+          material11: "Круглые Прутки и Трубы",
+          material12: "Нержавеющая Сталь 904L",
+
+          // Gallery
+          gallery1: "Высококачественные Стальные Плиты",
+          gallery2: "Инвентарь Конструкционных Балок",
+          gallery3: "Запас Нержавеющей Стали",
+          gallery4: "Дуплексные Стальные Материалы",
+          gallery5: "Инвентарь Никелевых Сплавов",
+          gallery6: "Хранение Инконеля",
+          gallery7: "Запас Сплава Монель",
+          gallery8: "Предварительно Нарезанные Стальные Секции",
+          gallery9: "Скошенные Трубные Секции",
+          gallery10: "Кованые Кольцевые Компоненты",
+          gallery11: "Запас Круглых Прутков",
+          gallery12: "Износостойкие Плиты Hardox",
+          gallery13: "Титановые Материалы",
+          gallery14: "Контроль Качества",
+          gallery15: "Заводские Сертификаты",
+          gallery16: "Прослеживаемость Материалов",
+          gallery17: "Готовые Сборки",
+          gallery18: "Трубопроводные Компоненты",
+          gallery19: "Конструкционные Подсекции",
+          gallery20: "Хранение Экзотических Сплавов",
+          gallery21: "Горячеформованные Компоненты",
+          gallery22: "Холодноформованные Секции",
+          gallery23: "Материалы, Соответствующие NACE",
+
+          // Sourcing
+          sourcingTitle: "Глобальная Сеть Закупок",
+          sourcingDescription:
+            "Материалы от проверенных поставщиков со всего мира для обеспечения качества, надежности и соответствия проектным требованиям.",
+          country1: "США",
+          country2: "Европейский Союз",
+          country3: "Великобритания",
+          country4: "Япония",
+          country5: "Южная Корея",
+          country6: "Китай",
+          country7: "Индия",
+
+          // Footer
+          footerAbout:
+            "У вас сложный проект? Позвольте нашим инженерам и специалистам по закупкам найти наиболее эффективное и надежное решение для вашего бизнеса.",
+          company: "Компания",
+          solutions: "Решения",
+          manufacturing: "Производство",
+          industrialProcurement: "Промышленные Закупки",
+          projectManagement: "Управление Проектами",
+          contactInfo: "Контакты",
+          addressText:
+            "Badamdar Estates, улица М. Мушфига 1C, AZ1006, Баку, Азербайджан",
+          workshopText: "Сальянское шоссе, 32 км, Баку, Азербайджан",
+          allRights: "© 2026 EVERSHOP MMC. Все права защищены.",
+          preparedBy: "Подготовлено:",
+          engineeringDesign: "Инжиниринг и Проектирование",
+        },
+      };
+
+      // ========== FLAG SVG DATA ==========
+      const flagSVG = {
+        az: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
     <path fill="#00b9e4" d="M0 0h640v160H0z"/>
     <path fill="#ed2939" d="M0 160h640v160H0z"/>
     <path fill="#3f9c35" d="M0 320h640v160H0z"/>
@@ -1671,235 +2170,247 @@ const flagSVG = {
     <circle cx="320" cy="240" r="60" fill="#ed2939"/>
     <path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/>
   </svg>`,
-  en: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+        en: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
     <path fill="#012169" d="M0 0h640v480H0z"/>
     <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
     <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
     <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
     <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
   </svg>`,
-  ru: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+        ru: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
     <path fill="#fff" d="M0 0h640v160H0z"/>
     <path fill="#0039a6" d="M0 160h640v160H0z"/>
     <path fill="#d52b1e" d="M0 320h640v160H0z"/>
-  </svg>`
-};
+  </svg>`,
+      };
 
-const langCodes = {
-  az: 'AZ',
-  en: 'EN',
-  ru: 'RU'
-};
+      const langCodes = {
+        az: "AZ",
+        en: "EN",
+        ru: "RU",
+      };
 
-// ========== LANGUAGE FUNCTIONS ==========
-let currentLanguage = localStorage.getItem('language') || 'en';
+      // ========== LANGUAGE FUNCTIONS ==========
+      let currentLanguage = localStorage.getItem("language") || "en";
 
-function setLanguage(lang) {
-  currentLanguage = lang;
-  localStorage.setItem('language', lang);
-  
-  // Update all elements with data-i18n attribute
-  document.querySelectorAll('[data-i18n]').forEach(element => {
-    const key = element.getAttribute('data-i18n');
-    if (translations[lang] && translations[lang][key]) {
-      element.textContent = translations[lang][key];
-    }
-  });
-  
-  // Update language buttons
-  updateLanguageButtons(lang);
-  
-  // Update HTML lang attribute
-  document.documentElement.lang = lang;
-  
-  // Update page title
-  const titles = {
-    en: 'Raw Materials & Pre-Fabricated Supply - Global Sourcing - EVERSHOP',
-    az: 'Xam Material və Hazır Komponentlər Təchizatı - Qlobal Tədarük - EVERSHOP',
-    ru: 'Поставка Сырья и Готовых Компонентов - Глобальные Закупки - EVERSHOP'
-  };
-  document.title = titles[lang];
-}
+      function setLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem("language", lang);
 
-function updateLanguageButtons(lang) {
-  // Update desktop language button
-  const currentLangBtn = document.getElementById('currentLangBtn');
-  if (currentLangBtn) {
-    currentLangBtn.innerHTML = `
+        // Update all elements with data-i18n attribute
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.getAttribute("data-i18n");
+          if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+
+        // Update language buttons
+        updateLanguageButtons(lang);
+
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+
+        // Update page title
+        const titles = {
+          en: "Raw Materials & Pre-Fabricated Supply - Global Sourcing - EVERSHOP",
+          az: "Xam Material və Hazır Komponentlər Təchizatı - Qlobal Tədarük - EVERSHOP",
+          ru: "Поставка Сырья и Готовых Компонентов - Глобальные Закупки - EVERSHOP",
+        };
+        document.title = titles[lang];
+      }
+
+      function updateLanguageButtons(lang) {
+        // Update desktop language button
+        const currentLangBtn = document.getElementById("currentLangBtn");
+        if (currentLangBtn) {
+          currentLangBtn.innerHTML = `
       ${flagSVG[lang]}
       <span class="lang-text">${langCodes[lang]}</span>
       <span class="dropdown-icon">▼</span>
     `;
-  }
-  
-  // Update mobile language button
-  const mobileLangBtn = document.getElementById('mobileLangBtn');
-  if (mobileLangBtn) {
-    mobileLangBtn.innerHTML = `
+        }
+
+        // Update mobile language button
+        const mobileLangBtn = document.getElementById("mobileLangBtn");
+        if (mobileLangBtn) {
+          mobileLangBtn.innerHTML = `
       ${flagSVG[lang]}
       <span class="lang-text">${langCodes[lang]}</span>
     `;
-  }
-}
-
-// ========== MOBILE MENU FUNCTIONS ==========
-function initMobileMenu() {
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const mainNav = document.getElementById('mainNav');
-  const dropdownItems = document.querySelectorAll('.nav-item.has-dropdown');
-
-  if (mobileMenuBtn && mainNav) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenuBtn.classList.toggle('active');
-      mainNav.classList.toggle('active');
-      document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.header-content')) {
-        mobileMenuBtn.classList.remove('active');
-        mainNav.classList.remove('active');
-        document.body.style.overflow = '';
+        }
       }
-    });
-  }
 
-  // Mobile dropdown functionality
-  dropdownItems.forEach(item => {
-    const link = item.querySelector('.nav-link');
-    link.addEventListener('click', (e) => {
-      if (window.innerWidth <= 992) {
-        e.preventDefault();
-        item.classList.toggle('dropdown-active');
-      }
-    });
-  });
-}
+      // ========== MOBILE MENU FUNCTIONS ==========
+      function initMobileMenu() {
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mainNav = document.getElementById("mainNav");
+        const dropdownItems = document.querySelectorAll(
+          ".nav-item.has-dropdown",
+        );
 
-// ========== SCROLL TO TOP FUNCTION ==========
-function initScrollToTop() {
-  const scrollToTopBtn = document.getElementById('scrollToTop');
-  
-  if (scrollToTopBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.add('show');
-      } else {
-        scrollToTopBtn.classList.remove('show');
-      }
-    });
+        if (mobileMenuBtn && mainNav) {
+          mobileMenuBtn.addEventListener("click", () => {
+            mobileMenuBtn.classList.toggle("active");
+            mainNav.classList.toggle("active");
+            document.body.style.overflow = mainNav.classList.contains("active")
+              ? "hidden"
+              : "";
+          });
 
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
-}
+          // Close menu when clicking outside
+          document.addEventListener("click", (e) => {
+            if (!e.target.closest(".header-content")) {
+              mobileMenuBtn.classList.remove("active");
+              mainNav.classList.remove("active");
+              document.body.style.overflow = "";
+            }
+          });
+        }
 
-// ========== HEADER SCROLL EFFECT ==========
-function initHeaderScroll() {
-  const header = document.querySelector('.header');
-  
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-  }
-}
-
-// ========== SCROLL ANIMATIONS ==========
-const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -100px 0px" };
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, observerOptions);
-
-// ========== INITIALIZE EVERYTHING ==========
-document.addEventListener('DOMContentLoaded', () => {
-  // Set initial language
-  setLanguage(currentLanguage);
-  
-  // Language switcher for desktop dropdown
-  document.querySelectorAll('.lang-option').forEach(option => {
-    option.addEventListener('click', (e) => {
-      e.preventDefault();
-      const lang = option.getAttribute('data-lang');
-      setLanguage(lang);
-    });
-  });
-  
-  // Mobile language button
-  const mobileLangBtn = document.getElementById('mobileLangBtn');
-  if (mobileLangBtn) {
-    mobileLangBtn.addEventListener('click', () => {
-      const languages = ['en', 'az', 'ru'];
-      const currentIndex = languages.indexOf(currentLanguage);
-      const nextIndex = (currentIndex + 1) % languages.length;
-      setLanguage(languages[nextIndex]);
-    });
-  }
-  
-  // Initialize other features
-  initMobileMenu();
-  initScrollToTop();
-  initHeaderScroll();
-  
-  // Scroll animations
-  document.querySelectorAll(".service-card, .gallery-item, .sourcing-badge").forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    observer.observe(el);
-  });
-
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach((a) => {
-    a.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        const headerHeight = document.querySelector('.header').offsetHeight;
-        const targetPosition = target.offsetTop - headerHeight;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
+        // Mobile dropdown functionality
+        dropdownItems.forEach((item) => {
+          const link = item.querySelector(".nav-link");
+          link.addEventListener("click", (e) => {
+            if (window.innerWidth <= 992) {
+              e.preventDefault();
+              item.classList.toggle("dropdown-active");
+            }
+          });
         });
       }
-    });
-  });
-});
 
-// ========== RESPONSIVE HANDLING ==========
-let resizeTimer;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    if (window.innerWidth > 992) {
-      const mainNav = document.getElementById('mainNav');
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      
-      if (mainNav) mainNav.classList.remove('active');
-      if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
-      document.body.style.overflow = '';
-      
-      document.querySelectorAll('.nav-item.has-dropdown').forEach(item => {
-        item.classList.remove('dropdown-active');
+      // ========== SCROLL TO TOP FUNCTION ==========
+      function initScrollToTop() {
+        const scrollToTopBtn = document.getElementById("scrollToTop");
+
+        if (scrollToTopBtn) {
+          window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+              scrollToTopBtn.classList.add("show");
+            } else {
+              scrollToTopBtn.classList.remove("show");
+            }
+          });
+
+          scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          });
+        }
+      }
+
+      // ========== HEADER SCROLL EFFECT ==========
+      function initHeaderScroll() {
+        const header = document.querySelector(".header");
+
+        if (header) {
+          window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 50) {
+              header.classList.add("scrolled");
+            } else {
+              header.classList.remove("scrolled");
+            }
+          });
+        }
+      }
+
+      // ========== SCROLL ANIMATIONS ==========
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // ========== INITIALIZE EVERYTHING ==========
+      document.addEventListener("DOMContentLoaded", () => {
+        // Set initial language
+        setLanguage(currentLanguage);
+
+        // Language switcher for desktop dropdown
+        document.querySelectorAll(".lang-option").forEach((option) => {
+          option.addEventListener("click", (e) => {
+            e.preventDefault();
+            const lang = option.getAttribute("data-lang");
+            setLanguage(lang);
+          });
+        });
+
+        // Mobile language button
+        const mobileLangBtn = document.getElementById("mobileLangBtn");
+        if (mobileLangBtn) {
+          mobileLangBtn.addEventListener("click", () => {
+            const languages = ["en", "az", "ru"];
+            const currentIndex = languages.indexOf(currentLanguage);
+            const nextIndex = (currentIndex + 1) % languages.length;
+            setLanguage(languages[nextIndex]);
+          });
+        }
+
+        // Initialize other features
+        initMobileMenu();
+        initScrollToTop();
+        initHeaderScroll();
+
+        // Scroll animations
+        document
+          .querySelectorAll(".service-card, .gallery-item, .sourcing-badge")
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            observer.observe(el);
+          });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              const headerHeight =
+                document.querySelector(".header").offsetHeight;
+              const targetPosition = target.offsetTop - headerHeight;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
       });
-    }
-  }, 250);
-});
-  </script>
-</body>
+
+      // ========== RESPONSIVE HANDLING ==========
+      let resizeTimer;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          if (window.innerWidth > 992) {
+            const mainNav = document.getElementById("mainNav");
+            const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+
+            if (mainNav) mainNav.classList.remove("active");
+            if (mobileMenuBtn) mobileMenuBtn.classList.remove("active");
+            document.body.style.overflow = "";
+
+            document
+              .querySelectorAll(".nav-item.has-dropdown")
+              .forEach((item) => {
+                item.classList.remove("dropdown-active");
+              });
+          }
+        }, 250);
+      });
+    </script>
+  </body>
 </html>
