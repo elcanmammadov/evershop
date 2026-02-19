@@ -17,7 +17,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-
     <style>
       :root {
         --primary: #ff6b35;
@@ -34,13 +33,11 @@
         --footer-dark: #0a2342;
         --transition: all 0.3s ease;
       }
-
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-
       body {
         font-family: "Inter", sans-serif;
         background: var(--dark);
@@ -48,6 +45,7 @@
         line-height: 1.6;
       }
 
+      /* ── HEADER ── */
       .header {
         background: var(--primary-blue);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -58,11 +56,9 @@
         z-index: 9999;
         transition: var(--transition);
       }
-
       .header.scrolled {
         box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
       }
-
       .header-content {
         max-width: 1400px;
         margin: 0 auto;
@@ -72,25 +68,21 @@
         justify-content: space-between;
         min-height: 85px;
       }
-
       .logo {
         display: flex;
         align-items: center;
         text-decoration: none;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s;
       }
-
       .logo:hover {
         transform: scale(1.05);
       }
-
       .logo-image {
         height: 75px;
         width: auto;
         object-fit: contain;
-        transition: filter 0.3s ease;
+        transition: filter 0.3s;
       }
-
       .logo:hover .logo-image {
         filter: brightness(1.2);
       }
@@ -99,18 +91,15 @@
         display: flex;
         align-items: center;
       }
-
       .nav-list {
         list-style: none;
         display: flex;
         gap: 0.5rem;
         align-items: center;
       }
-
       .nav-item {
         position: relative;
       }
-
       .nav-link {
         font-family: "Montserrat", sans-serif;
         text-decoration: none;
@@ -127,7 +116,6 @@
         position: relative;
         overflow: hidden;
       }
-
       .nav-link::before {
         content: "";
         position: absolute;
@@ -139,27 +127,22 @@
         transition: var(--transition);
         transform: translateX(-50%);
       }
-
       .nav-link:hover {
         background: rgba(255, 255, 255, 0.1);
         color: var(--accent-orange);
       }
-
       .nav-link:hover::before {
         width: 80%;
       }
-
       .dropdown-icon {
         display: inline-block;
         margin-left: 4px;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s;
         font-size: 0.75rem;
       }
-
       .nav-item:hover .dropdown-icon {
         transform: rotate(180deg);
       }
-
       .dropdown {
         position: absolute;
         top: 100%;
@@ -176,18 +159,15 @@
         border-top: 3px solid var(--accent-orange);
         overflow: hidden;
       }
-
       .nav-item:hover .dropdown {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
       }
-
       .dropdown-list {
         list-style: none;
         padding: 0.5rem 0;
       }
-
       .dropdown-link {
         display: block;
         padding: 0.875rem 1.5rem;
@@ -198,7 +178,6 @@
         transition: var(--transition);
         border-left: 3px solid transparent;
       }
-
       .dropdown-link:hover {
         background: var(--light-gray);
         border-left-color: var(--accent-orange);
@@ -210,7 +189,6 @@
         align-items: center;
         gap: 12px;
       }
-
       .mobile-menu-btn {
         display: flex;
         flex-direction: column;
@@ -222,11 +200,9 @@
         border-radius: 4px;
         transition: var(--transition);
       }
-
       .mobile-menu-btn:hover {
         background: rgba(255, 255, 255, 0.1);
       }
-
       .mobile-menu-btn span {
         width: 28px;
         height: 3px;
@@ -234,46 +210,33 @@
         border-radius: 2px;
         transition: var(--transition);
       }
-
       .mobile-menu-btn.active span:nth-child(1) {
         transform: rotate(45deg) translate(7px, 7px);
       }
-
       .mobile-menu-btn.active span:nth-child(2) {
         opacity: 0;
       }
-
       .mobile-menu-btn.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
       }
 
-      .language-dropdown .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .language-dropdown .flag-icon {
+      .flag-icon {
         width: 24px;
         height: 17px;
         border-radius: 2px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
       }
-
       .lang-text {
         font-weight: 700;
       }
-
       .lang-dropdown {
         min-width: 220px;
       }
-
       .lang-dropdown .dropdown-link {
         display: flex;
         align-items: center;
         gap: 12px;
       }
-
       .lang-dropdown .flag-icon {
         width: 28px;
         height: 20px;
@@ -290,22 +253,20 @@
         gap: 6px;
         transition: var(--transition);
       }
-
       .mobile-lang-btn:hover {
         background: rgba(255, 255, 255, 0.2);
       }
-
       .mobile-lang-btn .flag-icon {
         width: 22px;
         height: 16px;
       }
-
       .mobile-lang-btn .lang-text {
         color: white;
         font-size: 0.9rem;
         font-weight: 600;
       }
 
+      /* ── HERO ── */
       .hero {
         min-height: 60vh;
         display: flex;
@@ -315,7 +276,6 @@
         overflow: hidden;
         margin-top: 85px;
       }
-
       .hero::after {
         content: "";
         position: absolute;
@@ -330,7 +290,6 @@
           transparent
         );
       }
-
       .hero-container {
         max-width: 1400px;
         margin: 0 auto;
@@ -338,11 +297,9 @@
         position: relative;
         z-index: 1;
       }
-
       .hero-content {
         text-align: center;
       }
-
       .badge {
         display: inline-block;
         color: white;
@@ -354,15 +311,13 @@
         margin-bottom: 1.5rem;
         text-transform: uppercase;
       }
-
       .hero-content h1 {
         font-size: 3.5rem;
         font-weight: 800;
         margin-bottom: 1rem;
         line-height: 1.1;
-        color: #ffffff;
+        color: #fff;
       }
-
       .hero-content .tagline {
         font-size: 1.3rem;
         color: var(--text);
@@ -370,7 +325,6 @@
         letter-spacing: 0.5px;
         margin-bottom: 2rem;
       }
-
       .made-in-badge {
         display: inline-flex;
         align-items: center;
@@ -383,41 +337,159 @@
         font-size: 1.1rem;
         color: var(--primary);
       }
-
       .made-in-badge i {
         font-size: 1.3rem;
       }
 
+      /* ── PRODUCT SHOWCASE ── */
+      .product-showcase {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 5rem 2rem 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+      .showcase-visual {
+        position: relative;
+      }
+
+      /* ── GALLERY (fixed) ── */
+      .gallery-main {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 107, 53, 0.2);
+        background: var(--dark-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        aspect-ratio: 4/3;
+        margin-bottom: 12px;
+        cursor: zoom-in;
+        transition: border-color 0.3s;
+      }
+      .gallery-main:hover {
+        border-color: var(--primary);
+      }
+      .gallery-main img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 1.5rem;
+        transition:
+          transform 0.4s ease,
+          opacity 0.25s ease;
+      }
+      .gallery-main:hover img {
+        transform: scale(1.04);
+      }
+
+      .gallery-thumbs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .gallery-thumb {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid rgba(255, 107, 53, 0.15);
+        background: var(--dark-secondary);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        aspect-ratio: 4/3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .gallery-thumb:hover {
+        border-color: rgba(255, 107, 53, 0.5);
+      }
+      .gallery-thumb.active {
+        border-color: var(--primary);
+        box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
+      }
+      .gallery-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        padding: 6px;
+        transition: transform 0.3s;
+      }
+      .gallery-thumb:hover img {
+        transform: scale(1.06);
+      }
+
+      /* ── SHOWCASE INFO ── */
+      .showcase-info h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
+      }
+      .showcase-info h2 span {
+        color: var(--primary);
+      }
+      .showcase-info .sub-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        display: block;
+      }
+      .showcase-info p {
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+      .quick-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 2rem;
+      }
+      .qs-item {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 8px;
+        padding: 14px 18px;
+        transition: border-color 0.3s;
+      }
+      .qs-item:hover {
+        border-color: var(--primary);
+      }
+      .qs-item .qs-label {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 4px;
+      }
+      .qs-item .qs-val {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .qs-item .qs-val.orange {
+        color: var(--primary);
+      }
+
+      /* ── CONTENT ── */
       .content-section {
         max-width: 1400px;
         margin: 0 auto;
-        padding: 4rem 2rem;
-      }
-
-      .intro-section {
-        max-width: 1000px;
-        margin: 0 auto 5rem;
-        text-align: center;
-      }
-
-      .intro-section h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: var(--text);
-      }
-
-      .intro-section p {
-        font-size: 1.15rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.8;
-        margin-bottom: 1rem;
+        padding: 2rem 2rem 4rem;
       }
 
       .features-section {
         margin-bottom: 5rem;
       }
-
       .features-section h2 {
         font-size: 2.2rem;
         font-weight: 700;
@@ -425,14 +497,12 @@
         color: var(--text);
         text-align: center;
       }
-
       .features-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
         margin-bottom: 3rem;
       }
-
       .feature-card {
         background: var(--dark-secondary);
         border: 1px solid rgba(255, 107, 53, 0.15);
@@ -440,26 +510,22 @@
         padding: 2.5rem;
         transition: all 0.3s ease;
       }
-
       .feature-card:hover {
         border-color: var(--primary);
         transform: translateY(-5px);
         box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
       }
-
       .feature-icon {
         font-size: 3rem;
         color: var(--primary);
         margin-bottom: 1.5rem;
       }
-
       .feature-card h3 {
         font-size: 1.5rem;
         font-weight: 600;
         color: var(--primary);
         margin-bottom: 1rem;
       }
-
       .feature-card p {
         font-size: 1rem;
         color: rgba(255, 255, 255, 0.85);
@@ -473,28 +539,23 @@
         border-radius: 0 12px 12px 0;
         margin: 2rem 0;
       }
-
       .safety-features h4 {
         font-size: 1.3rem;
         color: var(--primary);
         margin-bottom: 1rem;
         font-weight: 600;
       }
-
       .safety-features ul {
         list-style: none;
         padding: 0;
       }
-
       .safety-features li {
-        padding: 0.75rem 0;
-        padding-left: 2rem;
+        padding: 0.75rem 0 0.75rem 2rem;
         position: relative;
         color: rgba(255, 255, 255, 0.9);
         font-size: 1.05rem;
         line-height: 1.6;
       }
-
       .safety-features li::before {
         content: "✓";
         position: absolute;
@@ -507,7 +568,6 @@
       .specifications-section {
         margin-bottom: 5rem;
       }
-
       .specifications-section h2 {
         font-size: 2.2rem;
         font-weight: 700;
@@ -515,13 +575,11 @@
         color: var(--text);
         text-align: center;
       }
-
       .specs-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 2rem;
       }
-
       .spec-card {
         background: var(--dark-secondary);
         border: 2px solid rgba(255, 107, 53, 0.2);
@@ -531,7 +589,6 @@
         position: relative;
         overflow: hidden;
       }
-
       .spec-card::before {
         content: "";
         position: absolute;
@@ -543,83 +600,89 @@
         transform: scaleX(0);
         transition: transform 0.3s ease;
       }
-
       .spec-card:hover::before {
         transform: scaleX(1);
       }
-
       .spec-card:hover {
         border-color: var(--primary);
         transform: translateY(-5px);
         box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
       }
-
       .spec-header {
         display: flex;
         align-items: center;
         gap: 15px;
         margin-bottom: 1.5rem;
       }
-
       .color-indicator {
         width: 50px;
         height: 50px;
         border-radius: 10px;
         border: 3px solid rgba(255, 255, 255, 0.3);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        flex-shrink: 0;
       }
-
       .color-indicator.orange {
         background: #ff6b35;
       }
-
       .color-indicator.red {
         background: #dc2626;
       }
-
       .spec-title {
         flex: 1;
+        min-width: 0;
       }
-
       .spec-title h3 {
         font-size: 1.6rem;
         font-weight: 700;
         color: var(--text);
         margin-bottom: 0.25rem;
       }
-
       .spec-title .item-code {
         font-size: 0.9rem;
         color: var(--text-muted);
         font-family: "Courier New", monospace;
       }
-
       .spec-details {
         padding: 1.5rem 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
       }
-
       .spec-row {
         display: flex;
         justify-content: space-between;
+        gap: 1rem;
         padding: 0.75rem 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        flex-wrap: wrap;
       }
-
       .spec-row:last-child {
         border-bottom: none;
       }
-
       .spec-label {
         font-weight: 600;
         color: var(--text-muted);
         font-size: 0.95rem;
       }
-
       .spec-value {
         font-weight: 600;
         color: var(--text);
         font-size: 1rem;
+        text-align: right;
+      }
+      .pkg-badges {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+      .pkg-badge {
+        background: rgba(255, 107, 53, 0.1);
+        border: 1px solid rgba(255, 107, 53, 0.3);
+        color: var(--primary);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
       }
 
       .customization-section {
@@ -630,14 +693,12 @@
         text-align: center;
         margin-bottom: 5rem;
       }
-
       .customization-section h2 {
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 1rem;
         color: var(--text);
       }
-
       .customization-section p {
         font-size: 1.15rem;
         color: rgba(255, 255, 255, 0.9);
@@ -645,7 +706,6 @@
         max-width: 800px;
         margin: 0 auto 2rem;
       }
-
       .color-palette {
         display: flex;
         justify-content: center;
@@ -653,17 +713,15 @@
         flex-wrap: wrap;
         margin-top: 2rem;
       }
-
       .color-sample {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         border-radius: 12px;
         border: 3px solid rgba(255, 255, 255, 0.3);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
         cursor: pointer;
       }
-
       .color-sample:hover {
         transform: scale(1.1);
         border-color: var(--primary);
@@ -676,14 +734,12 @@
         padding: 3rem;
         text-align: center;
       }
-
       .cta-section h2 {
         font-size: 2.2rem;
         font-weight: 700;
         margin-bottom: 1rem;
         color: var(--text);
       }
-
       .cta-section p {
         font-size: 1.15rem;
         color: rgba(255, 255, 255, 0.9);
@@ -692,14 +748,12 @@
         margin-left: auto;
         margin-right: auto;
       }
-
       .cta-buttons {
         display: flex;
         gap: 1.5rem;
         justify-content: center;
         flex-wrap: wrap;
       }
-
       .btn {
         padding: 1rem 2.5rem;
         border-radius: 8px;
@@ -711,55 +765,48 @@
         align-items: center;
         gap: 10px;
       }
-
       .btn-primary {
         background: var(--primary);
         color: white;
       }
-
       .btn-primary:hover {
         background: var(--accent-orange);
         transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
       }
-
       .btn-secondary {
         background: transparent;
         color: var(--text);
         border: 2px solid var(--primary);
       }
-
       .btn-secondary:hover {
         background: var(--primary);
         color: white;
         transform: translateY(-2px);
       }
 
+      /* ── FOOTER ── */
       .site-footer {
         background: var(--footer-dark);
-        color: #ffffff;
+        color: #fff;
         font-size: 1rem;
         width: 100%;
         overflow: hidden;
         margin-top: 4rem;
       }
-
       .footer-top {
         padding: 50px 0 35px;
       }
-
       .container {
         max-width: 1400px;
         margin: 0 auto;
         padding: 0 2rem;
       }
-
       .footer-row {
         display: grid;
         grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
         gap: 30px;
       }
-
       .footer-logo {
         width: 180px;
         height: auto;
@@ -767,28 +814,24 @@
         transition: var(--transition);
         cursor: pointer;
       }
-
       .footer-logo:hover {
         transform: scale(1.05);
         filter: brightness(1.2);
       }
-
       .footer-widget p {
         line-height: 1.7;
         color: rgba(255, 255, 255, 0.85);
         margin-bottom: 12px;
         font-size: 0.95rem;
       }
-
       .footer-widget h4 {
-        color: #ffffff;
+        color: #fff;
         font-weight: 600;
         margin-bottom: 18px;
         position: relative;
         padding-bottom: 10px;
         font-size: 1.1rem;
       }
-
       .footer-widget h4::after {
         content: "";
         width: 36px;
@@ -798,35 +841,29 @@
         left: 0;
         bottom: 0;
       }
-
       .footer-widget ul {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-
       .footer-widget ul li {
         margin-bottom: 8px;
       }
-
       .footer-widget ul li a {
         color: rgba(255, 255, 255, 0.85);
-        transition: color 0.3s ease;
+        transition: color 0.3s;
         text-decoration: none;
         display: inline-block;
         font-size: 0.95rem;
       }
-
       .footer-widget ul li a:hover {
         color: var(--accent-orange);
       }
-
       .footer-social {
         display: flex;
         gap: 10px;
         margin-top: 12px;
       }
-
       .footer-social a {
         width: 38px;
         height: 38px;
@@ -835,73 +872,65 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        color: #ffffff;
+        color: #fff;
         transition: var(--transition);
         text-decoration: none;
       }
-
       .footer-social a:hover {
         background: var(--accent-orange);
         transform: translateY(-3px);
       }
-
       .footer-contact {
         padding: 0;
         margin: 0;
         list-style: none;
       }
-
       .footer-contact li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 10px;
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.85);
         margin-bottom: 10px;
       }
-
       .footer-contact li i {
         color: var(--accent-orange);
         flex-shrink: 0;
         font-size: 1rem;
         width: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin-top: 3px;
       }
-
       .footer-contact li a {
         color: rgba(255, 255, 255, 0.85);
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: color 0.3s;
         flex: 1;
         font-size: 0.95rem;
+        word-break: break-word;
       }
-
       .footer-contact li a:hover {
         color: var(--accent-orange);
       }
-
       .footer-bottom {
         background: #050f1c;
         padding: 18px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
       }
-
       .footer-bottom-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
       }
-
       .footer-bottom p {
         margin: 0;
         color: rgba(255, 255, 255, 0.8);
         font-size: 0.9rem;
-      }
-
-      .footer-credit {
-        margin-left: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: center;
       }
 
       .scroll-to-top {
@@ -923,15 +952,19 @@
         z-index: 1000;
         box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
       }
-
       .scroll-to-top:hover {
         background: rgb(239, 53, 32);
         transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
       }
-
       .scroll-to-top.show {
         display: flex;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1100px) {
+        .product-showcase {
+          gap: 2.5rem;
+        }
       }
 
       @media (max-width: 992px) {
@@ -1017,6 +1050,7 @@
         .dropdown-link:hover {
           background: rgba(255, 255, 255, 0.1);
         }
+
         .hero {
           margin-top: 70px;
           min-height: 50vh;
@@ -1024,7 +1058,16 @@
         .hero-content h1 {
           font-size: 2.5rem;
         }
-        .features-grid,
+
+        .product-showcase {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding: 3rem 1.5rem;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
         .specs-grid {
           grid-template-columns: 1fr;
         }
@@ -1035,17 +1078,25 @@
 
       @media (max-width: 768px) {
         .content-section {
-          padding: 3rem 1.5rem;
-        }
-        .intro-section h2 {
-          font-size: 2rem;
+          padding: 2rem 1.5rem 3rem;
         }
         .hero-content h1 {
-          font-size: 2.2rem;
+          font-size: 2rem;
         }
         .hero-content .tagline {
-          font-size: 1.1rem;
+          font-size: 1rem;
         }
+        .made-in-badge {
+          font-size: 0.95rem;
+          padding: 0.6rem 1.5rem;
+        }
+        .showcase-info h2 {
+          font-size: 2rem;
+        }
+        .quick-specs {
+          grid-template-columns: 1fr 1fr;
+        }
+
         .footer-top {
           padding: 40px 0 30px;
         }
@@ -1058,6 +1109,10 @@
           gap: 12px;
           text-align: center;
         }
+        .footer-bottom p {
+          justify-content: center;
+        }
+
         .cta-buttons {
           flex-direction: column;
           align-items: stretch;
@@ -1065,8 +1120,23 @@
         .btn {
           justify-content: center;
         }
-        .specs-grid {
-          grid-template-columns: 1fr;
+
+        .customization-section {
+          padding: 2rem 1.5rem;
+        }
+        .cta-section {
+          padding: 2rem 1.5rem;
+        }
+        .cta-section h2 {
+          font-size: 1.8rem;
+        }
+        .cta-section p {
+          font-size: 1rem;
+        }
+
+        .color-sample {
+          width: 55px;
+          height: 55px;
         }
       }
 
@@ -1077,14 +1147,62 @@
         .logo-image {
           height: 50px;
         }
-        .mobile-lang-btn {
-          padding: 5px 8px;
-        }
         .container {
           padding: 0 1rem;
         }
+        .product-showcase {
+          padding: 2rem 1rem;
+        }
+        .content-section {
+          padding: 1.5rem 1rem 3rem;
+        }
+
+        .hero-container {
+          padding: 3rem 1rem;
+        }
+        .hero-content h1 {
+          font-size: 1.75rem;
+        }
+        .hero-content .tagline {
+          font-size: 0.95rem;
+        }
+
+        .quick-specs {
+          grid-template-columns: 1fr;
+        }
+        .showcase-info h2 {
+          font-size: 1.75rem;
+        }
+
+        .gallery-main {
+          aspect-ratio: 1/1;
+        }
+
+        .features-section h2,
+        .specifications-section h2 {
+          font-size: 1.75rem;
+          margin-bottom: 2rem;
+        }
+        .feature-card {
+          padding: 1.75rem;
+        }
+        .spec-card {
+          padding: 1.75rem;
+        }
+        .spec-title h3 {
+          font-size: 1.3rem;
+        }
+
+        .scroll-to-top {
+          bottom: 20px;
+          right: 20px;
+          width: 42px;
+          height: 42px;
+          font-size: 16px;
+        }
       }
 
+      /* ── ANIMATIONS ── */
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -1095,21 +1213,18 @@
           transform: translateY(0);
         }
       }
-
-      .intro-section,
+      .product-showcase,
       .features-section,
       .specifications-section,
       .customization-section,
       .cta-section {
         animation: fadeInUp 0.8s ease-out;
       }
-
       .feature-card,
       .spec-card {
         animation: fadeInUp 0.8s ease-out;
         animation-fill-mode: both;
       }
-
       .feature-card:nth-child(1),
       .spec-card:nth-child(1) {
         animation-delay: 0.1s;
@@ -1124,6 +1239,7 @@
     </style>
   </head>
   <body>
+    <!-- HEADER -->
     <header class="header">
       <div class="header-content">
         <a href="index.html" class="logo">
@@ -1133,7 +1249,6 @@
             class="logo-image"
           />
         </a>
-
         <div class="mobile-controls">
           <button class="mobile-lang-btn" id="mobileLangBtn">
             <svg
@@ -1153,18 +1268,14 @@
             </svg>
             <span class="lang-text">AZ</span>
           </button>
-
           <button
             class="mobile-menu-btn"
             id="mobileMenuBtn"
             aria-label="Toggle Menu"
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
           </button>
         </div>
-
         <nav class="nav" id="mainNav">
           <ul class="nav-list">
             <li class="nav-item">
@@ -1173,10 +1284,10 @@
               >
             </li>
             <li class="nav-item has-dropdown">
-              <a href="#products" class="nav-link">
-                <span data-i18n="products">Məhsullar</span>
-                <span class="dropdown-icon">▼</span>
-              </a>
+              <a href="#products" class="nav-link"
+                ><span data-i18n="products">Məhsullar</span
+                ><span class="dropdown-icon">▼</span></a
+              >
               <ul class="dropdown">
                 <li class="dropdown-list">
                   <a
@@ -1239,10 +1350,10 @@
               </ul>
             </li>
             <li class="nav-item has-dropdown">
-              <a href="#services" class="nav-link">
-                <span data-i18n="services">Xidmətlər</span>
-                <span class="dropdown-icon">▼</span>
-              </a>
+              <a href="#services" class="nav-link"
+                ><span data-i18n="services">Xidmətlər</span
+                ><span class="dropdown-icon">▼</span></a
+              >
               <ul class="dropdown">
                 <li class="dropdown-list">
                   <a
@@ -1273,9 +1384,9 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="market.html" class="nav-link">
-                <span data-i18n="markets">Bazar Sektorları</span>
-              </a>
+              <a href="market.html" class="nav-link"
+                ><span data-i18n="markets">Bazar Sektorları</span></a
+              >
             </li>
             <li class="nav-item">
               <a href="career.html" class="nav-link" data-i18n="career"
@@ -1299,8 +1410,8 @@
                     d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
                   />
                 </svg>
-                <span class="lang-text">AZ</span>
-                <span class="dropdown-icon">▼</span>
+                <span class="lang-text">AZ</span
+                ><span class="dropdown-icon">▼</span>
               </a>
               <ul class="dropdown lang-dropdown">
                 <li class="dropdown-list">
@@ -1368,6 +1479,7 @@
       </div>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-container">
         <div class="hero-content">
@@ -1378,45 +1490,124 @@
           </p>
           <div class="made-in-badge">
             <i class="fas fa-flag"></i>
-            <span data-i18n="madeInAzerbaijan">Azərbaycanda İstehsal Olunur</span>
+            <span data-i18n="madeInAzerbaijan"
+              >Azərbaycanda İstehsal Olunur</span
+            >
           </div>
         </div>
       </div>
     </section>
 
-    <section class="content-section">
-      <div class="intro-section">
-        <h2 data-i18n="introTitle">Professionallıq və Yerli İstehsal Birləşməsi</h2>
+    <!-- PRODUCT SHOWCASE -->
+    <div class="product-showcase">
+      <!-- Left: Gallery -->
+      <div class="showcase-visual">
+        <!-- Main image -->
+        <div class="gallery-main" id="galleryMain">
+          <img
+            id="mainImg"
+            src="assets/images/oem/WhatsApp Image 2026-02-17 at 16.39.37 (1).jpeg"
+            alt="Pipe Chock - Görünüş 1"
+          />
+        </div>
+        <!-- Thumbnails -->
+        <div class="gallery-thumbs">
+          <div
+            class="gallery-thumb active"
+            onclick="
+              switchImg(
+                this,
+                'assets/images/oem/WhatsApp Image 2026-02-17 at 16.39.37 (1).jpeg',
+              )
+            "
+          >
+            <img
+              src="assets/images/oem/WhatsApp Image 2026-02-17 at 16.39.37 (1).jpeg"
+              alt="Görünüş 1"
+            />
+          </div>
+          <div
+            class="gallery-thumb"
+            onclick="
+              switchImg(
+                this,
+                'assets/images/oem/WhatsApp Image 2026-02-17 at 16.39.37 (2).jpeg',
+              )
+            "
+          >
+            <img
+              src="assets/images/oem/WhatsApp Image 2026-02-17 at 16.39.37 (2).jpeg"
+              alt="Görünüş 2"
+            />
+          </div>
+          <div
+            class="gallery-thumb"
+            onclick="
+              switchImg(
+                this,
+                'assets/images/oem/WhatsApp Image 2026-02-17 at 16.39.37.jpeg',
+              )
+            "
+          >
+            <img
+              src="assets/images/oem/WhatsApp Image 2026-02-17 at 16.39.37.jpeg"
+              alt="Görünüş 3"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Info -->
+      <div class="showcase-info">
+        <span class="sub-label" data-i18n="category">Boru Aksesuarları</span>
+        <h2 data-i18n="productName">Boru <span>Dayaqları</span></h2>
         <p data-i18n="introPara1">
           Təchizat və metal konstruksiyaların hazırlanması xidmətləri ilə
           yanaşı, EVERSHOP ixtisaslaşdırılmış məhsulların qürurlu yerli
           istehsalçısıdır.
         </p>
         <p data-i18n="introPara2">
-          Yerli sənaye artımını dəstəkləmək missiyamızın bir hissəsi olaraq,
-          biz yüksək keyfiyyətli boru dayaqlarını birbaşa Azərbaycanda
+          Yerli sənaye artımını dəstəkləmək missiyamızın bir hissəsi olaraq, biz
+          yüksək keyfiyyətli boru dayaqlarını birbaşa Azərbaycanda
           layihələndiririk və istehsal edirik.
         </p>
+        <div class="quick-specs">
+          <div class="qs-item">
+            <div class="qs-label" data-i18n="material">Material</div>
+            <div class="qs-val orange">HDPE</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label" data-i18n="colorsLabel">Rənglər</div>
+            <div class="qs-val" data-i18n="colorsVal">Narıncı / Qırmızı</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label" data-i18n="nailsLabel">Mismar</div>
+            <div class="qs-val" data-i18n="nailsVal">Daxildir</div>
+          </div>
+          <div class="qs-item">
+            <div class="qs-label" data-i18n="pkgLabel">Qablaşdırma</div>
+            <div class="qs-val">CTN</div>
+          </div>
+        </div>
       </div>
+    </div>
 
+    <!-- CONTENT -->
+    <section class="content-section">
+      <!-- Features -->
       <div class="features-section">
         <h2 data-i18n="featuresTitle">Məhsulun Xüsusiyyətləri</h2>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-industry"></i>
-            </div>
+            <div class="feature-icon"><i class="fas fa-industry"></i></div>
             <h3 data-i18n="feature1Title">Azərbaycan İstehsalı</h3>
             <p data-i18n="feature1Desc">
               Məhsullarımız Bakıdakı müasir istehsalat obyektimizdə peşəkar
               mühəndislərimiz və texniki heyətimiz tərəfindən istehsal olunur.
             </p>
           </div>
-
           <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
+            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
             <h3 data-i18n="feature2Title">Material və Davamlılıq</h3>
             <p data-i18n="feature2Desc">
               Yüksək sıxlıqlı polietilendən (HDPE) hazırlanır. Bu material
@@ -1424,11 +1615,8 @@
               etibarlılığı təmin edir.
             </p>
           </div>
-
           <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-hard-hat"></i>
-            </div>
+            <div class="feature-icon"><i class="fas fa-hard-hat"></i></div>
             <h3 data-i18n="feature3Title">Təhlükəsizlik Standartları</h3>
             <p data-i18n="feature3Desc">
               Daşıma zamanı ağır boruların təhlükəsiz şəkildə bərkidilməsi üçün
@@ -1436,7 +1624,6 @@
             </p>
           </div>
         </div>
-
         <div class="safety-features">
           <h4 data-i18n="safetyFeaturesTitle">Təhlükəsizlik Üstünlükləri</h4>
           <ul>
@@ -1456,6 +1643,7 @@
         </div>
       </div>
 
+      <!-- Specifications -->
       <div class="specifications-section">
         <h2 data-i18n="specificationsTitle">Texniki Xüsusiyyətlər</h2>
         <div class="specs-grid">
@@ -1469,24 +1657,35 @@
             </div>
             <div class="spec-details">
               <div class="spec-row">
-                <span class="spec-label" data-i18n="dimensions">Ölçülər:</span>
-                <span class="spec-value">8 x 3 x 3½ düym</span>
+                <span class="spec-label" data-i18n="dimensions">Ölçülər:</span
+                ><span class="spec-value">8 x 3 x 3½ düym</span>
               </div>
               <div class="spec-row">
-                <span class="spec-label" data-i18n="color">Rəng:</span>
-                <span class="spec-value" data-i18n="orange">Narıncı</span>
+                <span class="spec-label" data-i18n="color">Rəng:</span
+                ><span class="spec-value" data-i18n="orange">Narıncı</span>
               </div>
               <div class="spec-row">
-                <span class="spec-label" data-i18n="material">Material:</span>
-                <span class="spec-value">HDPE</span>
+                <span class="spec-label" data-i18n="material">Material:</span
+                ><span class="spec-value">HDPE</span>
               </div>
               <div class="spec-row">
-                <span class="spec-label" data-i18n="application">Tətbiq:</span>
-                <span class="spec-value" data-i18n="heavyDuty">Ağır Boru</span>
+                <span class="spec-label" data-i18n="pkgQty"
+                  >Qablaşdırma miqdarı:</span
+                ><span class="spec-value">50 ədəd / CTN</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label" data-i18n="application">Tətbiq:</span
+                ><span class="spec-value" data-i18n="heavyDuty">Ağır Boru</span>
               </div>
             </div>
+            <div class="pkg-badges">
+              <span class="pkg-badge"
+                ><i class="fas fa-check" style="margin-right: 5px"></i
+                ><span data-i18n="withNails">Mismarla birlikdə</span></span
+              >
+              <span class="pkg-badge">CTN · 50 pcs</span>
+            </div>
           </div>
-
           <div class="spec-card">
             <div class="spec-header">
               <div class="color-indicator red"></div>
@@ -1497,42 +1696,78 @@
             </div>
             <div class="spec-details">
               <div class="spec-row">
-                <span class="spec-label" data-i18n="dimensions">Ölçülər:</span>
-                <span class="spec-value">5 x 2 x 2 düym</span>
+                <span class="spec-label" data-i18n="dimensions">Ölçülər:</span
+                ><span class="spec-value">5 x 2 x 2 düym</span>
               </div>
               <div class="spec-row">
-                <span class="spec-label" data-i18n="color">Rəng:</span>
-                <span class="spec-value" data-i18n="red">Qırmızı</span>
+                <span class="spec-label" data-i18n="color">Rəng:</span
+                ><span class="spec-value" data-i18n="red">Qırmızı</span>
               </div>
               <div class="spec-row">
-                <span class="spec-label" data-i18n="material">Material:</span>
-                <span class="spec-value">HDPE</span>
+                <span class="spec-label" data-i18n="material">Material:</span
+                ><span class="spec-value">HDPE</span>
               </div>
               <div class="spec-row">
-                <span class="spec-label" data-i18n="application">Tətbiq:</span>
-                <span class="spec-value" data-i18n="standardPipe">Standart Boru</span>
+                <span class="spec-label" data-i18n="pkgQty"
+                  >Qablaşdırma miqdarı:</span
+                ><span class="spec-value">135 ədəd / CTN</span>
               </div>
+              <div class="spec-row">
+                <span class="spec-label" data-i18n="application">Tətbiq:</span
+                ><span class="spec-value" data-i18n="standardPipe"
+                  >Standart Boru</span
+                >
+              </div>
+            </div>
+            <div class="pkg-badges">
+              <span class="pkg-badge"
+                ><i class="fas fa-check" style="margin-right: 5px"></i
+                ><span data-i18n="withNails">Mismarla birlikdə</span></span
+              >
+              <span class="pkg-badge">CTN · 135 pcs</span>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Customization -->
       <div class="customization-section">
         <h2 data-i18n="customizationTitle">Fərdi Sifariş İmkanları</h2>
         <p data-i18n="customizationDesc">
-          Müştərinin korporativ təhlükəsizlik standartlarına uyğun olaraq
-          fərqli rənglərdə xüsusi sifariş mümkündür. Bizim komandamız sizin
+          Müştərinin korporativ təhlükəsizlik standartlarına uyğun olaraq fərqli
+          rənglərdə xüsusi sifariş mümkündür. Bizim komandamız sizin
           ehtiyaclarınıza uyğun optimal həll təqdim etməyə hazırdır.
         </p>
         <div class="color-palette">
-          <div class="color-sample" style="background: #ff6b35;" title="Orange"></div>
-          <div class="color-sample" style="background: #dc2626;" title="Red"></div>
-          <div class="color-sample" style="background: #fbbf24;" title="Yellow"></div>
-          <div class="color-sample" style="background: #10b981;" title="Green"></div>
-          <div class="color-sample" style="background: #3b82f6;" title="Blue"></div>
+          <div
+            class="color-sample"
+            style="background: #ff6b35"
+            title="Orange"
+          ></div>
+          <div
+            class="color-sample"
+            style="background: #dc2626"
+            title="Red"
+          ></div>
+          <div
+            class="color-sample"
+            style="background: #fbbf24"
+            title="Yellow"
+          ></div>
+          <div
+            class="color-sample"
+            style="background: #10b981"
+            title="Green"
+          ></div>
+          <div
+            class="color-sample"
+            style="background: #3b82f6"
+            title="Blue"
+          ></div>
         </div>
       </div>
 
+      <!-- CTA -->
       <div class="cta-section">
         <h2 data-i18n="ctaTitle">Layihəniz üçün Boru Dayaqları Lazımdır?</h2>
         <p data-i18n="ctaDesc">
@@ -1541,29 +1776,32 @@
           edəcəklər.
         </p>
         <div class="cta-buttons">
-          <a href="https://wa.me/994702710066" class="btn btn-primary" data-i18n="ctaContact">
-            <i class="fab fa-whatsapp"></i>
-            Bizimlə Əlaqə Saxlayın
+          <a
+            href="https://wa.me/994702710066"
+            class="btn btn-primary"
+            data-i18n="ctaContact"
+          >
+            <i class="fab fa-whatsapp"></i> Bizimlə Əlaqə Saxlayın
           </a>
-          <a href="about.html" class="btn btn-secondary" data-i18n="ctaLearn">
-            Şirkət Haqqında
-          </a>
+          <a href="about.html" class="btn btn-secondary" data-i18n="ctaLearn"
+            >Şirkət Haqqında</a
+          >
         </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="site-footer" role="contentinfo">
       <div class="footer-top">
         <div class="container">
           <div class="footer-row">
             <div class="footer-widget">
-              <a href="index.html">
-                <img
+              <a href="index.html"
+                ><img
                   src="assets/images/logo/logo.png"
                   class="footer-logo"
                   alt="EVERSHOP MMC Logo"
-                />
-              </a>
+              /></a>
               <p data-i18n="footerAbout">
                 Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət
                 mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli
@@ -1575,28 +1813,24 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
-                >
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                </a>
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
                 <a
                   href="https://www.instagram.com/evershopllc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                >
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
-                </a>
+                  ><i class="fab fa-instagram"></i
+                ></a>
                 <a
                   href="https://www.linkedin.com/company/evershop-llc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                >
-                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                </a>
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
               </div>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="company">Şirkət</h4>
               <ul>
@@ -1609,7 +1843,6 @@
                 <li><a href="career.html" data-i18n="career">Karyera</a></li>
               </ul>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="solutions">Həllər</h4>
               <ul>
@@ -1648,59 +1881,50 @@
                 </li>
               </ul>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="contactInfo">Əlaqə</h4>
               <ul class="footer-contact">
                 <li>
-                  <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                  <a
+                  <i class="fas fa-phone-alt"></i
+                  ><a
                     href="https://wa.me/994702710066"
                     target="_blank"
                     rel="noopener noreferrer"
+                    >+994 70 271 00 66</a
                   >
-                    +994 70 271 00 66
-                  </a>
                 </li>
-
                 <li>
-                  <i class="fas fa-envelope"></i>
-                  <a
+                  <i class="fas fa-envelope"></i
+                  ><a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az"
                     target="_blank"
+                    >Sales@evershop.az</a
                   >
-                    Sales@evershop.az
-                  </a>
                 </li>
-
                 <li>
-                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                  <a
+                  <i class="fas fa-map-marker-alt"></i
+                  ><a
                     href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
+                    >Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
+                    Azerbaijan</a
                   >
-                    Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
-                    Azerbaijan
-                  </a>
                 </li>
-
                 <li>
-                  <i class="fas fa-industry" aria-hidden="true"></i>
-                  <a
+                  <i class="fas fa-industry"></i
+                  ><a
                     href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
+                    >Salyan Highway, 32 km, Baku, Azerbaijan</a
                   >
-                    Salyan Highway, 32 km, Baku, Azerbaijan
-                  </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="container">
           <div class="footer-bottom-content">
@@ -1715,9 +1939,8 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   style="text-decoration: none; color: inherit"
+                  ><strong>BUTA GRUP</strong></a
                 >
-                  <strong>BUTA GRUP</strong>
-                </a>
               </span>
             </p>
           </div>
@@ -1730,7 +1953,25 @@
     </button>
 
     <script>
-      const translations = {
+      /* ── Gallery switcher ── */
+      function switchImg(thumb, src) {
+        var mainImg = document.getElementById("mainImg");
+        mainImg.style.opacity = "0";
+        mainImg.style.transform = "scale(0.97)";
+        mainImg.style.transition = "opacity 0.2s ease, transform 0.2s ease";
+        setTimeout(function () {
+          mainImg.src = src;
+          mainImg.style.opacity = "1";
+          mainImg.style.transform = "scale(1)";
+        }, 180);
+        document.querySelectorAll(".gallery-thumb").forEach(function (t) {
+          t.classList.remove("active");
+        });
+        thumb.classList.add("active");
+      }
+
+      /* ── Translations ── */
+      var translations = {
         az: {
           about: "Haqqımızda",
           products: "Məhsullar",
@@ -1757,38 +1998,57 @@
           heroTitle: "Boru Dayaqları",
           heroTagline: "Təhlükəsiz Daşıma və Saxlama üçün Mühəndislik Həlli",
           madeInAzerbaijan: "Azərbaycanda İstehsal Olunur",
-          introTitle: "Professionallıq və Yerli İstehsal Birləşməsi",
-          introPara1: "Təchizat və metal konstruksiyaların hazırlanması xidmətləri ilə yanaşı, EVERSHOP ixtisaslaşdırılmış məhsulların qürurlu yerli istehsalçısıdır.",
-          introPara2: "Yerli sənaye artımını dəstəkləmək missiyamızın bir hissəsi olaraq, biz yüksək keyfiyyətli boru dayaqlarını birbaşa Azərbaycanda layihələndiririk və istehsal edirik.",
+          category: "Boru Aksesuarları",
+          productName: "Boru Dayaqları",
+          introPara1:
+            "Təchizat və metal konstruksiyaların hazırlanması xidmətləri ilə yanaşı, EVERSHOP ixtisaslaşdırılmış məhsulların qürurlu yerli istehsalçısıdır.",
+          introPara2:
+            "Yerli sənaye artımını dəstəkləmək missiyamızın bir hissəsi olaraq, biz yüksək keyfiyyətli boru dayaqlarını birbaşa Azərbaycanda layihələndiririk və istehsal edirik.",
+          material: "Material",
+          colorsLabel: "Rənglər",
+          colorsVal: "Narıncı / Qırmızı",
+          nailsLabel: "Mismar",
+          nailsVal: "Daxildir",
+          pkgLabel: "Qablaşdırma",
           featuresTitle: "Məhsulun Xüsusiyyətləri",
           feature1Title: "Azərbaycan İstehsalı",
-          feature1Desc: "Məhsullarımız Bakıdakı müasir istehsalat obyektimizdə peşəkar mühəndislərimiz və texniki heyətimiz tərəfindən istehsal olunur.",
+          feature1Desc:
+            "Məhsullarımız Bakıdakı müasir istehsalat obyektimizdə peşəkar mühəndislərimiz və texniki heyətimiz tərəfindən istehsal olunur.",
           feature2Title: "Material və Davamlılıq",
-          feature2Desc: "Yüksək sıxlıqlı polietilendən (HDPE) hazırlanır. Bu material yüksək zərbəyə davamlılıq və sahə şəraitində uzunmüddətli etibarlılığı təmin edir.",
+          feature2Desc:
+            "Yüksək sıxlıqlı polietilendən (HDPE) hazırlanır. Bu material yüksək zərbəyə davamlılıq və sahə şəraitində uzunmüddətli etibarlılığı təmin edir.",
           feature3Title: "Təhlükəsizlik Standartları",
-          feature3Desc: "Daşıma zamanı ağır boruların təhlükəsiz şəkildə bərkidilməsi üçün mühəndislik həlləri ilə hazırlanmışdır.",
+          feature3Desc:
+            "Daşıma zamanı ağır boruların təhlükəsiz şəkildə bərkidilməsi üçün mühəndislik həlləri ilə hazırlanmışdır.",
           safetyFeaturesTitle: "Təhlükəsizlik Üstünlükləri",
-          safetyFeature1: "Daşıma zamanı boruların yük avtomobillərinə təhlükəsiz bərkidilməsi üçün xüsusi olaraq hazırlanmışdır",
-          safetyFeature2: "Yükləmə və boşaltma zamanı təhlükəsizliyi təmin etmək üçün yüksək görünən rənglərdə (narıncı və qırmızı) mövcuddur",
-          safetyFeature3: "Bəzi modellər taxta platformalara sürətli və etibarlı bərkidilmə üçün hazır mismarlarla təchiz olunub",
+          safetyFeature1:
+            "Daşıma zamanı boruların yük avtomobillərinə təhlükəsiz bərkidilməsi üçün xüsusi olaraq hazırlanmışdır",
+          safetyFeature2:
+            "Yükləmə və boşaltma zamanı təhlükəsizliyi təmin etmək üçün yüksək görünən rənglərdə (narıncı və qırmızı) mövcuddur",
+          safetyFeature3:
+            "Bəzi modellər taxta platformalara sürətli və etibarlı bərkidilmə üçün hazır mismarlarla təchiz olunub",
           specificationsTitle: "Texniki Xüsusiyyətlər",
           largeSize: "Böyük Ölçü",
           standardSize: "Standart Ölçü",
           dimensions: "Ölçülər:",
           color: "Rəng:",
-          material: "Material:",
+          pkgQty: "Qablaşdırma miqdarı:",
           application: "Tətbiq:",
           orange: "Narıncı",
           red: "Qırmızı",
           heavyDuty: "Ağır Boru",
           standardPipe: "Standart Boru",
+          withNails: "Mismarla birlikdə",
           customizationTitle: "Fərdi Sifariş İmkanları",
-          customizationDesc: "Müştərinin korporativ təhlükəsizlik standartlarına uyğun olaraq fərqli rənglərdə xüsusi sifariş mümkündür. Bizim komandamız sizin ehtiyaclarınıza uyğun optimal həll təqdim etməyə hazırdır.",
+          customizationDesc:
+            "Müştərinin korporativ təhlükəsizlik standartlarına uyğun olaraq fərqli rənglərdə xüsusi sifariş mümkündür. Bizim komandamız sizin ehtiyaclarınıza uyğun optimal həll təqdim etməyə hazırdır.",
           ctaTitle: "Layihəniz üçün Boru Dayaqları Lazımdır?",
-          ctaDesc: "Bizimlə əlaqə saxlayın və yerli istehsal keyfiyyətindən faydalanın. Mühəndislərimiz sizin tələblərinizə uyğun optimal həll təqdim edəcəklər.",
+          ctaDesc:
+            "Bizimlə əlaqə saxlayın və yerli istehsal keyfiyyətindən faydalanın. Mühəndislərimiz sizin tələblərinizə uyğun optimal həll təqdim edəcəklər.",
           ctaContact: "Bizimlə Əlaqə Saxlayın",
           ctaLearn: "Şirkət Haqqında",
-          footerAbout: "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
+          footerAbout:
+            "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
           company: "Şirkət",
           solutions: "Həllər",
           engineeringDesign: "Mühəndislik və Dizayn",
@@ -1826,38 +2086,57 @@
           heroTitle: "Pipe Chocks",
           heroTagline: "Engineered Solution for Safe Transit and Storage",
           madeInAzerbaijan: "Made in Azerbaijan",
-          introTitle: "Combining Professional Engineering with Local Manufacturing",
-          introPara1: "In addition to supply and metal fabrication services, EVERSHOP is a proud local manufacturer of specialized products.",
-          introPara2: "As part of our mission to support local industrial growth, we design and manufacture high-quality pipe chocks directly in Azerbaijan.",
+          category: "Pipe Accessories",
+          productName: "Pipe Chocks",
+          introPara1:
+            "In addition to supply and metal fabrication services, EVERSHOP is a proud local manufacturer of specialized products.",
+          introPara2:
+            "As part of our mission to support local industrial growth, we design and manufacture high-quality pipe chocks directly in Azerbaijan.",
+          material: "Material",
+          colorsLabel: "Colors",
+          colorsVal: "Orange / Red",
+          nailsLabel: "Nails",
+          nailsVal: "Included",
+          pkgLabel: "Packaging",
           featuresTitle: "Product Features",
           feature1Title: "Made in Azerbaijan",
-          feature1Desc: "Our products are manufactured at our modern production facility in Baku by our professional engineers and technical staff.",
+          feature1Desc:
+            "Our products are manufactured at our modern production facility in Baku by our professional engineers and technical staff.",
           feature2Title: "Material & Durability",
-          feature2Desc: "Manufactured from high-density polyethylene (HDPE), ensuring high impact resistance and long-term reliability in field conditions.",
+          feature2Desc:
+            "Manufactured from high-density polyethylene (HDPE), ensuring high impact resistance and long-term reliability in field conditions.",
           feature3Title: "Safety Standards",
-          feature3Desc: "Engineered specifically to help secure heavy piping during transit with comprehensive safety features.",
+          feature3Desc:
+            "Engineered specifically to help secure heavy piping during transit with comprehensive safety features.",
           safetyFeaturesTitle: "Safety Features",
-          safetyFeature1: "Designed specifically to help secure pipe to trucks during transit",
-          safetyFeature2: "Available in high-visibility colors (Orange and Red) to ensure safety during loading and unloading",
-          safetyFeature3: "Certain styles include pre-installed nails for immediate and secure application to wooden truck beds",
+          safetyFeature1:
+            "Designed specifically to help secure pipe to trucks during transit",
+          safetyFeature2:
+            "Available in high-visibility colors (Orange and Red) to ensure safety during loading and unloading",
+          safetyFeature3:
+            "Certain styles include pre-installed nails for immediate and secure application to wooden truck beds",
           specificationsTitle: "Technical Specifications",
           largeSize: "Large Size",
           standardSize: "Standard Size",
           dimensions: "Dimensions:",
           color: "Color:",
-          material: "Material:",
+          pkgQty: "Package Qty:",
           application: "Application:",
           orange: "Orange",
           red: "Red",
           heavyDuty: "Heavy Duty Pipe",
           standardPipe: "Standard Pipe",
+          withNails: "Including Nails",
           customizationTitle: "Customization Options",
-          customizationDesc: "Custom colors are available upon request to meet specific corporate safety standards. Our team is ready to provide optimal solutions tailored to your needs.",
+          customizationDesc:
+            "Custom colors are available upon request to meet specific corporate safety standards. Our team is ready to provide optimal solutions tailored to your needs.",
           ctaTitle: "Need Pipe Chocks for Your Project?",
-          ctaDesc: "Contact us and benefit from local manufacturing quality. Our engineers will provide the optimal solution for your requirements.",
+          ctaDesc:
+            "Contact us and benefit from local manufacturing quality. Our engineers will provide the optimal solution for your requirements.",
           ctaContact: "Contact Us",
           ctaLearn: "About Company",
-          footerAbout: "Have a complex project? Let our engineers and trade experts find the most efficient and reliable solution for your business.",
+          footerAbout:
+            "Have a complex project? Let our engineers and trade experts find the most efficient and reliable solution for your business.",
           company: "Company",
           solutions: "Solutions",
           engineeringDesign: "Engineering & Design",
@@ -1893,40 +2172,60 @@
           langRu: "Русский язык",
           localManufacturing: "МЕСТНОЕ ПРОИЗВОДСТВО",
           heroTitle: "Башмаки для труб",
-          heroTagline: "Инженерное Решение для Безопасной Транспортировки и Хранения",
+          heroTagline:
+            "Инженерное Решение для Безопасной Транспортировки и Хранения",
           madeInAzerbaijan: "Сделано в Азербайджане",
-          introTitle: "Объединение Профессионального Инжиниринга и Местного Производства",
-          introPara1: "В дополнение к услугам по снабжению и изготовлению металлоконструкций, EVERSHOP является гордым местным производителем специализированных изделий.",
-          introPara2: "В рамках нашего стремления поддерживать рост местной промышленности мы проектируем и производим высококачественные башмаки для труб непосредственно в Азербайджане.",
+          category: "Трубопроводная Арматура",
+          productName: "Башмаки для труб",
+          introPara1:
+            "В дополнение к услугам по снабжению и изготовлению металлоконструкций, EVERSHOP является гордым местным производителем специализированных изделий.",
+          introPara2:
+            "В рамках нашего стремления поддерживать рост местной промышленности мы проектируем и производим высококачественные башмаки для труб непосредственно в Азербайджане.",
+          material: "Материал",
+          colorsLabel: "Цвета",
+          colorsVal: "Оранжевый / Красный",
+          nailsLabel: "Гвозди",
+          nailsVal: "Включены",
+          pkgLabel: "Упаковка",
           featuresTitle: "Характеристики Продукции",
           feature1Title: "Сделано в Азербайджане",
-          feature1Desc: "Продукция производится на нашем современном производственном предприятии в Баку нашими профессиональными инженерами и техническим персоналом.",
+          feature1Desc:
+            "Продукция производится на нашем современном производственном предприятии в Баку нашими профессиональными инженерами и техническим персоналом.",
           feature2Title: "Материал и Прочность",
-          feature2Desc: "Изготавливаются из полиэтилена высокой плотности (HDPE), что обеспечивает высокую ударопрочность и долговечность в полевых условиях.",
+          feature2Desc:
+            "Изготавливаются из полиэтилена высокой плотности (HDPE), что обеспечивает высокую ударопрочность и долговечность в полевых условиях.",
           feature3Title: "Стандарты Безопасности",
-          feature3Desc: "Разработаны специально для надежной фиксации тяжелых труб во время транспортировки с комплексными функциями безопасности.",
+          feature3Desc:
+            "Разработаны специально для надежной фиксации тяжелых труб во время транспортировки с комплексными функциями безопасности.",
           safetyFeaturesTitle: "Особенности Безопасности",
-          safetyFeature1: "Разработаны специально для надежной фиксации труб на грузовых автомобилях во время транспортировки",
-          safetyFeature2: "Доступны в ярких сигнальных цветах (оранжевый и красный) для обеспечения безопасности при погрузочно-разгрузочных работах",
-          safetyFeature3: "Определенные модели оснащены предустановленными гвоздями для быстрой и надежной фиксации к деревянным платформам",
+          safetyFeature1:
+            "Разработаны специально для надежной фиксации труб на грузовых автомобилях во время транспортировки",
+          safetyFeature2:
+            "Доступны в ярких сигнальных цветах (оранжевый и красный) для обеспечения безопасности при погрузочно-разгрузочных работах",
+          safetyFeature3:
+            "Определенные модели оснащены предустановленными гвоздями для быстрой и надежной фиксации к деревянным платформам",
           specificationsTitle: "Технические Характеристики",
           largeSize: "Большой Размер",
           standardSize: "Стандартный Размер",
           dimensions: "Размеры:",
           color: "Цвет:",
-          material: "Материал:",
+          pkgQty: "Кол-во в упаковке:",
           application: "Применение:",
           orange: "Оранжевый",
           red: "Красный",
           heavyDuty: "Тяжелая Труба",
           standardPipe: "Стандартная Труба",
+          withNails: "Включая гвозди",
           customizationTitle: "Возможности Индивидуального Заказа",
-          customizationDesc: "По запросу возможна окраска в другие цвета в соответствии с корпоративными стандартами безопасности заказчика. Наша команда готова предоставить оптимальные решения в соответствии с вашими потребностями.",
+          customizationDesc:
+            "По запросу возможна окраска в другие цвета в соответствии с корпоративными стандартами безопасности заказчика. Наша команда готова предоставить оптимальные решения в соответствии с вашими потребностями.",
           ctaTitle: "Нужны Башмаки для Труб для Вашего Проекта?",
-          ctaDesc: "Свяжитесь с нами и воспользуйтесь качеством местного производства. Наши инженеры предоставят оптимальное решение для ваших требований.",
+          ctaDesc:
+            "Свяжитесь с нами и воспользуйтесь качеством местного производства. Наши инженеры предоставят оптимальное решение для ваших требований.",
           ctaContact: "Свяжитесь с Нами",
           ctaLearn: "О Компании",
-          footerAbout: "У вас сложный проект? Позвольте нашим инженерам и торговым экспертам найти наиболее эффективное и надежное решение для вашего бизнеса.",
+          footerAbout:
+            "У вас сложный проект? Позвольте нашим инженерам и торговым экспертам найти наиболее эффективное и надежное решение для вашего бизнеса.",
           company: "Компания",
           solutions: "Решения",
           engineeringDesign: "Проектирование и Инжиниринг",
@@ -1940,113 +2239,103 @@
         },
       };
 
-      const flagSVGs = {
+      var flagSVGs = {
         az: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#00b9e4" d="M0 0h640v160H0z"/><path fill="#ed2939" d="M0 160h640v160H0z"/><path fill="#3f9c35" d="M0 320h640v160H0z"/><circle cx="304" cy="240" r="72" fill="#fff"/><circle cx="320" cy="240" r="60" fill="#ed2939"/><path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/></svg>',
         en: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg>',
         ru: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h640v160H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>',
       };
 
-      let currentLang = "az";
+      var currentLang = "az";
 
       function updateLanguage(lang) {
         currentLang = lang;
-        const trans = translations[lang];
-        document.querySelectorAll("[data-i18n]").forEach((elem) => {
-          const key = elem.getAttribute("data-i18n");
-          if (trans[key]) {
-            elem.textContent = trans[key];
-          }
+        var trans = translations[lang];
+        document.querySelectorAll("[data-i18n]").forEach(function (elem) {
+          var key = elem.getAttribute("data-i18n");
+          if (trans[key]) elem.textContent = trans[key];
         });
-
-        const currentLangBtn = document.getElementById("currentLangBtn");
-        if (currentLangBtn) {
-          currentLangBtn.innerHTML =
+        var clb = document.getElementById("currentLangBtn");
+        if (clb)
+          clb.innerHTML =
             flagSVGs[lang] +
-            `<span class="lang-text">${lang.toUpperCase()}</span><span class="dropdown-icon">▼</span>`;
-        }
-
-        const mobileLangBtn = document.getElementById("mobileLangBtn");
-        if (mobileLangBtn) {
-          mobileLangBtn.innerHTML =
+            '<span class="lang-text">' +
+            lang.toUpperCase() +
+            '</span><span class="dropdown-icon">▼</span>';
+        var mlb = document.getElementById("mobileLangBtn");
+        if (mlb)
+          mlb.innerHTML =
             flagSVGs[lang] +
-            `<span class="lang-text">${lang.toUpperCase()}</span>`;
-        }
-
+            '<span class="lang-text">' +
+            lang.toUpperCase() +
+            "</span>";
         document.documentElement.lang = lang;
         localStorage.setItem("preferredLanguage", lang);
       }
 
       function setupLanguageHandlers() {
-        document.querySelectorAll(".lang-option").forEach((option) => {
-          option.addEventListener("click", function (e) {
+        document.querySelectorAll(".lang-option").forEach(function (opt) {
+          opt.addEventListener("click", function (e) {
             e.preventDefault();
-            const lang = this.dataset.lang;
-            updateLanguage(lang);
+            updateLanguage(this.dataset.lang);
             if (window.innerWidth <= 992) {
-              const dropdown = this.closest(".has-dropdown");
-              if (dropdown) dropdown.classList.remove("dropdown-active");
+              var dd = this.closest(".has-dropdown");
+              if (dd) dd.classList.remove("dropdown-active");
             }
           });
         });
-
-        const mobileLangBtn = document.getElementById("mobileLangBtn");
-        if (mobileLangBtn) {
-          mobileLangBtn.addEventListener("click", function (e) {
+        var mlb = document.getElementById("mobileLangBtn");
+        if (mlb) {
+          mlb.addEventListener("click", function (e) {
             e.preventDefault();
             e.stopPropagation();
-            const langs = ["az", "en", "ru"];
-            const currentIndex = langs.indexOf(currentLang);
-            const nextIndex = (currentIndex + 1) % langs.length;
-            updateLanguage(langs[nextIndex]);
+            var langs = ["az", "en", "ru"];
+            updateLanguage(
+              langs[(langs.indexOf(currentLang) + 1) % langs.length],
+            );
           });
         }
       }
 
       function setupMobileMenu() {
-        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-        const mainNav = document.getElementById("mainNav");
-
-        if (mobileMenuBtn && mainNav) {
-          mobileMenuBtn.addEventListener("click", function (e) {
+        var btn = document.getElementById("mobileMenuBtn");
+        var nav = document.getElementById("mainNav");
+        if (btn && nav) {
+          btn.addEventListener("click", function (e) {
             e.preventDefault();
             e.stopPropagation();
             this.classList.toggle("active");
-            mainNav.classList.toggle("active");
+            nav.classList.toggle("active");
           });
-
-          const dropdowns = document.querySelectorAll(".has-dropdown");
-          dropdowns.forEach((dropdown) => {
-            const link = dropdown.querySelector(".nav-link");
+          var dds = document.querySelectorAll(".has-dropdown");
+          dds.forEach(function (dd) {
+            var link = dd.querySelector(".nav-link");
             if (link) {
               link.addEventListener("click", function (e) {
                 if (window.innerWidth <= 992) {
                   e.preventDefault();
-                  dropdown.classList.toggle("dropdown-active");
-                  dropdowns.forEach((other) => {
-                    if (other !== dropdown)
-                      other.classList.remove("dropdown-active");
+                  dd.classList.toggle("dropdown-active");
+                  dds.forEach(function (o) {
+                    if (o !== dd) o.classList.remove("dropdown-active");
                   });
                 }
               });
             }
           });
-
           document.addEventListener("click", function (e) {
             if (!e.target.closest(".header")) {
-              mainNav.classList.remove("active");
-              mobileMenuBtn.classList.remove("active");
-              dropdowns.forEach((dropdown) => {
-                dropdown.classList.remove("dropdown-active");
+              nav.classList.remove("active");
+              btn.classList.remove("active");
+              dds.forEach(function (d) {
+                d.classList.remove("dropdown-active");
               });
             }
           });
-
           window.addEventListener("resize", function () {
             if (window.innerWidth > 992) {
-              mainNav.classList.remove("active");
-              mobileMenuBtn.classList.remove("active");
-              dropdowns.forEach((dropdown) => {
-                dropdown.classList.remove("dropdown-active");
+              nav.classList.remove("active");
+              btn.classList.remove("active");
+              dds.forEach(function (d) {
+                d.classList.remove("dropdown-active");
               });
             }
           });
@@ -2054,31 +2343,26 @@
       }
 
       function setupScrollEffects() {
-        const header = document.querySelector(".header");
-        const scrollToTop = document.getElementById("scrollToTop");
-
+        var header = document.querySelector(".header");
+        var stt = document.getElementById("scrollToTop");
         window.addEventListener("scroll", function () {
           if (window.scrollY > 100) {
             if (header) header.classList.add("scrolled");
-            if (scrollToTop) scrollToTop.classList.add("show");
+            if (stt) stt.classList.add("show");
           } else {
             if (header) header.classList.remove("scrolled");
-            if (scrollToTop) scrollToTop.classList.remove("show");
+            if (stt) stt.classList.remove("show");
           }
         });
-
-        if (scrollToTop) {
-          scrollToTop.addEventListener("click", function () {
+        if (stt)
+          stt.addEventListener("click", function () {
             window.scrollTo({ top: 0, behavior: "smooth" });
           });
-        }
       }
 
       document.addEventListener("DOMContentLoaded", function () {
-        const savedLang = localStorage.getItem("preferredLanguage");
-        if (savedLang && translations[savedLang]) {
-          updateLanguage(savedLang);
-        }
+        var saved = localStorage.getItem("preferredLanguage");
+        if (saved && translations[saved]) updateLanguage(saved);
         setupLanguageHandlers();
         setupMobileMenu();
         setupScrollEffects();

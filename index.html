@@ -349,10 +349,7 @@
         poster="assets/images/hero.jpg"
         aria-label="Sənaye prosesləri video"
       >
-        <source
-          src="assets/video/WhatsApp Video 2026-02-17 at 16.31.47.mp4"
-          type="video/mp4"
-        />
+        <source src="assets/video/video.mp4" type="video/mp4" />
         Brauzeriniz video təqdimatını dəstəkləmir.
       </video>
 
@@ -716,12 +713,12 @@
                   href="mailto:sales@evershop.az"
                   onclick="
                     window.open(
-                      'https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az',
+                      'https://mail.google.com/mail/?view=cm&fs=1&to=Sales@evershop.az',
                       '_blank',
                     )
                   "
                 >
-                  sales@evershop.az
+                  Sales@evershop.az
                 </a>
               </p>
             </div>
@@ -797,7 +794,7 @@
             </div>
             <div class="partner-item">
               <img
-                src="assets/images/partners/Prokon.png"
+                src="assets/images/partners/prokon.png"
                 alt="Prokon"
                 loading="lazy"
               />
@@ -1099,7 +1096,7 @@
                 <li>
                   <i class="fas fa-envelope"></i>
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=Sales@evershop.az"
                     target="_blank"
                   >
                     Sales@evershop.az
@@ -2913,6 +2910,7 @@
         .hero-buttons {
           flex-direction: column;
           gap: 12px;
+          width: 250px;
         }
 
         .hero-btn {
@@ -3601,7 +3599,7 @@
 
           // Gmail-ə yönləndirmə
           const text = `Ad: ${name}\nSoyad: ${surname}\nTelefon: ${phone}\nEmail: ${email}\nMesaj: ${message}\n\nQeyd: Zəhmət olmasa faylı əlavə edin.`;
-          const mailTo = "sales@evershop.az";
+          const mailTo = "Sales@evershop.az";
           const subject = "Əlaqə Formu";
           const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${mailTo}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
 

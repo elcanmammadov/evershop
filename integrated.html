@@ -1,0 +1,2107 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İnteqrasiya olunmuş İdarəetmə Sistemi Siyasəti - EVERSHOP</title>
+    <link rel="icon" href="assets/favicon/fav.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --primary: #ff6b35;
+        --dark: rgb(22, 44, 71);
+        --dark-secondary: rgba(30, 52, 79, 1);
+        --text: #e8ecf1;
+        --primary-blue: #0a2342;
+        --accent-orange: #e85d04;
+        --accent-orange-light: #ff6b35;
+        --steel-gray: #2c3e50;
+        --light-gray: #ecf0f1;
+        --white: #ffffff;
+        --footer-dark: #0a2342;
+        --bg-dark: #0f1923;
+        --bg-section: #141922;
+        --primary-dark: #1a2332;
+        --text-light: #a8b2c1;
+        --transition: all 0.3s ease;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg-dark);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* HEADER */
+      .header {
+        background: var(--primary-blue);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        transition: var(--transition);
+      }
+      .header.scrolled {
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+      }
+      .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 85px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
+      .logo:hover {
+        transform: scale(1.05);
+      }
+      .logo-image {
+        height: 75px;
+        width: auto;
+        object-fit: contain;
+        transition: filter 0.3s ease;
+      }
+      .logo:hover .logo-image {
+        filter: brightness(1.2);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+      }
+      .nav-list {
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .nav-item {
+        position: relative;
+      }
+      .nav-link {
+        font-family: "Montserrat", sans-serif;
+        text-decoration: none;
+        color: var(--white);
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition);
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+      }
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--accent-orange);
+        transition: var(--transition);
+        transform: translateX(-50%);
+      }
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--accent-orange);
+      }
+      .nav-link:hover::before {
+        width: 80%;
+      }
+      .dropdown-icon {
+        display: inline-block;
+        margin-left: 4px;
+        transition: transform 0.3s ease;
+        font-size: 0.75rem;
+      }
+      .nav-item:hover .dropdown-icon {
+        transform: rotate(180deg);
+      }
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--white);
+        min-width: 280px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: var(--transition);
+        margin-top: 0.5rem;
+        border-top: 3px solid var(--accent-orange);
+        overflow: hidden;
+      }
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .dropdown-list {
+        list-style: none;
+        padding: 0.5rem 0;
+      }
+      .dropdown-link {
+        display: block;
+        padding: 0.875rem 1.5rem;
+        color: var(--primary-blue);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: var(--transition);
+        border-left: 3px solid transparent;
+      }
+      .dropdown-link:hover {
+        background: var(--light-gray);
+        border-left-color: var(--accent-orange);
+        padding-left: 1.75rem;
+      }
+      .mobile-controls {
+        display: none;
+        align-items: center;
+        gap: 12px;
+      }
+      .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        transition: var(--transition);
+      }
+      .mobile-menu-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .mobile-menu-btn span {
+        width: 28px;
+        height: 3px;
+        background: var(--white);
+        border-radius: 2px;
+        transition: var(--transition);
+      }
+      .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+      }
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+      .flag-icon {
+        width: 24px;
+        height: 17px;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+      .lang-text {
+        font-weight: 700;
+      }
+      .lang-dropdown {
+        min-width: 220px;
+      }
+      .lang-dropdown .dropdown-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .lang-dropdown .flag-icon {
+        width: 28px;
+        height: 20px;
+      }
+      .mobile-lang-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        gap: 6px;
+        transition: var(--transition);
+      }
+      .mobile-lang-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .mobile-lang-btn .flag-icon {
+        width: 22px;
+        height: 16px;
+      }
+      .mobile-lang-btn .lang-text {
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 55vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          135deg,
+          #0f1923 0%,
+          #162c47 60%,
+          #1a3a5a 100%
+        );
+        position: relative;
+        overflow: hidden;
+        margin-top: 85px;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary),
+          transparent
+        );
+      }
+      .hero-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+      }
+      .hero-text {
+        max-width: 820px;
+        padding-left: 3rem;
+        border-left: 4px solid var(--accent-orange-light);
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .company-name {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+      .hero-text h1 {
+        font-size: clamp(2rem, 4.5vw, 3.2rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        color: #ffffff;
+      }
+      .hero-subtitle {
+        font-size: 1.1rem;
+        color: var(--accent-orange-light);
+        margin-bottom: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      .hero-description {
+        font-size: 1.05rem;
+        color: var(--text-light);
+        line-height: 1.85;
+      }
+
+      /* ISO BADGES in hero */
+      .iso-badges {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+      .iso-badge {
+        background: rgba(255, 107, 53, 0.12);
+        border: 1px solid rgba(255, 107, 53, 0.4);
+        border-radius: 8px;
+        padding: 0.6rem 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--accent-orange-light);
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+      }
+      .iso-badge:hover {
+        background: rgba(255, 107, 53, 0.2);
+        transform: translateY(-2px);
+      }
+      .iso-badge i {
+        font-size: 1rem;
+      }
+
+      /* POLICY SECTION */
+      .policy-section {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+      .section-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        color: var(--text);
+        text-align: center;
+      }
+
+      .policy-intro {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 12px;
+        padding: 2.5rem;
+        margin-bottom: 3rem;
+        border-left: 4px solid var(--accent-orange-light);
+      }
+      .policy-intro p {
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.8;
+        font-size: 1.05rem;
+      }
+
+      /* COMMITMENTS GRID */
+      .commitments-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8rem;
+        margin-bottom: 4rem;
+      }
+      .commitment-card {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 12px;
+        padding: 2rem 1.6rem;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .commitment-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--accent-orange),
+          var(--primary)
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+      .commitment-card:hover::before {
+        transform: scaleX(1);
+      }
+      .commitment-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(255, 107, 53, 0.15);
+      }
+      .commitment-icon {
+        width: 52px;
+        height: 52px;
+        background: rgba(255, 107, 53, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent-orange-light);
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+      }
+      .commitment-title {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        color: var(--text);
+        line-height: 1.3;
+      }
+      .commitment-description {
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.65;
+        font-size: 0.9rem;
+      }
+
+      /* CERTIFICATES SECTION */
+      .certificates-section {
+        background: var(--bg-section);
+        padding: 4rem 2rem;
+      }
+      .certificates-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .certs-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .certs-subtitle {
+        color: var(--text-light);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      .certs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .cert-card {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 16px;
+        padding: 3rem 2rem;
+        text-align: center;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .cert-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 50% 0%,
+          rgba(255, 107, 53, 0.08) 0%,
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+      .cert-card:hover::after {
+        opacity: 1;
+      }
+      .cert-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(255, 107, 53, 0.2);
+      }
+      .cert-logo {
+        width: 90px;
+        height: 90px;
+        background: rgba(255, 107, 53, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2rem;
+        color: var(--accent-orange-light);
+        transition: all 0.3s;
+        border: 2px solid rgba(255, 107, 53, 0.3);
+      }
+      .cert-card:hover .cert-logo {
+        background: rgba(255, 107, 53, 0.2);
+        border-color: var(--accent-orange);
+        transform: scale(1.1);
+      }
+      .cert-name {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--accent-orange-light);
+        margin-bottom: 0.5rem;
+      }
+      .cert-year {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-light);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .cert-description {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+      .cert-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 1.2rem;
+        background: rgba(255, 107, 53, 0.1);
+        border: 1px solid rgba(255, 107, 53, 0.3);
+        border-radius: 20px;
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--accent-orange-light);
+      }
+
+      /* FRAMEWORK SECTION */
+      .framework-section {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+      .framework-box {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 52, 79, 0.8) 0%,
+          rgba(22, 44, 71, 0.9) 100%
+        );
+        border: 1px solid rgba(255, 107, 53, 0.2);
+        border-radius: 16px;
+        padding: 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .framework-box::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 107, 53, 0.06) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .framework-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 1.5rem;
+      }
+      .framework-title span {
+        color: var(--accent-orange-light);
+      }
+      .framework-text {
+        color: var(--text-light);
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      /* GALLERY */
+      .gallery-section {
+        padding: 4rem 2rem;
+        background: var(--bg-section);
+      }
+      .gallery-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .gallery-subtitle {
+        color: var(--text-light);
+        font-size: 1.05rem;
+        text-align: center;
+        margin-top: -2rem;
+        margin-bottom: 2.5rem;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        aspect-ratio: 4/3;
+        cursor: pointer;
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        transition: border-color 0.3s;
+      }
+      .gallery-item:hover {
+        border-color: var(--primary);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+        background: var(--dark-secondary);
+      }
+      .gallery-item:hover img {
+        transform: scale(1.08);
+      }
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9) 0%,
+          transparent 100%
+        );
+        padding: 2.5rem 1.5rem 1.5rem;
+        color: #fff;
+        transform: translateY(100%);
+        transition: transform 0.4s;
+      }
+      .gallery-item:hover .gallery-overlay {
+        transform: translateY(0);
+      }
+      .gallery-title {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+      @media (max-width: 992px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 576px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* SCROLL TO TOP & FOOTER same as original */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--accent-orange);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: var(--transition);
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
+      }
+      .scroll-to-top:hover {
+        background: rgb(239, 53, 32);
+        transform: translateY(-5px);
+      }
+      .scroll-to-top.show {
+        display: flex;
+      }
+
+      /* FOOTER */
+      .site-footer {
+        background: var(--footer-dark);
+        color: #fff;
+        font-size: 1rem;
+        width: 100%;
+        overflow: hidden;
+      }
+      .footer-top {
+        padding: 50px 0 35px;
+      }
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .footer-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+        gap: 30px;
+      }
+      .footer-logo {
+        width: 180px;
+        height: auto;
+        margin-bottom: 12px;
+        transition: var(--transition);
+        cursor: pointer;
+      }
+      .footer-logo:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+      .footer-widget p {
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+      }
+      .footer-widget h4 {
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 18px;
+        position: relative;
+        padding-bottom: 10px;
+        font-size: 1.1rem;
+      }
+      .footer-widget h4::after {
+        content: "";
+        width: 36px;
+        height: 2px;
+        background: var(--accent-orange);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      .footer-widget ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-widget ul li {
+        margin-bottom: 8px;
+      }
+      .footer-widget ul li a {
+        color: rgba(255, 255, 255, 0.85);
+        transition: color 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.95rem;
+      }
+      .footer-widget ul li a:hover {
+        color: var(--accent-orange);
+      }
+      .footer-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .footer-social a {
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.12);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #fff;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+      .footer-social a:hover {
+        background: var(--accent-orange);
+        transform: translateY(-3px);
+      }
+      .footer-contact {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .footer-contact li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 10px;
+      }
+      .footer-contact li i {
+        color: var(--accent-orange);
+        flex-shrink: 0;
+        font-size: 1rem;
+        width: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .footer-contact li a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        flex: 1;
+        font-size: 0.95rem;
+      }
+      .footer-contact li a:hover {
+        color: var(--accent-orange);
+      }
+      .footer-bottom {
+        background: #050f1c;
+        padding: 18px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .footer-bottom p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1200px) {
+        .commitments-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .certs-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 992px) {
+        .header-content {
+          padding: 0 1rem;
+          min-height: 70px;
+        }
+        .logo-image {
+          height: 60px;
+        }
+        .mobile-controls {
+          display: flex;
+        }
+        .mobile-lang-btn {
+          display: flex;
+        }
+        .nav-list .language-dropdown {
+          display: none;
+        }
+        .nav {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          right: 0;
+          background: var(--primary-blue);
+          max-height: 0;
+          overflow: hidden;
+          transition:
+            max-height 0.4s ease,
+            box-shadow 0.4s ease;
+        }
+        .nav.active {
+          max-height: calc(100vh - 70px);
+          overflow-y: auto;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .nav-list {
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+          padding: 1rem 0;
+        }
+        .nav-item {
+          width: 100%;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-link {
+          padding: 1rem 1.5rem;
+          font-size: 1.05rem;
+          width: 100%;
+          justify-content: space-between;
+        }
+        .nav-link::before {
+          display: none;
+        }
+        .dropdown {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          box-shadow: none;
+          margin-top: 0;
+          background: rgba(255, 255, 255, 0.05);
+          border-top: none;
+          border-radius: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+        .nav-item.dropdown-active .dropdown {
+          max-height: 500px;
+        }
+        .dropdown-list {
+          padding: 0;
+        }
+        .dropdown-link {
+          color: var(--white);
+          padding: 0.875rem 2.5rem;
+          font-size: 0.95rem;
+          border-left: 3px solid transparent;
+        }
+        .dropdown-link:hover {
+          background: rgba(255, 255, 255, 0.1);
+        }
+        .hero {
+          margin-top: 70px;
+          min-height: 50vh;
+        }
+        .hero-text {
+          padding-left: 1.5rem;
+        }
+        .footer-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .certs-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .commitments-grid {
+          grid-template-columns: 1fr;
+        }
+        .certs-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-row {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+        .footer-bottom-content {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+        .iso-badges {
+          gap: 0.7rem;
+        }
+        .framework-box {
+          padding: 2rem;
+        }
+      }
+      @media (max-width: 576px) {
+        .header-content {
+          padding: 0 0.75rem;
+        }
+        .logo-image {
+          height: 50px;
+        }
+        .container {
+          padding: 0 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <img
+            src="assets/images/logo/logo.png"
+            alt="EVERSHOP MMC"
+            class="logo-image"
+          />
+        </a>
+        <div class="mobile-controls">
+          <button class="mobile-lang-btn" id="mobileLangBtn">
+            <svg
+              class="flag-icon"
+              viewBox="0 0 640 480"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path fill="#00b9e4" d="M0 0h640v160H0z" />
+              <path fill="#ed2939" d="M0 160h640v160H0z" />
+              <path fill="#3f9c35" d="M0 320h640v160H0z" />
+              <circle cx="304" cy="240" r="72" fill="#fff" />
+              <circle cx="320" cy="240" r="60" fill="#ed2939" />
+              <path
+                fill="#fff"
+                d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
+              />
+            </svg>
+            <span class="lang-text">AZ</span>
+          </button>
+          <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Toggle Menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <nav class="nav" id="mainNav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="about.html" class="nav-link" data-i18n="about"
+                >Haqqımızda</a
+              >
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="#" class="nav-link"
+                ><span data-i18n="products">Məhsullar</span
+                ><span class="dropdown-icon">▼</span></a
+              >
+              <ul class="dropdown">
+                <li class="dropdown-list">
+                  <a
+                    href="custom.html"
+                    class="dropdown-link"
+                    data-i18n="fabrication"
+                    >Xüsusi Konstruksiyaların İstehsalı</a
+                  >
+                  <a
+                    href="static.html"
+                    class="dropdown-link"
+                    data-i18n="staticEquipment"
+                    >Statik Avadanlıq</a
+                  >
+                  <a
+                    href="packages.html"
+                    class="dropdown-link"
+                    data-i18n="skidPackages"
+                    >Sənaye Skid Paketləri</a
+                  >
+                  <a
+                    href="parts.html"
+                    class="dropdown-link"
+                    data-i18n="machinedParts"
+                    >Mexaniki Hissələr</a
+                  >
+                  <a
+                    href="supply.html"
+                    class="dropdown-link"
+                    data-i18n="equipmentSupply"
+                    >Sənaye Avadanlığı Təchizatı</a
+                  >
+                  <a
+                    href="steel.html"
+                    class="dropdown-link"
+                    data-i18n="steelPiping"
+                    >Polad və Boru Aksesuarları</a
+                  >
+                  <a
+                    href="sealing.html"
+                    class="dropdown-link"
+                    data-i18n="sealing"
+                    >Kipləndirici Elementlər</a
+                  >
+                  <a href="oem.html" class="dropdown-link" data-i18n="oemParts"
+                    >OEM Hissələri</a
+                  >
+                  <a
+                    href="prototype.html"
+                    class="dropdown-link"
+                    data-i18n="rdPrototype"
+                    >Tədqiqat və Prototip İstehsalı</a
+                  >
+                  <a
+                    href="https://www.evershop.az/az/shop"
+                    class="dropdown-link"
+                    >Shopping</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a href="#" class="nav-link"
+                ><span data-i18n="services">Xidmətlər</span
+                ><span class="dropdown-icon">▼</span></a
+              >
+              <ul class="dropdown">
+                <li class="dropdown-list">
+                  <a
+                    href="design.html"
+                    class="dropdown-link"
+                    data-i18n="designEngineering"
+                    >Dizayn və Mühəndislik</a
+                  >
+                  <a
+                    href="installation.html"
+                    class="dropdown-link"
+                    data-i18n="installation"
+                    >Quraşdırma və İstismara Verilmə</a
+                  >
+                  <a
+                    href="repair.html"
+                    class="dropdown-link"
+                    data-i18n="repairMaintenance"
+                    >Təmir və Texniki Xidmət</a
+                  >
+                  <a
+                    href="heat.html"
+                    class="dropdown-link"
+                    data-i18n="heatTreatment"
+                    >İstilik Emalı</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="market.html" class="nav-link"
+                ><span data-i18n="markets">Bazar Sektorları</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="career.html" class="nav-link" data-i18n="career"
+                >Karyera</a
+              >
+            </li>
+            <li class="nav-item has-dropdown language-dropdown">
+              <a href="#" class="nav-link" id="currentLangBtn">
+                <svg
+                  class="flag-icon"
+                  viewBox="0 0 640 480"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="#00b9e4" d="M0 0h640v160H0z" />
+                  <path fill="#ed2939" d="M0 160h640v160H0z" />
+                  <path fill="#3f9c35" d="M0 320h640v160H0z" />
+                  <circle cx="304" cy="240" r="72" fill="#fff" />
+                  <circle cx="320" cy="240" r="60" fill="#ed2939" />
+                  <path
+                    fill="#fff"
+                    d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
+                  />
+                </svg>
+                <span class="lang-text">AZ</span
+                ><span class="dropdown-icon">▼</span>
+              </a>
+              <ul class="dropdown lang-dropdown">
+                <li class="dropdown-list">
+                  <a href="#" class="dropdown-link lang-option" data-lang="az">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#00b9e4" d="M0 0h640v160H0z" />
+                      <path fill="#ed2939" d="M0 160h640v160H0z" />
+                      <path fill="#3f9c35" d="M0 320h640v160H0z" />
+                      <circle cx="304" cy="240" r="72" fill="#fff" />
+                      <circle cx="320" cy="240" r="60" fill="#ed2939" />
+                      <path
+                        fill="#fff"
+                        d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
+                      />
+                    </svg>
+                    <span data-i18n="langAz">Azərbaycan dili</span>
+                  </a>
+                  <a href="#" class="dropdown-link lang-option" data-lang="en">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#012169" d="M0 0h640v480H0z" />
+                      <path
+                        fill="#FFF"
+                        d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"
+                      />
+                      <path
+                        fill="#C8102E"
+                        d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"
+                      />
+                      <path
+                        fill="#FFF"
+                        d="M241 0v480h160V0H241zM0 160v160h640V160H0z"
+                      />
+                      <path
+                        fill="#C8102E"
+                        d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"
+                      />
+                    </svg>
+                    <span data-i18n="langEn">English</span>
+                  </a>
+                  <a href="#" class="dropdown-link lang-option" data-lang="ru">
+                    <svg
+                      class="flag-icon"
+                      viewBox="0 0 640 480"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="#fff" d="M0 0h640v160H0z" />
+                      <path fill="#0039a6" d="M0 160h640v160H0z" />
+                      <path fill="#d52b1e" d="M0 320h640v160H0z" />
+                    </svg>
+                    <span data-i18n="langRu">Русский язык</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-text">
+          <div class="company-name">EVERSHOP</div>
+          <h1 data-i18n="heroTitle">
+            İnteqrasiya olunmuş İdarəetmə Sistemi Siyasəti
+          </h1>
+          <p class="hero-subtitle" data-i18n="heroSubtitle">
+            ISO 9001:2015 • ISO 14001:2015 • ISO 45001:2018
+          </p>
+          <p class="hero-description" data-i18n="heroDescription">
+            EVERSHOP MMC keyfiyyət, ətraf mühitin mühafizəsi və əməyin
+            mühafizəsi sahələrində mükəmməlliyə nail olmaq məqsədilə ISO 9001,
+            ISO 14001 və ISO 45001 standartlarına uyğun olaraq İnteqrasiya
+            olunmuş İdarəetmə Sistemini qurur və davamlı olaraq təkmilləşdirir.
+          </p>
+          <div class="iso-badges">
+            <div class="iso-badge">
+              <i class="fas fa-certificate"></i> ISO 9001:2015
+            </div>
+            <div class="iso-badge">
+              <i class="fas fa-leaf"></i> ISO 14001:2015
+            </div>
+            <div class="iso-badge">
+              <i class="fas fa-hard-hat"></i> ISO 45001:2018
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLICY INTRO -->
+    <section class="policy-section">
+      <h2 class="section-title" data-i18n="commitmentsTitle">
+        Bizim Öhdəliklərimiz
+      </h2>
+      <div class="policy-intro">
+        <p data-i18n="policyIntroText">
+          EVERSHOP MMC keyfiyyət, ətraf mühitin mühafizəsi və əməyin mühafizəsi
+          və sağlamlığı sahələrində mükəmməlliyə nail olmaq məqsədilə ISO 9001,
+          ISO 14001 və ISO 45001 standartlarının tələblərinə uyğun olaraq
+          İnteqrasiya olunmuş İdarəetmə Sistemini qurur, tətbiq edir və davamlı
+          olaraq təkmilləşdirir.
+        </p>
+      </div>
+
+      <!-- COMMITMENTS GRID - 9 cards -->
+      <div class="commitments-grid">
+        <div class="commitment-card">
+          <div class="commitment-icon"><i class="fas fa-star"></i></div>
+          <h3 class="commitment-title" data-i18n="c1Title">
+            Müştəri Məmnuniyyəti
+          </h3>
+          <p class="commitment-description" data-i18n="c1Desc">
+            Müştəri tələblərinə cavab verən və müştəri məmnuniyyətini artıran
+            məhsul və xidmətlərin davamlı şəkildə təmin edilməsi.
+          </p>
+        </div>
+        <div class="commitment-card">
+          <div class="commitment-icon"><i class="fas fa-leaf"></i></div>
+          <h3 class="commitment-title" data-i18n="c2Title">
+            Ətraf Mühitin Qorunması
+          </h3>
+          <p class="commitment-description" data-i18n="c2Desc">
+            Çirklənmənin qarşısının alınması, ətraf mühitə təsirlərin
+            azaldılması və resurslardan səmərəli istifadə yolu ilə ətraf mühitin
+            qorunması.
+          </p>
+        </div>
+        <div class="commitment-card">
+          <div class="commitment-icon"><i class="fas fa-hard-hat"></i></div>
+          <h3 class="commitment-title" data-i18n="c3Title">
+            Təhlükəsiz İş Şəraiti
+          </h3>
+          <p class="commitment-description" data-i18n="c3Desc">
+            İşlə bağlı xəsarətlərin və peşə xəstəliklərinin qarşısının alınması
+            üçün təhlükəsiz və sağlam iş şəraitinin təmin edilməsi.
+          </p>
+        </div>
+        <div class="commitment-card">
+          <div class="commitment-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="commitment-title" data-i18n="c4Title">
+            Riskin Azaldılması
+          </h3>
+          <p class="commitment-description" data-i18n="c4Desc">
+            Təhlükələrin aradan qaldırılması və əməyin mühafizəsi və sağlamlığı
+            risklərinin azaldılması.
+          </p>
+        </div>
+        <div class="commitment-card">
+          <div class="commitment-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3 class="commitment-title" data-i18n="c5Title">Hüquqi Uyğunluq</h3>
+          <p class="commitment-description" data-i18n="c5Desc">
+            Müvafiq qanunvericilik, normativ və digər öhdəliklərin tam yerinə
+            yetirilməsi.
+          </p>
+        </div>
+        <div class="commitment-card">
+          <div class="commitment-icon"><i class="fas fa-users"></i></div>
+          <h3 class="commitment-title" data-i18n="c6Title">
+            İşçilərin İştirakı
+          </h3>
+          <p class="commitment-description" data-i18n="c6Desc">
+            Keyfiyyət, ətraf mühit və əməyin mühafizəsi və sağlamlığı ilə bağlı
+            məsələlərdə əməkdaşların məsləhətləşdirilməsi və iştirakının təmin
+            edilməsi.
+          </p>
+        </div>
+        <div class="commitment-card">
+          <div class="commitment-icon"><i class="fas fa-chart-line"></i></div>
+          <h3 class="commitment-title" data-i18n="c7Title">
+            Davamlı Təkmilləşdirmə
+          </h3>
+          <p class="commitment-description" data-i18n="c7Desc">
+            İnteqrasiya olunmuş İdarəetmə Sisteminin effektivliyinin davamlı
+            olaraq yaxşılaşdırılması.
+          </p>
+        </div>
+        <div class="commitment-card">
+          <div class="commitment-icon"><i class="fas fa-search"></i></div>
+          <h3 class="commitment-title" data-i18n="c8Title">
+            Risk və İmkanların İdarəsi
+          </h3>
+          <p class="commitment-description" data-i18n="c8Desc">
+            Keyfiyyət, ətraf mühit aspektləri və əməyin mühafizəsi üzrə risk və
+            imkanlarının müəyyən edilməsi və idarə olunması.
+          </p>
+        </div>
+        <div class="commitment-card">
+          <div class="commitment-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 class="commitment-title" data-i18n="c9Title">
+            Səriştəlilik və Məsuliyyət
+          </h3>
+          <p class="commitment-description" data-i18n="c9Desc">
+            Bütün əməkdaşların və aidiyyəti tərəflərin səriştəliliyinin,
+            məlumatlılığının və məsuliyyətinin təmin edilməsi.
+          </p>
+        </div>
+      </div>
+
+      <!-- FRAMEWORK BOX -->
+      <div class="framework-box">
+        <h3 class="framework-title" data-i18n="frameworkTitle">
+          Siyasətin <span>Çərçivəsi</span>
+        </h3>
+        <p class="framework-text" data-i18n="frameworkText">
+          Bu siyasət keyfiyyət, ətraf mühit və əməyin mühafizəsi və sağlamlığı
+          üzrə məqsədlərin müəyyən edilməsi və nəzərdən keçirilməsi üçün çərçivə
+          yaradır. Siyasət EVERSHOP MMC-nin bütün səviyyələrində çatdırılır,
+          başa düşülür və tətbiq olunur və uyğunluğunun, adekvatlığının və
+          effektivliyinin təmin edilməsi məqsədilə rəhbərlik tərəfindən mütəmadi
+          olaraq nəzərdən keçirilir.
+        </p>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="certificates-section">
+      <div class="certificates-inner">
+        <h2 class="certs-title" data-i18n="certsTitle">Sertifikatlarımız</h2>
+        <p class="certs-subtitle" data-i18n="certsSubtitle">
+          Beynəlxalq standartlara uyğunluğumuzu təsdiqləyən sertifikatlar
+        </p>
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-logo"><i class="fas fa-medal"></i></div>
+            <div class="cert-name">ISO 9001</div>
+            <div class="cert-year">:2015</div>
+            <p class="cert-description" data-i18n="cert1Desc">
+              Keyfiyyət İdarəetmə Sistemi — müştəri tələblərini ardıcıl şəkildə
+              yerinə yetirən məhsul və xidmətlərin təmin edilməsi.
+            </p>
+            <span class="cert-badge"
+              ><i class="fas fa-check-circle"></i>
+              <span data-i18n="certified">Sertifikatlaşdırılmış</span></span
+            >
+          </div>
+          <div class="cert-card">
+            <div class="cert-logo"><i class="fas fa-globe"></i></div>
+            <div class="cert-name">ISO 14001</div>
+            <div class="cert-year">:2015</div>
+            <p class="cert-description" data-i18n="cert2Desc">
+              Ətraf Mühit İdarəetmə Sistemi — ətraf mühitə təsirlərin
+              azaldılması və davamlı inkişafın təmin edilməsi.
+            </p>
+            <span class="cert-badge"
+              ><i class="fas fa-check-circle"></i>
+              <span data-i18n="certified">Sertifikatlaşdırılmış</span></span
+            >
+          </div>
+          <div class="cert-card">
+            <div class="cert-logo"><i class="fas fa-user-shield"></i></div>
+            <div class="cert-name">ISO 45001</div>
+            <div class="cert-year">:2018</div>
+            <p class="cert-description" data-i18n="cert3Desc">
+              Əməyin Mühafizəsi və Sağlamlıq İdarəetmə Sistemi — iş yerində
+              təhlükəsizlik və sağlamlığın qorunması.
+            </p>
+            <span class="cert-badge"
+              ><i class="fas fa-check-circle"></i>
+              <span data-i18n="certified">Sertifikatlaşdırılmış</span></span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+      <div class="gallery-inner">
+        <h2 class="section-title" data-i18n="galleryTitle">Qalereya</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="assets/images/integrated/WhatsApp Image 2026-01-28 at 11.17.21 (1).jpeg"
+              alt="Certificate 1"
+            />
+            <div class="gallery-overlay">
+              <!-- <div class="gallery-title" data-i18n="gal1">Sertifikat 1</div> -->
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/integrated/WhatsApp Image 2026-01-28 at 11.17.21 (2).jpeg"
+            />
+            <div class="gallery-overlay">
+              <!-- <div class="gallery-title" data-i18n="gal2">Sertifikat 2</div> -->
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/integrated/WhatsApp Image 2026-01-28 at 11.17.21.jpeg"
+              alt="Certificate 3"
+            />
+            <div class="gallery-overlay">
+              <!-- <div class="gallery-title" data-i18n="gal3">Sertifikat 3</div> -->
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/integrated/WhatsApp Image 2026-01-28 at 11.17.22 (1).jpeg"
+              alt="Certificate 4"
+            />
+            <div class="gallery-overlay">
+              <!-- <div class="gallery-title" data-i18n="gal4">Sertifikat 4</div> -->
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/integrated/WhatsApp Image 2026-01-28 at 11.17.22 (2).jpeg"
+              alt="Certificate 5"
+            />
+            <div class="gallery-overlay">
+              <!-- <div class="gallery-title" data-i18n="gal5">Sertifikat 5</div> -->
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/integrated/WhatsApp Image 2026-01-28 at 11.17.22 (3).jpeg"
+              alt="Certificate 6"
+            />
+            <div class="gallery-overlay">
+              <!-- <div class="gallery-title" data-i18n="gal6">Sertifikat 6</div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-row">
+            <div class="footer-widget">
+              <a href="index.html"
+                ><img
+                  src="assets/images/logo/logo.png"
+                  class="footer-logo"
+                  alt="EVERSHOP MMC Logo"
+              /></a>
+              <p data-i18n="footerAbout">
+                Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət
+                mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli
+                tapsınlar.
+              </p>
+              <div class="footer-social">
+                <a
+                  href="https://wa.me/994702710066"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/evershopllc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/company/evershop-llc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+            <div class="footer-widget">
+              <h4 data-i18n="company">Şirkət</h4>
+              <ul>
+                <li><a href="about.html" data-i18n="about">Haqqımızda</a></li>
+                <li><a href="index.html" data-i18n="products">Məhsullar</a></li>
+                <li><a href="index.html" data-i18n="services">Xidmətlər</a></li>
+                <li>
+                  <a href="market.html" data-i18n="markets">Bazar Sektorları</a>
+                </li>
+                <li><a href="career.html" data-i18n="career">Karyera</a></li>
+              </ul>
+            </div>
+            <div class="footer-widget">
+              <h4 data-i18n="solutions">Həllər</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="engineeringDesign"
+                    >Mühəndislik və Dizayn</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.evershop.az/az" data-i18n="manufacturing"
+                    >İstehsal</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="industrialProcurement"
+                    >Sənaye Tədarükü</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.evershop.az/az"
+                    data-i18n="projectManagement"
+                    >Layihə İdarəetməsi</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-widget">
+              <h4 data-i18n="contactInfo">Əlaqə</h4>
+              <ul class="footer-contact">
+                <li>
+                  <i class="fas fa-phone-alt"></i
+                  ><a
+                    href="https://wa.me/994702710066"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >+994 70 271 00 66</a
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i
+                  ><a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az"
+                    target="_blank"
+                    >Sales@evershop.az</a
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt"></i
+                  ><a
+                    href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-i18n="addressText"
+                    >Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
+                    Azerbaijan</a
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-industry"></i
+                  ><a
+                    href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-i18n="workshopText"
+                    >Salyan Highway, 32 km, Baku, Azerbaijan</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-content">
+            <p>
+              <span data-i18n="allRights"
+                >© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.</span
+              >
+              <span class="footer-credit">
+                <span data-i18n="preparedBy">Hazırlayan:</span>
+                <a
+                  href="https://www.butagrup.com.tr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="text-decoration: none; color: inherit"
+                  ><strong>BUTA GRUP</strong></a
+                ></span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      const translations = {
+        az: {
+          about: "Haqqımızda",
+          products: "Məhsullar",
+          services: "Xidmətlər",
+          markets: "Bazar Sektorları",
+          career: "Karyera",
+          fabrication: "Xüsusi Konstruksiyaların İstehsalı",
+          staticEquipment: "Statik Avadanlıq",
+          skidPackages: "Sənaye Skid Paketləri",
+          machinedParts: "Mexaniki Hissələr",
+          equipmentSupply: "Sənaye Avadanlığı Təchizatı",
+          steelPiping: "Polad və Boru Aksesuarları",
+          sealing: "Kipləndirici Elementlər",
+          oemParts: "OEM Hissələri",
+          rdPrototype: "Tədqiqat və Prototip İstehsalı",
+          designEngineering: "Dizayn və Mühəndislik",
+          installation: "Quraşdırma və İstismara Verilmə",
+          repairMaintenance: "Təmir və Texniki Xidmət",
+          heatTreatment: "İstilik Emalı",
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+          heroTitle: "İnteqrasiya olunmuş İdarəetmə Sistemi Siyasəti",
+          heroSubtitle: "ISO 9001:2015 • ISO 14001:2015 • ISO 45001:2018",
+          heroDescription:
+            "EVERSHOP MMC keyfiyyət, ətraf mühitin mühafizəsi və əməyin mühafizəsi sahələrində mükəmməlliyə nail olmaq məqsədilə ISO 9001, ISO 14001 və ISO 45001 standartlarına uyğun olaraq İnteqrasiya olunmuş İdarəetmə Sistemini qurur və davamlı olaraq təkmilləşdirir.",
+          commitmentsTitle: "Bizim Öhdəliklərimiz",
+          policyIntroText:
+            "EVERSHOP MMC keyfiyyət, ətraf mühitin mühafizəsi və əməyin mühafizəsi və sağlamlığı sahələrində mükəmməlliyə nail olmaq məqsədilə ISO 9001, ISO 14001 və ISO 45001 standartlarının tələblərinə uyğun olaraq İnteqrasiya olunmuş İdarəetmə Sistemini qurur, tətbiq edir və davamlı olaraq təkmilləşdirir.",
+          c1Title: "Müştəri Məmnuniyyəti",
+          c1Desc:
+            "Müştəri tələblərinə cavab verən və müştəri məmnuniyyətini artıran məhsul və xidmətlərin davamlı şəkildə təmin edilməsi.",
+          c2Title: "Ətraf Mühitin Qorunması",
+          c2Desc:
+            "Çirklənmənin qarşısının alınması, ətraf mühitə təsirlərin azaldılması və resurslardan səmərəli istifadə yolu ilə ətraf mühitin qorunması.",
+          c3Title: "Təhlükəsiz İş Şəraiti",
+          c3Desc:
+            "İşlə bağlı xəsarətlərin və peşə xəstəliklərinin qarşısının alınması üçün təhlükəsiz və sağlam iş şəraitinin təmin edilməsi.",
+          c4Title: "Riskin Azaldılması",
+          c4Desc:
+            "Təhlükələrin aradan qaldırılması və əməyin mühafizəsi və sağlamlığı risklərinin azaldılması.",
+          c5Title: "Hüquqi Uyğunluq",
+          c5Desc:
+            "Müvafiq qanunvericilik, normativ və digər öhdəliklərin tam yerinə yetirilməsi.",
+          c6Title: "İşçilərin İştirakı",
+          c6Desc:
+            "Keyfiyyət, ətraf mühit və əməyin mühafizəsi ilə bağlı məsələlərdə əməkdaşların məsləhətləşdirilməsi və iştirakının təmin edilməsi.",
+          c7Title: "Davamlı Təkmilləşdirmə",
+          c7Desc:
+            "İnteqrasiya olunmuş İdarəetmə Sisteminin effektivliyinin davamlı olaraq yaxşılaşdırılması.",
+          c8Title: "Risk və İmkanların İdarəsi",
+          c8Desc:
+            "Keyfiyyət, ətraf mühit aspektləri və əməyin mühafizəsi üzrə risk və imkanlarının müəyyən edilməsi və idarə olunması.",
+          c9Title: "Səriştəlilik və Məsuliyyət",
+          c9Desc:
+            "Bütün əməkdaşların və aidiyyəti tərəflərin səriştəliliyinin, məlumatlılığının və məsuliyyətinin təmin edilməsi.",
+          frameworkTitle: "Siyasətin Çərçivəsi",
+          frameworkText:
+            "Bu siyasət keyfiyyət, ətraf mühit və əməyin mühafizəsi və sağlamlığı üzrə məqsədlərin müəyyən edilməsi və nəzərdən keçirilməsi üçün çərçivə yaradır. Siyasət EVERSHOP MMC-nin bütün səviyyələrində çatdırılır, başa düşülür və tətbiq olunur və uyğunluğunun, adekvatlığının və effektivliyinin təmin edilməsi məqsədilə rəhbərlik tərəfindən mütəmadi olaraq nəzərdən keçirilir.",
+          certsTitle: "Sertifikatlarımız",
+          certsSubtitle:
+            "Beynəlxalq standartlara uyğunluğumuzu təsdiqləyən sertifikatlar",
+          cert1Desc:
+            "Keyfiyyət İdarəetmə Sistemi — müştəri tələblərini ardıcıl şəkildə yerinə yetirən məhsul və xidmətlərin təmin edilməsi.",
+          cert2Desc:
+            "Ətraf Mühit İdarəetmə Sistemi — ətraf mühitə təsirlərin azaldılması və davamlı inkişafın təmin edilməsi.",
+          cert3Desc:
+            "Əməyin Mühafizəsi və Sağlamlıq İdarəetmə Sistemi — iş yerində təhlükəsizlik və sağlamlığın qorunması.",
+          certified: "Sertifikatlaşdırılmış",
+          footerAbout:
+            "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
+          company: "Şirkət",
+          solutions: "Həllər",
+          engineeringDesign: "Mühəndislik və Dizayn",
+          manufacturing: "İstehsal",
+          industrialProcurement: "Sənaye Tədarükü",
+          projectManagement: "Layihə İdarəetməsi",
+          contactInfo: "Əlaqə",
+          addressText:
+            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+          workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
+          galleryTitle: "Qalereya",
+          gal1: "ISO 9001:2015 Sertifikatı",
+          gal2: "ISO 14001:2015 Sertifikatı",
+          gal3: "ISO 45001:2018 Sertifikatı",
+          gal4: "Sertifikat 4",
+          gal5: "Sertifikat 5",
+          gal6: "Sertifikat 6",
+          allRights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
+          preparedBy: "Hazırlayan:",
+        },
+        en: {
+          about: "About Us",
+          products: "Products",
+          services: "Services",
+          markets: "Market Sectors",
+          career: "Career",
+          fabrication: "Custom Fabrication",
+          staticEquipment: "Static Equipment",
+          skidPackages: "Industrial Skid Packages",
+          machinedParts: "Machined Parts",
+          equipmentSupply: "Industrial Equipment Supply",
+          steelPiping: "Steel & Piping Accessories",
+          sealing: "Sealing Elements",
+          oemParts: "OEM Parts",
+          rdPrototype: "R&D and Prototype Manufacturing",
+          designEngineering: "Design & Engineering",
+          installation: "Installation & Commissioning",
+          repairMaintenance: "Repair & Maintenance",
+          heatTreatment: "Heat Treatment",
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+          heroTitle: "Integrated Management System Policy",
+          heroSubtitle: "ISO 9001:2015 • ISO 14001:2015 • ISO 45001:2018",
+          heroDescription:
+            "EVERSHOP MMC is committed to excellence in quality, environmental protection, and occupational health and safety through the implementation and continual improvement of an Integrated Management System in accordance with ISO 9001, ISO 14001, and ISO 45001 standards.",
+          commitmentsTitle: "Our Commitments",
+          policyIntroText:
+            "EVERSHOP MMC is committed to excellence in quality, environmental protection, and occupational health and safety through the implementation and continual improvement of an Integrated Management System in accordance with ISO 9001, ISO 14001, and ISO 45001 standards.",
+          c1Title: "Customer Satisfaction",
+          c1Desc:
+            "Delivering products and services that consistently meet customer requirements and enhance customer satisfaction.",
+          c2Title: "Environmental Protection",
+          c2Desc:
+            "Protecting the environment by preventing pollution, minimizing environmental impacts, and promoting sustainable use of resources.",
+          c3Title: "Safe Working Conditions",
+          c3Desc:
+            "Providing safe and healthy working conditions to prevent work-related injury and ill health.",
+          c4Title: "Risk Reduction",
+          c4Desc:
+            "Eliminating hazards and reducing occupational health and safety risks.",
+          c5Title: "Legal Compliance",
+          c5Desc:
+            "Fulfilling all applicable legal, regulatory, and other compliance obligations.",
+          c6Title: "Employee Participation",
+          c6Desc:
+            "Consulting and involving employees in matters affecting quality, environmental performance, and occupational health and safety.",
+          c7Title: "Continual Improvement",
+          c7Desc:
+            "Continually improving the effectiveness of the Integrated Management System.",
+          c8Title: "Risk & Opportunity Management",
+          c8Desc:
+            "Identifying and addressing risks and opportunities related to quality, environmental aspects, and OH&S hazards.",
+          c9Title: "Competence & Responsibility",
+          c9Desc:
+            "Ensuring competence, awareness, and responsibility of all employees and relevant stakeholders.",
+          frameworkTitle: "Policy Framework",
+          frameworkText:
+            "This policy provides a framework for setting and reviewing objectives related to quality, environmental performance, and occupational health and safety. It is communicated, understood, and applied at all levels of EVERSHOP MMC and is regularly reviewed by top management to ensure its continuing suitability, adequacy, and effectiveness.",
+          certsTitle: "Our Certificates",
+          certsSubtitle:
+            "Certificates confirming our compliance with international standards",
+          cert1Desc:
+            "Quality Management System — ensuring products and services consistently meet customer requirements.",
+          cert2Desc:
+            "Environmental Management System — minimizing environmental impacts and ensuring sustainable development.",
+          cert3Desc:
+            "Occupational Health & Safety Management System — protecting safety and health in the workplace.",
+          certified: "Certified",
+          footerAbout:
+            "Have a complex project? Let our engineers and procurement specialists find the most efficient and reliable solution for your business.",
+          company: "Company",
+          solutions: "Solutions",
+          engineeringDesign: "Engineering & Design",
+          manufacturing: "Manufacturing",
+          industrialProcurement: "Industrial Procurement",
+          projectManagement: "Project Management",
+          contactInfo: "Contact",
+          addressText:
+            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+          workshopText: "Salyan Highway, 32 km, Baku, Azerbaijan",
+          galleryTitle: "Gallery",
+          gal1: "ISO 9001:2015 Certificate",
+          gal2: "ISO 14001:2015 Certificate",
+          gal3: "ISO 45001:2018 Certificate",
+          gal4: "Certificate 4",
+          gal5: "Certificate 5",
+          gal6: "Certificate 6",
+          allRights: "© 2026 EVERSHOP MMC. All rights reserved.",
+          preparedBy: "Prepared by:",
+        },
+        ru: {
+          about: "О нас",
+          products: "Продукция",
+          services: "Услуги",
+          markets: "Рыночные Секторы",
+          career: "Карьера",
+          fabrication: "Изготовление Специальных Конструкций",
+          staticEquipment: "Статическое Оборудование",
+          skidPackages: "Промышленные Скид-Пакеты",
+          machinedParts: "Механические Детали",
+          equipmentSupply: "Поставка Промышленного Оборудования",
+          steelPiping: "Сталь и Трубопроводная Арматура",
+          sealing: "Уплотнительные Элементы",
+          oemParts: "OEM Детали",
+          rdPrototype: "R&D и Прототипное Производство",
+          designEngineering: "Проектирование и Инжиниринг",
+          installation: "Монтаж и Пуско-Наладка",
+          repairMaintenance: "Ремонт и Техническое Обслуживание",
+          heatTreatment: "Термическая Обработка",
+          langAz: "Azərbaycan dili",
+          langEn: "English",
+          langRu: "Русский язык",
+          heroTitle: "Политика Интегрированной Системы Менеджмента",
+          heroSubtitle: "ISO 9001:2015 • ISO 14001:2015 • ISO 45001:2018",
+          heroDescription:
+            "EVERSHOP MMC стремится к совершенству в области качества, охраны окружающей среды и охраны труда и здоровья путём внедрения, поддержания и постоянного улучшения Интегрированной системы менеджмента в соответствии с требованиями ISO 9001, ISO 14001 и ISO 45001.",
+          commitmentsTitle: "Наши Обязательства",
+          policyIntroText:
+            "EVERSHOP MMC стремится к совершенству в области качества, охраны окружающей среды и охраны труда и здоровья путём внедрения, поддержания и постоянного улучшения Интегрированной системы менеджмента в соответствии с требованиями стандартов ISO 9001, ISO 14001 и ISO 45001.",
+          c1Title: "Удовлетворённость Клиентов",
+          c1Desc:
+            "Обеспечение стабильного предоставления продукции и услуг, соответствующих требованиям заказчиков и повышающих их удовлетворённость.",
+          c2Title: "Охрана Окружающей Среды",
+          c2Desc:
+            "Защита окружающей среды путём предотвращения загрязнения, снижения негативного воздействия и рационального использования ресурсов.",
+          c3Title: "Безопасные Условия Труда",
+          c3Desc:
+            "Обеспечение безопасных и здоровых условий труда для предотвращения производственного травматизма и профессиональных заболеваний.",
+          c4Title: "Снижение Рисков",
+          c4Desc:
+            "Устранение опасностей и снижение рисков в области охраны труда и здоровья.",
+          c5Title: "Соблюдение Законодательства",
+          c5Desc:
+            "Соблюдение применимых законодательных, нормативных и иных обязательных требований.",
+          c6Title: "Участие Сотрудников",
+          c6Desc:
+            "Консультирование работников и обеспечение их участия в вопросах качества, экологии и охраны труда и здоровья.",
+          c7Title: "Постоянное Улучшение",
+          c7Desc:
+            "Постоянное повышение результативности Интегрированной системы менеджмента.",
+          c8Title: "Управление Рисками и Возможностями",
+          c8Desc:
+            "Выявление и управление рисками и возможностями в области качества, экологических аспектов и ОТ и З.",
+          c9Title: "Компетентность и Ответственность",
+          c9Desc:
+            "Обеспечение компетентности, осведомлённости и ответственности сотрудников и заинтересованных сторон.",
+          frameworkTitle: "Основа Политики",
+          frameworkText:
+            "Настоящая политика служит основой для установления и пересмотра целей в области качества, охраны окружающей среды и охраны труда и здоровья. Политика доводится до сведения всех сотрудников EVERSHOP MMC, понимается и применяется на всех уровнях организации и регулярно анализируется высшим руководством с целью обеспечения её актуальности, адекватности и результативности.",
+          certsTitle: "Наши Сертификаты",
+          certsSubtitle:
+            "Сертификаты, подтверждающие соответствие международным стандартам",
+          cert1Desc:
+            "Система менеджмента качества — обеспечение продукции и услуг, стабильно соответствующих требованиям заказчиков.",
+          cert2Desc:
+            "Система экологического менеджмента — снижение воздействия на окружающую среду и обеспечение устойчивого развития.",
+          cert3Desc:
+            "Система менеджмента охраны труда и здоровья — защита безопасности и здоровья на рабочем месте.",
+          certified: "Сертифицировано",
+          footerAbout:
+            "У вас сложный проект? Позвольте нашим инженерам и специалистам найти наиболее эффективное решение для вашего бизнеса.",
+          company: "Компания",
+          solutions: "Решения",
+          engineeringDesign: "Инжиниринг и Проектирование",
+          manufacturing: "Производство",
+          industrialProcurement: "Промышленные Закупки",
+          projectManagement: "Управление Проектами",
+          contactInfo: "Контакты",
+          addressText:
+            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Баку, Азербайджан",
+          workshopText: "Сальянское шоссе, 32 км, Баку, Азербайджан",
+          galleryTitle: "Галерея",
+          gal1: "Сертификат ISO 9001:2015",
+          gal2: "Сертификат ISO 14001:2015",
+          gal3: "Сертификат ISO 45001:2018",
+          gal4: "Сертификат 4",
+          gal5: "Сертификат 5",
+          gal6: "Сертификат 6",
+          allRights: "© 2026 EVERSHOP MMC. Все права защищены.",
+          preparedBy: "Подготовлено:",
+        },
+      };
+
+      const flagSVGs = {
+        az: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#00b9e4" d="M0 0h640v160H0z"/><path fill="#ed2939" d="M0 160h640v160H0z"/><path fill="#3f9c35" d="M0 320h640v160H0z"/><circle cx="304" cy="240" r="72" fill="#fff"/><circle cx="320" cy="240" r="60" fill="#ed2939"/><path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/></svg>`,
+        en: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg>`,
+        ru: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h640v160H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>`,
+      };
+
+      let currentLang = localStorage.getItem("preferredLanguage") || "az";
+
+      function updateLanguage(lang) {
+        currentLang = lang;
+        const t = translations[lang];
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (t[key]) el.textContent = t[key];
+        });
+        // Update framework title span
+        const ftEl = document.querySelector("[data-i18n='frameworkTitle']");
+        if (ftEl) {
+          if (lang === "az")
+            ftEl.innerHTML = `Siyasətin <span style="color:var(--accent-orange-light)">Çərçivəsi</span>`;
+          else if (lang === "en")
+            ftEl.innerHTML = `Policy <span style="color:var(--accent-orange-light)">Framework</span>`;
+          else
+            ftEl.innerHTML = `Основа <span style="color:var(--accent-orange-light)">Политики</span>`;
+        }
+        const clBtn = document.getElementById("currentLangBtn");
+        if (clBtn)
+          clBtn.innerHTML =
+            flagSVGs[lang] +
+            `<span class="lang-text">${lang.toUpperCase()}</span><span class="dropdown-icon">▼</span>`;
+        const mlBtn = document.getElementById("mobileLangBtn");
+        if (mlBtn)
+          mlBtn.innerHTML =
+            flagSVGs[lang] +
+            `<span class="lang-text">${lang.toUpperCase()}</span>`;
+        document.documentElement.lang = lang;
+        localStorage.setItem("preferredLanguage", lang);
+        const titles = {
+          az: "İnteqrasiya olunmuş İdarəetmə Sistemi Siyasəti - EVERSHOP",
+          en: "Integrated Management System Policy - EVERSHOP",
+          ru: "Политика Интегрированной Системы Менеджмента - EVERSHOP",
+        };
+        document.title = titles[lang];
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        updateLanguage(currentLang);
+
+        document.querySelectorAll(".lang-option").forEach((opt) => {
+          opt.addEventListener("click", (e) => {
+            e.preventDefault();
+            updateLanguage(opt.dataset.lang);
+          });
+        });
+
+        const mlBtn = document.getElementById("mobileLangBtn");
+        if (mlBtn)
+          mlBtn.addEventListener("click", () => {
+            const langs = ["az", "en", "ru"];
+            updateLanguage(
+              langs[(langs.indexOf(currentLang) + 1) % langs.length],
+            );
+          });
+
+        const menuBtn = document.getElementById("mobileMenuBtn");
+        const nav = document.getElementById("mainNav");
+        if (menuBtn && nav) {
+          menuBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            menuBtn.classList.toggle("active");
+            nav.classList.toggle("active");
+          });
+          document.querySelectorAll(".has-dropdown").forEach((item) => {
+            item.querySelector(".nav-link").addEventListener("click", (e) => {
+              if (window.innerWidth <= 992) {
+                e.preventDefault();
+                item.classList.toggle("dropdown-active");
+                document.querySelectorAll(".has-dropdown").forEach((o) => {
+                  if (o !== item) o.classList.remove("dropdown-active");
+                });
+              }
+            });
+          });
+          document.addEventListener("click", (e) => {
+            if (!e.target.closest(".header")) {
+              nav.classList.remove("active");
+              menuBtn.classList.remove("active");
+            }
+          });
+          window.addEventListener("resize", () => {
+            if (window.innerWidth > 992) {
+              nav.classList.remove("active");
+              menuBtn.classList.remove("active");
+              document
+                .querySelectorAll(".has-dropdown")
+                .forEach((i) => i.classList.remove("dropdown-active"));
+            }
+          });
+        }
+
+        const header = document.querySelector(".header");
+        const scrollBtn = document.getElementById("scrollToTop");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 100) {
+            header && header.classList.add("scrolled");
+            scrollBtn && scrollBtn.classList.add("show");
+          } else {
+            header && header.classList.remove("scrolled");
+            scrollBtn && scrollBtn.classList.remove("show");
+          }
+        });
+        scrollBtn &&
+          scrollBtn.addEventListener("click", () =>
+            window.scrollTo({ top: 0, behavior: "smooth" }),
+          );
+
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.style.opacity = "1";
+                e.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
+        );
+        document
+          .querySelectorAll(".commitment-card, .cert-card")
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            obs.observe(el);
+          });
+      });
+    </script>
+  </body>
+</html>
