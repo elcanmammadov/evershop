@@ -31,13 +31,11 @@
         --footer-dark: #0a2342;
         --transition: all 0.3s ease;
       }
-
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-
       body {
         font-family: "Inter", sans-serif;
         background: var(--dark);
@@ -57,11 +55,9 @@
         z-index: 9999;
         transition: var(--transition);
       }
-
       .header.scrolled {
         box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
       }
-
       .header-content {
         max-width: 1400px;
         margin: 0 auto;
@@ -71,7 +67,6 @@
         justify-content: space-between;
         min-height: 85px;
       }
-
       .logo {
         display: flex;
         align-items: center;
@@ -90,7 +85,6 @@
       .logo:hover .logo-image {
         filter: brightness(1.2);
       }
-
       .nav {
         display: flex;
         align-items: center;
@@ -104,7 +98,6 @@
       .nav-item {
         position: relative;
       }
-
       .nav-link {
         font-family: "Montserrat", sans-serif;
         text-decoration: none;
@@ -121,7 +114,6 @@
         position: relative;
         overflow: hidden;
       }
-
       .nav-link::before {
         content: "";
         position: absolute;
@@ -133,7 +125,6 @@
         transition: var(--transition);
         transform: translateX(-50%);
       }
-
       .nav-link:hover {
         background: rgba(255, 255, 255, 0.1);
         color: var(--accent-orange);
@@ -141,7 +132,6 @@
       .nav-link:hover::before {
         width: 80%;
       }
-
       .dropdown-icon {
         display: inline-block;
         margin-left: 4px;
@@ -151,7 +141,6 @@
       .nav-item:hover .dropdown-icon {
         transform: rotate(180deg);
       }
-
       .dropdown {
         position: absolute;
         top: 100%;
@@ -168,7 +157,6 @@
         border-top: 3px solid var(--accent-orange);
         overflow: hidden;
       }
-
       .nav-item:hover .dropdown {
         opacity: 1;
         visibility: visible;
@@ -178,7 +166,6 @@
         list-style: none;
         padding: 0.5rem 0;
       }
-
       .dropdown-link {
         display: block;
         padding: 0.875rem 1.5rem;
@@ -189,19 +176,16 @@
         transition: var(--transition);
         border-left: 3px solid transparent;
       }
-
       .dropdown-link:hover {
         background: var(--light-gray);
         border-left-color: var(--accent-orange);
         padding-left: 1.75rem;
       }
-
       .mobile-controls {
         display: none;
         align-items: center;
         gap: 12px;
       }
-
       .mobile-menu-btn {
         display: flex;
         flex-direction: column;
@@ -213,7 +197,6 @@
         border-radius: 4px;
         transition: var(--transition);
       }
-
       .mobile-menu-btn:hover {
         background: rgba(255, 255, 255, 0.1);
       }
@@ -233,7 +216,6 @@
       .mobile-menu-btn.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
       }
-
       .language-dropdown .flag-icon {
         width: 24px;
         height: 17px;
@@ -255,7 +237,6 @@
         width: 28px;
         height: 20px;
       }
-
       .mobile-lang-btn {
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.3);
@@ -267,7 +248,6 @@
         gap: 6px;
         transition: var(--transition);
       }
-
       .mobile-lang-btn:hover {
         background: rgba(255, 255, 255, 0.2);
       }
@@ -291,7 +271,6 @@
         overflow: hidden;
         margin-top: 85px;
       }
-
       .hero::after {
         content: "";
         position: absolute;
@@ -306,7 +285,6 @@
           transparent
         );
       }
-
       .hero-container {
         max-width: 1400px;
         margin: 0 auto;
@@ -314,11 +292,9 @@
         position: relative;
         z-index: 1;
       }
-
       .hero-content {
         text-align: center;
       }
-
       .company-name {
         font-size: 1.2rem;
         font-weight: 700;
@@ -327,7 +303,6 @@
         margin-bottom: 1rem;
         text-transform: uppercase;
       }
-
       .hero-content h1 {
         font-size: 3.5rem;
         font-weight: 800;
@@ -335,7 +310,6 @@
         line-height: 1.1;
         color: #ffffff;
       }
-
       .hero-content .tagline {
         font-size: 1.3rem;
         color: var(--text);
@@ -354,7 +328,6 @@
       .services-section {
         padding: 4rem 0;
       }
-
       .services-section h2 {
         font-size: 2.2rem;
         text-align: center;
@@ -362,40 +335,38 @@
         font-weight: 700;
         color: var(--text);
       }
-
       .services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
       }
-
       .service-card {
         background: var(--dark-secondary);
         border: 1px solid rgba(255, 107, 53, 0.15);
-        border-radius: 14px;
+        border-radius: 0;
         overflow: hidden;
         transition: all 0.3s ease;
       }
-
       .service-card:hover {
         border-color: var(--primary);
         transform: translateY(-5px);
         box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
       }
-
       .service-image {
         width: 100%;
-        height: 220px;
+        height: 260px;
         object-fit: cover;
+        object-position: center;
+        display: block;
+        border-radius: 0;
         transition: transform 0.5s;
       }
       .service-card:hover .service-image {
-        transform: scale(1.05);
+        transform: scale(1.03);
       }
       .service-content {
         padding: 1.8rem 1.5rem;
       }
-
       .service-icon {
         width: 45px;
         height: 45px;
@@ -408,7 +379,6 @@
         font-size: 1.3rem;
         margin-bottom: 1.2rem;
       }
-
       .service-title {
         font-size: 1.25rem;
         font-weight: 600;
@@ -416,7 +386,6 @@
         margin-bottom: 0.8rem;
         line-height: 1.3;
       }
-
       .service-description {
         color: rgba(255, 255, 255, 0.85);
         line-height: 1.7;
@@ -432,27 +401,23 @@
         max-width: calc(1400px - 4rem);
         margin: 0 auto 4rem;
       }
-
       .materials-title {
         font-size: 2rem;
         font-weight: 700;
         color: var(--text);
         margin-bottom: 1rem;
       }
-
       .materials-description {
         color: rgba(255, 255, 255, 0.9);
         font-size: 1.05rem;
         line-height: 1.7;
         margin-bottom: 2.5rem;
       }
-
       .materials-list {
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
       }
-
       .material-badge {
         background: rgba(255, 107, 53, 0.1);
         border: 2px solid var(--primary);
@@ -464,18 +429,16 @@
         transition: all 0.3s;
         cursor: default;
       }
-
       .material-badge:hover {
         background: var(--primary);
         color: white;
         transform: translateY(-3px);
       }
 
-      /* ========== GALLERY ========== */
+      /* ========== GALLERY — FIX: border-radius: 0, cursor: pointer, height set ========== */
       .gallery-section {
         padding: 4rem 0;
       }
-
       .gallery-section h2 {
         font-size: 2.2rem;
         text-align: center;
@@ -483,24 +446,21 @@
         font-weight: 700;
         color: var(--text);
       }
-
       .gallery-grid {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 1.5rem;
       }
-
       .gallery-item {
         background: var(--dark-secondary);
         border: 1px solid rgba(255, 107, 53, 0.15);
-        border-radius: 12px;
+        border-radius: 0;
         overflow: hidden;
         position: relative;
-        aspect-ratio: 4/3;
         cursor: pointer;
         transition: all 0.3s ease;
+        height: 200px;
       }
-
       .gallery-item:hover {
         border-color: var(--primary);
         box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
@@ -509,56 +469,30 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
         transition: transform 0.5s;
       }
       .gallery-item:hover img {
-        transform: scale(1.1);
+        transform: scale(1.08);
       }
 
-      .gallery-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.9) 0%,
-          transparent 100%
-        );
-        padding: 2rem 1.5rem 1.5rem;
-        color: white;
-        transform: translateY(100%);
-        transition: transform 0.4s;
-      }
-
-      .gallery-item:hover .gallery-overlay {
-        transform: translateY(0);
-      }
-      .gallery-title {
-        font-weight: 600;
-        font-size: 0.9rem;
-      }
-
-      /* ========== FOOTER ========== */
+      /* ========== FOOTER — FIX: margin-top: 0 ========== */
       .site-footer {
         background: var(--footer-dark);
         color: #ffffff;
         font-size: 1rem;
         width: 100%;
         overflow: hidden;
-        margin-top: 5rem;
+        margin-top: 0;
       }
-
       .footer-top {
         padding: 50px 0 35px;
       }
-
       .footer-row {
         display: grid;
         grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
         gap: 30px;
       }
-
       .footer-logo {
         width: 180px;
         height: auto;
@@ -569,14 +503,12 @@
         transform: scale(1.05);
         filter: brightness(1.2);
       }
-
       .footer-widget p {
         line-height: 1.7;
         color: rgba(255, 255, 255, 0.85);
         margin-bottom: 12px;
         font-size: 0.95rem;
       }
-
       .footer-widget h4 {
         color: #ffffff;
         font-weight: 600;
@@ -585,7 +517,6 @@
         padding-bottom: 10px;
         font-size: 1.1rem;
       }
-
       .footer-widget h4::after {
         content: "";
         width: 36px;
@@ -595,7 +526,6 @@
         left: 0;
         bottom: 0;
       }
-
       .footer-widget ul {
         list-style: none;
         padding: 0;
@@ -604,7 +534,6 @@
       .footer-widget ul li {
         margin-bottom: 8px;
       }
-
       .footer-widget ul li a {
         color: rgba(255, 255, 255, 0.85);
         transition: color 0.3s ease;
@@ -612,17 +541,14 @@
         display: inline-block;
         font-size: 0.95rem;
       }
-
       .footer-widget ul li a:hover {
         color: var(--accent-orange);
       }
-
       .footer-social {
         display: flex;
         gap: 10px;
         margin-top: 12px;
       }
-
       .footer-social a {
         width: 38px;
         height: 38px;
@@ -635,18 +561,15 @@
         transition: var(--transition);
         text-decoration: none;
       }
-
       .footer-social a:hover {
         background: var(--accent-orange);
         transform: translateY(-4px);
       }
-
       .footer-contact {
         padding: 0;
         margin: 0;
         list-style: none;
       }
-
       .footer-contact li {
         display: flex;
         align-items: flex-start;
@@ -655,14 +578,12 @@
         color: rgba(255, 255, 255, 0.85);
         margin-bottom: 10px;
       }
-
       .footer-contact li i {
         color: var(--accent-orange);
         flex-shrink: 0;
         margin-top: 3px;
         width: 18px;
       }
-
       .footer-contact li a {
         color: rgba(255, 255, 255, 0.85);
         text-decoration: none;
@@ -670,17 +591,14 @@
         flex: 1;
         font-size: 0.95rem;
       }
-
       .footer-contact li a:hover {
         color: var(--accent-orange);
       }
-
       .footer-bottom {
         background: #050f1c;
         padding: 18px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
       }
-
       .footer-bottom-content {
         display: flex;
         justify-content: space-between;
@@ -694,7 +612,6 @@
       .footer-credit {
         margin-left: 5px;
       }
-
       .scroll-to-top {
         position: fixed;
         bottom: 30px;
@@ -714,7 +631,6 @@
         z-index: 1000;
         box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
       }
-
       .scroll-to-top:hover {
         background: rgb(239, 53, 32);
         transform: translateY(-5px);
@@ -733,8 +649,10 @@
         .gallery-grid {
           grid-template-columns: repeat(3, 1fr);
         }
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
-
       @media (max-width: 992px) {
         .header-content {
           padding: 0 1rem;
@@ -823,11 +741,18 @@
         .footer-row {
           grid-template-columns: repeat(2, 1fr);
         }
+        /* FIX: 2-col gallery on tablet */
         .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.75rem;
+        }
+        .gallery-item {
+          height: 180px;
+        }
+        .services-grid {
           grid-template-columns: repeat(2, 1fr);
         }
       }
-
       @media (max-width: 768px) {
         .hero-content h1 {
           font-size: 2.2rem;
@@ -838,8 +763,13 @@
         .services-grid {
           grid-template-columns: 1fr;
         }
+        /* FIX: 2-col gallery on mobile */
         .gallery-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.6rem;
+        }
+        .gallery-item {
+          height: 160px;
         }
         .materials-section {
           padding: 2rem 1.5rem;
@@ -865,7 +795,6 @@
           padding: 40px 0 30px;
         }
       }
-
       @media (max-width: 576px) {
         .header-content {
           padding: 0 0.75rem;
@@ -877,7 +806,15 @@
           padding: 5px 8px;
         }
         .container {
-          padding: 0 1rem;
+          padding: 0 0.75rem;
+        }
+        /* FIX: 2-col gallery on small mobile */
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+        }
+        .gallery-item {
+          height: 140px;
         }
       }
 
@@ -891,7 +828,6 @@
           transform: translateY(0);
         }
       }
-
       .hero-content {
         animation: fadeInUp 0.8s ease-out;
       }
@@ -915,6 +851,9 @@
       .service-card:nth-child(5) {
         animation-delay: 0.5s;
       }
+      .service-card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
     </style>
   </head>
   <body>
@@ -928,7 +867,6 @@
             class="logo-image"
           />
         </a>
-
         <div class="mobile-controls">
           <button class="mobile-lang-btn" id="mobileLangBtn">
             <svg
@@ -956,7 +894,6 @@
             <span></span><span></span><span></span>
           </button>
         </div>
-
         <nav class="nav" id="mainNav">
           <ul class="nav-list">
             <li class="nav-item">
@@ -965,10 +902,10 @@
               >
             </li>
             <li class="nav-item has-dropdown">
-              <a href="#products" class="nav-link">
-                <span data-i18n="products">Məhsullar</span>
-                <span class="dropdown-icon">▼</span>
-              </a>
+              <a href="#products" class="nav-link"
+                ><span data-i18n="products">Məhsullar</span
+                ><span class="dropdown-icon">▼</span></a
+              >
               <ul class="dropdown">
                 <li class="dropdown-list">
                   <a
@@ -1031,10 +968,10 @@
               </ul>
             </li>
             <li class="nav-item has-dropdown">
-              <a href="#services" class="nav-link">
-                <span data-i18n="services">Xidmətlər</span>
-                <span class="dropdown-icon">▼</span>
-              </a>
+              <a href="#services" class="nav-link"
+                ><span data-i18n="services">Xidmətlər</span
+                ><span class="dropdown-icon">▼</span></a
+              >
               <ul class="dropdown">
                 <li class="dropdown-list">
                   <a
@@ -1091,8 +1028,8 @@
                     d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
                   />
                 </svg>
-                <span class="lang-text">AZ</span>
-                <span class="dropdown-icon">▼</span>
+                <span class="lang-text">AZ</span
+                ><span class="dropdown-icon">▼</span>
               </a>
               <ul class="dropdown lang-dropdown">
                 <li class="dropdown-list">
@@ -1199,7 +1136,6 @@
               </p>
             </div>
           </div>
-
           <div class="service-card">
             <img
               src="assets/images/machined/GEAR 2 .jpg"
@@ -1221,7 +1157,6 @@
               </p>
             </div>
           </div>
-
           <div class="service-card">
             <img
               src="assets/images/machined/GEARS.jpg"
@@ -1240,7 +1175,6 @@
               </p>
             </div>
           </div>
-
           <div class="service-card">
             <img
               src="assets/images/machined/IMAGE 3.jpeg"
@@ -1261,7 +1195,6 @@
               </p>
             </div>
           </div>
-
           <div class="service-card">
             <img
               src="assets/images/machined/NOZLE 3.jpg"
@@ -1276,6 +1209,24 @@
                 Keyfiyyət və Ölçmə
               </h3>
               <p class="service-description" data-i18n="service5Desc">
+                Böyük montajlara və skidlərə inteqrasiyadan əvvəl təkraredilməni
+                və uyğunluğu təmin etmək üçün ölçü yoxlanması, nəzarət edilən
+                mexaniki emal iş prosesi və son yoxlamalar.
+              </p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="assets/images/machined/machined.jpeg"
+              alt="Machined Parts"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon"><i class="fas fa-cog"></i></div>
+              <h3 class="service-title" data-i18n="service6Title">
+                Mexaniki Emal
+              </h3>
+              <p class="service-description" data-i18n="service6Desc">
                 Böyük montajlara və skidlərə inteqrasiyadan əvvəl təkraredilməni
                 və uyğunluğu təmin etmək üçün ölçü yoxlanması, nəzarət edilən
                 mexaniki emal iş prosesi və son yoxlamalar.
@@ -1314,212 +1265,120 @@
         <div class="gallery-grid">
           <div class="gallery-item">
             <img src="assets/images/machined/NOZLES 2 .jpg" alt="Work 1" />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal1">
-                Böyük Ölçülü Komponent Mexaniki Emalı
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/Reductor Gears .jpg"
               alt="Work 2"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal2">
-                Dəqiq Torna İşləri
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/Self Rain. Nozzle1.jpg"
               alt="Work 3"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal3">
-                Boru Vərəqi Hazırlığı
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 13.13.30 (1).jpeg"
               alt="Work 4"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal4">
-                Qaplı Boru Vərəqi (Bərk)
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 13.13.30.jpeg"
               alt="Work 5"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal5">
-                Test Halqası İstehsalı
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 13.13.31 (1).jpeg"
               alt="Work 6"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal6">
-                Şaft Mexaniki Emalı
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 13.13.31 (2).jpeg"
               alt="Work 7"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal7">
-                Rulon Mexaniki Emalı
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 13.23.33.jpeg"
               alt="Work 8"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal8">Halqa İstehsalı</div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.43.58.jpeg"
               alt="Work 9"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal9">
-                Deliklik Əməliyyatları
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.43.59 (1).jpeg"
               alt="Work 10"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal10">Səth Bitirmə</div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.43.59 (2).jpeg"
               alt="Work 11"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal11">Ölçü Yoxlanması</div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.43.59 (3).jpeg"
               alt="Work 12"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal12">Dəqiq Frezeleme</div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.43.59 (4).jpeg"
               alt="Work 13"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal13">
-                Ağır Komponent Quraşdırması
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.43.59 (6).jpeg"
               alt="Work 14"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal14">
-                Böyük Ölçülü Hissə Kobud İşləmə
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.43.59 (7).jpeg"
               alt="Work 15"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal15">
-                Son Keçid Tornalanması
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.43.59.jpeg"
               alt="Work 16"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal16">
-                Qaplama Kənar Hazırlığı
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.44.00 (1).jpeg"
               alt="Work 17"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal17">
-                Boru Vərəqi Qazma Tərtibatı
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.44.00 (2).jpeg"
               alt="Work 18"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal18">
-                Test Halqası Son Uyğunluq
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.44.00 (3).jpeg"
               alt="Work 19"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal19">
-                Şaft Düzlük Nəzarəti
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/machined/WhatsApp Image 2026-01-27 at 15.44.00 (4).jpeg"
               alt="Work 20"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gal20">
-                Rulon Səth Bitirmə
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1531,13 +1390,12 @@
         <div class="container">
           <div class="footer-row">
             <div class="footer-widget">
-              <a href="index.html">
-                <img
+              <a href="index.html"
+                ><img
                   src="assets/images/logo/logo.png"
                   class="footer-logo"
                   alt="EVERSHOP MMC Logo"
-                />
-              </a>
+              /></a>
               <p data-i18n="footerAbout">
                 Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət
                 mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli
@@ -1567,7 +1425,6 @@
                 ></a>
               </div>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="company">Şirkət</h4>
               <ul>
@@ -1580,7 +1437,6 @@
                 <li><a href="career.html" data-i18n="career">Karyera</a></li>
               </ul>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="solutions">Həllər</h4>
               <ul>
@@ -1619,13 +1475,12 @@
                 </li>
               </ul>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="contactInfo">Əlaqə</h4>
               <ul class="footer-contact">
                 <li>
-                  <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                  <a
+                  <i class="fas fa-phone-alt" aria-hidden="true"></i
+                  ><a
                     href="https://wa.me/994702710066"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1633,16 +1488,16 @@
                   >
                 </li>
                 <li>
-                  <i class="fas fa-envelope" aria-hidden="true"></i>
-                  <a
+                  <i class="fas fa-envelope" aria-hidden="true"></i
+                  ><a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az"
                     target="_blank"
                     >Sales@evershop.az</a
                   >
                 </li>
                 <li>
-                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                  <a
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i
+                  ><a
                     href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1652,8 +1507,8 @@
                   >
                 </li>
                 <li>
-                  <i class="fas fa-industry" aria-hidden="true"></i>
-                  <a
+                  <i class="fas fa-industry" aria-hidden="true"></i
+                  ><a
                     href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1736,6 +1591,9 @@
           service5Title: "Keyfiyyət və Ölçmə",
           service5Desc:
             "Böyük montajlara və skidlərə inteqrasiyadan əvvəl təkraredilməni və uyğunluğu təmin etmək üçün ölçü yoxlanması, nəzarət edilən mexaniki emal iş prosesi və son yoxlamalar.",
+          service6Title: "Mexaniki Emal",
+          service6Desc:
+            "Böyük montajlara və skidlərə inteqrasiyadan əvvəl təkraredilməni və uyğunluğu təmin etmək üçün ölçü yoxlanması, nəzarət edilən mexaniki emal iş prosesi və son yoxlamalar.",
           materialsTitle: "Mexaniki Emal Üçün Hazır Materiallar",
           materialsDesc:
             "Tələbkar mühitlər üçün qaplı həllər daxil olmaqla, dəqiq və böyük ölçülü hissələr üçün uyğun geniş çeşidli materialları emal edirik.",
@@ -1748,26 +1606,6 @@
           mat7: "İnkonel",
           mat8: "Monel",
           galleryHeading: "Layihə Nümunələri",
-          gal1: "Böyük Ölçülü Komponent Mexaniki Emalı",
-          gal2: "Dəqiq Torna İşləri",
-          gal3: "Boru Vərəqi Hazırlığı",
-          gal4: "Qaplı Boru Vərəqi (Bərk)",
-          gal5: "Test Halqası İstehsalı",
-          gal6: "Şaft Mexaniki Emalı",
-          gal7: "Rulon Mexaniki Emalı",
-          gal8: "Halqa İstehsalı",
-          gal9: "Deliklik Əməliyyatları",
-          gal10: "Səth Bitirmə",
-          gal11: "Ölçü Yoxlanması",
-          gal12: "Dəqiq Frezeleme",
-          gal13: "Ağır Komponent Quraşdırması",
-          gal14: "Böyük Ölçülü Hissə Kobud İşləmə",
-          gal15: "Son Keçid Tornalanması",
-          gal16: "Qaplama Kənar Hazırlığı",
-          gal17: "Boru Vərəqi Qazma Tərtibatı",
-          gal18: "Test Halqası Son Uyğunluq",
-          gal19: "Şaft Düzlük Nəzarəti",
-          gal20: "Rulon Səth Bitirmə",
           footerAbout:
             "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
           company: "Şirkət",
@@ -1824,6 +1662,9 @@
           service5Title: "Quality & Measurement",
           service5Desc:
             "Dimensional verification, controlled machining workflow, and final checks to ensure repeatability and conformity before integration into larger assemblies and skids.",
+          service6Title: "Machining Operations",
+          service6Desc:
+            "Dimensional verification, controlled machining workflow, and final checks to ensure repeatability and conformity before integration into larger assemblies and skids.",
           materialsTitle: "Machining-Ready Materials",
           materialsDesc:
             "We machine a broad range of materials suitable for precision and oversized parts, including cladded solutions for demanding environments.",
@@ -1836,26 +1677,6 @@
           mat7: "Inconel",
           mat8: "Monel",
           galleryHeading: "Project Showcase",
-          gal1: "Oversized Component Machining",
-          gal2: "Precision Turning",
-          gal3: "Tube Sheet Preparation",
-          gal4: "Cladded Tube Sheet (Solid)",
-          gal5: "Test Ring Manufacturing",
-          gal6: "Shaft Machining",
-          gal7: "Roller Machining",
-          gal8: "Ring Fabrication",
-          gal9: "Boring Operations",
-          gal10: "Surface Finishing",
-          gal11: "Dimensional Check",
-          gal12: "Precision Milling",
-          gal13: "Heavy Component Setup",
-          gal14: "Oversized Part Roughing",
-          gal15: "Final Pass Turning",
-          gal16: "Cladding Edge Prep",
-          gal17: "Tube Sheet Drilling Layout",
-          gal18: "Test Ring Final Fit",
-          gal19: "Shaft Straightness Control",
-          gal20: "Roller Surface Finish",
           footerAbout:
             "Have a complex project? Let our engineers and procurement specialists find the most efficient and reliable solution for your business.",
           company: "Company",
@@ -1913,6 +1734,9 @@
           service5Title: "Качество и Измерение",
           service5Desc:
             "Проверка размеров, контролируемый рабочий процесс механической обработки и окончательные проверки для обеспечения повторяемости и соответствия перед интеграцией в более крупные сборки и скиды.",
+          service6Title: "Механическая Обработка",
+          service6Desc:
+            "Проверка размеров, контролируемый рабочий процесс механической обработки и окончательные проверки для обеспечения повторяемости и соответствия перед интеграцией в более крупные сборки и скиды.",
           materialsTitle: "Материалы, Готовые к Механической Обработке",
           materialsDesc:
             "Мы обрабатываем широкий спектр материалов, подходящих для прецизионных и крупногабаритных деталей, включая плакированные решения для требовательных условий.",
@@ -1925,26 +1749,6 @@
           mat7: "Инконель",
           mat8: "Монель",
           galleryHeading: "Примеры Проектов",
-          gal1: "Механическая Обработка Крупногабаритных Компонентов",
-          gal2: "Прецизионная Токарная Обработка",
-          gal3: "Подготовка Трубной Решетки",
-          gal4: "Плакированная Трубная Решетка (Сплошная)",
-          gal5: "Производство Испытательного Кольца",
-          gal6: "Механическая Обработка Вала",
-          gal7: "Механическая Обработка Ролика",
-          gal8: "Изготовление Кольца",
-          gal9: "Расточные Операции",
-          gal10: "Отделка Поверхности",
-          gal11: "Проверка Размеров",
-          gal12: "Прецизионное Фрезерование",
-          gal13: "Установка Тяжелого Компонента",
-          gal14: "Черновая Обработка Крупногабаритной Детали",
-          gal15: "Финишный Проход Токарной Обработки",
-          gal16: "Подготовка Края Плакировки",
-          gal17: "Разметка Сверления Трубной Решетки",
-          gal18: "Окончательная Посадка Испытательного Кольца",
-          gal19: "Контроль Прямолинейности Вала",
-          gal20: "Отделка Поверхности Ролика",
           footerAbout:
             "У вас сложный проект? Позвольте нашим инженерам и специалистам по закупкам найти наиболее эффективное и надежное решение для вашего бизнеса.",
           company: "Компания",
@@ -2053,7 +1857,6 @@
       function setupScrollEffects() {
         const header = document.querySelector(".header");
         const scrollBtn = document.getElementById("scrollToTop");
-
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -2065,7 +1868,6 @@
           },
           { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
         );
-
         document
           .querySelectorAll(".service-card, .gallery-item")
           .forEach((el) => {
@@ -2074,7 +1876,6 @@
             el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
             observer.observe(el);
           });
-
         window.addEventListener("scroll", () => {
           if (window.scrollY > 100) {
             header && header.classList.add("scrolled");
@@ -2084,7 +1885,6 @@
             scrollBtn && scrollBtn.classList.remove("show");
           }
         });
-
         scrollBtn &&
           scrollBtn.addEventListener("click", () =>
             window.scrollTo({ top: 0, behavior: "smooth" }),

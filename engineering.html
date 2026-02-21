@@ -60,7 +60,6 @@
         z-index: 9999;
         transition: var(--transition);
       }
-
       .header.scrolled {
         box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
       }
@@ -81,18 +80,15 @@
         text-decoration: none;
         transition: transform 0.3s ease;
       }
-
       .logo:hover {
         transform: scale(1.05);
       }
-
       .logo-image {
         height: 75px;
         width: auto;
         object-fit: contain;
         transition: filter 0.3s ease;
       }
-
       .logo:hover .logo-image {
         filter: brightness(1.2);
       }
@@ -101,14 +97,12 @@
         display: flex;
         align-items: center;
       }
-
       .nav-list {
         list-style: none;
         display: flex;
         gap: 0.5rem;
         align-items: center;
       }
-
       .nav-item {
         position: relative;
       }
@@ -129,7 +123,6 @@
         position: relative;
         overflow: hidden;
       }
-
       .nav-link::before {
         content: "";
         position: absolute;
@@ -141,12 +134,10 @@
         transition: var(--transition);
         transform: translateX(-50%);
       }
-
       .nav-link:hover {
         background: rgba(255, 255, 255, 0.1);
         color: var(--accent-orange);
       }
-
       .nav-link:hover::before {
         width: 80%;
       }
@@ -157,7 +148,6 @@
         transition: transform 0.3s ease;
         font-size: 0.75rem;
       }
-
       .nav-item:hover .dropdown-icon {
         transform: rotate(180deg);
       }
@@ -178,18 +168,15 @@
         border-top: 3px solid var(--accent-orange);
         overflow: hidden;
       }
-
       .nav-item:hover .dropdown {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
       }
-
       .dropdown-list {
         list-style: none;
         padding: 0.5rem 0;
       }
-
       .dropdown-link {
         display: block;
         padding: 0.875rem 1.5rem;
@@ -200,7 +187,6 @@
         transition: var(--transition);
         border-left: 3px solid transparent;
       }
-
       .dropdown-link:hover {
         background: var(--light-gray);
         border-left-color: var(--accent-orange);
@@ -212,7 +198,6 @@
         align-items: center;
         gap: 12px;
       }
-
       .mobile-menu-btn {
         display: flex;
         flex-direction: column;
@@ -224,11 +209,9 @@
         border-radius: 4px;
         transition: var(--transition);
       }
-
       .mobile-menu-btn:hover {
         background: rgba(255, 255, 255, 0.1);
       }
-
       .mobile-menu-btn span {
         width: 28px;
         height: 3px;
@@ -236,7 +219,6 @@
         border-radius: 2px;
         transition: var(--transition);
       }
-
       .mobile-menu-btn.active span:nth-child(1) {
         transform: rotate(45deg) translate(7px, 7px);
       }
@@ -280,7 +262,6 @@
         gap: 6px;
         transition: var(--transition);
       }
-
       .mobile-lang-btn:hover {
         background: rgba(255, 255, 255, 0.2);
       }
@@ -304,7 +285,6 @@
         overflow: hidden;
         margin-top: 85px;
       }
-
       .hero::after {
         content: "";
         position: absolute;
@@ -319,7 +299,6 @@
           transparent
         );
       }
-
       .hero-container {
         max-width: 1400px;
         margin: 0 auto;
@@ -327,11 +306,9 @@
         position: relative;
         z-index: 1;
       }
-
       .hero-content {
         text-align: center;
       }
-
       .company-name {
         font-size: 1.2rem;
         font-weight: 700;
@@ -340,7 +317,6 @@
         margin-bottom: 1rem;
         text-transform: uppercase;
       }
-
       .hero-content h1 {
         font-size: 3.5rem;
         font-weight: 800;
@@ -348,7 +324,6 @@
         line-height: 1.1;
         color: #ffffff;
       }
-
       .hero-content .tagline {
         font-size: 1.3rem;
         color: var(--text);
@@ -356,24 +331,17 @@
         letter-spacing: 1px;
       }
 
-      /* ========== CONTENT ========== */
-      .content-section {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 4rem 2rem;
-      }
-
+      /* ========== LAYOUT ========== */
       .container {
         max-width: 1400px;
         margin: 0 auto;
         padding: 0 2rem;
       }
 
-      /* ========== SERVICES GRID ========== */
+      /* ========== SERVICES — 4 cards in 1 row ========== */
       .services-section {
         padding: 4rem 0;
       }
-
       .services-section h2 {
         font-size: 2.2rem;
         text-align: center;
@@ -384,18 +352,16 @@
 
       .services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
       }
 
       .service-card {
         background: var(--dark-secondary);
         border: 1px solid rgba(255, 107, 53, 0.15);
-        border-radius: 14px;
         overflow: hidden;
         transition: all 0.3s ease;
       }
-
       .service-card:hover {
         border-color: var(--primary);
         transform: translateY(-5px);
@@ -406,17 +372,18 @@
         width: 100%;
         height: 220px;
         object-fit: cover;
+        object-position: center;
+        display: block;
+        border-radius: 0;
         transition: transform 0.5s;
       }
-
       .service-card:hover .service-image {
-        transform: scale(1.05);
+        transform: scale(1.03);
       }
 
       .service-content {
-        padding: 1.8rem 1.5rem;
+        padding: 1.5rem 1.2rem;
       }
-
       .service-icon {
         width: 45px;
         height: 45px;
@@ -427,21 +394,19 @@
         justify-content: center;
         color: var(--primary);
         font-size: 1.3rem;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1rem;
       }
-
       .service-title {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         font-weight: 600;
         color: var(--primary);
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.7rem;
         line-height: 1.3;
       }
-
       .service-description {
         color: rgba(255, 255, 255, 0.85);
         line-height: 1.7;
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
 
       /* ========== STANDARDS ========== */
@@ -450,32 +415,26 @@
         border: 1px solid rgba(255, 107, 53, 0.15);
         border-radius: 16px;
         padding: 3rem;
-        margin: 0 2rem 4rem;
         max-width: calc(1400px - 4rem);
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto 4rem;
       }
-
       .standards-title {
         font-size: 2rem;
         font-weight: 700;
         color: var(--text);
         margin-bottom: 1rem;
       }
-
       .standards-description {
         color: rgba(255, 255, 255, 0.9);
         font-size: 1.05rem;
         line-height: 1.7;
         margin-bottom: 2.5rem;
       }
-
       .standards-list {
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
       }
-
       .standard-badge {
         background: rgba(255, 107, 53, 0.1);
         border: 2px solid var(--primary);
@@ -487,7 +446,6 @@
         transition: all 0.3s;
         cursor: default;
       }
-
       .standard-badge:hover {
         background: var(--primary);
         color: white;
@@ -498,7 +456,6 @@
       .gallery-section {
         padding: 4rem 0;
       }
-
       .gallery-section h2 {
         font-size: 2.2rem;
         text-align: center;
@@ -509,60 +466,35 @@
 
       .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
       }
 
+      /* FIX 1: border-radius: 0 (removed), cursor: pointer added */
       .gallery-item {
         background: var(--dark-secondary);
         border: 1px solid rgba(255, 107, 53, 0.15);
-        border-radius: 12px;
+        border-radius: 0;
         overflow: hidden;
-        transition: all 0.3s ease;
         position: relative;
         aspect-ratio: 4/3;
         cursor: pointer;
+        transition: all 0.3s ease;
+        height: 200px;
       }
-
       .gallery-item:hover {
         border-color: var(--primary);
         box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
       }
-
       .gallery-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
         transition: transform 0.5s;
       }
-
       .gallery-item:hover img {
-        transform: scale(1.1);
-      }
-
-      .gallery-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.9) 0%,
-          transparent 100%
-        );
-        padding: 2rem 1.5rem 1.5rem;
-        color: white;
-        transform: translateY(100%);
-        transition: transform 0.4s;
-      }
-
-      .gallery-item:hover .gallery-overlay {
-        transform: translateY(0);
-      }
-
-      .gallery-title {
-        font-weight: 600;
-        font-size: 1rem;
+        transform: scale(1.08);
       }
 
       /* ========== FOOTER ========== */
@@ -572,38 +504,33 @@
         font-size: 1rem;
         width: 100%;
         overflow: hidden;
-        margin-top: 5rem;
+        /* FIX 2: removed margin-top: 5rem — now 0 */
+        margin-top: 0;
       }
-
       .footer-top {
         padding: 50px 0 35px;
       }
-
       .footer-row {
         display: grid;
         grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
         gap: 30px;
       }
-
       .footer-logo {
         width: 180px;
         height: auto;
         margin-bottom: 12px;
         transition: var(--transition);
       }
-
       .footer-logo:hover {
         transform: scale(1.05);
         filter: brightness(1.2);
       }
-
       .footer-widget p {
         line-height: 1.7;
         color: rgba(255, 255, 255, 0.85);
         margin-bottom: 12px;
         font-size: 0.95rem;
       }
-
       .footer-widget h4 {
         color: #ffffff;
         font-weight: 600;
@@ -612,7 +539,6 @@
         padding-bottom: 10px;
         font-size: 1.1rem;
       }
-
       .footer-widget h4::after {
         content: "";
         width: 36px;
@@ -622,7 +548,6 @@
         left: 0;
         bottom: 0;
       }
-
       .footer-widget ul {
         list-style: none;
         padding: 0;
@@ -631,7 +556,6 @@
       .footer-widget ul li {
         margin-bottom: 8px;
       }
-
       .footer-widget ul li a {
         color: rgba(255, 255, 255, 0.85);
         transition: color 0.3s ease;
@@ -639,17 +563,14 @@
         display: inline-block;
         font-size: 0.95rem;
       }
-
       .footer-widget ul li a:hover {
         color: var(--accent-orange);
       }
-
       .footer-social {
         display: flex;
         gap: 10px;
         margin-top: 12px;
       }
-
       .footer-social a {
         width: 38px;
         height: 38px;
@@ -662,17 +583,14 @@
         transition: var(--transition);
         text-decoration: none;
       }
-
       .footer-social a:hover {
         background: var(--accent-orange);
         transform: translateY(-4px);
       }
-
       .footer-contact {
         padding: 0;
         margin: 0;
       }
-
       .footer-contact li {
         display: flex;
         align-items: flex-start;
@@ -681,17 +599,12 @@
         color: rgba(255, 255, 255, 0.85);
         margin-bottom: 10px;
       }
-
       .footer-contact li i {
         color: var(--accent-orange);
         flex-shrink: 0;
         margin-top: 3px;
         width: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
-
       .footer-contact li a {
         color: rgba(255, 255, 255, 0.85);
         text-decoration: none;
@@ -699,23 +612,19 @@
         flex: 1;
         font-size: 0.95rem;
       }
-
       .footer-contact li a:hover {
         color: var(--accent-orange);
       }
-
       .footer-bottom {
         background: #050f1c;
         padding: 18px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
       }
-
       .footer-bottom-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-
       .footer-bottom p {
         margin: 0;
         color: rgba(255, 255, 255, 0.8);
@@ -744,17 +653,28 @@
         z-index: 1000;
         box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
       }
-
       .scroll-to-top:hover {
         background: rgb(239, 53, 32);
         transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
       }
       .scroll-to-top.show {
         display: flex;
       }
 
       /* ========== RESPONSIVE ========== */
+      @media (max-width: 1400px) {
+        .gallery-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (max-width: 1200px) {
+        .gallery-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
       @media (max-width: 992px) {
         .header-content {
           padding: 0 1rem;
@@ -783,7 +703,6 @@
           transition:
             max-height 0.4s ease,
             box-shadow 0.4s ease;
-          box-shadow: none;
         }
         .nav.active {
           max-height: calc(100vh - 70px);
@@ -845,19 +764,23 @@
           grid-template-columns: repeat(2, 1fr);
         }
         .services-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
+        }
+        /* FIX 3: Mobile gallery 2 columns on tablet */
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.75rem;
+        }
+        .gallery-item {
+          height: 180px;
         }
       }
-
       @media (max-width: 768px) {
         .hero-content h1 {
           font-size: 2.2rem;
         }
         .hero-content .tagline {
           font-size: 1.1rem;
-        }
-        .content-section {
-          padding: 3rem 1.5rem;
         }
         .standards-section {
           padding: 2rem 1.5rem;
@@ -879,14 +802,21 @@
           gap: 12px;
           text-align: center;
         }
-        .gallery-grid {
-          grid-template-columns: 1fr;
-        }
         .footer-top {
           padding: 40px 0 30px;
         }
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+        /* FIX 3: Mobile gallery 2 columns on mobile */
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.6rem;
+        }
+        .gallery-item {
+          height: 160px;
+        }
       }
-
       @media (max-width: 576px) {
         .header-content {
           padding: 0 0.75rem;
@@ -896,6 +826,17 @@
         }
         .mobile-lang-btn {
           padding: 5px 8px;
+        }
+        .container {
+          padding: 0 0.75rem;
+        }
+        /* FIX 3: Mobile gallery stays 2 columns on small screens */
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+        }
+        .gallery-item {
+          height: 140px;
         }
       }
 
@@ -909,11 +850,9 @@
           transform: translateY(0);
         }
       }
-
       .hero-content {
         animation: fadeInUp 0.8s ease-out;
       }
-
       .service-card,
       .gallery-item {
         animation: fadeInUp 0.8s ease-out;
@@ -1189,14 +1128,14 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES — 4 cards in 1 row -->
     <section class="services-section" id="services">
       <div class="container">
         <h2 data-i18n="servicesHeading">Mühəndislik Xidmətləri</h2>
         <div class="services-grid">
           <div class="service-card">
             <img
-              src="assets/images/engineering/Skid .jpg"
+              src="assets/images/engineering/skid.jpg"
               alt="Design & Calculation Services"
               class="service-image"
             />
@@ -1219,7 +1158,7 @@
 
           <div class="service-card">
             <img
-              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (1).jpeg"
+              src="assets/images/engineering/material.jpeg"
               alt="Material Science & Metallurgy"
               class="service-image"
             />
@@ -1241,7 +1180,7 @@
 
           <div class="service-card">
             <img
-              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (2).jpeg"
+              src="assets/images/engineering/Project Management & Procurement Strategy.jpg"
               alt="Project Management"
               class="service-image"
             />
@@ -1262,7 +1201,7 @@
 
           <div class="service-card">
             <img
-              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (3).jpeg"
+              src="assets/images/engineering/Reverse Engineering .jpg"
               alt="Reverse Engineering"
               class="service-image"
             />
@@ -1313,113 +1252,75 @@
         <div class="gallery-grid">
           <div class="gallery-item">
             <img
-              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (4).jpeg"
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (2).jpeg"
               alt="Engineering Excellence"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery1">
-                Təzyiq Qablarının Dizaynı
-              </div>
-            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (3).jpeg"
+              alt="Piping Systems"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (4).jpeg"
+              alt="Metallurgical Testing"
+            />
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54 (5).jpeg"
-              alt="Piping Systems"
+              alt="CAD Design"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery2">
-                Boru Sistemləri Mühəndisliyi
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.54.jpeg"
-              alt="Metallurgical Testing"
+              alt="Quality Control"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery3">
-                Metallurgiya Sınağı
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.55 (1).jpeg"
-              alt="CAD Design"
+              alt="Welding Inspection"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery4">
-                CAD Mühəndisliyi
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.55 (2).jpeg"
-              alt="Quality Control"
+              alt="Material Testing"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery5">
-                Keyfiyyət Nəzarəti
-              </div>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="assets/images/engineering/WhatsApp Image 2026-01-28 at 17.49.58.jpeg"
-              alt="Welding Inspection"
-            />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery6">
-                Qaynaq Yoxlaması
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/engineering/WhatsApp Image 2026-01-24 at 13.34.55.jpeg"
-              alt="Material Testing"
+              alt="Structural Analysis"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery7">
-                Material Sınaq Laboratoriyası
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/engineering/WhatsApp Image 2026-01-28 at 11.15.48 (1).jpeg"
-              alt="Structural Analysis"
+              alt="Factory Testing"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery8">
-                Struktur Analizi
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/engineering/WhatsApp Image 2026-01-28 at 11.15.48 (2).jpeg"
-              alt="Factory Testing"
+              alt="On-site Oversight"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery9">
-                Zavod Qəbulu Sınağı
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/engineering/WhatsApp Image 2026-01-28 at 11.15.48.jpeg"
               alt="On-site Oversight"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery10">
-                Sahədə İstehsal Nəzarəti
-              </div>
-            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/engineering/WhatsApp Image 2026-01-28 at 17.49.58.jpeg"
+              alt="On-site Oversight"
+            />
           </div>
         </div>
       </div>
@@ -1449,28 +1350,24 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
-                >
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                </a>
+                  ><i class="fab fa-whatsapp" aria-hidden="true"></i
+                ></a>
                 <a
                   href="https://www.instagram.com/evershopllc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                >
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
-                </a>
+                  ><i class="fab fa-instagram" aria-hidden="true"></i
+                ></a>
                 <a
                   href="https://www.linkedin.com/company/evershop-llc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                >
-                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                </a>
+                  ><i class="fab fa-linkedin-in" aria-hidden="true"></i
+                ></a>
               </div>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="company">Şirkət</h4>
               <ul>
@@ -1483,7 +1380,6 @@
                 <li><a href="career.html" data-i18n="career">Karyera</a></li>
               </ul>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="solutions">Həllər</h4>
               <ul>
@@ -1522,7 +1418,6 @@
                 </li>
               </ul>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="contactInfo">Əlaqə</h4>
               <ul class="footer-contact">
@@ -1532,18 +1427,16 @@
                     href="https://wa.me/994702710066"
                     target="_blank"
                     rel="noopener noreferrer"
+                    >+994 70 271 00 66</a
                   >
-                    +994 70 271 00 66
-                  </a>
                 </li>
                 <li>
                   <i class="fas fa-envelope" aria-hidden="true"></i>
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az"
                     target="_blank"
+                    >Sales@evershop.az</a
                   >
-                    Sales@evershop.az
-                  </a>
                 </li>
                 <li>
                   <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -1552,10 +1445,9 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     data-i18n="addressText"
+                    >Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
+                    Azerbaijan</a
                   >
-                    Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
-                    Azerbaijan
-                  </a>
                 </li>
                 <li>
                   <i class="fas fa-industry" aria-hidden="true"></i>
@@ -1564,9 +1456,8 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     data-i18n="workshopText"
+                    >Salyan Highway, 32 km, Baku, Azerbaijan</a
                   >
-                    Salyan Highway, 32 km, Baku, Azerbaijan
-                  </a>
                 </li>
               </ul>
             </div>
@@ -1587,9 +1478,8 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   style="text-decoration: none; color: inherit"
+                  ><strong>BUTA GRUP</strong></a
                 >
-                  <strong>BUTA GRUP</strong>
-                </a>
               </span>
             </p>
           </div>
@@ -1645,27 +1535,15 @@
             "Biz yerli istehsal və qlobal tələblər arasında körpü qururuq. Mühəndislik komandamız hər layihənin beynəlxalq kodlara ciddi şəkildə riayət etməsini təmin edir, o cümlədən:",
           gostBadge: "GOST (Regional Sertifikat və Standartlar)",
           galleryHeading: "Layihə Nümunələri",
-          gallery1: "Təzyiq Qablarının Dizaynı",
-          gallery2: "Boru Sistemləri Mühəndisliyi",
-          gallery3: "Metallurgiya Sınağı",
-          gallery4: "CAD Mühəndisliyi",
-          gallery5: "Keyfiyyət Nəzarəti",
-          gallery6: "Qaynaq Yoxlaması",
-          gallery7: "Material Sınaq Laboratoriyası",
-          gallery8: "Struktur Analizi",
-          gallery9: "Zavod Qəbulu Sınağı",
-          gallery10: "Sahədə İstehsal Nəzarəti",
           footerAbout:
             "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
           company: "Şirkət",
           solutions: "Həllər",
           engineeringDesign: "Mühəndislik və Dizayn",
-          manufacturing: "İstehsal",
           industrialEquipment: "Sənaye Avadanlıqları",
+          manufacturing: "İstehsal",
           energySolutions: "Enerji Həlləri",
           innovativeProjects: "İnnovativ Layihələr",
-          industrialProcurement: "Sənaye Tədarükü",
-          projectManagement: "Layihə İdarəetməsi",
           contactInfo: "Əlaqə",
           addressText:
             "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
@@ -1715,27 +1593,15 @@
             "We bridge the gap between local production and global requirements. Our engineering team ensures that every project adheres strictly to international codes, including:",
           gostBadge: "GOST (Regional Certification & Standards)",
           galleryHeading: "Project Showcase",
-          gallery1: "Pressure Vessel Design",
-          gallery2: "Piping Systems Engineering",
-          gallery3: "Metallurgical Testing",
-          gallery4: "CAD Engineering",
-          gallery5: "Quality Control",
-          gallery6: "Welding Inspection",
-          gallery7: "Material Testing Lab",
-          gallery8: "Structural Analysis",
-          gallery9: "Factory Acceptance Testing",
-          gallery10: "On-Site Fabrication Oversight",
           footerAbout:
             "Have a complex project? Let our engineers and procurement specialists find the most efficient and reliable solution for your business.",
           company: "Company",
           solutions: "Solutions",
           engineeringDesign: "Engineering & Design",
-          manufacturing: "Manufacturing",
           industrialEquipment: "Industrial Equipment",
+          manufacturing: "Manufacturing",
           energySolutions: "Energy Solutions",
           innovativeProjects: "Innovative Projects",
-          industrialProcurement: "Industrial Procurement",
-          projectManagement: "Project Management",
           contactInfo: "Contact",
           addressText:
             "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
@@ -1785,27 +1651,15 @@
             "Мы устраняем разрыв между местным производством и глобальными требованиями. Наша инженерная команда обеспечивает строгое соблюдение каждым проектом международных кодексов, включая:",
           gostBadge: "ГОСТ (Региональная Сертификация и Стандарты)",
           galleryHeading: "Примеры Проектов",
-          gallery1: "Проектирование Сосудов Давления",
-          gallery2: "Инжиниринг Трубопроводных Систем",
-          gallery3: "Металлургические Испытания",
-          gallery4: "CAD Инжиниринг",
-          gallery5: "Контроль Качества",
-          gallery6: "Инспекция Сварки",
-          gallery7: "Лаборатория Испытания Материалов",
-          gallery8: "Структурный Анализ",
-          gallery9: "Заводские Приемочные Испытания",
-          gallery10: "Надзор За Производством На Месте",
           footerAbout:
             "У вас сложный проект? Позвольте нашим инженерам и специалистам по закупкам найти наиболее эффективное и надежное решение для вашего бизнеса.",
           company: "Компания",
           solutions: "Решения",
           engineeringDesign: "Инжиниринг и Проектирование",
-          manufacturing: "Производство",
           industrialEquipment: "Промышленное Оборудование",
+          manufacturing: "Производство",
           energySolutions: "Энергетические Решения",
           innovativeProjects: "Инновационные Проекты",
-          industrialProcurement: "Промышленные Закупки",
-          projectManagement: "Управление Проектами",
           contactInfo: "Контакты",
           addressText:
             "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Баку, Азербайджан",

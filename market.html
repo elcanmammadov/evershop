@@ -17,7 +17,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-
     <style>
       :root {
         --primary: #ff6b35;
@@ -25,30 +24,27 @@
         --dark-secondary: rgba(30, 52, 79, 1);
         --text: #e8ecf1;
         --text-muted: #8b96a5;
-        --accent: #4a9eff;
         --primary-blue: #0a2342;
         --accent-orange: #e85d04;
-        --steel-gray: #2c3e50;
         --light-gray: #ecf0f1;
         --white: #ffffff;
         --footer-dark: #0a2342;
         --transition: all 0.3s ease;
       }
-
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-
       body {
         font-family: "Inter", sans-serif;
         background: var(--dark);
         color: var(--text);
         line-height: 1.6;
+        overflow-x: hidden;
       }
 
-      /* ========== HEADER STYLES ========== */
+      /* ========== HEADER ========== */
       .header {
         background: var(--primary-blue);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -59,11 +55,9 @@
         z-index: 9999;
         transition: var(--transition);
       }
-
       .header.scrolled {
         box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
       }
-
       .header-content {
         max-width: 1400px;
         margin: 0 auto;
@@ -73,45 +67,37 @@
         justify-content: space-between;
         min-height: 85px;
       }
-
       .logo {
         display: flex;
         align-items: center;
         text-decoration: none;
         transition: transform 0.3s ease;
       }
-
       .logo:hover {
         transform: scale(1.05);
       }
-
       .logo-image {
         height: 75px;
         width: auto;
         object-fit: contain;
         transition: filter 0.3s ease;
       }
-
       .logo:hover .logo-image {
         filter: brightness(1.2);
       }
-
       .nav {
         display: flex;
         align-items: center;
       }
-
       .nav-list {
         list-style: none;
         display: flex;
         gap: 0.5rem;
         align-items: center;
       }
-
       .nav-item {
         position: relative;
       }
-
       .nav-link {
         font-family: "Montserrat", sans-serif;
         text-decoration: none;
@@ -128,7 +114,6 @@
         position: relative;
         overflow: hidden;
       }
-
       .nav-link::before {
         content: "";
         position: absolute;
@@ -140,27 +125,22 @@
         transition: var(--transition);
         transform: translateX(-50%);
       }
-
       .nav-link:hover {
         background: rgba(255, 255, 255, 0.1);
         color: var(--accent-orange);
       }
-
       .nav-link:hover::before {
         width: 80%;
       }
-
       .dropdown-icon {
         display: inline-block;
         margin-left: 4px;
         transition: transform 0.3s ease;
         font-size: 0.75rem;
       }
-
       .nav-item:hover .dropdown-icon {
         transform: rotate(180deg);
       }
-
       .dropdown {
         position: absolute;
         top: 100%;
@@ -177,18 +157,15 @@
         border-top: 3px solid var(--accent-orange);
         overflow: hidden;
       }
-
       .nav-item:hover .dropdown {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
       }
-
       .dropdown-list {
         list-style: none;
         padding: 0.5rem 0;
       }
-
       .dropdown-link {
         display: block;
         padding: 0.875rem 1.5rem;
@@ -199,19 +176,16 @@
         transition: var(--transition);
         border-left: 3px solid transparent;
       }
-
       .dropdown-link:hover {
         background: var(--light-gray);
         border-left-color: var(--accent-orange);
         padding-left: 1.75rem;
       }
-
       .mobile-controls {
         display: none;
         align-items: center;
         gap: 12px;
       }
-
       .mobile-menu-btn {
         display: flex;
         flex-direction: column;
@@ -223,11 +197,9 @@
         border-radius: 4px;
         transition: var(--transition);
       }
-
       .mobile-menu-btn:hover {
         background: rgba(255, 255, 255, 0.1);
       }
-
       .mobile-menu-btn span {
         width: 28px;
         height: 3px;
@@ -235,51 +207,36 @@
         border-radius: 2px;
         transition: var(--transition);
       }
-
       .mobile-menu-btn.active span:nth-child(1) {
         transform: rotate(45deg) translate(7px, 7px);
       }
-
       .mobile-menu-btn.active span:nth-child(2) {
         opacity: 0;
       }
-
       .mobile-menu-btn.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
       }
-
-      .language-dropdown .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
       .language-dropdown .flag-icon {
         width: 24px;
         height: 17px;
         border-radius: 2px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
       }
-
       .lang-text {
         font-weight: 700;
       }
-
       .lang-dropdown {
         min-width: 220px;
       }
-
       .lang-dropdown .dropdown-link {
         display: flex;
         align-items: center;
         gap: 12px;
       }
-
       .lang-dropdown .flag-icon {
         width: 28px;
         height: 20px;
       }
-
       .mobile-lang-btn {
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.3);
@@ -291,25 +248,22 @@
         gap: 6px;
         transition: var(--transition);
       }
-
       .mobile-lang-btn:hover {
         background: rgba(255, 255, 255, 0.2);
       }
-
       .mobile-lang-btn .flag-icon {
         width: 22px;
         height: 16px;
       }
-
       .mobile-lang-btn .lang-text {
         color: white;
         font-size: 0.9rem;
         font-weight: 600;
       }
 
-      /* Hero Section */
+      /* ========== HERO ========== */
       .hero {
-        min-height: 40vh;
+        min-height: 50vh;
         display: flex;
         align-items: center;
         background: linear-gradient(135deg, #162c47 0%, #1a3a5a 100%);
@@ -317,7 +271,6 @@
         overflow: hidden;
         margin-top: 85px;
       }
-
       .hero::after {
         content: "";
         position: absolute;
@@ -332,7 +285,6 @@
           transparent
         );
       }
-
       .hero-container {
         max-width: 1400px;
         margin: 0 auto;
@@ -340,255 +292,196 @@
         position: relative;
         z-index: 1;
       }
-
       .hero-content {
         text-align: center;
+        animation: fadeInUp 0.8s ease-out;
       }
-
+      .company-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
       .hero-content h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
         font-weight: 800;
         margin-bottom: 1rem;
         line-height: 1.1;
         color: #ffffff;
       }
-
-      .hero-content .subtitle {
-        font-size: 1.2rem;
-        color: var(--text);
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        line-height: 1.8;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      /* Content Section */
-      .content-section {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 4rem 2rem;
-      }
-
-      /* Gallery Section */
-      .gallery-section {
-        margin-bottom: 5rem;
-      }
-
-      .gallery-single {
-        position: relative;
-        overflow: hidden;
-        border: 1px solid rgba(255, 107, 53, 0.15);
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .gallery-single:hover {
-        border-color: var(--primary);
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-      }
-
-      .gallery-single img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        display: block;
-      }
-
-      /* Sectors Grid */
-      .sectors-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 2rem;
-        margin-bottom: 5rem;
-      }
-
-      .sector-card {
-        background: var(--dark-secondary);
-        border: 1px solid rgba(255, 107, 53, 0.15);
-        border-radius: 16px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .sector-card:hover {
-        border-color: var(--primary);
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(255, 107, 53, 0.15);
-      }
-
-      .card-image {
-        width: 100%;
-        height: 180px;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 107, 53, 0.1) 0%,
-          rgba(74, 158, 255, 0.1) 100%
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        border-bottom: 1px solid rgba(255, 107, 53, 0.1);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .card-image::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          var(--dark-secondary) 0%,
-          transparent 100%
-        );
-        opacity: 0.5;
-      }
-
-      .card-content {
-        padding: 1.8rem;
-      }
-
-      .card-content h3 {
+      .hero-content .tagline {
         font-size: 1.3rem;
-        font-weight: 700;
         color: var(--text);
-        margin-bottom: 0.8rem;
-      }
-
-      .card-content p {
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.85);
-        line-height: 1.6;
-      }
-
-      /* Capabilities Section */
-      .capabilities-section {
-        background: var(--dark-secondary);
-        border: 1px solid rgba(255, 107, 53, 0.15);
-        border-radius: 16px;
-        padding: 3rem;
-        margin-top: 4rem;
-      }
-
-      .capabilities-section h2 {
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: var(--text);
-        text-align: center;
-      }
-
-      .capabilities-section > p {
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 2.5rem;
-        line-height: 1.8;
-        text-align: center;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .capabilities-list {
-        display: grid;
-        gap: 1.5rem;
-      }
-
-      .capability-item {
-        display: flex;
-        gap: 1.5rem;
-        padding: 2rem;
-        background: rgba(255, 107, 53, 0.05);
-        border: 1px solid rgba(255, 107, 53, 0.1);
-        border-left: 4px solid var(--primary);
-        border-radius: 12px;
-        transition: all 0.3s ease;
-      }
-
-      .capability-item:hover {
-        border-color: var(--primary);
-        background: rgba(255, 107, 53, 0.08);
-        transform: translateX(5px);
-      }
-
-      .capability-icon {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, var(--primary) 0%, #ff8f5a 100%);
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        font-size: 1.5rem;
-        color: white;
-      }
-
-      .capability-content h3 {
-        font-size: 1.2rem;
         font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: var(--text);
+        letter-spacing: 1px;
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.8;
       }
 
-      .capability-content p {
-        color: rgba(255, 255, 255, 0.85);
-        line-height: 1.7;
-        font-size: 0.95rem;
-      }
-
-      /* ========== FOOTER STYLES ========== */
-      .site-footer {
-        background: var(--footer-dark);
-        color: #ffffff;
-        font-size: 1rem;
-        width: 100%;
-        overflow: hidden;
-        margin-top: 4rem;
-      }
-
-      .footer-top {
-        padding: 50px 0 35px;
-      }
-
+      /* ========== LAYOUT ========== */
       .container {
         max-width: 1400px;
         margin: 0 auto;
         padding: 0 2rem;
       }
 
+      /* ========== GALLERY ========== */
+      .gallery-section {
+        padding: 4rem 0 2rem;
+      }
+      .gallery-single {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .gallery-single:hover {
+        border-color: var(--primary);
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+      }
+      .gallery-single img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s;
+      }
+      .gallery-single:hover img {
+        transform: scale(1.02);
+      }
+
+      /* ========== SECTORS (pillar-card style) ========== */
+      .sectors-section {
+        padding: 4rem 0;
+      }
+      .sectors-section h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        color: var(--text);
+        text-align: center;
+      }
+      .sectors-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .sector-card {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .sector-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+      }
+      .sector-content {
+        padding: 1.8rem 1.5rem;
+      }
+      .sector-icon {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 107, 53, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+      .sector-card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.8rem;
+      }
+      .sector-card p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.7;
+      }
+
+      /* ========== CAPABILITIES (badge style matching about.html) ========== */
+      .capabilities-section {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 16px;
+        padding: 3rem;
+        max-width: calc(1400px - 4rem);
+        margin: 0 auto 4rem;
+      }
+      .capabilities-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 1rem;
+      }
+      .capabilities-description {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+      }
+      .capabilities-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .capability-badge {
+        background: rgba(255, 107, 53, 0.1);
+        border: 2px solid var(--primary);
+        padding: 0.8rem 1.8rem;
+        border-radius: 50px;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s;
+        cursor: default;
+      }
+      .capability-badge:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      /* ========== FOOTER ========== */
+      .site-footer {
+        background: var(--footer-dark);
+        color: #ffffff;
+        font-size: 1rem;
+        width: 100%;
+        overflow: hidden;
+      }
+      .footer-top {
+        padding: 50px 0 35px;
+      }
       .footer-row {
         display: grid;
         grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
         gap: 30px;
       }
-
       .footer-logo {
         width: 180px;
         height: auto;
         margin-bottom: 12px;
         transition: var(--transition);
-        cursor: pointer;
       }
-
       .footer-logo:hover {
         transform: scale(1.05);
         filter: brightness(1.2);
       }
-
       .footer-widget p {
         line-height: 1.7;
         color: rgba(255, 255, 255, 0.85);
         margin-bottom: 12px;
         font-size: 0.95rem;
       }
-
       .footer-widget h4 {
         color: #ffffff;
         font-weight: 600;
@@ -597,7 +490,6 @@
         padding-bottom: 10px;
         font-size: 1.1rem;
       }
-
       .footer-widget h4::after {
         content: "";
         width: 36px;
@@ -607,17 +499,14 @@
         left: 0;
         bottom: 0;
       }
-
       .footer-widget ul {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-
       .footer-widget ul li {
         margin-bottom: 8px;
       }
-
       .footer-widget ul li a {
         color: rgba(255, 255, 255, 0.85);
         transition: color 0.3s ease;
@@ -625,17 +514,14 @@
         display: inline-block;
         font-size: 0.95rem;
       }
-
       .footer-widget ul li a:hover {
         color: var(--accent-orange);
       }
-
       .footer-social {
         display: flex;
         gap: 10px;
         margin-top: 12px;
       }
-
       .footer-social a {
         width: 38px;
         height: 38px;
@@ -648,37 +534,29 @@
         transition: var(--transition);
         text-decoration: none;
       }
-
       .footer-social a:hover {
         background: var(--accent-orange);
-        transform: translateY(-3px);
+        transform: translateY(-4px);
       }
-
       .footer-contact {
         padding: 0;
         margin: 0;
         list-style: none;
       }
-
       .footer-contact li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 10px;
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.85);
         margin-bottom: 10px;
       }
-
       .footer-contact li i {
         color: var(--accent-orange);
         flex-shrink: 0;
-        font-size: 1rem;
+        margin-top: 3px;
         width: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
-
       .footer-contact li a {
         color: rgba(255, 255, 255, 0.85);
         text-decoration: none;
@@ -686,33 +564,27 @@
         flex: 1;
         font-size: 0.95rem;
       }
-
       .footer-contact li a:hover {
         color: var(--accent-orange);
       }
-
       .footer-bottom {
         background: #050f1c;
         padding: 18px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
       }
-
       .footer-bottom-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-
       .footer-bottom p {
         margin: 0;
         color: rgba(255, 255, 255, 0.8);
         font-size: 0.9rem;
       }
-
       .footer-credit {
         margin-left: 5px;
       }
-
       .scroll-to-top {
         position: fixed;
         bottom: 30px;
@@ -732,52 +604,32 @@
         z-index: 1000;
         box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
       }
-
       .scroll-to-top:hover {
         background: rgb(239, 53, 32);
         transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
       }
-
       .scroll-to-top.show {
         display: flex;
       }
 
-      /* Responsive */
-      @media (max-width: 1400px) {
-        .sectors-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      @media (max-width: 1200px) {
-        .sectors-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
+      /* ========== RESPONSIVE ========== */
       @media (max-width: 992px) {
         .header-content {
           padding: 0 1rem;
           min-height: 70px;
         }
-
         .logo-image {
           height: 60px;
         }
-
         .mobile-controls {
           display: flex;
         }
-
         .mobile-lang-btn {
           display: flex;
         }
-
         .nav-list .language-dropdown {
           display: none;
         }
-
         .nav {
           position: fixed;
           top: 70px;
@@ -789,38 +641,31 @@
           transition:
             max-height 0.4s ease,
             box-shadow 0.4s ease;
-          box-shadow: none;
         }
-
         .nav.active {
           max-height: calc(100vh - 70px);
           overflow-y: auto;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
-
         .nav-list {
           flex-direction: column;
           width: 100%;
           gap: 0;
           padding: 1rem 0;
         }
-
         .nav-item {
           width: 100%;
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         .nav-link {
           padding: 1rem 1.5rem;
           font-size: 1.05rem;
           width: 100%;
           justify-content: space-between;
         }
-
         .nav-link::before {
           display: none;
         }
-
         .dropdown {
           position: static;
           opacity: 1;
@@ -835,83 +680,74 @@
           overflow: hidden;
           transition: max-height 0.3s ease;
         }
-
         .nav-item.dropdown-active .dropdown {
           max-height: 500px;
         }
-
-        .dropdown-list {
-          padding: 0;
-        }
-
         .dropdown-link {
           color: var(--white);
           padding: 0.875rem 2.5rem;
           font-size: 0.95rem;
           border-left: 3px solid transparent;
         }
-
         .dropdown-link:hover {
           background: rgba(255, 255, 255, 0.1);
         }
-
         .hero {
           margin-top: 70px;
         }
-
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        .sectors-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
         .footer-row {
           grid-template-columns: repeat(2, 1fr);
         }
       }
-
       @media (max-width: 768px) {
-        .content-section {
-          padding: 3rem 1.5rem;
-        }
-
         .hero-content h1 {
           font-size: 2.2rem;
         }
-
+        .hero-content .tagline {
+          font-size: 1.1rem;
+        }
         .sectors-grid {
           grid-template-columns: 1fr;
         }
-
-        .footer-top {
-          padding: 40px 0 30px;
+        .capabilities-section {
+          padding: 2rem 1.5rem;
+          margin: 0 1rem 3rem;
         }
-
+        .capabilities-list {
+          gap: 1rem;
+        }
+        .capability-badge {
+          font-size: 0.9rem;
+          padding: 0.6rem 1.4rem;
+        }
         .footer-row {
           grid-template-columns: 1fr;
           gap: 25px;
         }
-
         .footer-bottom-content {
           flex-direction: column;
           gap: 12px;
           text-align: center;
         }
       }
-
       @media (max-width: 576px) {
         .header-content {
           padding: 0 0.75rem;
         }
-
         .logo-image {
           height: 50px;
         }
-
-        .mobile-lang-btn {
-          padding: 5px 8px;
-        }
-
         .container {
-          padding: 0 1rem;
+          padding: 0 0.75rem;
         }
       }
 
-      /* Animations */
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -921,34 +757,6 @@
           opacity: 1;
           transform: translateY(0);
         }
-      }
-
-      .hero-content,
-      .gallery-section,
-      .sectors-grid,
-      .capabilities-section {
-        animation: fadeInUp 0.8s ease-out;
-      }
-
-      .sector-card {
-        animation: fadeInUp 0.8s ease-out;
-        animation-fill-mode: both;
-      }
-
-      .sector-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .sector-card:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .sector-card:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .sector-card:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-      .sector-card:nth-child(5) {
-        animation-delay: 0.5s;
       }
     </style>
   </head>
@@ -963,7 +771,6 @@
             class="logo-image"
           />
         </a>
-
         <div class="mobile-controls">
           <button class="mobile-lang-btn" id="mobileLangBtn">
             <svg
@@ -991,18 +798,14 @@
             </svg>
             <span class="lang-text">EN</span>
           </button>
-
           <button
             class="mobile-menu-btn"
             id="mobileMenuBtn"
             aria-label="Toggle Menu"
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
           </button>
         </div>
-
         <nav class="nav" id="mainNav">
           <ul class="nav-list">
             <li class="nav-item">
@@ -1011,7 +814,7 @@
               >
             </li>
             <li class="nav-item has-dropdown">
-              <a href="#products" class="nav-link">
+              <a href="#" class="nav-link">
                 <span data-translate="nav_products">Products</span>
                 <span class="dropdown-icon">▼</span>
               </a>
@@ -1051,7 +854,7 @@
                     href="steel.html"
                     class="dropdown-link"
                     data-translate="dropdown_steel"
-                    >Steel & Piping Accessories</a
+                    >Steel &amp; Piping Accessories</a
                   >
                   <a
                     href="sealing.html"
@@ -1069,7 +872,7 @@
                     href="prototype.html"
                     class="dropdown-link"
                     data-translate="dropdown_rd"
-                    >R&D and Prototype</a
+                    >R&amp;D and Prototype</a
                   >
                   <a
                     href="https://www.evershop.az/az/shop"
@@ -1081,7 +884,7 @@
               </ul>
             </li>
             <li class="nav-item has-dropdown">
-              <a href="#services" class="nav-link">
+              <a href="#" class="nav-link">
                 <span data-translate="nav_services">Services</span>
                 <span class="dropdown-icon">▼</span>
               </a>
@@ -1091,19 +894,19 @@
                     href="design.html"
                     class="dropdown-link"
                     data-translate="dropdown_design"
-                    >Design & Engineering</a
+                    >Design &amp; Engineering</a
                   >
                   <a
                     href="installation.html"
                     class="dropdown-link"
                     data-translate="dropdown_installation"
-                    >Installation & Commissioning</a
+                    >Installation &amp; Commissioning</a
                   >
                   <a
                     href="repair.html"
                     class="dropdown-link"
                     data-translate="dropdown_repair"
-                    >Repair & Maintenance</a
+                    >Repair &amp; Maintenance</a
                   >
                   <a
                     href="heat.html"
@@ -1221,26 +1024,23 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-container">
         <div class="hero-content">
+          <div class="company-name">EVERSHOP</div>
           <h1 data-translate="hero_title">Market Sectors</h1>
-          <p class="subtitle" data-translate="hero_subtitle">
+          <p class="tagline" data-translate="hero_subtitle">
             EVERSHOP delivers specialized fabrication, engineering, and supply
-            solutions to the world's most demanding industries. Our expertise
-            spans Oil & Gas, Petrochemical, Power Generation, and Water
-            Treatment sectors, where quality, safety, and reliability are
-            non-negotiable.
+            solutions to the world's most demanding industries.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="content-section">
-      <!-- Gallery Single Image -->
-      <div class="gallery-section">
+    <!-- GALLERY -->
+    <section class="gallery-section">
+      <div class="container">
         <div class="gallery-single">
           <img
             src="assets/images/market/WhatsApp Image 2026-02-10 at 01.39.01.jpeg"
@@ -1248,346 +1048,104 @@
           />
         </div>
       </div>
+    </section>
 
-      <!-- Sectors Grid -->
-      <div class="sectors-grid">
-        <!-- Card 1: Oil & Gas -->
-        <div class="sector-card">
-          <div class="card-image">
-            <svg
-              width="120"
-              height="120"
-              viewBox="0 0 200 200"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M100 60 L100 140"
-                stroke="#FF6B35"
-                stroke-width="8"
-                stroke-linecap="round"
-              />
-              <circle cx="100" cy="50" r="15" fill="#FF6B35" />
-              <ellipse
-                cx="100"
-                cy="150"
-                rx="40"
-                ry="15"
-                fill="rgba(255, 107, 53, 0.3)"
-                stroke="#FF6B35"
-                stroke-width="3"
-              />
-              <path
-                d="M80 80 Q70 100 80 120"
-                stroke="#FF6B35"
-                stroke-width="4"
-                fill="none"
-              />
-              <path
-                d="M120 80 Q130 100 120 120"
-                stroke="#FF6B35"
-                stroke-width="4"
-                fill="none"
-              />
-            </svg>
-          </div>
-          <div class="card-content">
-            <h3 data-translate="sector1_title">Oil & Gas</h3>
-            <p data-translate="sector1_desc">
-              Pressure vessels, separators, heat exchangers, and process
-              equipment for upstream, midstream, and downstream operations.
-            </p>
-          </div>
-        </div>
-
-        <!-- Card 2: Petrochemical -->
-        <div class="sector-card">
-          <div class="card-image">
-            <svg
-              width="120"
-              height="120"
-              viewBox="0 0 200 200"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="100"
-                cy="120"
-                r="30"
-                fill="none"
-                stroke="#FF6B35"
-                stroke-width="4"
-              />
-              <path d="M100 90 L100 50" stroke="#FF6B35" stroke-width="4" />
-              <circle cx="100" cy="45" r="8" fill="#FF6B35" />
-              <line
-                x1="70"
-                y1="120"
-                x2="60"
-                y2="140"
-                stroke="#FF6B35"
-                stroke-width="3"
-              />
-              <line
-                x1="130"
-                y1="120"
-                x2="140"
-                y2="140"
-                stroke="#FF6B35"
-                stroke-width="3"
-              />
-              <circle cx="60" cy="145" r="6" fill="rgba(255, 107, 53, 0.5)" />
-              <circle cx="140" cy="145" r="6" fill="rgba(255, 107, 53, 0.5)" />
-            </svg>
-          </div>
-          <div class="card-content">
-            <h3 data-translate="sector2_title">Petrochemical</h3>
-            <p data-translate="sector2_desc">
-              Specialized reactors, columns, and process skids designed for
-              corrosive and high-temperature chemical processing environments.
-            </p>
-          </div>
-        </div>
-
-        <!-- Card 3: Power Generation -->
-        <div class="sector-card">
-          <div class="card-image">
-            <svg
-              width="120"
-              height="120"
-              viewBox="0 0 200 200"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M120 50 L80 100 L110 100 L70 150"
-                stroke="#FF6B35"
-                stroke-width="6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <circle
-                cx="100"
-                cy="100"
-                r="60"
-                fill="none"
-                stroke="#FF6B35"
-                stroke-width="3"
-                opacity="0.3"
-              />
-              <path d="M100 40 L105 50 L95 50 Z" fill="#FF6B35" />
-              <path d="M140 100 L150 105 L150 95 Z" fill="#FF6B35" />
-              <path d="M100 160 L95 150 L105 150 Z" fill="#FF6B35" />
-              <path d="M60 100 L50 95 L50 105 Z" fill="#FF6B35" />
-            </svg>
-          </div>
-          <div class="card-content">
-            <h3 data-translate="sector3_title">Power Generation</h3>
-            <p data-translate="sector3_desc">
-              Boilers, heat recovery steam generators, condensers, and auxiliary
-              equipment for thermal and combined-cycle power plants.
-            </p>
-          </div>
-        </div>
-
-        <!-- Card 4: Water Treatment -->
-        <div class="sector-card">
-          <div class="card-image">
-            <svg
-              width="120"
-              height="120"
-              viewBox="0 0 200 200"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M100 50 Q80 70 100 90 Q120 70 100 50" fill="#FF6B35" />
-              <path
-                d="M85 95 Q70 110 85 125 Q100 110 85 95"
-                fill="rgba(255, 107, 53, 0.7)"
-              />
-              <path
-                d="M115 95 Q100 110 115 125 Q130 110 115 95"
-                fill="rgba(255, 107, 53, 0.7)"
-              />
-              <ellipse
-                cx="100"
-                cy="140"
-                rx="50"
-                ry="10"
-                fill="rgba(74, 158, 255, 0.3)"
-                stroke="#4A9EFF"
-                stroke-width="2"
-              />
-              <path
-                d="M60 135 Q65 130 70 135"
-                stroke="#4A9EFF"
-                stroke-width="2"
-                fill="none"
-              />
-              <path
-                d="M90 135 Q95 130 100 135"
-                stroke="#4A9EFF"
-                stroke-width="2"
-                fill="none"
-              />
-              <path
-                d="M120 135 Q125 130 130 135"
-                stroke="#4A9EFF"
-                stroke-width="2"
-                fill="none"
-              />
-            </svg>
-          </div>
-          <div class="card-content">
-            <h3 data-translate="sector4_title">Water Treatment</h3>
-            <p data-translate="sector4_desc">
-              Complete skid packages, filtration systems, and specialized
-              vessels for industrial water treatment and desalination
-              facilities.
-            </p>
-          </div>
-        </div>
-
-        <!-- Card 5: Industrial Manufacturing -->
-        <div class="sector-card">
-          <div class="card-image">
-            <svg
-              width="120"
-              height="120"
-              viewBox="0 0 200 200"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                x="50"
-                y="80"
-                width="40"
-                height="60"
-                fill="rgba(255, 107, 53, 0.2)"
-                stroke="#FF6B35"
-                stroke-width="3"
-              />
-              <rect
-                x="110"
-                y="80"
-                width="40"
-                height="60"
-                fill="rgba(255, 107, 53, 0.2)"
-                stroke="#FF6B35"
-                stroke-width="3"
-              />
-              <polygon
-                points="50,80 70,50 130,50 150,80"
-                fill="rgba(255, 107, 53, 0.3)"
-                stroke="#FF6B35"
-                stroke-width="3"
-              />
-              <rect x="60" y="100" width="15" height="20" fill="#FF6B35" />
-              <rect x="120" y="100" width="15" height="20" fill="#FF6B35" />
-              <line
-                x1="40"
-                y1="140"
-                x2="160"
-                y2="140"
-                stroke="#FF6B35"
-                stroke-width="4"
-              />
-            </svg>
-          </div>
-          <div class="card-content">
-            <h3 data-translate="sector5_title">Industrial Manufacturing</h3>
-            <p data-translate="sector5_desc">
-              Custom fabrication solutions including structural steel, process
-              equipment, and specialized components for diverse manufacturing
-              applications.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Capabilities Section -->
-      <div class="capabilities-section">
-        <h2 data-translate="capabilities_title">
-          Our Core Capabilities Across Sectors
-        </h2>
-        <p data-translate="capabilities_subtitle">
-          Regardless of industry, EVERSHOP delivers consistent engineering
-          excellence through our integrated approach.
-        </p>
-
-        <div class="capabilities-list">
-          <div class="capability-item">
-            <div class="capability-icon">
-              <i class="fas fa-certificate"></i>
-            </div>
-            <div class="capability-content">
-              <h3 data-translate="cap1_title">ASME Code Compliance</h3>
-              <p data-translate="cap1_desc">
-                All pressure vessels and heat exchangers fabricated to ASME
-                Section VIII Division 1 & 2 standards, with full documentation
-                and U-stamp certification where required.
+    <!-- SECTORS -->
+    <section class="sectors-section">
+      <div class="container">
+        <h2 data-translate="sectors_title">Our Market Sectors</h2>
+        <div class="sectors-grid">
+          <div class="sector-card">
+            <div class="sector-content">
+              <div class="sector-icon"><i class="fas fa-oil-can"></i></div>
+              <h3 data-translate="sector1_title">Oil &amp; Gas</h3>
+              <p data-translate="sector1_desc">
+                Pressure vessels, separators, heat exchangers, and process
+                equipment for upstream, midstream, and downstream operations.
               </p>
             </div>
           </div>
-
-          <div class="capability-item">
-            <div class="capability-icon"><i class="fas fa-atom"></i></div>
-            <div class="capability-content">
-              <h3 data-translate="cap2_title">
-                Advanced Materials Engineering
-              </h3>
-              <p data-translate="cap2_desc">
-                Expertise in exotic alloys (Inconel, Monel, Hastelloy),
-                duplex/super duplex stainless steels, and specialized cladding
-                for corrosive service environments.
+          <div class="sector-card">
+            <div class="sector-content">
+              <div class="sector-icon"><i class="fas fa-flask"></i></div>
+              <h3 data-translate="sector2_title">Petrochemical</h3>
+              <p data-translate="sector2_desc">
+                Specialized reactors, columns, and process skids designed for
+                corrosive and high-temperature chemical processing environments.
               </p>
             </div>
           </div>
-
-          <div class="capability-item">
-            <div class="capability-icon"><i class="fas fa-tasks"></i></div>
-            <div class="capability-content">
-              <h3 data-translate="cap3_title">Integrated Project Management</h3>
-              <p data-translate="cap3_desc">
-                End-to-end coordination from design and material sourcing
-                through fabrication, testing, and delivery—ensuring on-time,
-                on-budget project completion.
+          <div class="sector-card">
+            <div class="sector-content">
+              <div class="sector-icon"><i class="fas fa-bolt"></i></div>
+              <h3 data-translate="sector3_title">Power Generation</h3>
+              <p data-translate="sector3_desc">
+                Boilers, heat recovery steam generators, condensers, and
+                auxiliary equipment for thermal and combined-cycle power plants.
               </p>
             </div>
           </div>
-
-          <div class="capability-item">
-            <div class="capability-icon">
-              <i class="fas fa-check-double"></i>
-            </div>
-            <div class="capability-content">
-              <h3 data-translate="cap4_title">Quality Assurance & Testing</h3>
-              <p data-translate="cap4_desc">
-                Comprehensive QA/QC programs including NDT (RT, UT, MT, PT),
-                hydrostatic testing, material traceability, and full inspection
-                documentation.
+          <div class="sector-card">
+            <div class="sector-content">
+              <div class="sector-icon"><i class="fas fa-tint"></i></div>
+              <h3 data-translate="sector4_title">Water Treatment</h3>
+              <p data-translate="sector4_desc">
+                Complete skid packages, filtration systems, and specialized
+                vessels for industrial water treatment and desalination
+                facilities.
               </p>
             </div>
           </div>
-
-          <div class="capability-item">
-            <div class="capability-icon">
-              <i class="fas fa-globe-americas"></i>
-            </div>
-            <div class="capability-content">
-              <h3 data-translate="cap5_title">
-                Local Manufacturing with Global Standards
-              </h3>
-              <p data-translate="cap5_desc">
-                Made in Azerbaijan facility combining local production
-                efficiency with international engineering standards and global
-                component sourcing capabilities.
+          <div class="sector-card">
+            <div class="sector-content">
+              <div class="sector-icon"><i class="fas fa-industry"></i></div>
+              <h3 data-translate="sector5_title">Industrial Manufacturing</h3>
+              <p data-translate="sector5_desc">
+                Custom fabrication solutions including structural steel, process
+                equipment, and specialized components for diverse manufacturing
+                applications.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- CAPABILITIES (badge style) -->
+    <div class="capabilities-section">
+      <h2 class="capabilities-title" data-translate="capabilities_title">
+        Our Core Capabilities Across Sectors
+      </h2>
+      <p
+        class="capabilities-description"
+        data-translate="capabilities_subtitle"
+      >
+        Regardless of industry, EVERSHOP delivers consistent engineering
+        excellence through our integrated approach.
+      </p>
+      <div class="capabilities-list">
+        <div class="capability-badge" data-translate="cap1_title">
+          ASME Code Compliance
+        </div>
+        <div class="capability-badge" data-translate="cap2_title">
+          Advanced Materials Engineering
+        </div>
+        <div class="capability-badge" data-translate="cap3_title">
+          Integrated Project Management
+        </div>
+        <div class="capability-badge" data-translate="cap4_title">
+          Quality Assurance &amp; Testing
+        </div>
+        <div class="capability-badge" data-translate="cap5_title">
+          Local Manufacturing – Global Standards
+        </div>
+        <div class="capability-badge">NDT &amp; Hydrostatic Testing</div>
+        <div class="capability-badge">U-Stamp Certification</div>
+        <div class="capability-badge">Exotic Alloy Expertise</div>
+        <div class="capability-badge">End-to-End Coordination</div>
+        <div class="capability-badge">Material Traceability</div>
+      </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="site-footer" role="contentinfo">
@@ -1613,7 +1171,7 @@
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
                 >
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                  <i class="fab fa-whatsapp"></i>
                 </a>
                 <a
                   href="https://www.instagram.com/evershopllc/"
@@ -1621,7 +1179,7 @@
                   rel="noopener noreferrer"
                   aria-label="Instagram"
                 >
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <i class="fab fa-instagram"></i>
                 </a>
                 <a
                   href="https://www.linkedin.com/company/evershop-llc/"
@@ -1629,11 +1187,10 @@
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
-                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                  <i class="fab fa-linkedin-in"></i>
                 </a>
               </div>
             </div>
-
             <div class="footer-widget">
               <h4 data-translate="footer_company">Company</h4>
               <ul>
@@ -1660,7 +1217,6 @@
                 </li>
               </ul>
             </div>
-
             <div class="footer-widget">
               <h4 data-translate="footer_solutions">Solutions</h4>
               <ul>
@@ -1668,7 +1224,7 @@
                   <a
                     href="https://www.evershop.az/az"
                     data-translate="footer_engineering"
-                    >Engineering & Design</a
+                    >Engineering &amp; Design</a
                   >
                 </li>
                 <li>
@@ -1694,12 +1250,11 @@
                 </li>
               </ul>
             </div>
-
             <div class="footer-widget">
               <h4 data-translate="footer_contact">Contact</h4>
               <ul class="footer-contact">
                 <li>
-                  <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                  <i class="fas fa-phone-alt"></i>
                   <a
                     href="https://wa.me/994702710066"
                     target="_blank"
@@ -1716,25 +1271,25 @@
                   >
                 </li>
                 <li>
-                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <i class="fas fa-map-marker-alt"></i>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    data-translate="footer_address"
-                    >Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
-                    Azerbaijan</a
                   >
+                    Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
+                    Azerbaijan
+                  </a>
                 </li>
                 <li>
-                  <i class="fas fa-industry" aria-hidden="true"></i>
+                  <i class="fas fa-industry"></i>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    data-translate="footer_workshop"
-                    >Salyan Highway, 32 km, Baku, Azerbaijan</a
                   >
+                    Salyan Highway, 32 km, Baku, Azerbaijan
+                  </a>
                 </li>
               </ul>
             </div>
@@ -1765,16 +1320,13 @@
       </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
       <i class="fas fa-arrow-up"></i>
     </button>
 
     <script>
-      // Market Sectors Translations
       const translations = {
         en: {
-          // Navigation
           nav_about: "About",
           nav_products: "Products",
           nav_services: "Services",
@@ -1797,13 +1349,10 @@
           lang_en: "English",
           lang_az: "Azərbaycan dili",
           lang_ru: "Русский язык",
-
-          // Hero
           hero_title: "Market Sectors",
           hero_subtitle:
-            "EVERSHOP delivers specialized fabrication, engineering, and supply solutions to the world's most demanding industries. Our expertise spans Oil & Gas, Petrochemical, Power Generation, and Water Treatment sectors, where quality, safety, and reliability are non-negotiable.",
-
-          // Sectors
+            "EVERSHOP delivers specialized fabrication, engineering, and supply solutions to the world's most demanding industries.",
+          sectors_title: "Our Market Sectors",
           sector1_title: "Oil & Gas",
           sector1_desc:
             "Pressure vessels, separators, heat exchangers, and process equipment for upstream, midstream, and downstream operations.",
@@ -1819,28 +1368,14 @@
           sector5_title: "Industrial Manufacturing",
           sector5_desc:
             "Custom fabrication solutions including structural steel, process equipment, and specialized components for diverse manufacturing applications.",
-
-          // Capabilities
           capabilities_title: "Our Core Capabilities Across Sectors",
           capabilities_subtitle:
             "Regardless of industry, EVERSHOP delivers consistent engineering excellence through our integrated approach.",
           cap1_title: "ASME Code Compliance",
-          cap1_desc:
-            "All pressure vessels and heat exchangers fabricated to ASME Section VIII Division 1 & 2 standards, with full documentation and U-stamp certification where required.",
           cap2_title: "Advanced Materials Engineering",
-          cap2_desc:
-            "Expertise in exotic alloys (Inconel, Monel, Hastelloy), duplex/super duplex stainless steels, and specialized cladding for corrosive service environments.",
           cap3_title: "Integrated Project Management",
-          cap3_desc:
-            "End-to-end coordination from design and material sourcing through fabrication, testing, and delivery—ensuring on-time, on-budget project completion.",
           cap4_title: "Quality Assurance & Testing",
-          cap4_desc:
-            "Comprehensive QA/QC programs including NDT (RT, UT, MT, PT), hydrostatic testing, material traceability, and full inspection documentation.",
-          cap5_title: "Local Manufacturing with Global Standards",
-          cap5_desc:
-            "Made in Azerbaijan facility combining local production efficiency with international engineering standards and global component sourcing capabilities.",
-
-          // Footer
+          cap5_title: "Local Manufacturing – Global Standards",
           footer_about:
             "Have a complex project? Let our engineers and trade experts find the most efficient and reliable solution for your business.",
           footer_company: "Company",
@@ -1850,9 +1385,6 @@
           footer_procurement: "Industrial Procurement",
           footer_project: "Project Management",
           footer_contact: "Contact",
-          footer_address:
-            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
-          footer_workshop: "Salyan Highway, 32 km, Baku, Azerbaijan",
           footer_rights: "© 2026 EVERSHOP MMC. All rights reserved.",
           footer_prepared: "Prepared by:",
         },
@@ -1879,11 +1411,10 @@
           lang_en: "English",
           lang_az: "Azərbaycan dili",
           lang_ru: "Русский язык",
-
           hero_title: "Bazar Sektorları",
           hero_subtitle:
-            "EVERSHOP dünyanın ən tələbkar sənayelerinə ixtisaslaşdırılmış istehsal, mühəndislik və tədarük həlləri təqdim edir. Keyfiyyət, təhlükəsizlik və etibarlılığın kompromissiz olduğu Neft və Qaz, Neft-Kimya, Enerji İstehsalı və Su Təmizləmə sektorlarında təcrübəmiz var.",
-
+            "EVERSHOP dünyanın ən tələbkar sənayelerinə ixtisaslaşdırılmış istehsal, mühəndislik və tədarük həlləri təqdim edir.",
+          sectors_title: "Bizim Bazar Sektorlarımız",
           sector1_title: "Neft və Qaz",
           sector1_desc:
             "Yuxarı axın, orta axın və aşağı axın əməliyyatları üçün təzyiq qabları, separatorlar, istilik mübadiləçiləri və proses avadanlığı.",
@@ -1899,26 +1430,14 @@
           sector5_title: "Sənaye İstehsalı",
           sector5_desc:
             "Müxtəlif istehsal tətbiqləri üçün konstruktiv polad, proses avadanlığı və ixtisaslaşdırılmış komponentlər daxil olmaqla fərdi istehsal həlləri.",
-
           capabilities_title: "Bütün Sektorlarda Əsas İmkanlarımız",
           capabilities_subtitle:
             "Sənayedən asılı olmayaraq, EVERSHOP inteqrasiya olunmuş yanaşmamız vasitəsilə ardıcıl mühəndislik mükəmməlliyi təqdim edir.",
           cap1_title: "ASME Koduna Uyğunluq",
-          cap1_desc:
-            "Bütün təzyiq qabları və istilik mübadiləçiləri ASME Bölmə VIII Divizion 1 və 2 standartlarına uyğun istehsal olunur, tam sənədləşmə və tələb olunduqda U-damğası sertifikatı ilə.",
           cap2_title: "Qabaqcıl Material Mühəndisliyi",
-          cap2_desc:
-            "Ekzotik ərintilər (İnkonel, Monel, Hastelloy), dupleks/super dupleks paslanmayan poladlar və korroziyalı xidmət mühitləri üçün ixtisaslaşdırılmış örtük sahəsində ekspertiza.",
           cap3_title: "İnteqrasiya Edilmiş Layihə İdarəetməsi",
-          cap3_desc:
-            "Dizayn və material tədarükündən istehsal, sınaq və çatdırılmaya qədər başdan-sona əlaqələndirmə—vaxtında, büdcə daxilində layihənin tamamlanmasını təmin edir.",
           cap4_title: "Keyfiyyətə Zəmanət və Sınaq",
-          cap4_desc:
-            "NDT (RT, UT, MT, PT), hidrostatik sınaq, material izlənməsi və tam yoxlama sənədləşməsi daxil olmaqla hərtərəfli KK/KN proqramları.",
-          cap5_title: "Qlobal Standartlarla Yerli İstehsal",
-          cap5_desc:
-            "Yerli istehsal səmərəliliyini beynəlxalq mühəndislik standartları və qlobal komponent tədarükü imkanları ilə birləşdirən Azərbaycanda istehsal obyekti.",
-
+          cap5_title: "Yerli İstehsal – Qlobal Standartlar",
           footer_about:
             "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
           footer_company: "Şirkət",
@@ -1928,9 +1447,6 @@
           footer_procurement: "Sənaye Tədarükü",
           footer_project: "Layihə İdarəetməsi",
           footer_contact: "Əlaqə",
-          footer_address:
-            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
-          footer_workshop: "Salyan Highway, 32 km, Baku, Azerbaijan",
           footer_rights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
           footer_prepared: "Hazırlayan:",
         },
@@ -1957,11 +1473,10 @@
           lang_en: "English",
           lang_az: "Azərbaycan dili",
           lang_ru: "Русский язык",
-
           hero_title: "Рыночные Секторы",
           hero_subtitle:
-            "EVERSHOP предоставляет специализированные решения по изготовлению, проектированию и поставкам для самых требовательных отраслей мира. Наш опыт охватывает секторы нефти и газа, нефтехимии, производства электроэнергии и водоочистки, где качество, безопасность и надежность являются непреложными.",
-
+            "EVERSHOP предоставляет специализированные решения по изготовлению, проектированию и поставкам для самых требовательных отраслей мира.",
+          sectors_title: "Наши Рыночные Секторы",
           sector1_title: "Нефть и Газ",
           sector1_desc:
             "Сосуды под давлением, сепараторы, теплообменники и технологическое оборудование для операций добычи, транспортировки и переработки.",
@@ -1976,27 +1491,15 @@
             "Полные скид-пакеты, системы фильтрации и специализированные сосуды для промышленной водоочистки и опреснительных установок.",
           sector5_title: "Промышленное Производство",
           sector5_desc:
-            "Индивидуальные решения по изготовлению, включая конструкционную сталь, технологическое оборудование и специализированные компоненты для различных производственных применений.",
-
+            "Индивидуальные решения по изготовлению, включая конструкционную сталь, технологическое оборудование и специализированные компоненты.",
           capabilities_title: "Наши Основные Возможности Во Всех Секторах",
           capabilities_subtitle:
             "Независимо от отрасли, EVERSHOP обеспечивает последовательное инженерное совершенство через наш интегрированный подход.",
           cap1_title: "Соответствие Кодексу ASME",
-          cap1_desc:
-            "Все сосуды под давлением и теплообменники изготовлены в соответствии со стандартами ASME Раздел VIII Дивизион 1 и 2, с полной документацией и сертификацией U-штампом при необходимости.",
           cap2_title: "Передовая Материаловедение",
-          cap2_desc:
-            "Экспертиза в экзотических сплавах (Инконель, Монель, Хастеллой), дуплексных/супер дуплексных нержавеющих сталях и специализированной облицовке для коррозионных сред.",
           cap3_title: "Интегрированное Управление Проектами",
-          cap3_desc:
-            "Сквозная координация от проектирования и закупки материалов до изготовления, испытаний и поставки—обеспечивая своевременное завершение проекта в рамках бюджета.",
           cap4_title: "Обеспечение Качества и Испытания",
-          cap4_desc:
-            "Комплексные программы КК/КК, включая НК (РК, УК, МК, ПК), гидростатические испытания, прослеживаемость материалов и полную документацию по инспекции.",
-          cap5_title: "Местное Производство с Глобальными Стандартами",
-          cap5_desc:
-            "Произведено в Азербайджане предприятие, сочетающее эффективность местного производства с международными инженерными стандартами и возможностями глобальных поставок компонентов.",
-
+          cap5_title: "Местное Производство – Глобальные Стандарты",
           footer_about:
             "У вас сложный проект? Позвольте нашим инженерам и торговым экспертам найти наиболее эффективное и надежное решение для вашего бизнеса.",
           footer_company: "Компания",
@@ -2006,148 +1509,140 @@
           footer_procurement: "Промышленные Закупки",
           footer_project: "Управление Проектами",
           footer_contact: "Контакты",
-          footer_address:
-            "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Баку, Азербайджан",
-          footer_workshop: "Сальянское шоссе, 32 км, Баку, Азербайджан",
           footer_rights: "© 2026 EVERSHOP MMC. Все права защищены.",
           footer_prepared: "Подготовлено:",
         },
       };
 
-      const flagSVG = {
-        en: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg>`,
-        az: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#00b9e4" d="M0 0h640v160H0z"/><path fill="#ed2939" d="M0 160h640v160H0z"/><path fill="#3f9c35" d="M0 320h640v160H0z"/><circle cx="304" cy="240" r="72" fill="#fff"/><circle cx="320" cy="240" r="60" fill="#ed2939"/><path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/></svg>`,
-        ru: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h640v160H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>`,
+      const flagSVGs = {
+        en: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg>',
+        az: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#00b9e4" d="M0 0h640v160H0z"/><path fill="#ed2939" d="M0 160h640v160H0z"/><path fill="#3f9c35" d="M0 320h640v160H0z"/><circle cx="304" cy="240" r="72" fill="#fff"/><circle cx="320" cy="240" r="60" fill="#ed2939"/><path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/></svg>',
+        ru: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h640v160H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>',
       };
 
-      const langCodes = { en: "EN", az: "AZ", ru: "RU" };
-      let currentLanguage = localStorage.getItem("preferredLanguage") || "en";
+      let currentLang = localStorage.getItem("preferredLanguage") || "en";
 
-      function setLanguage(lang) {
-        currentLanguage = lang;
-        localStorage.setItem("preferredLanguage", lang);
-
-        document.querySelectorAll("[data-translate]").forEach((element) => {
-          const key = element.getAttribute("data-translate");
-          if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-          }
+      function updateLanguage(lang) {
+        currentLang = lang;
+        const t = translations[lang];
+        document.querySelectorAll("[data-translate]").forEach((el) => {
+          const key = el.getAttribute("data-translate");
+          if (t[key]) el.textContent = t[key];
         });
-
-        updateLanguageButtons(lang);
+        const btn = document.getElementById("currentLangBtn");
+        if (btn)
+          btn.innerHTML =
+            flagSVGs[lang] +
+            `<span class="lang-text">${lang.toUpperCase()}</span><span class="dropdown-icon">▼</span>`;
+        const mBtn = document.getElementById("mobileLangBtn");
+        if (mBtn)
+          mBtn.innerHTML =
+            flagSVGs[lang] +
+            `<span class="lang-text">${lang.toUpperCase()}</span>`;
         document.documentElement.lang = lang;
-      }
-
-      function updateLanguageButtons(lang) {
-        const currentLangBtn = document.getElementById("currentLangBtn");
-        if (currentLangBtn) {
-          currentLangBtn.innerHTML = `${flagSVG[lang]}<span class="lang-text">${langCodes[lang]}</span><span class="dropdown-icon">▼</span>`;
-        }
-
-        const mobileLangBtn = document.getElementById("mobileLangBtn");
-        if (mobileLangBtn) {
-          mobileLangBtn.innerHTML = `${flagSVG[lang]}<span class="lang-text">${langCodes[lang]}</span>`;
-        }
-      }
-
-      function initMobileMenu() {
-        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-        const mainNav = document.getElementById("mainNav");
-        const dropdownItems = document.querySelectorAll(
-          ".nav-item.has-dropdown",
-        );
-
-        if (mobileMenuBtn && mainNav) {
-          mobileMenuBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            mobileMenuBtn.classList.toggle("active");
-            mainNav.classList.toggle("active");
-          });
-
-          document.addEventListener("click", (e) => {
-            if (!e.target.closest(".header")) {
-              mobileMenuBtn.classList.remove("active");
-              mainNav.classList.remove("active");
-              dropdownItems.forEach((item) =>
-                item.classList.remove("dropdown-active"),
-              );
-            }
-          });
-        }
-
-        dropdownItems.forEach((item) => {
-          const link = item.querySelector(".nav-link");
-          if (link) {
-            link.addEventListener("click", (e) => {
-              if (window.innerWidth <= 992) {
-                e.preventDefault();
-                item.classList.toggle("dropdown-active");
-                dropdownItems.forEach((other) => {
-                  if (other !== item) other.classList.remove("dropdown-active");
-                });
-              }
-            });
-          }
-        });
-
-        window.addEventListener("resize", () => {
-          if (window.innerWidth > 992) {
-            mainNav.classList.remove("active");
-            mobileMenuBtn.classList.remove("active");
-            dropdownItems.forEach((item) =>
-              item.classList.remove("dropdown-active"),
-            );
-          }
-        });
-      }
-
-      function initScrollToTop() {
-        const scrollToTopBtn = document.getElementById("scrollToTop");
-        const header = document.querySelector(".header");
-
-        if (scrollToTopBtn) {
-          window.addEventListener("scroll", () => {
-            scrollToTopBtn.classList.toggle("show", window.pageYOffset > 100);
-            if (header) {
-              header.classList.toggle("scrolled", window.pageYOffset > 100);
-            }
-          });
-
-          scrollToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          });
-        }
+        localStorage.setItem("preferredLanguage", lang);
+        const titles = {
+          az: "EVERSHOP - Bazar Sektorları",
+          en: "EVERSHOP - Market Sectors",
+          ru: "EVERSHOP - Рыночные Секторы",
+        };
+        document.title = titles[lang];
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        setLanguage(currentLanguage);
+        updateLanguage(currentLang);
 
-        document.querySelectorAll(".lang-option").forEach((option) => {
-          option.addEventListener("click", (e) => {
+        document.querySelectorAll(".lang-option").forEach((opt) => {
+          opt.addEventListener("click", (e) => {
             e.preventDefault();
-            setLanguage(option.getAttribute("data-lang"));
-            if (window.innerWidth <= 992) {
-              const dropdown = option.closest(".has-dropdown");
-              if (dropdown) dropdown.classList.remove("dropdown-active");
-            }
+            updateLanguage(opt.dataset.lang);
           });
         });
 
-        const mobileLangBtn = document.getElementById("mobileLangBtn");
-        if (mobileLangBtn) {
-          mobileLangBtn.addEventListener("click", (e) => {
+        const mBtn = document.getElementById("mobileLangBtn");
+        if (mBtn)
+          mBtn.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
-            const languages = ["en", "az", "ru"];
-            const currentIndex = languages.indexOf(currentLanguage);
-            const nextIndex = (currentIndex + 1) % languages.length;
-            setLanguage(languages[nextIndex]);
+            const langs = ["en", "az", "ru"];
+            updateLanguage(
+              langs[(langs.indexOf(currentLang) + 1) % langs.length],
+            );
+          });
+
+        const menuBtn = document.getElementById("mobileMenuBtn");
+        const nav = document.getElementById("mainNav");
+        if (menuBtn && nav) {
+          menuBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            menuBtn.classList.toggle("active");
+            nav.classList.toggle("active");
+          });
+          document.querySelectorAll(".has-dropdown").forEach((item) => {
+            item.querySelector(".nav-link").addEventListener("click", (e) => {
+              if (window.innerWidth <= 992) {
+                e.preventDefault();
+                item.classList.toggle("dropdown-active");
+                document.querySelectorAll(".has-dropdown").forEach((o) => {
+                  if (o !== item) o.classList.remove("dropdown-active");
+                });
+              }
+            });
+          });
+          document.addEventListener("click", (e) => {
+            if (!e.target.closest(".header")) {
+              nav.classList.remove("active");
+              menuBtn.classList.remove("active");
+              document
+                .querySelectorAll(".has-dropdown")
+                .forEach((i) => i.classList.remove("dropdown-active"));
+            }
+          });
+          window.addEventListener("resize", () => {
+            if (window.innerWidth > 992) {
+              nav.classList.remove("active");
+              menuBtn.classList.remove("active");
+              document
+                .querySelectorAll(".has-dropdown")
+                .forEach((i) => i.classList.remove("dropdown-active"));
+            }
           });
         }
 
-        initMobileMenu();
-        initScrollToTop();
+        const header = document.querySelector(".header");
+        const scrollBtn = document.getElementById("scrollToTop");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 100) {
+            header && header.classList.add("scrolled");
+            scrollBtn && scrollBtn.classList.add("show");
+          } else {
+            header && header.classList.remove("scrolled");
+            scrollBtn && scrollBtn.classList.remove("show");
+          }
+        });
+        scrollBtn &&
+          scrollBtn.addEventListener("click", () =>
+            window.scrollTo({ top: 0, behavior: "smooth" }),
+          );
+
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.style.opacity = "1";
+                e.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+        document.querySelectorAll(".sector-card").forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(30px)";
+          el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          obs.observe(el);
+        });
       });
     </script>
   </body>

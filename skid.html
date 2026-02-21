@@ -6,7 +6,7 @@
     <title>Su Təmizləmə və Kimyəvi Skid Paketləri - EVERSHOP</title>
     <link rel="icon" href="assets/favicon/fav.png" type="image/png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -17,36 +17,28 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
     <style>
       :root {
         --primary: #ff6b35;
         --dark: rgb(22, 44, 71);
         --dark-secondary: rgba(30, 52, 79, 1);
         --text: #e8ecf1;
+        --text-muted: #8b96a5;
         --primary-blue: #0a2342;
         --accent-orange: #e85d04;
-        --accent-orange-light: #ff6b35;
-        --steel-gray: #2c3e50;
         --light-gray: #ecf0f1;
         --white: #ffffff;
         --footer-dark: #0a2342;
-        --bg-dark: #0f1923;
-        --bg-section: #141922;
-        --primary-dark: #1a2332;
-        --text-light: #a8b2c1;
         --transition: all 0.3s ease;
       }
-
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-
       body {
         font-family: "Inter", sans-serif;
-        background: var(--bg-dark);
+        background: var(--dark);
         color: var(--text);
         line-height: 1.6;
         overflow-x: hidden;
@@ -224,7 +216,7 @@
       .mobile-menu-btn.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
       }
-      .flag-icon {
+      .language-dropdown .flag-icon {
         width: 24px;
         height: 17px;
         border-radius: 2px;
@@ -271,15 +263,10 @@
 
       /* ========== HERO ========== */
       .hero {
-        min-height: 70vh;
+        min-height: 50vh;
         display: flex;
         align-items: center;
-        background: linear-gradient(
-          135deg,
-          #0f1923 0%,
-          #162c47 60%,
-          #1a3a5a 100%
-        );
+        background: linear-gradient(135deg, #162c47 0%, #1a3a5a 100%);
         position: relative;
         overflow: hidden;
         margin-top: 85px;
@@ -301,110 +288,117 @@
       .hero-container {
         max-width: 1400px;
         margin: 0 auto;
-        padding: 4rem 2rem;
+        padding: 3rem 2rem;
         position: relative;
         z-index: 1;
-        width: 100%;
       }
-      .hero-text {
-        max-width: 820px;
-        padding-left: 3rem;
-        border-left: 4px solid var(--accent-orange-light);
-        animation: fadeInUp 0.8s ease-out;
+      .hero-content {
+        text-align: center;
       }
       .company-name {
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 700;
         color: var(--primary);
         letter-spacing: 3px;
         margin-bottom: 1rem;
         text-transform: uppercase;
       }
-      .hero-text h1 {
-        font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      .hero-content h1 {
+        font-size: 3.5rem;
         font-weight: 800;
-        line-height: 1.1;
         margin-bottom: 1rem;
+        line-height: 1.1;
         color: #ffffff;
       }
-      .hero-subtitle {
-        font-size: 1.1rem;
-        color: var(--accent-orange-light);
-        margin-bottom: 1.2rem;
+      .hero-content .tagline {
+        font-size: 1.3rem;
+        color: var(--text);
         font-weight: 600;
-        letter-spacing: 0.5px;
-      }
-      .hero-description {
-        font-size: 1.05rem;
-        color: var(--text-light);
-        line-height: 1.85;
+        letter-spacing: 1px;
       }
 
-      /* ========== CONTENT SECTION ========== */
-      .content-section {
+      /* ========== LAYOUT ========== */
+      .container {
         max-width: 1400px;
         margin: 0 auto;
-        padding: 4rem 2rem;
-      }
-      .section-title {
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin-bottom: 3rem;
-        color: var(--text);
-        text-align: center;
+        padding: 0 2rem;
       }
 
-      /* ========== SERVICES GRID (4 cols) ========== */
+      /* ========== SERVICES ========== */
+      .services-section {
+        padding: 4rem 0;
+      }
+      .services-section h2 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-weight: 700;
+        color: var(--text);
+      }
       .services-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1.8rem;
+        gap: 2rem;
       }
       .service-card {
         background: var(--dark-secondary);
         border: 1px solid rgba(255, 107, 53, 0.15);
-        border-radius: 12px;
-        padding: 2rem 1.6rem;
-        transition: all 0.4s ease;
+        border-radius: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
       }
       .service-card:hover {
         border-color: var(--primary);
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(255, 107, 53, 0.15);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+      }
+      .service-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.5s;
+      }
+      .service-card:hover .service-image {
+        transform: scale(1.03);
+      }
+      .service-content {
+        padding: 1.5rem 1.3rem;
       }
       .service-icon {
-        width: 48px;
-        height: 48px;
+        width: 45px;
+        height: 45px;
         background: rgba(255, 107, 53, 0.1);
-        border-radius: 10px;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--accent-orange-light);
+        color: var(--primary);
         font-size: 1.3rem;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1rem;
       }
       .service-title {
         font-size: 1.1rem;
-        font-weight: 700;
-        margin-bottom: 0.8rem;
-        color: var(--text);
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.7rem;
         line-height: 1.3;
       }
       .service-description {
-        color: rgba(255, 255, 255, 0.8);
-        line-height: 1.65;
-        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.7;
+        font-size: 0.95rem;
       }
 
-      /* ========== FEATURES SECTION ========== */
+      /* ========== FEATURES (badge style) ========== */
       .features-section {
-        background: var(--bg-section);
-        padding: 4rem 2rem;
-      }
-      .features-inner {
-        max-width: 1400px;
-        margin: 0 auto;
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 16px;
+        padding: 3rem;
+        max-width: calc(1400px - 4rem);
+        margin: 0 auto 4rem;
       }
       .features-title {
         font-size: 2rem;
@@ -412,117 +406,86 @@
         color: var(--text);
         margin-bottom: 1rem;
       }
-      .features-desc {
-        color: var(--text-light);
+      .features-description {
+        color: rgba(255, 255, 255, 0.9);
         font-size: 1.05rem;
         line-height: 1.7;
         margin-bottom: 2.5rem;
       }
       .features-list {
         display: flex;
-        flex-direction: column;
-        gap: 1.8rem;
+        flex-wrap: wrap;
+        gap: 1.5rem;
       }
-      .feature-item {
-        background: rgba(255, 107, 53, 0.05);
-        border-left: 4px solid var(--accent-orange-light);
-        padding: 1.6rem 2rem;
-        border-radius: 0 8px 8px 0;
-        transition: all 0.3s;
-      }
-      .feature-item:hover {
+      .feature-badge {
         background: rgba(255, 107, 53, 0.1);
-        transform: translateX(6px);
+        border: 2px solid var(--primary);
+        padding: 0.8rem 1.8rem;
+        border-radius: 50px;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s;
+        cursor: default;
       }
-      .feature-item-title {
-        font-weight: 700;
-        color: var(--accent-orange-light);
-        margin-bottom: 0.6rem;
-        font-size: 1.1rem;
-      }
-      .feature-item-description {
-        color: var(--text-light);
-        font-size: 0.95rem;
-        line-height: 1.65;
-      }
-      .feature-item ul {
-        margin-top: 0.8rem;
-        padding-left: 1.5rem;
-        color: var(--text-light);
-      }
-      .feature-item li {
-        margin-bottom: 0.4rem;
-        font-size: 0.92rem;
+      .feature-badge:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
       }
 
       /* ========== GALLERY ========== */
       .gallery-section {
-        padding: 4rem 2rem;
+        padding: 4rem 0;
       }
-      .gallery-inner {
-        max-width: 1400px;
-        margin: 0 auto;
+      .gallery-section h2 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-weight: 700;
+        color: var(--text);
       }
       .gallery-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
-        margin-top: 3rem;
       }
       .gallery-item {
-        position: relative;
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        border-radius: 0;
         overflow: hidden;
-        border-radius: 10px;
-        aspect-ratio: 4/3;
+        position: relative;
         cursor: pointer;
+        transition: all 0.3s ease;
+        height: 320px;
+      }
+      .gallery-item:hover {
+        border-color: var(--primary);
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
       }
       .gallery-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
         transition: transform 0.5s;
       }
       .gallery-item:hover img {
         transform: scale(1.08);
       }
-      .gallery-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.9) 0%,
-          transparent 100%
-        );
-        padding: 2.5rem 1.5rem 1.5rem;
-        color: #fff;
-        transform: translateY(100%);
-        transition: transform 0.4s;
-      }
-      .gallery-item:hover .gallery-overlay {
-        transform: translateY(0);
-      }
-      .gallery-title {
-        font-weight: 600;
-        font-size: 1rem;
-      }
 
       /* ========== FOOTER ========== */
       .site-footer {
         background: var(--footer-dark);
-        color: #fff;
+        color: #ffffff;
         font-size: 1rem;
         width: 100%;
         overflow: hidden;
+        margin-top: 0;
       }
       .footer-top {
         padding: 50px 0 35px;
-      }
-      .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
       }
       .footer-row {
         display: grid;
@@ -534,7 +497,6 @@
         height: auto;
         margin-bottom: 12px;
         transition: var(--transition);
-        cursor: pointer;
       }
       .footer-logo:hover {
         transform: scale(1.05);
@@ -547,7 +509,7 @@
         font-size: 0.95rem;
       }
       .footer-widget h4 {
-        color: #fff;
+        color: #ffffff;
         font-weight: 600;
         margin-bottom: 18px;
         position: relative;
@@ -594,13 +556,13 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        color: #fff;
+        color: #ffffff;
         transition: var(--transition);
         text-decoration: none;
       }
       .footer-social a:hover {
         background: var(--accent-orange);
-        transform: translateY(-3px);
+        transform: translateY(-4px);
       }
       .footer-contact {
         padding: 0;
@@ -609,7 +571,7 @@
       }
       .footer-contact li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 10px;
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.85);
@@ -618,11 +580,8 @@
       .footer-contact li i {
         color: var(--accent-orange);
         flex-shrink: 0;
-        font-size: 1rem;
+        margin-top: 3px;
         width: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
       .footer-contact li a {
         color: rgba(255, 255, 255, 0.85);
@@ -652,7 +611,6 @@
       .footer-credit {
         margin-left: 5px;
       }
-
       .scroll-to-top {
         position: fixed;
         bottom: 30px;
@@ -678,18 +636,6 @@
       }
       .scroll-to-top.show {
         display: flex;
-      }
-
-      /* ========== ANIMATIONS ========== */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
       }
 
       /* ========== RESPONSIVE ========== */
@@ -768,9 +714,6 @@
         .nav-item.dropdown-active .dropdown {
           max-height: 500px;
         }
-        .dropdown-list {
-          padding: 0;
-        }
         .dropdown-link {
           color: var(--white);
           padding: 0.875rem 2.5rem;
@@ -782,24 +725,40 @@
         }
         .hero {
           margin-top: 70px;
-          min-height: 60vh;
         }
-        .hero-text {
-          padding-left: 1.5rem;
+        .hero-content h1 {
+          font-size: 2.5rem;
         }
         .footer-row {
           grid-template-columns: repeat(2, 1fr);
         }
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-item {
+          height: 260px;
+        }
       }
       @media (max-width: 768px) {
-        .content-section {
-          padding: 3rem 1.5rem;
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+        .hero-content .tagline {
+          font-size: 1.1rem;
         }
         .services-grid {
           grid-template-columns: 1fr;
         }
-        .gallery-grid {
-          grid-template-columns: 1fr;
+        .features-section {
+          padding: 2rem 1.5rem;
+          margin: 0 1rem 3rem;
+        }
+        .features-list {
+          gap: 1rem;
+        }
+        .feature-badge {
+          font-size: 0.9rem;
+          padding: 0.6rem 1.4rem;
         }
         .footer-row {
           grid-template-columns: 1fr;
@@ -810,6 +769,9 @@
           gap: 12px;
           text-align: center;
         }
+        .footer-top {
+          padding: 40px 0 30px;
+        }
       }
       @media (max-width: 576px) {
         .header-content {
@@ -819,13 +781,44 @@
           height: 50px;
         }
         .container {
-          padding: 0 1rem;
+          padding: 0 0.75rem;
         }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-content {
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .service-card,
+      .gallery-item {
+        animation: fadeInUp 0.8s ease-out;
+        animation-fill-mode: both;
+      }
+      .service-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .service-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .service-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .service-card:nth-child(4) {
+        animation-delay: 0.4s;
       }
     </style>
   </head>
   <body>
-    <!-- ========== HEADER ========== -->
+    <!-- HEADER -->
     <header class="header">
       <div class="header-content">
         <a href="index.html" class="logo">
@@ -835,7 +828,6 @@
             class="logo-image"
           />
         </a>
-
         <div class="mobile-controls">
           <button class="mobile-lang-btn" id="mobileLangBtn">
             <svg
@@ -863,7 +855,6 @@
             <span></span><span></span><span></span>
           </button>
         </div>
-
         <nav class="nav" id="mainNav">
           <ul class="nav-list">
             <li class="nav-item">
@@ -872,10 +863,10 @@
               >
             </li>
             <li class="nav-item has-dropdown">
-              <a href="#" class="nav-link">
-                <span data-i18n="products">Məhsullar</span>
-                <span class="dropdown-icon">▼</span>
-              </a>
+              <a href="#" class="nav-link"
+                ><span data-i18n="products">Məhsullar</span
+                ><span class="dropdown-icon">▼</span></a
+              >
               <ul class="dropdown">
                 <li class="dropdown-list">
                   <a
@@ -938,10 +929,10 @@
               </ul>
             </li>
             <li class="nav-item has-dropdown">
-              <a href="#" class="nav-link">
-                <span data-i18n="services">Xidmətlər</span>
-                <span class="dropdown-icon">▼</span>
-              </a>
+              <a href="#" class="nav-link"
+                ><span data-i18n="services">Xidmətlər</span
+                ><span class="dropdown-icon">▼</span></a
+              >
               <ul class="dropdown">
                 <li class="dropdown-list">
                   <a
@@ -998,8 +989,8 @@
                     d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"
                   />
                 </svg>
-                <span class="lang-text">AZ</span>
-                <span class="dropdown-icon">▼</span>
+                <span class="lang-text">AZ</span
+                ><span class="dropdown-icon">▼</span>
               </a>
               <ul class="dropdown lang-dropdown">
                 <li class="dropdown-list">
@@ -1067,184 +1058,171 @@
       </div>
     </header>
 
-    <!-- ========== HERO ========== -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-container">
-        <div class="hero-text">
+        <div class="hero-content">
           <div class="company-name">EVERSHOP</div>
           <h1 data-i18n="heroTitle">Su Təmizləmə və Kimyəvi Skid Paketləri</h1>
-          <p class="hero-subtitle" data-i18n="heroSubtitle">
+          <p class="tagline" data-i18n="heroSubtitle">
             Kritik Tətbiqlər üçün İnteqrasiya Edilmiş Proses Həlləri
           </p>
-          <p class="hero-description" data-i18n="heroDescription">
-            EVERSHOP-da biz ən tələbkar sənaye mühitləri üçün xüsusi yüksək
-            spesifikasiyalı Su Təmizləmə Skid Paketləri dizayn və istehsal
-            edirik. Qlobal komponent tədarükü və yerli mühəndislik təcrübəsi
-            arasında körpü yaradaraq, dərhal sahədə istismara verilməsi üçün
-            hazır, tam inteqrasiya edilmiş "qoş-işlət" sistemləri təqdim edirik.
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- ========== SERVICES ========== -->
-    <section class="content-section">
-      <h2 class="section-title" data-i18n="servicesTitle">
-        Bizim Xidmətlərimiz
+    <!-- SERVICES -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <h2 data-i18n="servicesTitle">Bizim Xidmətlərimiz</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <img
+              src="assets/images/skid/Skid .jpg"
+              alt="Engineered for Criticality"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+              <h3 class="service-title" data-i18n="service1Title">
+                Kritiklik üçün Mühəndislik
+              </h3>
+              <p class="service-description" data-i18n="service1Desc">
+                Skidlərimiz dayanma müddəti mümkün olmayan sənaye sahələri —
+                Neft və Qaz, Neft-Kimya və Enerji İstehsalı üçün inşa
+                edilmişdir.
+              </p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="assets/images/skid/WhatsApp Image 2026-01-24 at 13.19.19.jpeg"
+              alt="Single-Source Integration"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+              <h3 class="service-title" data-i18n="service2Title">
+                Tək Mənbə İnteqrasiyası
+              </h3>
+              <p class="service-description" data-i18n="service2Desc">
+                Skid-in bütün həyat dövrünü idarə edirik: yüksək təzyiqli
+                nasosların tədarükündən struktur çərçivələrin dəqiq istehsalına
+                qədər.
+              </p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="assets/images/skid/Skid .jpg"
+              alt="Advanced Material Expertise"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon"><i class="fas fa-atom"></i></div>
+              <h3 class="service-title" data-i18n="service3Title">
+                Qabaqcıl Material Təcrübəsi
+              </h3>
+              <p class="service-description" data-i18n="service3Desc">
+                Korroziyalı mühitlər üçün Paslanmayan Polad (316L),
+                Dupleks/Super Dupleks və Ərintili Poladlar daxil olmaqla yüksək
+                keyfiyyətli materiallar.
+              </p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="assets/images/skid/WhatsApp Image 2026-01-24 at 13.19.19.jpeg"
+              alt="Assembly & Testing"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">
+                <i class="fas fa-check-double"></i>
+              </div>
+              <h3 class="service-title" data-i18n="service4Title">
+                Hərtərəfli Yığma və Test
+              </h3>
+              <p class="service-description" data-i18n="service4Desc">
+                Hər bir skid Bakı zavodumuzda istehsal edilir. Tam təzyiq testi,
+                keyfiyyət sertifikatlaşdırması və sahəyə hazır çatdırılma
+                daxildir.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES (badge style) -->
+    <div class="features-section">
+      <h2 class="features-title" data-i18n="featuresTitle">
+        Skid Paket İmkanlarımız
       </h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3 class="service-title" data-i18n="service1Title">
-            Kritiklik üçün Mühəndislik
-          </h3>
-          <p class="service-description" data-i18n="service1Desc">
-            Skidlərimiz dayanma müddəti mümkün olmayan sənaye sahələri — Neft və
-            Qaz, Neft-Kimya və Enerji İstehsalı üçün inşa edilmişdir. Hər bir
-            paketin ciddi standartlara (ASME, ISO, GOST) uyğunluğunu təmin
-            edirik.
-          </p>
+      <p class="features-description" data-i18n="featuresDesc">
+        Kritik tətbiqlərdə etibarlılıq və performansı təmin edən dizayndan testə
+        qədər tam açar təslimi həlləri.
+      </p>
+      <div class="features-list">
+        <div class="feature-badge" data-i18n="feat1">
+          Neft və Qaz Skid Paketləri
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-layer-group"></i></div>
-          <h3 class="service-title" data-i18n="service2Title">
-            Tək Mənbə İnteqrasiyası
-          </h3>
-          <p class="service-description" data-i18n="service2Desc">
-            Skid-in bütün həyat dövrünü idarə edirik: ixtisaslaşdırılmış yüksək
-            təzyiqli nasosların və membranların tədarükündən struktur
-            çərçivələrin və birləşdirici boruların dəqiq istehsalına qədər.
-          </p>
+        <div class="feature-badge" data-i18n="feat2">
+          Su Təmizləmə Sistemləri
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-atom"></i></div>
-          <h3 class="service-title" data-i18n="service3Title">
-            Qabaqcıl Material Təcrübəsi
-          </h3>
-          <p class="service-description" data-i18n="service3Desc">
-            Korroziyalı və ya yüksək təzyiqli mühitlər üçün Paslanmayan Polad
-            (316L), Dupleks/Super Dupleks və Ərintili Poladlar daxil olmaqla
-            yüksək keyfiyyətli materiallardan istifadə edirik.
-          </p>
+        <div class="feature-badge" data-i18n="feat3">
+          Kimyəvi Proses Skidləri
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-check-double"></i></div>
-          <h3 class="service-title" data-i18n="service4Title">
-            Hərtərəfli Yığma və Test
-          </h3>
-          <p class="service-description" data-i18n="service4Desc">
-            Hər bir skid Bakı zavodumuzda Azərbaycanda istehsal edilmişdir.
-            Struktur çərçivə istehsalı, yüksək dəqiqlikli boru quraşdırılması,
-            tam təzyiq testi və keyfiyyət sertifikatlaşdırmasını əhatə edir.
-          </p>
+        <div class="feature-badge" data-i18n="feat4">
+          Yüksək Təzyiqli Nasos Qurğuları
+        </div>
+        <div class="feature-badge" data-i18n="feat5">
+          Membran Filtrasiya Sistemləri
+        </div>
+        <div class="feature-badge" data-i18n="feat6">
+          Paslanmayan Polad 316L
+        </div>
+        <div class="feature-badge" data-i18n="feat7">
+          Dupleks və Super Dupleks
+        </div>
+        <div class="feature-badge" data-i18n="feat8">
+          ASME / ISO / GOST Uyğunluğu
+        </div>
+        <div class="feature-badge" data-i18n="feat9">Açar Təslimi Həllər</div>
+        <div class="feature-badge" data-i18n="feat10">
+          Sahədə Quraşdırma Dəstəyi
+        </div>
+        <div class="feature-badge" data-i18n="feat11">
+          Azərbaycanda İstehsal
+        </div>
+        <div class="feature-badge" data-i18n="feat12">
+          NACE Uyğun Materiallar
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- ========== FEATURES ========== -->
-    <section class="features-section">
-      <div class="features-inner">
-        <h2 class="features-title" data-i18n="featuresTitle">
-          Skid Paket İmkanlarımız
-        </h2>
-        <p class="features-desc" data-i18n="featuresDesc">
-          Kritik tətbiqlərdə etibarlılıq və performansı təmin edən dizayndan
-          testə qədər tam açar təslimi həlləri.
-        </p>
-        <div class="features-list">
-          <div class="feature-item">
-            <div class="feature-item-title" data-i18n="feature1Title">
-              Kritiklik üçün Mühəndislik
-            </div>
-            <div class="feature-item-description" data-i18n="feature1Desc">
-              Skidlərimiz dayanma müddəti mümkün olmayan sənaye sahələri — Neft
-              və Qaz, Neft-Kimya və Enerji İstehsalı üçün inşa edilmişdir. Hər
-              bir paketin ciddi təhlükəsizlik və performans standartlarına
-              (ASME, ISO, GOST) uyğunluğunu təmin edirik.
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-item-title" data-i18n="feature2Title">
-              Tək Mənbə İnteqrasiyası
-            </div>
-            <div class="feature-item-description" data-i18n="feature2Desc">
-              Skid-in bütün həyat dövrünü idarə edirik: ixtisaslaşdırılmış
-              yüksək təzyiqli nasosların və membranların tədarükündən struktur
-              çərçivələrin və birləşdirici boruların dəqiq istehsalına qədər. Bu
-              inteqrasiya edilmiş yanaşma problemsiz uyğunluğu və optimal
-              performansı təmin edir.
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-item-title" data-i18n="feature3Title">
-              Qabaqcıl Material Təcrübəsi
-            </div>
-            <div class="feature-item-description" data-i18n="feature3Desc">
-              Korroziyalı və ya yüksək təzyiqli su təmizləmə mühitləri üçün
-              Paslanmayan Polad (316L), Dupleks/Super Dupleks və Ərintili
-              Poladlar daxil olmaqla yüksək keyfiyyətli materiallardan istifadə
-              edirik və sərt şəraitdə uzunmüddətli davamlılığı təmin edirik.
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-item-title" data-i18n="feature4Title">
-              Hərtərəfli Yığma və Test
-            </div>
-            <div class="feature-item-description" data-i18n="feature4Desc">
-              Hər bir skid Bakı zavodumuzda Azərbaycanda İstehsal edilmişdir. Bu
-              aşağıdakıları əhatə edir:
-            </div>
-            <ul>
-              <li data-i18n="feature4Item1">
-                Struktur Çərçivə İstehsalı və Örtük
-              </li>
-              <li data-i18n="feature4Item2">
-                Yüksək dəqiqlikli boru və cihaz quraşdırılması
-              </li>
-              <li data-i18n="feature4Item3">
-                Çatdırılmadan əvvəl tam təzyiq testi və keyfiyyət
-                sertifikatlaşdırması
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== GALLERY ========== -->
+    <!-- GALLERY -->
     <section class="gallery-section">
-      <div class="gallery-inner">
-        <h2 class="section-title" data-i18n="galleryTitle">
-          Məhsul Qalereyası
-        </h2>
+      <div class="container">
+        <h2 data-i18n="galleryTitle">Məhsul Qalereyası</h2>
         <div class="gallery-grid">
           <div class="gallery-item">
             <img
               src="assets/images/skid/Skid .jpg"
               alt="Water Treatment Skid 1"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery1">
-                Tam Skid Paket Yığması
-              </div>
-            </div>
           </div>
           <div class="gallery-item">
             <img
               src="assets/images/skid/WhatsApp Image 2026-01-24 at 13.19.19.jpeg"
               alt="Water Treatment Skid 2"
             />
-            <div class="gallery-overlay">
-              <div class="gallery-title" data-i18n="gallery2">
-                Təzyiq Testi və Keyfiyyət Nəzarəti
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- FOOTER -->
     <footer class="site-footer" role="contentinfo">
       <div class="footer-top">
         <div class="container">
@@ -1267,21 +1245,21 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
-                  ><i class="fab fa-whatsapp"></i
+                  ><i class="fab fa-whatsapp" aria-hidden="true"></i
                 ></a>
                 <a
                   href="https://www.instagram.com/evershopllc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  ><i class="fab fa-instagram"></i
+                  ><i class="fab fa-instagram" aria-hidden="true"></i
                 ></a>
                 <a
                   href="https://www.linkedin.com/company/evershop-llc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  ><i class="fab fa-linkedin-in"></i
+                  ><i class="fab fa-linkedin-in" aria-hidden="true"></i
                 ></a>
               </div>
             </div>
@@ -1332,8 +1310,8 @@
               <h4 data-i18n="contactInfo">Əlaqə</h4>
               <ul class="footer-contact">
                 <li>
-                  <i class="fas fa-phone-alt"></i>
-                  <a
+                  <i class="fas fa-phone-alt" aria-hidden="true"></i
+                  ><a
                     href="https://wa.me/994702710066"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1341,16 +1319,16 @@
                   >
                 </li>
                 <li>
-                  <i class="fas fa-envelope"></i>
-                  <a
+                  <i class="fas fa-envelope" aria-hidden="true"></i
+                  ><a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az"
                     target="_blank"
                     >Sales@evershop.az</a
                   >
                 </li>
                 <li>
-                  <i class="fas fa-map-marker-alt"></i>
-                  <a
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i
+                  ><a
                     href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1360,8 +1338,8 @@
                   >
                 </li>
                 <li>
-                  <i class="fas fa-industry"></i>
-                  <a
+                  <i class="fas fa-industry" aria-hidden="true"></i
+                  ><a
                     href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1406,9 +1384,6 @@
         az: {
           about: "Haqqımızda",
           products: "Məhsullar",
-          services: "Xidmətlər",
-          markets: "Bazar Sektorları",
-          career: "Karyera",
           fabrication: "Xüsusi Konstruksiyaların İstehsalı",
           staticEquipment: "Statik Avadanlıq",
           skidPackages: "Sənaye Skid Paketləri",
@@ -1418,53 +1393,48 @@
           sealing: "Kipləndirici Elementlər",
           oemParts: "OEM Hissələri",
           rdPrototype: "Tədqiqat və Prototip İstehsalı",
+          services: "Xidmətlər",
           designEngineering: "Dizayn və Mühəndislik",
           installation: "Quraşdırma və İstismara Verilmə",
           repairMaintenance: "Təmir və Texniki Xidmət",
           heatTreatment: "İstilik Emalı",
+          markets: "Bazar Sektorları",
+          career: "Karyera",
           langAz: "Azərbaycan dili",
           langEn: "English",
           langRu: "Русский язык",
           heroTitle: "Su Təmizləmə və Kimyəvi Skid Paketləri",
           heroSubtitle:
             "Kritik Tətbiqlər üçün İnteqrasiya Edilmiş Proses Həlləri",
-          heroDescription:
-            'EVERSHOP-da biz ən tələbkar sənaye mühitləri üçün xüsusi yüksək spesifikasiyalı Su Təmizləmə Skid Paketləri dizayn və istehsal edirik. Qlobal komponent tədarükü və yerli mühəndislik təcrübəsi arasında körpü yaradaraq, dərhal sahədə istismara verilməsi üçün hazır, tam inteqrasiya edilmiş "qoş-işlət" sistemləri təqdim edirik.',
           servicesTitle: "Bizim Xidmətlərimiz",
           service1Title: "Kritiklik üçün Mühəndislik",
           service1Desc:
-            "Skidlərimiz dayanma müddəti mümkün olmayan sənaye sahələri — Neft və Qaz, Neft-Kimya və Enerji İstehsalı üçün inşa edilmişdir. Hər bir paketin ciddi standartlara (ASME, ISO, GOST) uyğunluğunu təmin edirik.",
+            "Skidlərimiz dayanma müddəti mümkün olmayan sənaye sahələri — Neft və Qaz, Neft-Kimya və Enerji İstehsalı üçün inşa edilmişdir.",
           service2Title: "Tək Mənbə İnteqrasiyası",
           service2Desc:
-            "Skid-in bütün həyat dövrünü idarə edirik: ixtisaslaşdırılmış yüksək təzyiqli nasosların və membranların tədarükündən struktur çərçivələrin və birləşdirici boruların dəqiq istehsalına qədər.",
+            "Skid-in bütün həyat dövrünü idarə edirik: yüksək təzyiqli nasosların tədarükündən struktur çərçivələrin dəqiq istehsalına qədər.",
           service3Title: "Qabaqcıl Material Təcrübəsi",
           service3Desc:
-            "Korroziyalı və ya yüksək təzyiqli mühitlər üçün Paslanmayan Polad (316L), Dupleks/Super Dupleks və Ərintili Poladlar daxil olmaqla yüksək keyfiyyətli materiallardan istifadə edirik.",
+            "Korroziyalı mühitlər üçün Paslanmayan Polad (316L), Dupleks/Super Dupleks və Ərintili Poladlar daxil olmaqla yüksək keyfiyyətli materiallar.",
           service4Title: "Hərtərəfli Yığma və Test",
           service4Desc:
-            "Hər bir skid Bakı zavodumuzda Azərbaycanda istehsal edilmişdir. Struktur çərçivə istehsalı, yüksək dəqiqlikli boru quraşdırılması, tam təzyiq testi və keyfiyyət sertifikatlaşdırmasını əhatə edir.",
+            "Hər bir skid Bakı zavodumuzda istehsal edilir. Tam təzyiq testi, keyfiyyət sertifikatlaşdırması və sahəyə hazır çatdırılma daxildir.",
           featuresTitle: "Skid Paket İmkanlarımız",
           featuresDesc:
             "Kritik tətbiqlərdə etibarlılıq və performansı təmin edən dizayndan testə qədər tam açar təslimi həlləri.",
-          feature1Title: "Kritiklik üçün Mühəndislik",
-          feature1Desc:
-            "Skidlərimiz dayanma müddəti mümkün olmayan sənaye sahələri — Neft və Qaz, Neft-Kimya və Enerji İstehsalı üçün inşa edilmişdir. Hər bir paketin ciddi təhlükəsizlik və performans standartlarına (ASME, ISO, GOST) uyğunluğunu təmin edirik.",
-          feature2Title: "Tək Mənbə İnteqrasiyası",
-          feature2Desc:
-            "Skid-in bütün həyat dövrünü idarə edirik: ixtisaslaşdırılmış yüksək təzyiqli nasosların və membranların tədarükündən struktur çərçivələrin və birləşdirici boruların dəqiq istehsalına qədər. Bu inteqrasiya edilmiş yanaşma problemsiz uyğunluğu və optimal performansı təmin edir.",
-          feature3Title: "Qabaqcıl Material Təcrübəsi",
-          feature3Desc:
-            "Korroziyalı və ya yüksək təzyiqli su təmizləmə mühitləri üçün Paslanmayan Polad (316L), Dupleks/Super Dupleks və Ərintili Poladlar daxil olmaqla yüksək keyfiyyətli materiallardan istifadə edirik və sərt şəraitdə uzunmüddətli davamlılığı təmin edirik.",
-          feature4Title: "Hərtərəfli Yığma və Test",
-          feature4Desc:
-            "Hər bir skid Bakı zavodumuzda Azərbaycanda İstehsal edilmişdir. Bu aşağıdakıları əhatə edir:",
-          feature4Item1: "Struktur Çərçivə İstehsalı və Örtük",
-          feature4Item2: "Yüksək dəqiqlikli boru və cihaz quraşdırılması",
-          feature4Item3:
-            "Çatdırılmadan əvvəl tam təzyiq testi və keyfiyyət sertifikatlaşdırması",
+          feat1: "Neft və Qaz Skid Paketləri",
+          feat2: "Su Təmizləmə Sistemləri",
+          feat3: "Kimyəvi Proses Skidləri",
+          feat4: "Yüksək Təzyiqli Nasos Qurğuları",
+          feat5: "Membran Filtrasiya Sistemləri",
+          feat6: "Paslanmayan Polad 316L",
+          feat7: "Dupleks və Super Dupleks",
+          feat8: "ASME / ISO / GOST Uyğunluğu",
+          feat9: "Açar Təslimi Həllər",
+          feat10: "Sahədə Quraşdırma Dəstəyi",
+          feat11: "Azərbaycanda İstehsal",
+          feat12: "NACE Uyğun Materiallar",
           galleryTitle: "Məhsul Qalereyası",
-          gallery1: "Tam Skid Paket Yığması",
-          gallery2: "Təzyiq Testi və Keyfiyyət Nəzarəti",
           footerAbout:
             "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
           company: "Şirkət",
@@ -1483,9 +1453,6 @@
         en: {
           about: "About Us",
           products: "Products",
-          services: "Services",
-          markets: "Market Sectors",
-          career: "Career",
           fabrication: "Custom Fabrication",
           staticEquipment: "Static Equipment",
           skidPackages: "Industrial Skid Packages",
@@ -1495,54 +1462,48 @@
           sealing: "Sealing Elements",
           oemParts: "OEM Parts",
           rdPrototype: "R&D and Prototype Manufacturing",
+          services: "Services",
           designEngineering: "Design & Engineering",
           installation: "Installation & Commissioning",
           repairMaintenance: "Repair & Maintenance",
           heatTreatment: "Heat Treatment",
+          markets: "Market Sectors",
+          career: "Career",
           langAz: "Azərbaycan dili",
           langEn: "English",
           langRu: "Русский язык",
           heroTitle: "Water Treatment & Chemical Skid Packages",
           heroSubtitle:
             "Integrated Process Solutions for Critical Applications",
-          heroDescription:
-            "At EVERSHOP, we design and fabricate high-specification Water Treatment Skid Packages tailored for the most demanding industrial environments. By bridging the gap between global component sourcing and local engineering expertise, we deliver fully integrated, 'plug-and-play' systems ready for immediate onsite commissioning.",
           servicesTitle: "Our Services",
           service1Title: "Engineered for Criticality",
           service1Desc:
-            "Our skids are built for industries where downtime is not an option—including Oil & Gas, Petrochemical, and Power Generation. We ensure every package meets rigorous safety and performance standards (ASME, ISO, GOST).",
+            "Our skids are built for industries where downtime is not an option — Oil & Gas, Petrochemical, and Power Generation — meeting ASME, ISO, GOST standards.",
           service2Title: "Single-Source Integration",
           service2Desc:
-            "We manage the entire lifecycle of the skid: from the procurement of specialized high-pressure pumps and membranes to the precision fabrication of the structural frames and interconnecting piping.",
+            "We manage the entire lifecycle: from procurement of high-pressure pumps and membranes to precision fabrication of structural frames and interconnecting piping.",
           service3Title: "Advanced Material Expertise",
           service3Desc:
-            "For corrosive or high-pressure water treatment environments, we utilize high-grade materials including Stainless Steel (316L), Duplex/Super Duplex, and Alloy Steels, ensuring long-term durability.",
+            "For corrosive or high-pressure environments we utilize Stainless Steel (316L), Duplex/Super Duplex, and Alloy Steels for long-term durability.",
           service4Title: "Comprehensive Assembly & Testing",
           service4Desc:
-            "Every skid is Made in Azerbaijan at our Baku facility. This includes structural frame fabrication & coating, high-precision piping and instrumentation installation, and full pressure testing and quality certification.",
+            "Every skid is Made in Azerbaijan at our Baku facility with full pressure testing, quality certification, and field-ready delivery.",
           featuresTitle: "Our Skid Package Capabilities",
           featuresDesc:
             "Complete turnkey solutions from design through testing, ensuring reliability and performance in critical applications.",
-          feature1Title: "Engineered for Criticality",
-          feature1Desc:
-            "Our skids are built for industries where downtime is not an option—including Oil & Gas, Petrochemical, and Power Generation. We ensure every package meets rigorous safety and performance standards (ASME, ISO, GOST).",
-          feature2Title: "Single-Source Integration",
-          feature2Desc:
-            "We manage the entire lifecycle of the skid: from the procurement of specialized high-pressure pumps and membranes to the precision fabrication of the structural frames and interconnecting piping. This integrated approach ensures seamless compatibility and optimal performance.",
-          feature3Title: "Advanced Material Expertise",
-          feature3Desc:
-            "For corrosive or high-pressure water treatment environments, we utilize high-grade materials including Stainless Steel (316L), Duplex/Super Duplex, and Alloy Steels, ensuring long-term durability in harsh conditions.",
-          feature4Title: "Comprehensive Assembly & Testing",
-          feature4Desc:
-            "Every skid is Made in Azerbaijan at our Baku facility. This includes:",
-          feature4Item1: "Structural Frame Fabrication & Coating",
-          feature4Item2:
-            "High-precision piping and instrumentation installation",
-          feature4Item3:
-            "Full pressure testing and quality certification before delivery",
+          feat1: "Oil & Gas Skid Packages",
+          feat2: "Water Treatment Systems",
+          feat3: "Chemical Process Skids",
+          feat4: "High-Pressure Pump Assemblies",
+          feat5: "Membrane Filtration Systems",
+          feat6: "Stainless Steel 316L",
+          feat7: "Duplex & Super Duplex",
+          feat8: "ASME / ISO / GOST Compliance",
+          feat9: "Turnkey Solutions",
+          feat10: "Field Installation Support",
+          feat11: "Made in Azerbaijan",
+          feat12: "NACE Compliant Materials",
           galleryTitle: "Product Gallery",
-          gallery1: "Complete Skid Package Assembly",
-          gallery2: "Pressure Testing & Quality Control",
           footerAbout:
             "Have a complex project? Let our engineers and procurement specialists find the most efficient and reliable solution for your business.",
           company: "Company",
@@ -1561,66 +1522,57 @@
         ru: {
           about: "О нас",
           products: "Продукция",
-          services: "Услуги",
-          markets: "Рыночные Секторы",
-          career: "Карьера",
-          fabrication: "Изготовление Специальных Конструкций",
+          fabrication: "Изготовление на Заказ",
           staticEquipment: "Статическое Оборудование",
           skidPackages: "Промышленные Скид-Пакеты",
           machinedParts: "Механические Детали",
-          equipmentSupply: "Поставка Промышленного Оборудования",
+          equipmentSupply: "Поставка Оборудования",
           steelPiping: "Сталь и Трубопроводная Арматура",
           sealing: "Уплотнительные Элементы",
           oemParts: "OEM Детали",
-          rdPrototype: "R&D и Прототипное Производство",
+          rdPrototype: "R&D и Прототипирование",
+          services: "Услуги",
           designEngineering: "Проектирование и Инжиниринг",
           installation: "Монтаж и Пуско-Наладка",
           repairMaintenance: "Ремонт и Техническое Обслуживание",
           heatTreatment: "Термическая Обработка",
+          markets: "Рыночные Секторы",
+          career: "Карьера",
           langAz: "Azərbaycan dili",
           langEn: "English",
           langRu: "Русский язык",
           heroTitle: "Пакеты Водоподготовки и Химических Скидов",
           heroSubtitle:
             "Интегрированные Процессные Решения для Критических Применений",
-          heroDescription:
-            "В EVERSHOP мы проектируем и изготавливаем высокоспециализированные пакеты скидов для водоподготовки, адаптированные для самых требовательных промышленных сред. Соединяя глобальные поставки компонентов и местный инженерный опыт, мы поставляем полностью интегрированные системы 'подключи и работай', готовые к немедленному вводу в эксплуатацию.",
           servicesTitle: "Наши Услуги",
           service1Title: "Спроектировано для Критичности",
           service1Desc:
-            "Наши скиды созданы для отраслей, где простой недопустим — включая нефть и газ, нефтехимию и энергогенерацию. Мы гарантируем соответствие строгим стандартам безопасности (ASME, ISO, ГОСТ).",
+            "Наши скиды созданы для отраслей, где простой недопустим — нефть и газ, нефтехимия и энергогенерация — с соответствием ASME, ISO, ГОСТ.",
           service2Title: "Интеграция из Одного Источника",
           service2Desc:
-            "Мы управляем всем жизненным циклом скида: от закупки специализированных высоконапорных насосов и мембран до прецизионного изготовления структурных рам и соединительных трубопроводов.",
+            "Управляем всем жизненным циклом: от закупки высоконапорных насосов и мембран до прецизионного изготовления рам и трубопроводов.",
           service3Title: "Экспертиза в Передовых Материалах",
           service3Desc:
-            "Для коррозионных или высоконапорных сред используем высококачественные материалы, включая нержавеющую сталь (316L), дуплекс/супер дуплекс и легированные стали, обеспечивая долговечность.",
+            "Для коррозионных сред используем нержавеющую сталь (316L), дуплекс/супер дуплекс и легированные стали для долговечности.",
           service4Title: "Комплексная Сборка и Тестирование",
           service4Desc:
-            "Каждый скид производится в Азербайджане на нашем заводе в Баку. Включает изготовление конструкционной рамы, высокоточную установку трубопроводов и КИП, полное испытание давлением и сертификацию качества.",
+            "Каждый скид производится в Азербайджане на заводе в Баку с полным испытанием давлением и сертификацией качества.",
           featuresTitle: "Наши Возможности в Скид-Пакетах",
           featuresDesc:
-            "Полные решения 'под ключ' от проектирования до тестирования, обеспечивающие надежность и производительность в критических применениях.",
-          feature1Title: "Спроектировано для Критичности",
-          feature1Desc:
-            "Наши скиды созданы для отраслей, где простой недопустим — включая нефть и газ, нефтехимию и энергогенерацию. Мы гарантируем, что каждый пакет соответствует строгим стандартам безопасности и производительности (ASME, ISO, ГОСТ).",
-          feature2Title: "Интеграция из Одного Источника",
-          feature2Desc:
-            "Мы управляем всем жизненным циклом скида: от закупки специализированных высоконапорных насосов и мембран до прецизионного изготовления структурных рам и соединительных трубопроводов. Этот интегрированный подход обеспечивает бесшовную совместимость и оптимальную производительность.",
-          feature3Title: "Экспертиза в Передовых Материалах",
-          feature3Desc:
-            "Для коррозионных или высоконапорных сред водоподготовки используем высококачественные материалы, включая нержавеющую сталь (316L), дуплекс/супер дуплекс и легированные стали, обеспечивая долговечность в суровых условиях.",
-          feature4Title: "Комплексная Сборка и Тестирование",
-          feature4Desc:
-            "Каждый скид производится в Азербайджане на нашем заводе в Баку. Это включает:",
-          feature4Item1: "Изготовление и покрытие конструкционной рамы",
-          feature4Item2:
-            "Высокоточная установка трубопроводов и контрольно-измерительных приборов",
-          feature4Item3:
-            "Полное испытание давлением и сертификация качества перед поставкой",
+            "Полные решения 'под ключ' от проектирования до тестирования, обеспечивающие надежность в критических применениях.",
+          feat1: "Скид-Пакеты Нефть и Газ",
+          feat2: "Системы Водоподготовки",
+          feat3: "Скиды Химических Процессов",
+          feat4: "Высоконапорные Насосные Узлы",
+          feat5: "Мембранные Фильтрационные Системы",
+          feat6: "Нержавеющая Сталь 316L",
+          feat7: "Дуплекс и Супер Дуплекс",
+          feat8: "Соответствие ASME / ISO / ГОСТ",
+          feat9: "Решения Под Ключ",
+          feat10: "Поддержка Полевого Монтажа",
+          feat11: "Производство в Азербайджане",
+          feat12: "Материалы NACE",
           galleryTitle: "Галерея Продукции",
-          gallery1: "Полная Сборка Скид-Пакета",
-          gallery2: "Испытание Давлением и Контроль Качества",
           footerAbout:
             "У вас сложный проект? Позвольте нашим инженерам и специалистам по закупкам найти наиболее эффективное решение для вашего бизнеса.",
           company: "Компания",
@@ -1639,9 +1591,9 @@
       };
 
       const flagSVGs = {
-        az: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#00b9e4" d="M0 0h640v160H0z"/><path fill="#ed2939" d="M0 160h640v160H0z"/><path fill="#3f9c35" d="M0 320h640v160H0z"/><circle cx="304" cy="240" r="72" fill="#fff"/><circle cx="320" cy="240" r="60" fill="#ed2939"/><path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/></svg>`,
-        en: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg>`,
-        ru: `<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h640v160H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>`,
+        az: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#00b9e4" d="M0 0h640v160H0z"/><path fill="#ed2939" d="M0 160h640v160H0z"/><path fill="#3f9c35" d="M0 320h640v160H0z"/><circle cx="304" cy="240" r="72" fill="#fff"/><circle cx="320" cy="240" r="60" fill="#ed2939"/><path fill="#fff" d="m352 208 7.7 21.5 20.3-9.8-9.8 20.3 21.5 7.7-21.5 7.7 9.8 20.3-20.3-9.8-7.7 21.5-7.7-21.5-20.3 9.8 9.8-20.3-21.5-7.7 21.5-7.7-9.8-20.3 20.3 9.8z"/></svg>',
+        en: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/><path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/><path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/><path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/></svg>',
+        ru: '<svg class="flag-icon" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0 0h640v160H0z"/><path fill="#0039a6" d="M0 160h640v160H0z"/><path fill="#d52b1e" d="M0 320h640v160H0z"/></svg>',
       };
 
       let currentLang = localStorage.getItem("preferredLanguage") || "az";
@@ -1653,14 +1605,14 @@
           const key = el.getAttribute("data-i18n");
           if (t[key]) el.textContent = t[key];
         });
-        const clBtn = document.getElementById("currentLangBtn");
-        if (clBtn)
-          clBtn.innerHTML =
+        const btn = document.getElementById("currentLangBtn");
+        if (btn)
+          btn.innerHTML =
             flagSVGs[lang] +
             `<span class="lang-text">${lang.toUpperCase()}</span><span class="dropdown-icon">▼</span>`;
-        const mlBtn = document.getElementById("mobileLangBtn");
-        if (mlBtn)
-          mlBtn.innerHTML =
+        const mBtn = document.getElementById("mobileLangBtn");
+        if (mBtn)
+          mBtn.innerHTML =
             flagSVGs[lang] +
             `<span class="lang-text">${lang.toUpperCase()}</span>`;
         document.documentElement.lang = lang;
@@ -1673,63 +1625,86 @@
         document.title = titles[lang];
       }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        updateLanguage(currentLang);
-
+      function setupLanguageHandlers() {
         document.querySelectorAll(".lang-option").forEach((opt) => {
           opt.addEventListener("click", (e) => {
             e.preventDefault();
             updateLanguage(opt.dataset.lang);
           });
         });
-
-        const mlBtn = document.getElementById("mobileLangBtn");
-        if (mlBtn)
-          mlBtn.addEventListener("click", () => {
+        const mBtn = document.getElementById("mobileLangBtn");
+        if (mBtn) {
+          mBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             const langs = ["az", "en", "ru"];
             updateLanguage(
               langs[(langs.indexOf(currentLang) + 1) % langs.length],
             );
           });
-
-        const menuBtn = document.getElementById("mobileMenuBtn");
-        const nav = document.getElementById("mainNav");
-        if (menuBtn && nav) {
-          menuBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            menuBtn.classList.toggle("active");
-            nav.classList.toggle("active");
-          });
-          document.querySelectorAll(".has-dropdown").forEach((item) => {
-            item.querySelector(".nav-link").addEventListener("click", (e) => {
-              if (window.innerWidth <= 992) {
-                e.preventDefault();
-                item.classList.toggle("dropdown-active");
-                document.querySelectorAll(".has-dropdown").forEach((o) => {
-                  if (o !== item) o.classList.remove("dropdown-active");
-                });
-              }
-            });
-          });
-          document.addEventListener("click", (e) => {
-            if (!e.target.closest(".header")) {
-              nav.classList.remove("active");
-              menuBtn.classList.remove("active");
-            }
-          });
-          window.addEventListener("resize", () => {
-            if (window.innerWidth > 992) {
-              nav.classList.remove("active");
-              menuBtn.classList.remove("active");
-              document
-                .querySelectorAll(".has-dropdown")
-                .forEach((i) => i.classList.remove("dropdown-active"));
-            }
-          });
         }
+      }
 
+      function setupMobileMenu() {
+        const btn = document.getElementById("mobileMenuBtn");
+        const nav = document.getElementById("mainNav");
+        if (!btn || !nav) return;
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          btn.classList.toggle("active");
+          nav.classList.toggle("active");
+        });
+        document.querySelectorAll(".has-dropdown").forEach((item) => {
+          item.querySelector(".nav-link").addEventListener("click", (e) => {
+            if (window.innerWidth <= 992) {
+              e.preventDefault();
+              item.classList.toggle("dropdown-active");
+            }
+          });
+        });
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest(".header-content")) {
+            nav.classList.remove("active");
+            btn.classList.remove("active");
+            document
+              .querySelectorAll(".has-dropdown")
+              .forEach((i) => i.classList.remove("dropdown-active"));
+          }
+        });
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 992) {
+            nav.classList.remove("active");
+            btn.classList.remove("active");
+            document
+              .querySelectorAll(".has-dropdown")
+              .forEach((i) => i.classList.remove("dropdown-active"));
+          }
+        });
+      }
+
+      function setupScrollEffects() {
         const header = document.querySelector(".header");
         const scrollBtn = document.getElementById("scrollToTop");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+        document
+          .querySelectorAll(".service-card, .gallery-item")
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            observer.observe(el);
+          });
         window.addEventListener("scroll", () => {
           if (window.scrollY > 100) {
             header && header.classList.add("scrolled");
@@ -1743,26 +1718,13 @@
           scrollBtn.addEventListener("click", () =>
             window.scrollTo({ top: 0, behavior: "smooth" }),
           );
+      }
 
-        const obs = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.style.opacity = "1";
-                e.target.style.transform = "translateY(0)";
-              }
-            });
-          },
-          { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
-        );
-        document
-          .querySelectorAll(".service-card, .gallery-item, .feature-item")
-          .forEach((el) => {
-            el.style.opacity = "0";
-            el.style.transform = "translateY(30px)";
-            el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-            obs.observe(el);
-          });
+      document.addEventListener("DOMContentLoaded", () => {
+        updateLanguage(currentLang);
+        setupLanguageHandlers();
+        setupMobileMenu();
+        setupScrollEffects();
       });
     </script>
   </body>

@@ -17,7 +17,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-
     <style>
       :root {
         --primary: #ff6b35;
@@ -25,30 +24,27 @@
         --dark-secondary: rgba(30, 52, 79, 1);
         --text: #e8ecf1;
         --text-muted: #8b96a5;
-        --accent: #4a9eff;
         --primary-blue: #0a2342;
         --accent-orange: #e85d04;
-        --steel-gray: #2c3e50;
         --light-gray: #ecf0f1;
         --white: #ffffff;
         --footer-dark: #0a2342;
         --transition: all 0.3s ease;
       }
-
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-
       body {
         font-family: "Inter", sans-serif;
         background: var(--dark);
         color: var(--text);
         line-height: 1.6;
+        overflow-x: hidden;
       }
 
-      /* ===== HEADER ===== */
+      /* ========== HEADER ========== */
       .header {
         background: var(--primary-blue);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -62,7 +58,6 @@
       .header.scrolled {
         box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
       }
-
       .header-content {
         max-width: 1400px;
         margin: 0 auto;
@@ -72,7 +67,6 @@
         justify-content: space-between;
         min-height: 85px;
       }
-
       .logo {
         display: flex;
         align-items: center;
@@ -91,7 +85,6 @@
       .logo:hover .logo-image {
         filter: brightness(1.2);
       }
-
       .nav {
         display: flex;
         align-items: center;
@@ -105,7 +98,6 @@
       .nav-item {
         position: relative;
       }
-
       .nav-link {
         font-family: "Montserrat", sans-serif;
         text-decoration: none;
@@ -140,7 +132,6 @@
       .nav-link:hover::before {
         width: 80%;
       }
-
       .dropdown-icon {
         display: inline-block;
         margin-left: 4px;
@@ -150,7 +141,6 @@
       .nav-item:hover .dropdown-icon {
         transform: rotate(180deg);
       }
-
       .dropdown {
         position: absolute;
         top: 100%;
@@ -191,7 +181,6 @@
         border-left-color: var(--accent-orange);
         padding-left: 1.75rem;
       }
-
       .mobile-controls {
         display: none;
         align-items: center;
@@ -227,12 +216,6 @@
       .mobile-menu-btn.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
       }
-
-      .language-dropdown .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
       .language-dropdown .flag-icon {
         width: 24px;
         height: 17px;
@@ -254,7 +237,6 @@
         width: 28px;
         height: 20px;
       }
-
       .mobile-lang-btn {
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.3);
@@ -279,7 +261,7 @@
         font-weight: 600;
       }
 
-      /* ===== HERO ===== */
+      /* ========== HERO ========== */
       .hero {
         min-height: 50vh;
         display: flex;
@@ -312,6 +294,7 @@
       }
       .hero-content {
         text-align: center;
+        animation: fadeInUp 0.8s ease-out;
       }
       .company-name {
         font-size: 1.2rem;
@@ -337,145 +320,40 @@
         margin: 0 auto;
       }
 
-      /* ===== CONTENT ===== */
-      .content-section {
+      /* ========== LAYOUT ========== */
+      .container {
         max-width: 1400px;
         margin: 0 auto;
-        padding: 4rem 2rem;
+        padding: 0 2rem;
       }
 
-      /* Section intro (mirrors story-section) */
-      .intro-section {
-        max-width: 900px;
-        margin: 0 auto 5rem;
-        padding: 3rem;
-        border-radius: 16px;
-        text-align: center;
-      }
-      .intro-section h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: var(--text);
-      }
-      .intro-section p {
-        font-size: 1.15rem;
-        color: #ffffff;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-      }
-
-      /* ===== PILLARS-STYLE VALUE CARDS ===== */
-      .pillars-section {
-        margin-bottom: 5rem;
-        padding: 3rem 0;
-      }
-      .pillars-section h2 {
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin-bottom: 3rem;
-        color: var(--text);
-        text-align: center;
-      }
-      .pillars-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-      }
-      .pillar-card {
-        background: var(--dark-secondary);
-        border: 1px solid rgba(255, 107, 53, 0.15);
-        border-radius: 12px;
-        padding: 2.5rem;
-        transition: all 0.3s ease;
-      }
-      .pillar-card:hover {
-        border-color: var(--primary);
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
-      }
-      .pillar-card h3 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--primary);
-        margin-bottom: 1rem;
-      }
-      .pillar-card p {
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.7;
-      }
-
-      /* ===== BENEFITS (mirrors identity-section style) ===== */
-      .benefits-wrapper {
-        border: 1px solid rgba(255, 107, 53, 0.15);
-        border-radius: 16px;
-        padding: 3rem;
-        background: rgba(30, 52, 79, 0.5);
-        margin-bottom: 5rem;
-      }
-      .benefits-wrapper h2 {
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin-bottom: 0.75rem;
-        color: var(--text);
-      }
-      .benefits-wrapper > p {
-        font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.8;
-        margin-bottom: 2.5rem;
-      }
-      .benefits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-      }
-      .benefit-item {
-        background: var(--dark-secondary);
-        border: 1px solid rgba(255, 107, 53, 0.15);
-        border-radius: 12px;
-        padding: 2rem;
-        transition: all 0.3s ease;
-      }
-      .benefit-item:hover {
-        border-color: var(--primary);
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
-      }
-      .benefit-item h3 {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--primary);
-        margin-bottom: 0.75rem;
-      }
-      .benefit-item p {
-        font-size: 0.95rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.7;
-      }
-
-      /* ===== CTA (mirrors identity-section) ===== */
+      /* ========== CTA (mirrors story-inner) ========== */
       .cta-section {
+        padding: 4rem 0 2rem;
+      }
+      .cta-inner {
+        background: var(--dark-secondary);
         border: 1px solid rgba(255, 107, 53, 0.15);
         border-radius: 16px;
         padding: 3rem;
-        background: rgba(30, 52, 79, 0.5);
+        max-width: 900px;
+        margin: 0 auto;
         text-align: center;
-        margin-bottom: 2rem;
       }
-      .cta-section h2 {
+      .cta-inner h2 {
         font-size: 2.2rem;
         font-weight: 700;
         margin-bottom: 1rem;
         color: var(--text);
       }
-      .cta-section p {
+      .cta-inner p {
         font-size: 1.1rem;
         color: rgba(255, 255, 255, 0.9);
         line-height: 1.8;
+        margin-bottom: 2rem;
         max-width: 700px;
-        margin: 0 auto 2rem;
+        margin-left: auto;
+        margin-right: auto;
       }
       .cta-button {
         display: inline-flex;
@@ -500,22 +378,134 @@
         box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
       }
 
-      /* ===== FOOTER ===== */
+      /* ========== PILLARS (values) ========== */
+      .pillars-section {
+        padding: 4rem 0;
+      }
+      .pillars-section h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        color: var(--text);
+        text-align: center;
+      }
+      .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+      }
+      .pillar-card {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .pillar-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+      }
+      .pillar-content {
+        padding: 1.8rem 1.5rem;
+      }
+      .pillar-icon {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 107, 53, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+      .pillar-card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.8rem;
+      }
+      .pillar-card p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.7;
+      }
+
+      /* ========== BENEFITS (2-col engineering style) ========== */
+      .benefits-section {
+        padding: 0 0 4rem;
+      }
+      .benefits-section h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--text);
+        text-align: center;
+      }
+      .benefits-subtitle {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .benefit-card {
+        background: var(--dark-secondary);
+        border: 1px solid rgba(255, 107, 53, 0.15);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .benefit-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+      }
+      .benefit-content {
+        padding: 1.8rem 1.5rem;
+      }
+      .benefit-icon {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 107, 53, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+      .benefit-card h3 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.7rem;
+      }
+      .benefit-card p {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.7;
+      }
+
+      /* ========== FOOTER ========== */
       .site-footer {
         background: var(--footer-dark);
         color: #ffffff;
         font-size: 1rem;
         width: 100%;
         overflow: hidden;
-        margin-top: 4rem;
       }
       .footer-top {
         padding: 50px 0 35px;
-      }
-      .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
       }
       .footer-row {
         display: grid;
@@ -527,7 +517,6 @@
         height: auto;
         margin-bottom: 12px;
         transition: var(--transition);
-        cursor: pointer;
       }
       .footer-logo:hover {
         transform: scale(1.05);
@@ -593,7 +582,7 @@
       }
       .footer-social a:hover {
         background: var(--accent-orange);
-        transform: translateY(-3px);
+        transform: translateY(-4px);
       }
       .footer-contact {
         padding: 0;
@@ -602,7 +591,7 @@
       }
       .footer-contact li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 10px;
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.85);
@@ -611,11 +600,8 @@
       .footer-contact li i {
         color: var(--accent-orange);
         flex-shrink: 0;
-        font-size: 1rem;
+        margin-top: 3px;
         width: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
       .footer-contact li a {
         color: rgba(255, 255, 255, 0.85);
@@ -645,8 +631,6 @@
       .footer-credit {
         margin-left: 5px;
       }
-
-      /* ===== SCROLL TO TOP ===== */
       .scroll-to-top {
         position: fixed;
         bottom: 30px;
@@ -669,13 +653,12 @@
       .scroll-to-top:hover {
         background: rgb(239, 53, 32);
         transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
       }
       .scroll-to-top.show {
         display: flex;
       }
 
-      /* ===== RESPONSIVE ===== */
+      /* ========== RESPONSIVE ========== */
       @media (max-width: 992px) {
         .header-content {
           padding: 0 1rem;
@@ -704,7 +687,6 @@
           transition:
             max-height 0.4s ease,
             box-shadow 0.4s ease;
-          box-shadow: none;
         }
         .nav.active {
           max-height: calc(100vh - 70px);
@@ -747,9 +729,6 @@
         .nav-item.dropdown-active .dropdown {
           max-height: 500px;
         }
-        .dropdown-list {
-          padding: 0;
-        }
         .dropdown-link {
           color: var(--white);
           padding: 0.875rem 2.5rem;
@@ -765,29 +744,31 @@
         .hero-content h1 {
           font-size: 2.5rem;
         }
-        .pillars-grid,
+        .pillars-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
         .benefits-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
         }
         .footer-row {
           grid-template-columns: repeat(2, 1fr);
         }
       }
       @media (max-width: 768px) {
-        .content-section {
-          padding: 3rem 1.5rem;
-        }
-        .intro-section {
-          padding: 2rem 1.5rem;
-        }
-        .intro-section h2 {
-          font-size: 2rem;
-        }
         .hero-content h1 {
           font-size: 2.2rem;
         }
         .hero-content .tagline {
           font-size: 1.1rem;
+        }
+        .pillars-grid {
+          grid-template-columns: 1fr;
+        }
+        .benefits-grid {
+          grid-template-columns: 1fr;
+        }
+        .cta-inner {
+          padding: 2rem 1.5rem;
         }
         .footer-row {
           grid-template-columns: 1fr;
@@ -806,15 +787,11 @@
         .logo-image {
           height: 50px;
         }
-        .mobile-lang-btn {
-          padding: 5px 8px;
-        }
         .container {
-          padding: 0 1rem;
+          padding: 0 0.75rem;
         }
       }
 
-      /* ===== ANIMATIONS ===== */
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -824,40 +801,6 @@
           opacity: 1;
           transform: translateY(0);
         }
-      }
-      .hero-content,
-      .intro-section,
-      .pillars-section,
-      .benefits-wrapper,
-      .cta-section {
-        animation: fadeInUp 0.8s ease-out;
-      }
-      .pillar-card,
-      .benefit-item {
-        animation: fadeInUp 0.8s ease-out;
-        animation-fill-mode: both;
-      }
-      .pillar-card:nth-child(1),
-      .benefit-item:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .pillar-card:nth-child(2),
-      .benefit-item:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .pillar-card:nth-child(3),
-      .benefit-item:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .pillar-card:nth-child(4),
-      .benefit-item:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-      .benefit-item:nth-child(5) {
-        animation-delay: 0.5s;
-      }
-      .benefit-item:nth-child(6) {
-        animation-delay: 0.6s;
       }
     </style>
   </head>
@@ -872,7 +815,6 @@
             class="logo-image"
           />
         </a>
-
         <div class="mobile-controls">
           <button class="mobile-lang-btn" id="mobileLangBtn">
             <svg
@@ -900,7 +842,6 @@
             <span></span><span></span><span></span>
           </button>
         </div>
-
         <nav class="nav" id="mainNav">
           <ul class="nav-list">
             <li class="nav-item">
@@ -909,7 +850,7 @@
               >
             </li>
             <li class="nav-item has-dropdown">
-              <a href="#products" class="nav-link">
+              <a href="#" class="nav-link">
                 <span data-i18n="products">Məhsullar</span>
                 <span class="dropdown-icon">▼</span>
               </a>
@@ -975,7 +916,7 @@
               </ul>
             </li>
             <li class="nav-item has-dropdown">
-              <a href="#services" class="nav-link">
+              <a href="#" class="nav-link">
                 <span data-i18n="services">Xidmətlər</span>
                 <span class="dropdown-icon">▼</span>
               </a>
@@ -1117,110 +1058,151 @@
       </div>
     </section>
 
-
-       <!-- CTA -->
-      <div class="cta-section">
-        <h2 style="margin: 50px;" data-i18n="ctaTitle">Düzgün Vəzifə Görmürsünüz?</h2>
-        <p data-i18n="ctaDescription">
-          Biz həmişə istedadlı peşəkarlarla əlaqə qurmaqda maraqlıyıq. CV-nizi
-          göndərin və komandamıza necə töhfə verə biləcəyinizi bizə bildirin.
-        </p>
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az&su=CV Göndərmək&body=Salam! CV-mi göndərmək istəyirəm."
-          target="_blank"
-          class="cta-button"
-        >
-          <span data-i18n="ctaButton">✉️ CV-nizi Göndərin</span>
-        </a>
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-inner">
+          <h2 data-i18n="ctaTitle">Düzgün Vəzifə Görmürsünüz?</h2>
+          <p data-i18n="ctaDescription">
+            Biz həmişə istedadlı peşəkarlarla əlaqə qurmaqda maraqlıyıq. CV-nizi
+            göndərin və komandamıza necə töhfə verə biləcəyinizi bizə bildirin.
+          </p>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az&su=CV Göndərmək&body=Salam! CV-mi göndərmək istəyirəm."
+            target="_blank"
+            class="cta-button"
+          >
+            <span data-i18n="ctaButton">✉️ CV-nizi Göndərin</span>
+          </a>
+        </div>
       </div>
+    </section>
 
-      <!-- Values – same pillars style -->
-      <div class="pillars-section">
+    <!-- VALUES (pillars) -->
+    <section class="pillars-section">
+      <div class="container">
         <h2 data-i18n="valuesTitle">Dəyərlərimiz</h2>
         <div class="pillars-grid">
           <div class="pillar-card">
-            <h3 data-i18n="value1Title">İnnovasiya və İnkişaf</h3>
-            <p data-i18n="value1Desc">
-              Beynəlxalq standartlar və ən son mühəndislik texnologiyaları ilə
-              qabaqcıl layihələr üzərində işləyin.
-            </p>
+            <div class="pillar-content">
+              <div class="pillar-icon"><i class="fas fa-lightbulb"></i></div>
+              <h3 data-i18n="value1Title">İnnovasiya və İnkişaf</h3>
+              <p data-i18n="value1Desc">
+                Beynəlxalq standartlar və ən son mühəndislik texnologiyaları ilə
+                qabaqcıl layihələr üzərində işləyin.
+              </p>
+            </div>
           </div>
           <div class="pillar-card">
-            <h3 data-i18n="value2Title">Ekspert Komandası</h3>
-            <p data-i18n="value2Desc">
-              Təcrübəli mühəndislər və sənaye peşəkarları ilə kritik
-              infrastruktur layihələri üzərində əməkdaşlıq edin.
-            </p>
+            <div class="pillar-content">
+              <div class="pillar-icon"><i class="fas fa-users"></i></div>
+              <h3 data-i18n="value2Title">Ekspert Komandası</h3>
+              <p data-i18n="value2Desc">
+                Təcrübəli mühəndislər və sənaye peşəkarları ilə kritik
+                infrastruktur layihələri üzərində əməkdaşlıq edin.
+              </p>
+            </div>
           </div>
           <div class="pillar-card">
-            <h3 data-i18n="value3Title">Qlobal Standartlar</h3>
-            <p data-i18n="value3Desc">
-              ASME, ISO, GOST və digər beynəlxalq mühəndislik kodları və
-              sertifikatları sahəsində ekspertiza qazanın.
-            </p>
+            <div class="pillar-content">
+              <div class="pillar-icon"><i class="fas fa-globe"></i></div>
+              <h3 data-i18n="value3Title">Qlobal Standartlar</h3>
+              <p data-i18n="value3Desc">
+                ASME, ISO, GOST və digər beynəlxalq mühəndislik kodları və
+                sertifikatları sahəsində ekspertiza qazanın.
+              </p>
+            </div>
           </div>
           <div class="pillar-card">
-            <h3 data-i18n="value4Title">Karyera İnkişafı</h3>
-            <p data-i18n="value4Desc">
-              Davamlı öyrənmə imkanları və peşəkar inkişaf və ixtisaslaşma üçün
-              aydın yollar.
-            </p>
+            <div class="pillar-content">
+              <div class="pillar-icon"><i class="fas fa-chart-line"></i></div>
+              <h3 data-i18n="value4Title">Karyera İnkişafı</h3>
+              <p data-i18n="value4Desc">
+                Davamlı öyrənmə imkanları və peşəkar inkişaf və ixtisaslaşma
+                üçün aydın yollar.
+              </p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Benefits -->
-      <div class="benefits-wrapper">
+    <!-- BENEFITS -->
+    <section class="benefits-section">
+      <div class="container">
         <h2 data-i18n="benefitsTitle">Üstünlüklər və İmtiyazlar</h2>
-        <p data-i18n="benefitsDescription">
+        <p class="benefits-subtitle" data-i18n="benefitsDescription">
           Biz uğurunuzu dəstəkləmək üçün nəzərdə tutulmuş rəqabətli kompensasiya
           və hərtərəfli müavinətlər paketi təklif edirik.
         </p>
         <div class="benefits-grid">
-          <div class="benefit-item">
-            <h3 data-i18n="benefit1Title">Rəqabətli Maaş</h3>
-            <p data-i18n="benefit1Desc">
-              Performansa əsaslanan bonuslar və müntəzəm nəzərdən keçirmələr ilə
-              bazar liderliyi kompensasiya paketləri.
-            </p>
+          <div class="benefit-card">
+            <div class="benefit-content">
+              <div class="benefit-icon"><i class="fas fa-dollar-sign"></i></div>
+              <h3 data-i18n="benefit1Title">Rəqabətli Maaş</h3>
+              <p data-i18n="benefit1Desc">
+                Performansa əsaslanan bonuslar və müntəzəm nəzərdən keçirmələr
+                ilə bazar liderliyi kompensasiya paketləri.
+              </p>
+            </div>
           </div>
-          <div class="benefit-item">
-            <h3 data-i18n="benefit2Title">Peşəkar İnkişaf</h3>
-            <p data-i18n="benefit2Desc">
-              Təlim proqramlarına, sertifikatlara və sənaye konfranslarına
-              qatılmaq imkanlarına çıxış.
-            </p>
+          <div class="benefit-card">
+            <div class="benefit-content">
+              <div class="benefit-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3 data-i18n="benefit2Title">Peşəkar İnkişaf</h3>
+              <p data-i18n="benefit2Desc">
+                Təlim proqramlarına, sertifikatlara və sənaye konfranslarına
+                qatılmaq imkanlarına çıxış.
+              </p>
+            </div>
           </div>
-          <div class="benefit-item">
-            <h3 data-i18n="benefit3Title">Layihə Müxtəlifliyi</h3>
-            <p data-i18n="benefit3Desc">
-              Müxtəlif sənaye sahələrində müxtəlif layihələr üzərində işləyin və
-              geniş mühəndislik təcrübəsi qazanın.
-            </p>
+          <div class="benefit-card">
+            <div class="benefit-content">
+              <div class="benefit-icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <h3 data-i18n="benefit3Title">Layihə Müxtəlifliyi</h3>
+              <p data-i18n="benefit3Desc">
+                Müxtəlif sənaye sahələrində müxtəlif layihələr üzərində işləyin
+                və geniş mühəndislik təcrübəsi qazanın.
+              </p>
+            </div>
           </div>
-          <div class="benefit-item">
-            <h3 data-i18n="benefit4Title">Sağlamlıq və Rifah</h3>
-            <p data-i18n="benefit4Desc">
-              Sizin üçün hərtərəfli sağlamlıq sığortası və rifah proqramları.
-            </p>
+          <div class="benefit-card">
+            <div class="benefit-content">
+              <div class="benefit-icon"><i class="fas fa-heartbeat"></i></div>
+              <h3 data-i18n="benefit4Title">Sağlamlıq və Rifah</h3>
+              <p data-i18n="benefit4Desc">
+                Sizin üçün hərtərəfli sağlamlıq sığortası və rifah proqramları.
+              </p>
+            </div>
           </div>
-          <div class="benefit-item">
-            <h3 data-i18n="benefit5Title">İş-Həyat Balansı</h3>
-            <p data-i18n="benefit5Desc">
-              Sağlam iş-həyat balansını qorumaq üçün çevik iş qaydaları və
-              səxavətli məzuniyyət siyasəti.
-            </p>
+          <div class="benefit-card">
+            <div class="benefit-content">
+              <div class="benefit-icon">
+                <i class="fas fa-balance-scale"></i>
+              </div>
+              <h3 data-i18n="benefit5Title">İş-Həyat Balansı</h3>
+              <p data-i18n="benefit5Desc">
+                Sağlam iş-həyat balansını qorumaq üçün çevik iş qaydaları və
+                səxavətli məzuniyyət siyasəti.
+              </p>
+            </div>
           </div>
-          <div class="benefit-item">
-            <h3 data-i18n="benefit6Title">Əməkdaşlıq Mədəniyyəti</h3>
-            <p data-i18n="benefit6Desc">
-              Əməkdaşlığı, hörmət və innovasiyanı qiymətləndirən dəstəkləyici
-              komanda mühitinə qoşulun.
-            </p>
+          <div class="benefit-card">
+            <div class="benefit-content">
+              <div class="benefit-icon"><i class="fas fa-handshake"></i></div>
+              <h3 data-i18n="benefit6Title">Əməkdaşlıq Mədəniyyəti</h3>
+              <p data-i18n="benefit6Desc">
+                Əməkdaşlığı, hörmət və innovasiyanı qiymətləndirən dəstəkləyici
+                komanda mühitinə qoşulun.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
     </section>
 
     <!-- FOOTER -->
@@ -1248,7 +1230,7 @@
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
                 >
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                  <i class="fab fa-whatsapp"></i>
                 </a>
                 <a
                   href="https://www.instagram.com/evershopllc/"
@@ -1256,7 +1238,7 @@
                   rel="noopener noreferrer"
                   aria-label="Instagram"
                 >
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  <i class="fab fa-instagram"></i>
                 </a>
                 <a
                   href="https://www.linkedin.com/company/evershop-llc/"
@@ -1264,7 +1246,7 @@
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
-                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                  <i class="fab fa-linkedin-in"></i>
                 </a>
               </div>
             </div>
@@ -1322,7 +1304,7 @@
               <h4 data-i18n="contactInfo">Əlaqə</h4>
               <ul class="footer-contact">
                 <li>
-                  <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                  <i class="fas fa-phone-alt"></i>
                   <a
                     href="https://wa.me/994702710066"
                     target="_blank"
@@ -1339,7 +1321,7 @@
                   >
                 </li>
                 <li>
-                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <i class="fas fa-map-marker-alt"></i>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
                     target="_blank"
@@ -1350,7 +1332,7 @@
                   </a>
                 </li>
                 <li>
-                  <i class="fas fa-industry" aria-hidden="true"></i>
+                  <i class="fas fa-industry"></i>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
                     target="_blank"
@@ -1418,11 +1400,6 @@
           langRu: "Русский язык",
           pageTitle: "Komandamıza Qoşulun",
           pageSubtitle: "İnnovasiyanın dəqiqliklə birləşdiyi komandaya qoşulun",
-          pageSubtitleFull:
-            "EVERSHOP-da biz sənaye mühəndisliyi və istehsal mükəmməlliyinin gələcəyini qururuq. Neft və Qaz, Neft-Kimya və Su Təmizləmə sənayesində real təsir göstərmək istəyən istedadlı, həvəsli peşəkarlar axtarırıq.",
-          whyWorkWithUs: "Niyə Bizimlə İşləməlisiniz",
-          whyWorkDescription:
-            "Biz istedadlı peşəkarların inkişaf edə, yenilik edə və mükəmməlləşə biləcəyi mühit yaratmağa sadiqik.",
           valuesTitle: "Dəyərlərimiz",
           value1Title: "İnnovasiya və İnkişaf",
           value1Desc:
@@ -1480,7 +1457,7 @@
           services: "Services",
           markets: "Market Sectors",
           career: "Career",
-          fabrication: "Fabrication Custom Structures",
+          fabrication: "Custom Fabrication",
           staticEquipment: "Static Equipment",
           skidPackages: "Industrial Skid Packages",
           machinedParts: "Machined Parts",
@@ -1499,11 +1476,6 @@
           pageTitle: "Join Our Team",
           pageSubtitle:
             "Where innovation meets precision — join the team shaping critical infrastructure",
-          pageSubtitleFull:
-            "At EVERSHOP, we're building the future of industrial engineering and manufacturing excellence. We're looking for talented, passionate professionals who want to make a real impact in the Oil & Gas, Petrochemical, and Water Treatment industries.",
-          whyWorkWithUs: "Why Work With Us",
-          whyWorkDescription:
-            "We're committed to creating an environment where talented professionals can grow, innovate, and excel.",
           valuesTitle: "Our Values",
           value1Title: "Innovation & Growth",
           value1Desc:
@@ -1579,11 +1551,6 @@
           langRu: "Русский язык",
           pageTitle: "Присоединяйтесь к Нашей Команде",
           pageSubtitle: "Там, где инновации встречаются с точностью",
-          pageSubtitleFull:
-            "В EVERSHOP мы строим будущее промышленного инжиниринга. Мы ищем талантливых профессионалов для работы в отраслях нефти и газа, нефтехимии и водоочистки.",
-          whyWorkWithUs: "Почему Стоит Работать с Нами",
-          whyWorkDescription:
-            "Мы стремимся создать среду, в которой талантливые специалисты могут расти, внедрять инновации и преуспевать.",
           valuesTitle: "Наши Ценности",
           value1Title: "Инновации и Рост",
           value1Desc:
@@ -1663,23 +1630,27 @@
             `<span class="lang-text">${lang.toUpperCase()}</span>`;
         document.documentElement.lang = lang;
         localStorage.setItem("preferredLanguage", lang);
+        const titles = {
+          az: "EVERSHOP - Karyera",
+          en: "EVERSHOP - Careers",
+          ru: "EVERSHOP - Карьера",
+        };
+        document.title = titles[lang];
       }
 
       document.addEventListener("DOMContentLoaded", () => {
         updateLanguage(currentLang);
 
-        // Language options
-        document.querySelectorAll(".lang-option").forEach((el) => {
-          el.addEventListener("click", (e) => {
+        document.querySelectorAll(".lang-option").forEach((opt) => {
+          opt.addEventListener("click", (e) => {
             e.preventDefault();
-            updateLanguage(el.dataset.lang);
+            updateLanguage(opt.dataset.lang);
           });
         });
 
-        // Mobile lang cycle
-        const mLang = document.getElementById("mobileLangBtn");
-        if (mLang)
-          mLang.addEventListener("click", (e) => {
+        const mBtn = document.getElementById("mobileLangBtn");
+        if (mBtn)
+          mBtn.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
             const langs = ["az", "en", "ru"];
@@ -1688,7 +1659,6 @@
             );
           });
 
-        // Mobile menu
         const menuBtn = document.getElementById("mobileMenuBtn");
         const nav = document.getElementById("mainNav");
         if (menuBtn && nav) {
@@ -1703,6 +1673,9 @@
               if (window.innerWidth <= 992) {
                 e.preventDefault();
                 item.classList.toggle("dropdown-active");
+                document.querySelectorAll(".has-dropdown").forEach((o) => {
+                  if (o !== item) o.classList.remove("dropdown-active");
+                });
               }
             });
           });
@@ -1710,28 +1683,57 @@
             if (!e.target.closest(".header")) {
               nav.classList.remove("active");
               menuBtn.classList.remove("active");
+              document
+                .querySelectorAll(".has-dropdown")
+                .forEach((i) => i.classList.remove("dropdown-active"));
             }
           });
           window.addEventListener("resize", () => {
             if (window.innerWidth > 992) {
               nav.classList.remove("active");
               menuBtn.classList.remove("active");
+              document
+                .querySelectorAll(".has-dropdown")
+                .forEach((i) => i.classList.remove("dropdown-active"));
             }
           });
         }
 
-        // Scroll to top
-        const stt = document.getElementById("scrollToTop");
+        const header = document.querySelector(".header");
+        const scrollBtn = document.getElementById("scrollToTop");
         window.addEventListener("scroll", () => {
-          document
-            .querySelector(".header")
-            .classList.toggle("scrolled", window.scrollY > 100);
-          if (stt) stt.classList.toggle("show", window.scrollY > 100);
+          if (window.scrollY > 100) {
+            header && header.classList.add("scrolled");
+            scrollBtn && scrollBtn.classList.add("show");
+          } else {
+            header && header.classList.remove("scrolled");
+            scrollBtn && scrollBtn.classList.remove("show");
+          }
         });
-        if (stt)
-          stt.addEventListener("click", () =>
+        scrollBtn &&
+          scrollBtn.addEventListener("click", () =>
             window.scrollTo({ top: 0, behavior: "smooth" }),
           );
+
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.style.opacity = "1";
+                e.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+        document
+          .querySelectorAll(".pillar-card, .benefit-card")
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            obs.observe(el);
+          });
       });
     </script>
   </body>
