@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- Header Section -->
+    <!-- Header -->
     <header class="header" role="banner">
       <div class="header-content">
         <a href="/" class="logo" aria-label="EVERSHOP MMC Ana səhifə">
@@ -212,6 +212,11 @@
                   >
                 </li>
               </ul>
+            </li>
+            <li class="nav-item">
+              <a href="integrated.html" class="nav-link" data-i18n="quality"
+                >Keyfiyyət İdarəetməsi</a
+              >
             </li>
             <li class="nav-item">
               <a href="market.html" class="nav-link"
@@ -523,8 +528,6 @@
               placeholder="Mesaj"
               rows="5"
             ></textarea>
-
-            <!-- Custom File Upload -->
             <div class="file-upload">
               <label for="fileUpload" data-i18n="formFileLabel"
                 >Fayl əlavə et (PDF, JPG, PNG)</label
@@ -553,7 +556,6 @@
                 />
               </div>
             </div>
-
             <div class="checkbox">
               <input
                 type="checkbox"
@@ -664,9 +666,9 @@
               <i class="fas fa-phone-alt" aria-hidden="true"></i>
               <h4 data-i18n="callUs">Bizə zəng edin</h4>
               <p>
-                <a href="https://wa.me/994702710066" target="_blank">
-                  <span data-i18n="contactPhone">+994 70 271 00 66</span>
-                </a>
+                <a href="https://wa.me/994702710066" target="_blank"
+                  ><span data-i18n="contactPhone">+994 70 271 00 66</span></a
+                >
               </p>
             </div>
             <div class="contact-item">
@@ -681,9 +683,8 @@
                       '_blank',
                     )
                   "
+                  ><span data-i18n="contactEmail">sales@evershop.az</span></a
                 >
-                  <span data-i18n="contactEmail">sales@evershop.az</span>
-                </a>
               </p>
             </div>
           </div>
@@ -818,7 +819,7 @@
                 loading="lazy"
               />
             </div>
-            <!-- Repeat -->
+            <!-- Repeat for infinite scroll -->
             <div class="partner-item">
               <img
                 src="assets/images/partners/socar-stp.png"
@@ -948,6 +949,7 @@
       <div class="footer-top">
         <div class="container">
           <div class="footer-row">
+            <!-- Logo & About -->
             <div class="footer-widget">
               <img
                 src="assets/images/logo/logo.png"
@@ -983,59 +985,70 @@
                 ></a>
               </div>
             </div>
+
+            <!-- Company Links -->
             <div class="footer-widget">
               <h4 data-i18n="company">Şirkət</h4>
               <ul>
                 <li><a href="about.html" data-i18n="about">Haqqımızda</a></li>
                 <li><a href="#" data-i18n="products">Məhsullar</a></li>
                 <li><a href="#" data-i18n="services">Xidmətlər</a></li>
+                <!-- ✅ Quality Management - Footer -->
+                <li>
+                  <a href="integrated.html" data-i18n="quality"
+                    >Keyfiyyət İdarəetməsi</a
+                  >
+                </li>
                 <li>
                   <a href="market.html" data-i18n="markets">Bazar Sektorları</a>
                 </li>
                 <li><a href="career.html" data-i18n="career">Karyera</a></li>
               </ul>
             </div>
+
+            <!-- Solutions Links -->
             <div class="footer-widget">
               <h4 data-i18n="solutions">Həllər</h4>
               <ul>
                 <li>
-                  <a
-                    href="https://www.evershop.az/"
-                    data-i18n="engineeringDesign"
-                    >Mühəndislik və Dizayn</a
+                  <a href="engineering.html" data-i18n="footerEngineering"
+                    >Mühəndislik</a
                   >
                 </li>
                 <li>
-                  <a
-                    href="https://www.evershop.az/"
-                    data-i18n="industrialEquipment"
-                    >Sənaye Avadanlıqları</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.evershop.az/" data-i18n="manufacturing"
+                  <a href="fabrication.html" data-i18n="footerFabrication"
                     >İstehsal</a
                   >
                 </li>
                 <li>
-                  <a href="https://www.evershop.az/" data-i18n="energySolutions"
-                    >Enerji Həlləri</a
+                  <a href="machined.html" data-i18n="footerMachining"
+                    >Mexaniki Emal</a
                   >
                 </li>
                 <li>
-                  <a
-                    href="https://www.evershop.az/"
-                    data-i18n="innovativeProjects"
-                    >İnnovativ Layihələr</a
+                  <a href="material.html" data-i18n="footerMaterialSupply"
+                    >Material Təchizatı</a
+                  >
+                </li>
+                <li>
+                  <a href="equipment.html" data-i18n="footerEquipmentSupply"
+                    >Avadanlıq Təchizatı</a
+                  >
+                </li>
+                <li>
+                  <a href="skid.html" data-i18n="footerIndustrialSkid"
+                    >Sənaye Skid İstehsalı</a
                   >
                 </li>
               </ul>
             </div>
+
+            <!-- Contact -->
             <div class="footer-widget">
               <h4 data-i18n="contactInfo">Əlaqə</h4>
               <ul class="footer-contact">
                 <li>
-                  <i class="fas fa-phone-alt"></i>
+                  <i style="margin-top: 8px" class="fas fa-phone-alt"></i>
                   <a
                     href="https://wa.me/994702710066"
                     target="_blank"
@@ -1045,7 +1058,7 @@
                   </a>
                 </li>
                 <li>
-                  <i class="fas fa-envelope"></i>
+                  <i style="margin-top: 8px" class="fas fa-envelope"></i>
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=Sales@evershop.az"
                     target="_blank"
@@ -1054,7 +1067,7 @@
                   </a>
                 </li>
                 <li>
-                  <i class="fas fa-map-marker-alt"></i>
+                  <i style="margin-top: 8px" class="fas fa-map-marker-alt"></i>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
                     target="_blank"
@@ -1067,7 +1080,7 @@
                   </a>
                 </li>
                 <li>
-                  <i class="fas fa-industry"></i>
+                  <i style="margin-top: 8px" class="fas fa-industry"></i>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
                     target="_blank"
@@ -1088,9 +1101,10 @@
           <div class="footer-bottom-content">
             <p>
               <span data-i18n="allRights"
-                >© 2026 EVERSHOP MMC. All rights reserved.</span
-              ><span class="footer-credit">
-                <span data-i18n="preparedBy">Prepared by:</span>
+                >© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.</span
+              >
+              <span class="footer-credit">
+                <span data-i18n="preparedBy">Hazırlayan:</span>
                 <a
                   href="https://www.butagrup.com.tr/"
                   target="_blank"

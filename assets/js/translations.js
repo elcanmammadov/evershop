@@ -6,6 +6,7 @@ const translations = {
     services: "Xidmətlər",
     markets: "Bazar Sektorları",
     career: "Karyera",
+    quality: "Keyfiyyət İdarəetməsi",
 
     // Products Dropdown
     fabrication: "Xüsusi Konstruksiyaların İstehsalı",
@@ -93,11 +94,12 @@ const translations = {
       "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
     company: "Şirkət",
     solutions: "Həllər",
-    engineeringDesign: "Mühəndislik və Dizayn",
-    manufacturing: "İstehsal",
-    energySolutions: "Enerji Həlləri",
-    industrialEquipment: "Sənaye Avadanlıqları",
-    innovativeProjects: "İnnovativ Layihələr",
+    footerEngineering: "Mühəndislik",
+    footerFabrication: "İstehsal",
+    footerMachining: "Mexaniki Emal",
+    footerMaterialSupply: "Material Təchizatı",
+    footerEquipmentSupply: "Avadanlıq Təchizatı",
+    footerIndustrialSkid: "Sənaye Skid İstehsalı",
     allRights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
     preparedBy: "Hazırlayan:",
 
@@ -114,6 +116,7 @@ const translations = {
     services: "Services",
     markets: "Market Sectors",
     career: "Career",
+    quality: "Quality Management",
 
     // Products Dropdown
     fabrication: "Custom Structures Fabrication",
@@ -197,11 +200,12 @@ const translations = {
       "Have a complex project? Let our engineers and trade experts find the most efficient and reliable solution for your business.",
     company: "Company",
     solutions: "Solutions",
-    engineeringDesign: "Engineering & Design",
-    manufacturing: "Manufacturing",
-    energySolutions: "Energy Solutions",
-    industrialEquipment: "Industrial Equipment",
-    innovativeProjects: "Innovative Projects",
+    footerEngineering: "Engineering",
+    footerFabrication: "Fabrication",
+    footerMachining: "Machining",
+    footerMaterialSupply: "Material Supply",
+    footerEquipmentSupply: "Equipment Supply",
+    footerIndustrialSkid: "Industrial Skid Fabrication",
     allRights: "© 2026 EVERSHOP MMC. All rights reserved.",
     preparedBy: "Prepared by:",
 
@@ -218,6 +222,7 @@ const translations = {
     services: "Услуги",
     markets: "Рыночные Секторы",
     career: "Карьера",
+    quality: "Управление Качеством",
 
     // Products Dropdown
     fabrication: "Изготовление Нестандартных Конструкций",
@@ -305,11 +310,12 @@ const translations = {
       "У вас сложный проект? Позвольте нашим инженерам и торговым экспертам найти наиболее эффективное и надежное решение для вашего бизнеса.",
     company: "Компания",
     solutions: "Решения",
-    engineeringDesign: "Проектирование и Инжиниринг",
-    manufacturing: "Производство",
-    energySolutions: "Энергетические Решения",
-    industrialEquipment: "Промышленное Оборудование",
-    innovativeProjects: "Инновационные Проекты",
+    footerEngineering: "Инжиниринг",
+    footerFabrication: "Производство",
+    footerMachining: "Механическая Обработка",
+    footerMaterialSupply: "Поставка Материалов",
+    footerEquipmentSupply: "Поставка Оборудования",
+    footerIndustrialSkid: "Производство Промышленных Скидов",
     allRights: "© 2026 EVERSHOP MMC. Все права защищены.",
     preparedBy: "Подготовлено:",
 
