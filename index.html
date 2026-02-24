@@ -62,16 +62,13 @@
             </svg>
             <span class="lang-text">AZ</span>
           </button>
-
           <button
             class="mobile-menu-btn"
             id="mobileMenuBtn"
             aria-label="Menyu"
             aria-expanded="false"
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
           </button>
         </div>
 
@@ -217,9 +214,9 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="market.html" class="nav-link">
-                <span data-i18n="markets">Bazar Sektorları</span>
-              </a>
+              <a href="market.html" class="nav-link"
+                ><span data-i18n="markets">Bazar Sektorları</span></a
+              >
             </li>
             <li class="nav-item">
               <a href="career.html" class="nav-link" data-i18n="career"
@@ -352,9 +349,7 @@
         <source src="assets/video/video.mp4" type="video/mp4" />
         Brauzeriniz video təqdimatını dəstəkləmir.
       </video>
-
       <div class="hero-overlay" aria-hidden="true"></div>
-
       <div class="hero-content">
         <div class="hero-text-box">
           <h1 class="hero-title">
@@ -385,7 +380,6 @@
       <h2 class="section-title" data-i18n="mainActivities">
         Əsas Fəaliyyət Sahələri
       </h2>
-
       <div class="activities-grid">
         <article class="activity-card">
           <img
@@ -398,15 +392,9 @@
             <p data-i18n="engineeringDesc">
               Sənaye layihələri üçün yüksək keyfiyyətli mühəndislik həlləri.
             </p>
-            <a
-              href="engineering.html"
-              data-i18n="explore"
-              aria-label="Mühəndislik haqqında ətraflı"
-              >ARAŞDIR</a
-            >
+            <a href="engineering.html" data-i18n="explore">ARAŞDIR</a>
           </div>
         </article>
-
         <article class="activity-card">
           <img
             src="assets/images/fabrication/Production .jpeg"
@@ -418,15 +406,9 @@
             <p data-i18n="fabricationDesc">
               Qlobal standartlara cavab verən inkişaf etmiş istehsal xidmətləri.
             </p>
-            <a
-              href="fabrication.html"
-              data-i18n="explore"
-              aria-label="İstehsal haqqında ətraflı"
-              >ARAŞDIR</a
-            >
+            <a href="fabrication.html" data-i18n="explore">ARAŞDIR</a>
           </div>
         </article>
-
         <article class="activity-card">
           <img
             src="assets/images/machined/cover.jpeg"
@@ -439,15 +421,9 @@
               Müasir CNC texnologiyalarından istifadə edərək dəqiq mexaniki
               emal.
             </p>
-            <a
-              href="machined.html"
-              data-i18n="explore"
-              aria-label="Mexaniki emal haqqında ətraflı"
-              >ARAŞDIR</a
-            >
+            <a href="machined.html" data-i18n="explore">ARAŞDIR</a>
           </div>
         </article>
-
         <article class="activity-card">
           <img
             src="assets/images/material/WhatsApp Image 2026-01-27 at 15.35.54.jpeg"
@@ -459,15 +435,9 @@
             <p data-i18n="materialSupplyDesc">
               Sertifikatlaşdırılmış sənaye materiallarının qlobal tədarükü.
             </p>
-            <a
-              href="material.html"
-              data-i18n="explore"
-              aria-label="Material təchizatı haqqında ətraflı"
-              >ARAŞDIR</a
-            >
+            <a href="material.html" data-i18n="explore">ARAŞDIR</a>
           </div>
         </article>
-
         <article class="activity-card">
           <img
             src="assets/images/equipment/WATER PUMP .jpg"
@@ -479,15 +449,9 @@
             <p data-i18n="equipmentSupplyDesc">
               Etibarlı sənaye avadanlığı və maşın həlləri.
             </p>
-            <a
-              href="equipment.html"
-              data-i18n="explore"
-              aria-label="Avadanlıq təchizatı haqqında ətraflı"
-              >ARAŞDIR</a
-            >
+            <a href="equipment.html" data-i18n="explore">ARAŞDIR</a>
           </div>
         </article>
-
         <article class="activity-card">
           <img
             src="assets/images/skid/WhatsApp Image 2026-01-24 at 13.19.19.jpeg"
@@ -499,12 +463,7 @@
             <p data-i18n="industrialSkidDesc">
               Sənaye əməliyyatları üçün xüsusi hazırlanmış skid sistemləri.
             </p>
-            <a
-              href="skid.html"
-              data-i18n="explore"
-              aria-label="Sənaye skid haqqında ətraflı"
-              >ARAŞDIR</a
-            >
+            <a href="skid.html" data-i18n="explore">ARAŞDIR</a>
           </div>
         </article>
       </div>
@@ -519,65 +478,80 @@
           loading="lazy"
         />
       </div>
-
       <div class="contact-form-area">
         <div class="form-box">
           <h2 data-i18n="getInTouch">Bizimlə Əlaqə Saxlayın</h2>
           <span class="line" aria-hidden="true"></span>
-
           <form id="contactForm" novalidate>
             <div class="row">
               <input
                 type="text"
                 name="firstName"
+                data-i18n-placeholder="formFirstName"
                 placeholder="Ad*"
                 required
                 aria-required="true"
-                aria-label="Ad"
               />
               <input
                 type="text"
                 name="lastName"
+                data-i18n-placeholder="formLastName"
                 placeholder="Soyad*"
                 required
                 aria-required="true"
-                aria-label="Soyad"
               />
             </div>
-
             <div class="row">
               <input
                 type="tel"
                 name="phone"
+                data-i18n-placeholder="formPhone"
                 placeholder="Telefon nömrəsi"
-                aria-label="Telefon"
               />
               <input
                 type="email"
                 name="email"
+                data-i18n-placeholder="formEmail"
                 placeholder="Email*"
                 required
                 aria-required="true"
-                aria-label="Email"
               />
             </div>
-
             <textarea
               name="message"
+              data-i18n-placeholder="formMessage"
               placeholder="Mesaj"
-              aria-label="Mesaj"
               rows="5"
             ></textarea>
 
+            <!-- Custom File Upload -->
             <div class="file-upload">
-              <label for="fileUpload">Fayl əlavə et (PDF, JPG, PNG)</label>
-              <input
-                type="file"
-                id="fileUpload"
-                name="file"
-                accept=".pdf,.jpg,.jpeg,.png"
-                aria-label="Fayl yüklə"
-              />
+              <label for="fileUpload" data-i18n="formFileLabel"
+                >Fayl əlavə et (PDF, JPG, PNG)</label
+              >
+              <div class="file-upload-custom">
+                <button
+                  type="button"
+                  class="file-upload-btn"
+                  id="fileUploadBtn"
+                  data-i18n="formFileBtn"
+                >
+                  Fayl seçin
+                </button>
+                <span
+                  class="file-upload-name"
+                  id="fileUploadName"
+                  data-i18n="formFileNone"
+                  >Fayl seçilməyib</span
+                >
+                <input
+                  type="file"
+                  id="fileUpload"
+                  name="file"
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  style="display: none"
+                />
+              </div>
             </div>
 
             <div class="checkbox">
@@ -589,13 +563,13 @@
                 aria-required="true"
               />
               <label for="privacyConsent">
-                Məxfilik Siyasətinə uyğun olaraq məlumatlarımın saxlanmasına
-                razıyam
-                <a href="#" aria-label="Məxfilik siyasəti">Məxfilik Siyasəti</a
-                >.
+                <span data-i18n="formPrivacyText"
+                  >Məxfilik Siyasətinə uyğun olaraq məlumatlarımın saxlanmasına
+                  razıyam</span
+                >
+                <a href="#" data-i18n="formPrivacyLink">Məxfilik Siyasəti</a>.
               </label>
             </div>
-
             <button type="submit" data-i18n="send">GÖNDƏR</button>
           </form>
         </div>
@@ -605,73 +579,65 @@
     <!-- Certifications Section -->
     <section class="cert-section-wrapper" id="certifications">
       <h2 class="cert-title" data-i18n="certifications">Sertifikatlar</h2>
-
       <div class="cert-grid">
         <div
           class="cert-item"
           data-pdf="assets/pdf/ISO 9001.pdf"
           role="button"
           tabindex="0"
-          aria-label="ISO 9001 sertifikatı"
         >
-          <span class="cert-item-corner top-left" aria-hidden="true"></span>
-          <span class="cert-item-corner top-right" aria-hidden="true"></span>
-          <span class="cert-item-corner bottom-left" aria-hidden="true"></span>
-          <span class="cert-item-corner bottom-right" aria-hidden="true"></span>
+          <span class="cert-item-corner top-left"></span
+          ><span class="cert-item-corner top-right"></span>
+          <span class="cert-item-corner bottom-left"></span
+          ><span class="cert-item-corner bottom-right"></span>
           <img
             src="assets/images/certifikat/ISO 9001-1.png"
             alt="ISO 9001 Sertifikatı"
             loading="lazy"
           />
         </div>
-
         <div
           class="cert-item"
           data-pdf="assets/pdf/İSO 14001.pdf"
           role="button"
           tabindex="0"
-          aria-label="ISO 14001 sertifikatı"
         >
-          <span class="cert-item-corner top-left" aria-hidden="true"></span>
-          <span class="cert-item-corner top-right" aria-hidden="true"></span>
-          <span class="cert-item-corner bottom-left" aria-hidden="true"></span>
-          <span class="cert-item-corner bottom-right" aria-hidden="true"></span>
+          <span class="cert-item-corner top-left"></span
+          ><span class="cert-item-corner top-right"></span>
+          <span class="cert-item-corner bottom-left"></span
+          ><span class="cert-item-corner bottom-right"></span>
           <img
             src="assets/images/certifikat/İSO 14001-1.png"
             alt="ISO 14001 Sertifikatı"
             loading="lazy"
           />
         </div>
-
         <div
           class="cert-item"
           data-pdf="assets/pdf/ISO 45001.pdf"
           role="button"
           tabindex="0"
-          aria-label="ISO 45001 sertifikatı"
         >
-          <span class="cert-item-corner top-left" aria-hidden="true"></span>
-          <span class="cert-item-corner top-right" aria-hidden="true"></span>
-          <span class="cert-item-corner bottom-left" aria-hidden="true"></span>
-          <span class="cert-item-corner bottom-right" aria-hidden="true"></span>
+          <span class="cert-item-corner top-left"></span
+          ><span class="cert-item-corner top-right"></span>
+          <span class="cert-item-corner bottom-left"></span
+          ><span class="cert-item-corner bottom-right"></span>
           <img
             src="assets/images/certifikat/ISO 45001-1.png"
             alt="ISO 45001 Sertifikatı"
             loading="lazy"
           />
         </div>
-
         <div
           class="cert-item"
           data-pdf="assets/pdf/Uyğunluq.pdf"
           role="button"
           tabindex="0"
-          aria-label="Uyğunluq sertifikatı"
         >
-          <span class="cert-item-corner top-left" aria-hidden="true"></span>
-          <span class="cert-item-corner top-right" aria-hidden="true"></span>
-          <span class="cert-item-corner bottom-left" aria-hidden="true"></span>
-          <span class="cert-item-corner bottom-right" aria-hidden="true"></span>
+          <span class="cert-item-corner top-left"></span
+          ><span class="cert-item-corner top-right"></span>
+          <span class="cert-item-corner bottom-left"></span
+          ><span class="cert-item-corner bottom-right"></span>
           <img
             src="assets/images/certifikat/Uyğunluq-1.png"
             alt="Uyğunluq Sertifikatı"
@@ -693,18 +659,16 @@
               həlli tapsınlar.
             </p>
           </div>
-
           <div class="contact-info">
             <div class="contact-item">
               <i class="fas fa-phone-alt" aria-hidden="true"></i>
               <h4 data-i18n="callUs">Bizə zəng edin</h4>
               <p>
                 <a href="https://wa.me/994702710066" target="_blank">
-                  +994 70 271 00 66
+                  <span data-i18n="contactPhone">+994 70 271 00 66</span>
                 </a>
               </p>
             </div>
-
             <div class="contact-item">
               <i class="fas fa-envelope" aria-hidden="true"></i>
               <h4 data-i18n="emailUs">Bizə email göndərin</h4>
@@ -713,12 +677,12 @@
                   href="mailto:sales@evershop.az"
                   onclick="
                     window.open(
-                      'https://mail.google.com/mail/?view=cm&fs=1&to=Sales@evershop.az',
+                      'https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az',
                       '_blank',
                     )
                   "
                 >
-                  Sales@evershop.az
+                  <span data-i18n="contactEmail">sales@evershop.az</span>
                 </a>
               </p>
             </div>
@@ -735,7 +699,6 @@
       <div class="partner-slider-container">
         <div class="partner-slider">
           <div class="partner-slider-items">
-            <!-- Xarici şirkətlər -->
             <div class="partner-item">
               <img
                 src="assets/images/partners/socar-stp.png"
@@ -806,8 +769,6 @@
                 loading="lazy"
               />
             </div>
-
-            <!-- Azərbaycan şirkətləri -->
             <div class="partner-item">
               <img
                 src="assets/images/partners/steel.png"
@@ -857,8 +818,7 @@
                 loading="lazy"
               />
             </div>
-
-            <!-- Tekrar - Sonsuz kaydırma için -->
+            <!-- Repeat -->
             <div class="partner-item">
               <img
                 src="assets/images/partners/socar-stp.png"
@@ -1005,28 +965,24 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
-                >
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                </a>
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
                 <a
                   href="https://www.instagram.com/evershopllc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                >
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
-                </a>
+                  ><i class="fab fa-instagram"></i
+                ></a>
                 <a
                   href="https://www.linkedin.com/company/evershop-llc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                >
-                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                </a>
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
               </div>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="company">Şirkət</h4>
               <ul>
@@ -1039,7 +995,6 @@
                 <li><a href="career.html" data-i18n="career">Karyera</a></li>
               </ul>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="solutions">Həllər</h4>
               <ul>
@@ -1076,51 +1031,51 @@
                 </li>
               </ul>
             </div>
-
             <div class="footer-widget">
               <h4 data-i18n="contactInfo">Əlaqə</h4>
               <ul class="footer-contact">
                 <li>
-                  <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                  <i class="fas fa-phone-alt"></i>
                   <a
                     href="https://wa.me/994702710066"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    +994 70 271 00 66
+                    <span data-i18n="contactPhone">+994 70 271 00 66</span>
                   </a>
                 </li>
-
                 <li>
                   <i class="fas fa-envelope"></i>
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=Sales@evershop.az"
                     target="_blank"
                   >
-                    Sales@evershop.az
+                    <span data-i18n="contactEmail">sales@evershop.az</span>
                   </a>
                 </li>
-
                 <li>
-                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <i class="fas fa-map-marker-alt"></i>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
-                    Azerbaijan
+                    <span data-i18n="contactAddress1"
+                      >Badamdar Mülkləri, M. Muşfiq küçəsi 1C, AZ1006, Bakı,
+                      Azərbaycan</span
+                    >
                   </a>
                 </li>
-
                 <li>
-                  <i class="fas fa-industry" aria-hidden="true"></i>
+                  <i class="fas fa-industry"></i>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Salyan Highway, 32 km, Baku, Azerbaijan
+                    <span data-i18n="contactAddress2"
+                      >Salyan şossesi, 32 km, Bakı, Azərbaycan</span
+                    >
                   </a>
                 </li>
               </ul>
@@ -1128,38 +1083,33 @@
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="container">
           <div class="footer-bottom-content">
             <p>
               <span data-i18n="allRights"
-                >© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.</span
-              >
-              <span class="footer-credit">
-                <span data-i18n="preparedBy">Hazırlayan:</span>
+                >© 2026 EVERSHOP MMC. All rights reserved.</span
+              ><span class="footer-credit">
+                <span data-i18n="preparedBy">Prepared by:</span>
                 <a
                   href="https://www.butagrup.com.tr/"
                   target="_blank"
                   rel="noopener noreferrer"
                   style="text-decoration: none; color: inherit"
+                  ><strong>BUTA GRUP</strong></a
                 >
-                  <strong>BUTA GRUP</strong>
-                </a>
               </span>
             </p>
           </div>
         </div>
       </div>
     </footer>
-    
 
-    <!-- Scroll to Top Button -->
+    <!-- Scroll to Top -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Yuxarı qayıt">
-      <i class="fas fa-arrow-up" aria-hidden="true"></i>
+      <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
     <script src="assets/js/translations.js"></script>
     <script src="assets/js/script.js"></script>
   </body>

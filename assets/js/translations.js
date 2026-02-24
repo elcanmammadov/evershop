@@ -52,8 +52,19 @@ const translations = {
       "Sənaye əməliyyatları üçün xüsusi hazırlanmış skid sistemləri.",
     explore: "ARAŞDIR",
 
-    // Contact Section
+    // Contact Form
     getInTouch: "Bizimlə Əlaqə Saxlayın",
+    formFirstName: "Ad*",
+    formLastName: "Soyad*",
+    formPhone: "Telefon nömrəsi",
+    formEmail: "Email*",
+    formMessage: "Mesaj",
+    formFileLabel: "Fayl əlavə et (PDF, JPG, PNG)",
+    formFileBtn: "Fayl seçin",
+    formFileNone: "Fayl seçilməyib",
+    formPrivacyText:
+      "Məxfilik Siyasətinə uyğun olaraq məlumatlarımın saxlanmasına razıyam",
+    formPrivacyLink: "Məxfilik Siyasəti",
     send: "GÖNDƏR",
 
     // Certifications
@@ -65,6 +76,14 @@ const translations = {
       "Mürəkkəb layihəniz var? Bizim mühəndislərimiz və ticarət mütəxəssislərimiz sizin biznesiniz üçün ən səmərəli və etibarlı həlli tapsınlar.",
     callUs: "Bizə zəng edin",
     emailUs: "Bizə email göndərin",
+
+    // Contact Details
+    contactInfo: "Əlaqə",
+    contactPhone: "+994 70 271 00 66",
+    contactEmail: "sales@evershop.az",
+    contactAddress1:
+      "Badamdar Mülkləri, M. Muşfiq küçəsi 1C, AZ1006, Bakı, Azərbaycan",
+    contactAddress2: "Salyan şossesi, 32 km, Bakı, Azərbaycan",
 
     // Partners
     partners: "Tərəfdaşlar",
@@ -79,7 +98,6 @@ const translations = {
     energySolutions: "Enerji Həlləri",
     industrialEquipment: "Sənaye Avadanlıqları",
     innovativeProjects: "İnnovativ Layihələr",
-    contactInfo: "Əlaqə",
     allRights: "© 2026 EVERSHOP MMC. Bütün hüquqlar qorunur.",
     preparedBy: "Hazırlayan:",
 
@@ -139,8 +157,18 @@ const translations = {
     industrialSkidDesc: "Custom-built skid systems for industrial operations.",
     explore: "EXPLORE",
 
-    // Contact Section
+    // Contact Form
     getInTouch: "Get in Touch",
+    formFirstName: "First Name*",
+    formLastName: "Last Name*",
+    formPhone: "Phone Number",
+    formEmail: "Email*",
+    formMessage: "Message",
+    formFileLabel: "Attach a File (PDF, JPG, PNG)",
+    formFileBtn: "Choose File",
+    formFileNone: "No file chosen",
+    formPrivacyText: "I agree to the storage of my data in accordance with the",
+    formPrivacyLink: "Privacy Policy",
     send: "SEND",
 
     // Certifications
@@ -150,8 +178,16 @@ const translations = {
     letsGetInTouch: "Let's Get in Touch!",
     ctaDescription:
       "Have a complex project? Let our engineers and trade experts find the most efficient and reliable solution for your business.",
-    callUs: "Call us",
-    emailUs: "Email us",
+    callUs: "Call Us",
+    emailUs: "Email Us",
+
+    // Contact Details
+    contactInfo: "Contact",
+    contactPhone: "+994 70 271 00 66",
+    contactEmail: "sales@evershop.az",
+    contactAddress1:
+      "Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku, Azerbaijan",
+    contactAddress2: "Salyan Highway, 32 km, Baku, Azerbaijan",
 
     // Partners
     partners: "Partners",
@@ -166,7 +202,6 @@ const translations = {
     energySolutions: "Energy Solutions",
     industrialEquipment: "Industrial Equipment",
     innovativeProjects: "Innovative Projects",
-    contactInfo: "Contact",
     allRights: "© 2026 EVERSHOP MMC. All rights reserved.",
     preparedBy: "Prepared by:",
 
@@ -230,8 +265,18 @@ const translations = {
       "Специально разработанные скид-системы для промышленных операций.",
     explore: "ИЗУЧИТЬ",
 
-    // Contact Section
+    // Contact Form
     getInTouch: "Свяжитесь с Нами",
+    formFirstName: "Имя*",
+    formLastName: "Фамилия*",
+    formPhone: "Номер телефона",
+    formEmail: "Email*",
+    formMessage: "Сообщение",
+    formFileLabel: "Прикрепить файл (PDF, JPG, PNG)",
+    formFileBtn: "Выбрать файл",
+    formFileNone: "Файл не выбран",
+    formPrivacyText: "Я согласен на хранение моих данных в соответствии с",
+    formPrivacyLink: "Политикой конфиденциальности",
     send: "ОТПРАВИТЬ",
 
     // Certifications
@@ -243,6 +288,14 @@ const translations = {
       "У вас сложный проект? Позвольте нашим инженерам и торговым экспертам найти наиболее эффективное и надежное решение для вашего бизнеса.",
     callUs: "Позвоните нам",
     emailUs: "Напишите нам",
+
+    // Contact Details
+    contactInfo: "Контакты",
+    contactPhone: "+994 70 271 00 66",
+    contactEmail: "sales@evershop.az",
+    contactAddress1:
+      "Бадамдар Эстейтс, ул. М. Мушфига 1C, AZ1006, Баку, Азербайджан",
+    contactAddress2: "Сальянское шоссе, 32 км, Баку, Азербайджан",
 
     // Partners
     partners: "Партнеры",
@@ -257,7 +310,6 @@ const translations = {
     energySolutions: "Энергетические Решения",
     industrialEquipment: "Промышленное Оборудование",
     innovativeProjects: "Инновационные Проекты",
-    contactInfo: "Контакты",
     allRights: "© 2026 EVERSHOP MMC. Все права защищены.",
     preparedBy: "Подготовлено:",
 
