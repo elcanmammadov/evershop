@@ -328,32 +328,108 @@
         padding: 0 2rem;
       }
 
-      /* ========== GALLERY ========== */
-      .gallery-section {
-        padding: 4rem 0 2rem;
+      /* ========== PHOTO GRID SECTION ========== */
+      .photo-grid-section {
+        padding: 3rem 0 1rem;
       }
-      .gallery-single {
-        background: var(--dark-secondary);
-        border: 1px solid rgba(255, 107, 53, 0.15);
+      .photo-grid-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 2.5rem;
+      }
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 3px;
+      }
+      .photo-card {
+        position: relative;
+        aspect-ratio: 4 / 3;
         overflow: hidden;
-        transition: all 0.3s ease;
+        cursor: pointer;
+        background: var(--dark-secondary);
       }
-      .gallery-single:hover {
-        border-color: var(--primary);
-        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
-      }
-      .gallery-single img {
+      .photo-card img {
         width: 100%;
-        height: 400px;
+        height: 100%;
         object-fit: cover;
+        filter: brightness(0.85) saturate(0.9);
+        transition:
+          filter 0.4s ease,
+          transform 0.5s ease;
         display: block;
-        transition: transform 0.5s;
       }
-      .gallery-single:hover img {
-        transform: scale(1.02);
+      .photo-card:hover img {
+        filter: brightness(1) saturate(1);
+        transform: scale(1.07);
+      }
+      .photo-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 15, 30, 0.88) 0%,
+          rgba(10, 15, 30, 0.05) 50%,
+          transparent 100%
+        );
+        pointer-events: none;
+      }
+      .photo-card-label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        padding: 14px 12px 12px;
+      }
+      .photo-card-line {
+        width: 20px;
+        height: 2px;
+        background: var(--primary);
+        margin-bottom: 6px;
+        transition: width 0.3s ease;
+      }
+      .photo-card:hover .photo-card-line {
+        width: 36px;
+      }
+      .photo-card-label span {
+        font-family: "Montserrat", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: #fff;
+        line-height: 1.3;
+        display: block;
+      }
+      .photo-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid transparent;
+        z-index: 3;
+        transition: border-color 0.3s ease;
+        pointer-events: none;
+      }
+      .photo-card:hover::before {
+        border-color: rgba(255, 107, 53, 0.5);
       }
 
-      /* ========== SECTORS (pillar-card style) ========== */
+      @media (max-width: 1100px) {
+        .photo-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .photo-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* ========== SECTORS ========== */
       .sectors-section {
         padding: 4rem 0;
       }
@@ -407,7 +483,7 @@
         line-height: 1.7;
       }
 
-      /* ========== CAPABILITIES (badge style matching about.html) ========== */
+      /* ========== CAPABILITIES ========== */
       .capabilities-section {
         background: var(--dark-secondary);
         border: 1px solid rgba(255, 107, 53, 0.15);
@@ -581,9 +657,6 @@
         margin: 0;
         color: rgba(255, 255, 255, 0.8);
         font-size: 0.9rem;
-      }
-      .footer-credit {
-        margin-left: 5px;
       }
       .scroll-to-top {
         position: fixed;
@@ -1038,14 +1111,148 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="gallery-section">
+    <!-- ========== PHOTO GRID SECTION ========== -->
+    <section class="photo-grid-section">
       <div class="container">
-        <div class="gallery-single">
-          <img src="assets/images/market/market.jpg" alt="Market Sectors" />
+        <h2 data-translate="pg_title">Explore Our Sectors</h2>
+        <div class="photo-grid">
+          <div class="photo-card">
+            <img
+              src="assets/images/market/energy.jpg"
+              alt="Energy"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_energy">Energy</span>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img
+              src="assets/images/market/zibil.jpg"
+              alt="Waste & Recycling"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_waste">Waste &amp; Recycling</span>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img
+              src="assets/images/market/shore.jpg"
+              alt="Offshore Structures"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_offshore">Offshore Structures</span>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img
+              src="assets/images/market/mining.jpg"
+              alt="Mining & Quarrying"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_mining">Mining &amp; Quarrying</span>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img
+              src="assets/images/market/oil.jpg"
+              alt="Oil & Gas"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_oilgas">Oil &amp; Gas</span>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img
+              src="assets/images/market/eng.jpg"
+              alt="General Engineering"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_engineering">General Engineering</span>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img
+              src="assets/images/market/ren.jpg"
+              alt="Renewables"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_renewables">Renewables</span>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img
+              src="assets/images/market/petro.jpg"
+              alt="Petrochemical"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_petrochem">Petrochemical</span>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img
+              src="assets/images/market/nuc.jpg"
+              alt="Nuclear"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_nuclear">Nuclear</span>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img
+              src="assets/images/market/civil.jpg"
+              alt="Civil Engineering"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_civil"
+                >Civil Engineering &amp; Construction</span
+              >
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img
+              src="assets/images/market/def.jpg"
+              alt="Defence"
+              loading="lazy"
+            />
+            <div class="photo-card-label">
+              <div class="photo-card-line"></div>
+              <span data-translate="pg_defence">Defence</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <!-- ========== / PHOTO GRID SECTION ========== -->
 
     <!-- SECTORS -->
     <section class="sectors-section">
@@ -1108,7 +1315,7 @@
       </div>
     </section>
 
-    <!-- CAPABILITIES (badge style) -->
+    <!-- CAPABILITIES -->
     <div class="capabilities-section">
       <h2 class="capabilities-title" data-translate="capabilities_title">
         Our Core Capabilities Across Sectors
@@ -1167,25 +1374,22 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
-                >
-                  <i class="fab fa-whatsapp"></i>
-                </a>
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
                 <a
                   href="https://www.instagram.com/evershopllc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
+                  ><i class="fab fa-instagram"></i
+                ></a>
                 <a
                   href="https://www.linkedin.com/company/evershop-llc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                >
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
               </div>
             </div>
             <div class="footer-widget">
@@ -1251,8 +1455,8 @@
               <h4 data-translate="footer_contact">Contact</h4>
               <ul class="footer-contact">
                 <li>
-                  <i class="fas fa-phone-alt"></i>
-                  <a
+                  <i class="fas fa-phone-alt"></i
+                  ><a
                     href="https://wa.me/994702710066"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1260,33 +1464,31 @@
                   >
                 </li>
                 <li>
-                  <i class="fas fa-envelope"></i>
-                  <a
+                  <i class="fas fa-envelope"></i
+                  ><a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@evershop.az"
                     target="_blank"
                     >sales@evershop.az</a
                   >
                 </li>
                 <li>
-                  <i class="fas fa-map-marker-alt"></i>
-                  <a
+                  <i class="fas fa-map-marker-alt"></i
+                  ><a
                     href="https://www.google.com/maps/search/?api=1&query=Badamdar+Estates,+M.+Mushfiq+Street+1C,+AZ1006,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
+                    >Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
+                    Azerbaijan</a
                   >
-                    Badamdar Estates, M. Mushfiq Street 1C, AZ1006, Baku,
-                    Azerbaijan
-                  </a>
                 </li>
                 <li>
-                  <i class="fas fa-industry"></i>
-                  <a
+                  <i class="fas fa-industry"></i
+                  ><a
                     href="https://www.google.com/maps/search/?api=1&query=Salyan+Highway,+32+km,+Baku,+Azerbaijan"
                     target="_blank"
                     rel="noopener noreferrer"
+                    >Salyan Highway, 32 km, Baku, Azerbaijan</a
                   >
-                    Salyan Highway, 32 km, Baku, Azerbaijan
-                  </a>
                 </li>
               </ul>
             </div>
@@ -1307,9 +1509,8 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   style="text-decoration: none; color: inherit"
+                  ><strong>BUTA GRUP</strong></a
                 >
-                  <strong>BUTA GRUP</strong>
-                </a>
               </span>
             </p>
           </div>
@@ -1349,6 +1550,18 @@
           hero_title: "Market Sectors",
           hero_subtitle:
             "EVERSHOP delivers specialized fabrication, engineering, and supply solutions to the world's most demanding industries.",
+          pg_title: "Explore Our Sectors",
+          pg_energy: "Energy",
+          pg_waste: "Waste & Recycling",
+          pg_offshore: "Offshore Structures",
+          pg_mining: "Mining & Quarrying",
+          pg_oilgas: "Oil & Gas",
+          pg_engineering: "General Engineering",
+          pg_renewables: "Renewables",
+          pg_petrochem: "Petrochemical",
+          pg_nuclear: "Nuclear",
+          pg_civil: "Civil Engineering & Construction",
+          pg_defence: "Defence",
           sectors_title: "Our Market Sectors",
           sector1_title: "Oil & Gas",
           sector1_desc:
@@ -1411,6 +1624,18 @@
           hero_title: "Bazar Sektorları",
           hero_subtitle:
             "EVERSHOP dünyanın ən tələbkar sənayelerinə ixtisaslaşdırılmış istehsal, mühəndislik və tədarük həlləri təqdim edir.",
+          pg_title: "Sektorlarımızı Kəşf Edin",
+          pg_energy: "Enerji",
+          pg_waste: "Tullantı və Geri Dönüşüm",
+          pg_offshore: "Offshore Konstruksiyalar",
+          pg_mining: "Mədən və Karyer",
+          pg_oilgas: "Neft və Qaz",
+          pg_engineering: "Ümumi Mühəndislik",
+          pg_renewables: "Bərpa Olunan Enerji",
+          pg_petrochem: "Neft-Kimya",
+          pg_nuclear: "Nüvə",
+          pg_civil: "Tikinti Mühəndisliyi",
+          pg_defence: "Müdafiə",
           sectors_title: "Bizim Bazar Sektorlarımız",
           sector1_title: "Neft və Qaz",
           sector1_desc:
@@ -1473,13 +1698,25 @@
           hero_title: "Рыночные Секторы",
           hero_subtitle:
             "EVERSHOP предоставляет специализированные решения по изготовлению, проектированию и поставкам для самых требовательных отраслей мира.",
+          pg_title: "Изучите Наши Секторы",
+          pg_energy: "Энергетика",
+          pg_waste: "Отходы и Переработка",
+          pg_offshore: "Морские Конструкции",
+          pg_mining: "Горнодобывающая",
+          pg_oilgas: "Нефть и Газ",
+          pg_engineering: "Общая Инженерия",
+          pg_renewables: "Возобновляемые Источники",
+          pg_petrochem: "Нефтехимия",
+          pg_nuclear: "Ядерная",
+          pg_civil: "Гражданское Строительство",
+          pg_defence: "Оборона",
           sectors_title: "Наши Рыночные Секторы",
           sector1_title: "Нефть и Газ",
           sector1_desc:
-            "Сосуды под давлением, сепараторы, теплообменники и технологическое оборудование для операций добычи, транспортировки и переработки.",
+            "Сосуды под давлением, сепараторы, теплообменники и технологическое оборудование для добычи, транспортировки и переработки.",
           sector2_title: "Нефтехимия",
           sector2_desc:
-            "Специализированные реакторы, колонны и технологические скиды, предназначенные для коррозионных и высокотемпературных химических процессов.",
+            "Специализированные реакторы, колонны и технологические скиды для коррозионных и высокотемпературных химических процессов.",
           sector3_title: "Производство Электроэнергии",
           sector3_desc:
             "Котлы, парогенераторы утилизации тепла, конденсаторы и вспомогательное оборудование для тепловых и комбинированных электростанций.",
@@ -1493,7 +1730,7 @@
           capabilities_subtitle:
             "Независимо от отрасли, EVERSHOP обеспечивает последовательное инженерное совершенство через наш интегрированный подход.",
           cap1_title: "Соответствие Кодексу ASME",
-          cap2_title: "Передовая Материаловедение",
+          cap2_title: "Передовое Материаловедение",
           cap3_title: "Интегрированное Управление Проектами",
           cap4_title: "Обеспечение Качества и Испытания",
           cap5_title: "Местное Производство – Глобальные Стандарты",
@@ -1634,7 +1871,8 @@
           },
           { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
         );
-        document.querySelectorAll(".sector-card").forEach((el) => {
+
+        document.querySelectorAll(".sector-card, .photo-card").forEach((el) => {
           el.style.opacity = "0";
           el.style.transform = "translateY(30px)";
           el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
